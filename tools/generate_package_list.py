@@ -115,6 +115,12 @@ def main(
                     "version": package_info.get("version", "-"),
                     "num_modules": len(builds),
                     "modules": [],
+                    "author": ", ".join(
+                        author.get("name") for author in package_info.get("authors", [])
+                    )
+                    or "-",
+                    "license": package_info.get("license", "-"),
+                    "homepage": package_info.get("homepage", "-"),
                 }
 
                 # Process each module

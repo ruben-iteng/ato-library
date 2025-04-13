@@ -2,7 +2,7 @@
 
 # ato-library
 
-This is a monorepo for various ato and fabll packages.
+This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https://docs.atopile.io/atopile/guides/faebryk) packages for your projects made with [atopile](https://www.github.com/atopile/atopile)
 
 ## Available Packages
 

@@ -3,12 +3,17 @@
 {{ package.description }}
 
 ## Package Information
+
 - Version: {{ package.version }}
 - Total Modules: {{ package.num_modules }}
+- Author(s): {{ package.author }}
+- License: {{ package.license }}
+- Homepage: {{ package.homepage }}
 
 ## Available Modules
 
 ### Module List
+
 | Module | Description |
 |--------|-------------|
 {% for module in package.modules -%}
