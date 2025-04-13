@@ -1,0 +1,16 @@
+# {{ package.name }}
+
+{{ package.description }}
+
+## Package Information
+- Version: {{ package.version }}
+- Total Modules: {{ package.num_modules }}
+
+## Available Modules
+
+### Module List
+| Module | Description |
+|--------|-------------|
+{% for module in package.modules -%}
+| {{ module.name | md_cell }} | {{ module.description | md_cell }} |
+{% endfor %}
