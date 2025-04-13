@@ -1,0 +1,112 @@
+import ElectricLogic, ElectricPower, JTAG, SWD, Power
+
+module ARM_CORTEX_M_DEBUG_HEADER:
+    """
+    10 pin debug header with SWD pinout according to ARM Cortex M debug specification
+    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1
+    """
+    swd = new SWD
+    jtag = new JTAG
+    ground_detect = new ElectricLogic
+    reference = new ElectricPower
+    connector = new FTSH10501LDVKTR
+
+    # jtag connections
+    jtag.tms.line ~ connector.2
+    jtag.tck.line ~ connector.4
+    jtag.tdo.line ~ connector.6
+    jtag.tdi.line ~ connector.8
+    jtag.n_trst.line ~ connector.10
+
+    jtag.vtref.hv ~ reference.hv
+    jtag.vtref.gnd ~ reference.gnd
+
+    # swd connections
+    swd.dio.line ~ connector.2
+    swd.clk.line ~ connector.4
+    swd.swo.line ~ connector.6
+    swd.reset.line ~ connector.10
+
+    # common
+    reference.hv ~ connector.1
+    reference.gnd ~ connector.3
+    reference.gnd ~ connector.5
+
+    ground_detect.line ~ connector.9
+
+module SWD_TC2030_IDC_NL:
+    """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout"""
+    swd = new SWD
+    reference = new ElectricPower
+    connector = new _TC2030_IDC_NL
+
+    # swd connections
+    swd.dio.line ~ connector.2
+    swd.reset.line ~ connector.3
+    swd.clk.line ~ connector.4
+    swd.swo.line ~ connector.6
+
+    swd.dio.reference.gnd ~ reference.gnd
+
+    # common
+    reference.hv ~ connector.1
+    reference.gnd ~ connector.5
+
+module SWD_TC2030_IDC_FP:
+    """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout"""
+    swd = new SWD
+    reference = new ElectricPower
+    connector = new _TC2030_IDC_FP
+
+    # swd connections
+    swd.dio.line ~ connector.2
+    swd.reset.line ~ connector.3
+    swd.clk.line ~ connector.4
+    swd.swo.line ~ connector.6
+
+    swd.dio.reference.gnd ~ reference.gnd
+
+    # common
+    reference.hv ~ connector.1
+    reference.gnd ~ connector.5
+
+component FTSH10501LDVKTR:
+    """Samtec FTSH_105_01_L_DV_K_TR connector with ARM cortex debug pinout"""
+    lcsc_id = "C448647"
+    manufacturer = "Samtec"
+    mpn = "FTSH-105-01-L-DV-K-TR"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/1912111437_Samtec-FTSH-105-01-L-DV-K-TR_C448647.pdf"
+    designator_prefix = "X"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+    pin 7
+    pin 8
+    pin 9
+    pin 10
+
+component _TC2030_IDC_NL:
+    """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern"""
+    footprint = "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+
+component _TC2030_IDC_FP:
+    """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with holes"""
+    footprint = "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
