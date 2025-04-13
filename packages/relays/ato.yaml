@@ -1,0 +1,28 @@
+requires-atopile: "^0.4.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  driven_dpdt_bistable_relay:
+    entry: relays.ato:DrivenDPDTBistableRelay
+    description: |
+      Bistable DPDT relay with driver and indicator LEDs
+      - 5V coil power
+      - 5V/3.3V logic power
+      - 2A contact carry current
+      - TC118S DC motor driver (H-bridge) as relay driver
+
+
+package:
+  identifier: atopile/relays
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Iteng
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: Relay modules
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library

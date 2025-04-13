@@ -1,0 +1,168 @@
+import ElectricPower, ElectricSignal, ElectricLogic, Capacitor, LEDIndicator
+
+module SPST_Relay from Relay:
+    """Single Pole Single Throw Relay"""
+    input = new ElectricLogic
+
+    common = new ElectricSignal
+    contact = new ElectricSignal
+
+module SPDT_Relay from Relay:
+    """Single Pole Double Throw Relay"""
+    input_a = new ElectricLogic
+
+    common = new ElectricSignal
+    normally_closed = new ElectricSignal
+    normally_open = new ElectricSignal
+
+module DPST_Relay from Relay:
+    """Double Pole Single Throw Relay"""
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    common_a = new ElectricSignal
+    contact_a = new ElectricSignal
+
+    common_b = new ElectricSignal
+    contact_b = new ElectricSignal
+
+module DPDT_Relay from Relay:
+    """Double Pole Double Throw Relay"""
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    common_a = new ElectricSignal
+    normally_closed_a = new ElectricSignal
+    normally_open_a = new ElectricSignal
+
+    common_b = new ElectricSignal
+    normally_closed_b = new ElectricSignal
+    normally_open_b = new ElectricSignal
+
+module Relay:
+    coil = new ElectricPower
+
+module DrivenDPDTBistableRelay:
+    """
+    Bistable DPDT relay with driver and indicator LEDs
+    - 5V coil power
+    - 5V/3.3V logic power
+    - 2A contact carry current
+    - TC118S DC motor driver (H-bridge) as relay driver
+    """
+
+    # interfaces
+    power = new ElectricPower
+    assert power.voltage within 5V+/-10%
+    coil_power = new ElectricPower
+
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    common_a = new ElectricSignal
+    normally_closed_a = new ElectricSignal
+    normally_open_a = new ElectricSignal
+
+    common_b = new ElectricSignal
+    normally_closed_b = new ElectricSignal
+    normally_open_b = new ElectricSignal
+
+    # components
+    relay = new G6KU2FYTRDC5
+    relay_driver = new Shenzhen_Fuman_Elec_TC118S
+    led_indicator_a = new LEDIndicator
+    led_indicator_b = new LEDIndicator
+
+    # Bypass capacitors
+    power_5v_bypass_capacitor = new Capacitor
+    power_5v_bulk_capacitor = new Capacitor
+
+    power_5v_bypass_capacitor.power ~ power
+    power_5v_bulk_capacitor.power ~ power
+
+    power_5v_bypass_capacitor.package = "C0402"
+    power_5v_bulk_capacitor.package = "C0402"
+
+    power_5v_bypass_capacitor.value = 100nF +/- 20%
+    power_5v_bulk_capacitor.value = 220nF +/- 20%
+
+    # Relay filter capacitor
+    relay_filter_capacitor = new Capacitor
+    relay_filter_capacitor.power ~ relay_driver.motor_power_out
+    relay_filter_capacitor.package = "C0402"
+    relay_filter_capacitor.value = 100pF +/- 20%
+
+    # led indicators
+    led_indicator_a.led.led.lcsc_id = "C2286" # red
+    #led_indicator_a.led.led.brightness = 5millicandela +/- 10%
+    led_indicator_a.led.current_limiting_resistor.package = "R0402"
+    led_indicator_b.led.led.lcsc_id = "C12624" # green
+    #led_indicator_b.led.led.brightness = 5millicandela +/- 10%
+    led_indicator_b.led.current_limiting_resistor.package = "R0402"
+
+
+        # connections
+    coil_power ~ relay.coil
+
+    relay_driver.power ~ power
+    input_a.reference ~ power
+    input_b.reference ~ power
+
+    relay_driver.input_a ~ input_a
+    led_indicator_a.logic_in ~ input_a
+    relay_driver.input_b ~ input_b
+    led_indicator_b.logic_in ~ input_b
+    relay_driver.motor_power_out ~ relay.coil
+
+    relay.common_a ~ common_a
+    relay.normally_closed_a ~ normally_closed_a
+    relay.normally_open_a ~ normally_open_a
+
+    relay.common_b ~ common_b
+    relay.normally_closed_b ~ normally_closed_b
+    relay.normally_open_b ~ normally_open_b
+
+component G6KU2FYTRDC5 from DPDT_Relay:
+    """Omron Electronics G6KU_2F_Y_TR_DC5 bistable relay"""
+    lcsc_id = "C2153173"
+    manufacturer = "Omron Electronics"
+    mpn = "G6KU-2F-Y-TR DC5"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2211281630_Omron-Electronics-G6KU-2F-Y-TR-DC5_C2153173.pdf"
+    designator_prefix = "RELAY"
+
+    assert coil.voltage within 5V+/-10%
+    coil.vcc ~ pin 8
+    coil.gnd ~ pin 1
+
+    normally_closed_a ~ pin 2
+    common_a ~ pin 3
+    normally_open_a ~ pin 4
+
+    normally_closed_b ~ pin 7
+    common_b ~ pin 6
+    normally_open_b ~ pin 5
+
+component Shenzhen_Fuman_Elec_TC118S:
+    """Shenzhen Fuman Elec TC118S dc motor driver"""
+    lcsc_id = "C88308"
+    manufacturer = "Shenzhen Fuman Elec"
+    mpn = "TC118S"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2204121200_Shenzhen-Fuman-Elec-TC118S_C88308.pdf"
+    designator_prefix = "U"
+
+    # interfaces
+    power = new ElectricPower
+    motor_power_out = new ElectricPower
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    # pins
+    power.vcc ~ pin 4
+    power.gnd ~ pin 7
+    power.gnd ~ pin 6
+
+    motor_power_out.vcc ~ pin 8
+    motor_power_out.gnd ~ pin 5
+
+    input_a.line ~ pin 2
+    input_b.line ~ pin 3
