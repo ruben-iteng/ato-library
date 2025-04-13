@@ -1,0 +1,14 @@
+[project]
+name = "ato-library"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Ruben Iteng", email = "94007802+ruben-iteng@users.noreply.github.com" },
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pre-commit>=4.2.0",
+    "uv>=0.6.14",
+]

@@ -1,0 +1,26 @@
+exclude: \.(kicad_pcb|kicad_pro|kicad_sch|kicad_mod|step|wrl)$
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: generate-package-list
+        name: Generate Package List
+        entry: tools/generate_package_list.py
+        language: script
+        pass_filenames: false
+        files: ^(packages/.*|tools/generate_package_list\.py)$
