@@ -33,7 +33,7 @@ env.filters["md_cell"] = sanitize_markdown_cell
 
 def get_module_docstring(file_path, module_name):
     """Extract the docstring for a specific module from a file.
-    Looks for the docstring after the module definition.
+    Looks for the docstring after the module/class definition.
     """
     try:
         logger.debug(
@@ -42,27 +42,32 @@ def get_module_docstring(file_path, module_name):
         with open(file_path, "r") as f:
             content = f.read()
 
-            # Find the module definition
-            module_def = f"module {module_name}"
-            module_pos = content.find(module_def)
+            # Determine if we're looking for a module or class based on file extension
+            if str(file_path).endswith(".py"):
+                definition = f"class {module_name}"
+            else:
+                definition = f"module {module_name}"
 
-            if module_pos == -1:
-                logger.debug(f"Module {module_name} not found")
+            logger.debug(f"Looking for definition: {definition}")
+            definition_pos = content.find(definition)
+
+            if definition_pos == -1:
+                logger.warning(f"{definition} not found")
                 return "-"
 
-            # Look for triple-quote docstrings after the module definition
-            content_after_module = content[module_pos:]
+            # Look for triple-quote docstrings after the definition
+            content_after_def = content[definition_pos:]
             for quote in ['"""', "'''"]:
-                start = content_after_module.find(quote)
+                start = content_after_def.find(quote)
                 if start != -1:
                     # Find the closing quotes
-                    end = content_after_module.find(quote, start + 3)
+                    end = content_after_def.find(quote, start + 3)
                     if end != -1:
-                        docstring = content_after_module[start + 3 : end].strip()
-                        logger.debug(f"Found docstring using {quote}")
+                        docstring = content_after_def[start + 3 : end].strip()
+                        logger.debug(f"Found docstring: {docstring}")
                         return docstring
 
-            logger.debug("No docstring found")
+            logger.warning(f"No docstring found for {definition}")
             return "-"
     except Exception as e:
         logger.error(f"Failed to read docstring from {file_path}: {e}")
@@ -74,11 +79,11 @@ def find_module_file(package_dir, module_entry):
     if not module_entry or ":" not in module_entry:
         return None
 
-    module_path, class_name = module_entry.split(":")
-    # The module file is named after the package (e.g. debug-headers.ato, relays.ato)
-    file_path = package_dir / f"{package_dir.name}.ato"
+    module_path, module_name = module_entry.split(":")
+    # Use the actual file name from the entry point
+    file_path = package_dir / module_path
     logger.debug(f"Looking for module file: {file_path}")
-    return file_path, class_name
+    return file_path, module_name
 
 
 def main(
@@ -125,7 +130,9 @@ def main(
 
                 # Process each module
                 for build_name, build_info in builds.items():
+                    logger.debug(f"Processing module: {build_name} <> {build_info}")
                     module_info = find_module_file(package_dir, build_info.get("entry"))
+                    logger.debug(f"Module info: {module_info}")
                     if module_info is None:
                         build_description = "-"
                     else:
@@ -166,7 +173,7 @@ def main(
                     readme_path = package_dir / "README.md"
                     with open(readme_path, "w") as f:
                         f.write(package_readme)
-                        logger.info(f"Generated README at {readme_path}")
+                        logger.info(f"Generated {readme_path}")
                 except Exception as e:
                     logger.error(
                         f"Failed to generate package README for {package_dir.name}: {e}"
