@@ -4,16 +4,27 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
+      # Checks for files that would conflict in case-insensitive filesystems
       - id: check-case-conflict
+      # Ensures code is placed after docstrings
       - id: check-docstring-first
+      # Verifies executable files have a proper shebang
       - id: check-executables-have-shebangs
+      # Validates JSON files for syntax errors
       - id: check-json
-      - id: check-merge-conflict
-      - id: check-symlinks
-      - id: check-toml
-      - id: check-vcs-permalinks
+      # Validates YAML files for syntax errors
       - id: check-yaml
+      # Validates TOML files for syntax errors
+      - id: check-toml
+      # Detects unresolved merge conflict markers
+      - id: check-merge-conflict
+      # Checks for broken symlinks
+      - id: check-symlinks
+      # Ensures VCS permalinks are valid
+      - id: check-vcs-permalinks
+      # Ensures files end with exactly one newline
       - id: end-of-file-fixer
+      # Removes trailing whitespace from lines
       - id: trailing-whitespace
 
   - repo: local
