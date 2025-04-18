@@ -1,4 +1,4 @@
-# debug-headers
+# debug-interfaces
 
 SWD and tag connect headers for programming and debugging
 

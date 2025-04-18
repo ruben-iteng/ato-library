@@ -1,0 +1,29 @@
+import ElectricPower, ElectricLogic
+
+component AddressableLEDConnector from Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+    """
+    XT30 connector with 2 additional data pins.
+    Wired for connecting to addressable LED strips.
+    """
+
+    power = new ElectricPower
+    data = new ElectricLogic
+    clock = new ElectricLogic
+
+    power.hv ~ pin 1
+    power.lv ~ pin 2
+    data.line ~ pin 3
+    clock.line ~ pin 4
+
+component Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+    """XT30 connector with 2 additional data pins"""
+    lcsc_id = "C19268030"
+    manufacturer = "Changzhou Amass Elec"
+    mpn = "XT30PW(2+2)-M.G.B"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401121133_Changzhou-Amass-Elec-XT30-2-2PW-M-G-B_C19268030.pdf"
+    designator_prefix = "U"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4

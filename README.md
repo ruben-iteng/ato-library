@@ -8,9 +8,21 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
-| [debug-headers](packages/debug-headers/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
+| [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
+|  | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
+|  | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
+|  | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
+| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
+|  | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
+| [connectors](packages/connectors/README.md) | 5 modules | Various connectors | 0.1.0 |
+|  | screw_terminal_3_81mm_2p | - | |
+|  | screw_terminal_3_81mm_3p | - | |
+|  | screw_terminal_3_81mm_4p | - | |
+|  | screw_terminal_3_81mm_5p | - | |
+|  | addressable_led_connector | - | |
+| [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
 |  | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 |  | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 |  | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
-| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
-|  | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
+| [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.0 |
+|  | isolated_ina228 | INA228 with I2C and power isolation. | |

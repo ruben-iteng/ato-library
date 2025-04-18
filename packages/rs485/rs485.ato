@@ -1,0 +1,74 @@
+import Analog_Devices_ADM2587EBRWZ_ReferenceDesign
+import RS485_Bus_Protection
+import UART_Base, RS485HalfDuplex, ElectricLogic, ElectricPower, UART_RS485
+import Resistor, Capacitor
+
+module IsolatedUARTRS485 from Analog_Devices_ADM2587EBRWZ_ReferenceDesign:
+    """Isolated UART to half duplex RS485 interface"""
+
+module RS485BusProtection from RS485_Bus_Protection:
+    """
+    RS485 bus protection.
+    - Overvoltage protection
+    - Overcurrent protection
+    - Common mode filter
+    - Termination resistor
+    - ESD protection
+    - Lightning protection
+
+    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf
+    """
+
+module RS485Transceiver:
+    """
+    Simple UART to RS485 converter.
+    UART and TNOW interface in, RS485 interface out.
+    """
+
+    # external interfaces
+    uart = new UART_Base
+    rs485 = new RS485HalfDuplex
+    read_enable = new ElectricLogic
+    power = new ElectricPower
+
+    # components
+    uart_rs485_converter = new MaxLinear_SP3485EN_L_TR
+    termination_resistor = new Resistor
+    bypass_capacitor = new Capacitor
+
+    # connections
+    uart ~ uart_rs485_converter.uart
+    read_enable ~ uart_rs485_converter.read_enable
+    read_enable ~ uart_rs485_converter.write_enable
+    power ~ uart_rs485_converter.power
+
+    rs485 ~ uart_rs485_converter.rs485
+
+    rs485.diff_pair.p.line ~ termination_resistor.p1
+    rs485.diff_pair.n.line ~ termination_resistor.p2
+
+    power ~ bypass_capacitor.power
+
+    # parametrization
+    termination_resistor.resistance = 120ohm +/- 5%
+    termination_resistor.package = "R0402"
+    bypass_capacitor.value = 100nF +/- 20%
+    bypass_capacitor.package = "C0402"
+
+component MaxLinear_SP3485EN_L_TR from UART_RS485:
+    """3.3V (5V compatible)RS485 transceiver"""
+    lcsc_id = "C8963"
+    manufacturer = "MaxLinear"
+    mpn = "SP3485EN-L/TR"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_MaxLinear-SP3485EN-L-TR_C8963.pdf"
+    designator_prefix = "U"
+
+    # pins
+    rs485.diff_pair.p.line ~ pin 6
+    rs485.diff_pair.n.line ~ pin 7
+    write_enable.line ~ pin 3
+    uart.tx.line ~ pin 4
+    power.lv ~ pin 5
+    read_enable.line ~ pin 2
+    uart.rx.line ~ pin 1
+    power.hv ~ pin 8

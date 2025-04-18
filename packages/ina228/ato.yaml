@@ -6,23 +6,16 @@ paths:
   footprints: ./footprints
 
 builds:
-  driven_dpdt_bistable_relay:
-    entry: relays.ato:DrivenDPDTBistableRelay
-    description: |
-      Bistable DPDT relay with driver and indicator LEDs
-      - 5V coil power
-      - 5V/3.3V logic power
-      - 2A contact carry current
-      - TC118S DC motor driver (H-bridge) as relay driver
-
+  isolated_ina228:
+    entry: Isolated_INA228.py:Isolated_INA228
 
 package:
-  identifier: ruben-iteng/relays
+  identifier: ruben-iteng/ina228
   repository: https://github.com/ruben-iteng/ato-library
   version: "0.1.0"
   authors:
     - name: Ruben Iteng
       email: 94007802+ruben-iteng@users.noreply.github.com
-  summary: Relay modules
+  summary: INA228 low voltage power monitor with I2C interface
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library

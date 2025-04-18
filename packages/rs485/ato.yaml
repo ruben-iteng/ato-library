@@ -6,22 +6,22 @@ paths:
   footprints: ./footprints
 
 builds:
-  arm_cortex_m_debug_header:
-    entry: debug-headers.ato:ARM_CORTEX_M_DEBUG_HEADER
+  bus_protection:
+    entry: rs485.ato:RS485BusProtection
 
-  swd_tc2030_idc_nl:
-    entry: debug-headers.ato:SWD_TC2030_IDC_NL
+  transceiver:
+    entry: rs485.ato:RS485Transceiver
 
-  swd_tc2030_idc_fp:
-    entry: debug-headers.ato:SWD_TC2030_IDC_FP
+  isolated_transceiver:
+    entry: rs485.ato:IsolatedUARTRS485
 
 package:
-  identifier: atopile/debug-headers
+  identifier: ruben-iteng/rs485
   repository: https://github.com/ruben-iteng/ato-library
   version: "0.1.0"
   authors:
     - name: Ruben Iteng
       email: 94007802+ruben-iteng@users.noreply.github.com
-  summary: SWD and tag connect headers for programming and debugging
+  summary: RS485 related modules
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library

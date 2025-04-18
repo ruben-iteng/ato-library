@@ -1,0 +1,50 @@
+
+component DIBO_DB2ERM_3_81_2P_GN:
+    """Screw terminal 3.81mm pitch 2 pin"""
+    lcsc_id = "C430325"
+    manufacturer = "DIBO"
+    mpn = "DB2ERM-3.81-2P-GN"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303271530_DORABO-DB2ERM-3-81-2P-GN_C430325.pdf"
+    designator_prefix = "X"
+
+    pin 1
+    pin 2
+
+component DIBO_DB2ERM_3_81_3P_GN:
+    """Screw terminal 3.81mm pitch 3 pin"""
+    lcsc_id = "C395693"
+    manufacturer = "DIBO"
+    mpn = "DB2ERM-3.81-3P-GN"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303271600_DORABO-DB2ERM-3-81-3P-GN_C395693.pdf"
+    designator_prefix = "X"
+
+    pin 1
+    pin 2
+    pin 3
+
+component DIBO_DB2ERM_3_81_4P_GN:
+    """Screw terminal 3.81mm pitch 4 pin"""
+    lcsc_id = "C395696"
+    manufacturer = "DIBO"
+    mpn = "DB2ERM-3.81-4P-GN"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303271600_DORABO-DB2ERM-3-81-4P-GN_C395696.pdf"
+    designator_prefix = "X"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+
+component DIBO_DB2ERM_3_81_5P_GN:
+    """Screw terminal 3.81mm pitch 5 pin"""
+    lcsc_id = "C395702"
+    manufacturer = "DIBO"
+    mpn = "DB2ERM-3.81-5P-GN"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303271600_DORABO-DB2ERM-3-81-5P-GN_C395702.pdf"
+    designator_prefix = "X"
+
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5

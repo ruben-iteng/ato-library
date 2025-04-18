@@ -6,23 +6,22 @@ paths:
   footprints: ./footprints
 
 builds:
-  driven_dpdt_bistable_relay:
-    entry: relays.ato:DrivenDPDTBistableRelay
-    description: |
-      Bistable DPDT relay with driver and indicator LEDs
-      - 5V coil power
-      - 5V/3.3V logic power
-      - 2A contact carry current
-      - TC118S DC motor driver (H-bridge) as relay driver
+  arm_cortex_m_debug_header:
+    entry: debug-interfaces.ato:ARM_CORTEX_M_DEBUG_HEADER
 
+  swd_tc2030_idc_nl:
+    entry: debug-interfaces.ato:SWD_TC2030_IDC_NL
+
+  swd_tc2030_idc_fp:
+    entry: debug-interfaces.ato:SWD_TC2030_IDC_FP
 
 package:
-  identifier: ruben-iteng/relays
+  identifier: ruben-iteng/debug-interfaces
   repository: https://github.com/ruben-iteng/ato-library
   version: "0.1.0"
   authors:
     - name: Ruben Iteng
       email: 94007802+ruben-iteng@users.noreply.github.com
-  summary: Relay modules
+  summary: SWD and tag connect headers for programming and debugging
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library
