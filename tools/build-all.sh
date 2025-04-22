@@ -2,8 +2,10 @@
 
 # This script is taken from https://github.com/atopile/packages
 
-# Store the original directory
+# Store the original directory and script directory
 ORIGINAL_DIR=$(pwd)
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT_DIR="$( cd "$SCRIPT_DIR/.." && pwd )"
 
 # Arrays to store results
 declare -a successful_builds=()
@@ -18,7 +20,7 @@ handle_error() {
 }
 
 # Change to packages directory
-cd packages
+cd "$ROOT_DIR/packages" || handle_error "Could not change to packages directory"
 
 # Loop through all directories
 for dir in */; do
