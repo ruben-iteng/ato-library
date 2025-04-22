@@ -1,0 +1,46 @@
+import LDO, ElectricLogic, ElectricPower, Capacitor
+
+module LDO_5V_to_3V3:
+    """5V to 3.3V LDO"""
+
+    # external interfaces
+    power_in = new ElectricPower
+    power_out = new ElectricPower
+
+    # components
+    ldo = new MICRONENanjing_Micro_One_Elec_ME6216A33XG
+    power_in_decoupling_capacitor = new Capacitor
+    power_out_decoupling_capacitor = new Capacitor
+
+    # connections
+    power_in ~ ldo.power_in
+    power_out ~ ldo.power_out
+
+    power_in.hv ~ power_in_decoupling_capacitor.power.hv
+    power_in.lv ~ power_in_decoupling_capacitor.power.lv
+    power_out.hv ~ power_out_decoupling_capacitor.power.hv
+    power_out.lv ~ power_out_decoupling_capacitor.power.lv
+
+    # parameters
+    #power_in_decoupling_capacitor.value = 100nF +/- 20%
+    power_in_decoupling_capacitor.lcsc_id = "C1525"
+    #power_out_decoupling_capacitor.value = 100nF +/- 20%
+    power_out_decoupling_capacitor.lcsc_id = "C1525"
+
+component MICRONENanjing_Micro_One_Elec_ME6216A33XG from LDO:
+    """Simple 5V to 3.3V LDO nominal 250mA, max 500mA"""
+    lcsc_id = "C236655"
+    manufacturer = "MICRONE(Nanjing Micro One Elec)"
+    mpn = "ME6216A33XG"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_MICRONE-Nanjing-Micro-One-Elec-ME6216A33XG_C236655.pdf"
+    designator_prefix = "U"
+
+    # pins
+    power_in.hv ~ pin 3
+    power_out.hv ~ pin 2
+    power_out.lv ~ pin 1
+
+    # parameters
+    power_out.output_voltage = 3.3V +/- 1%
+    power_out.output_current = 250mA +/- 10%
+    power_in.voltage = 3.6V to 6V

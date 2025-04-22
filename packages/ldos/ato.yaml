@@ -1,0 +1,22 @@
+requires-atopile: "^0.5.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  5v_to_3v3:
+    entry: ldos.ato:LDO_5V_to_3V3
+
+
+package:
+  identifier: ruben-iteng/ldos
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Iteng
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: Various Low Dropout Regulators (LDOs)
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
