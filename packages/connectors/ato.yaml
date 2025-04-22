@@ -19,7 +19,10 @@ builds:
     entry: screw-terminals.ato:DIBO_DB2ERM_3_81_5P_GN
 
   addressable_led_connector:
-    entry: power-connectors.ato:AddressableLEDConnector
+    entry: power.ato:AddressableLEDConnector
+
+  usb_2_0_type_c:
+    entry: usb.ato:USB2_0TypeC
 
 package:
   identifier: ruben-iteng/connectors

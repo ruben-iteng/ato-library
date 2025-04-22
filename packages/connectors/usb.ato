@@ -1,0 +1,85 @@
+import USB2_0, ElectricPower, ElectricSignal, Electrical, Resistor, TECH_PUBLIC_USBLC6_2SC6, Capacitor
+
+module USB2_0TypeC:
+    """
+    USB 2.0 Type-C connector
+    - 5V PD compatible
+    - ESD protection
+    """
+
+    # external interfaces
+    usb = new USB2_0
+
+    # components
+    connector = new USBTypeC16PinConnector
+    cc1_resistor = new Resistor
+    cc2_resistor = new Resistor
+    esd_protection = new TECH_PUBLIC_USBLC6_2SC6
+    esd_decoupling_capacitor = new Capacitor
+
+    # connections
+    connector.usb ~ esd_protection.usb_in; esd_protection.usb_out ~ usb
+    usb.usb_if.buspower ~ connector.power_vbus
+    usb.usb_if.buspower.lv ~ connector.shield
+
+    connector.cc1 ~ cc1_resistor.p1; cc1_resistor.p2 ~ connector.GND
+    connector.cc2 ~ cc2_resistor.p1; cc2_resistor.p2 ~ connector.GND
+
+    esd_protection.usb_in.usb_if.buspower ~ esd_decoupling_capacitor.power
+
+    # parameters
+    cc1_resistor.resistance = 5.1kohm +/- 1%
+    cc2_resistor.resistance = 5.1kohm +/- 1%
+    cc1_resistor.package = "R0402"
+    cc2_resistor.package = "R0402"
+
+    esd_decoupling_capacitor.capacitance = 100nF +/- 10%
+    esd_decoupling_capacitor.package = "C0402"
+
+component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
+    """16 pin USB type-C connector"""
+
+    # external interfaces
+    usb = new USB2_0
+    power_vbus = new ElectricPower
+    cc1 = new ElectricSignal
+    cc2 = new ElectricSignal
+    sbu1 = new ElectricSignal
+    sbu2 = new ElectricSignal
+    shield = new Electrical
+
+    # connections
+    usb.usb_if.buspower.gnd ~ GND
+    cc1.line ~ CC1
+    cc2.line ~ CC2
+    sbu1.line ~ SBU1
+    sbu2.line ~ SBU2
+    shield ~ SHELL
+    usb.usb_if.d.p ~ DP1
+    usb.usb_if.d.n ~ DN1
+    usb.usb_if.d.p ~ DP2
+    usb.usb_if.d.n ~ DN2
+
+component SHOU_HAN_TYPE_C_16PIN_2MD073:
+    """Common 16 pin USB type-C connector"""
+    lcsc_id = "C2765186"
+    manufacturer = "SHOU HAN"
+    mpn = "TYPE-C 16PIN 2MD(073)"
+    datasheet_url = "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588920841703079936"
+    designator_prefix = "USB"
+
+    # pins
+    signal CC1 ~ pin 4
+    signal CC2 ~ pin 10
+    signal DN1 ~ pin 7
+    signal DN2 ~ pin 5
+    signal DP1 ~ pin 6
+    signal DP2 ~ pin 8
+    signal GND ~ pin 1
+    GND ~ pin 12
+    signal SBU1 ~ pin 9
+    signal SBU2 ~ pin 3
+    signal SHELL ~ pin 13
+    SHELL ~ pin 14
+    signal VBUS ~ pin 2
+    VBUS ~ pin 11
