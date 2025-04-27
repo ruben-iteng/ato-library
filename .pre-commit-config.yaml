@@ -34,4 +34,4 @@ repos:
         entry: /usr/bin/env -S uv run tools/generate_package_list.py
         language: script
         pass_filenames: false
-        files: \.(kicad_pcb|py|ato)$
+        files: \.(kicad_pcb|py|ato|jinja)$
