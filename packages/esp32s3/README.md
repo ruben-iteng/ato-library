@@ -14,6 +14,6 @@ ESP32 S3 microcontroller
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/esp32_s3_wroom_reference_design.png" alt="esp32_s3_wroom_reference_design" width="250" height="250"/>| esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM |

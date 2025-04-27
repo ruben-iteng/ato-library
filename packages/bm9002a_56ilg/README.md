@@ -14,6 +14,6 @@ BM9002A-56ILG microcontroller
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250" height="250"/>| cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. |

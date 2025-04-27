@@ -9,32 +9,32 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
 | [bm9002a_56ilg](packages/bm9002a_56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0 |
-|  | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
+| <img src="packages/bm9002a_56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250" height="250"/> | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
 | [connectors](packages/connectors/README.md) | 5 modules | Various connectors | 0.1.0 |
-|  | screw_terminal_3_81mm_2p | - | |
-|  | screw_terminal_3_81mm_3p | - | |
-|  | screw_terminal_3_81mm_4p | - | |
-|  | screw_terminal_3_81mm_5p | - | |
-|  | addressable_led_connector | - | |
+| <img src="packages/connectors/assets/screw_terminal_3_81mm_2p.png" alt="screw_terminal_3_81mm_2p" width="250" height="250"/> | screw_terminal_3_81mm_2p | - | |
+| <img src="packages/connectors/assets/screw_terminal_3_81mm_3p.png" alt="screw_terminal_3_81mm_3p" width="250" height="250"/> | screw_terminal_3_81mm_3p | - | |
+| <img src="packages/connectors/assets/screw_terminal_3_81mm_4p.png" alt="screw_terminal_3_81mm_4p" width="250" height="250"/> | screw_terminal_3_81mm_4p | - | |
+| <img src="packages/connectors/assets/screw_terminal_3_81mm_5p.png" alt="screw_terminal_3_81mm_5p" width="250" height="250"/> | screw_terminal_3_81mm_5p | - | |
+| <img src="packages/connectors/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250" height="250"/> | addressable_led_connector | - | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
-|  | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
-|  | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
-|  | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
+| <img src="packages/debug-interfaces/assets/arm_cortex_m_debug_header.png" alt="arm_cortex_m_debug_header" width="250" height="250"/> | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
+| <img src="packages/debug-interfaces/assets/swd_tc2030_idc_nl.png" alt="swd_tc2030_idc_nl" width="250" height="250"/> | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
+| <img src="packages/debug-interfaces/assets/swd_tc2030_idc_fp.png" alt="swd_tc2030_idc_fp" width="250" height="250"/> | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
 | [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.0 |
-|  | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
+| <img src="packages/esp32s3/assets/esp32_s3_wroom_reference_design.png" alt="esp32_s3_wroom_reference_design" width="250" height="250"/> | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.0 |
-|  | isolated_ina228 | INA228 with I2C and power isolation. | |
+| <img src="packages/ina228/assets/isolated_ina228.png" alt="isolated_ina228" width="250" height="250"/> | isolated_ina228 | INA228 with I2C and power isolation. | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.0 |
-|  | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
+| <img src="packages/ldos/assets/5v_to_3v3.png" alt="5v_to_3v3" width="250" height="250"/> | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
 | [logic](packages/logic/README.md) | 1 module | Digital logic related components and modules | 0.1.0 |
-|  | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+| <img src="packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250" height="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
-|  | faebryk | - | |
+| <img src="packages/logos/assets/faebryk.png" alt="faebryk" width="250" height="250"/> | faebryk | - | |
 | [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
-|  | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
+| <img src="packages/relays/assets/driven_dpdt_bistable_relay.png" alt="driven_dpdt_bistable_relay" width="250" height="250"/> | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
 | [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
-|  | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
-|  | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
-|  | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
+| <img src="packages/rs485/assets/bus_protection.png" alt="bus_protection" width="250" height="250"/> | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
+| <img src="packages/rs485/assets/transceiver.png" alt="transceiver" width="250" height="250"/> | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
+| <img src="packages/rs485/assets/isolated_transceiver.png" alt="isolated_transceiver" width="250" height="250"/> | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
 | [usb](packages/usb/README.md) | 1 module | USB connectors and circuitry | 0.1.0 |
-|  | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |
+| <img src="packages/usb/assets/usb_2_0_type_c_data_power.png" alt="usb_2_0_type_c_data_power" width="250" height="250"/> | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |

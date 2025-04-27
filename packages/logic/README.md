@@ -14,6 +14,6 @@ Digital logic related components and modules
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250" height="250"/>| AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 |

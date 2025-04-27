@@ -14,6 +14,6 @@ INA228 low voltage power monitor with I2C interface
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| isolated_ina228 | INA228 with I2C and power isolation. |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/isolated_ina228.png" alt="isolated_ina228" width="250" height="250"/>| isolated_ina228 | INA228 with I2C and power isolation. |

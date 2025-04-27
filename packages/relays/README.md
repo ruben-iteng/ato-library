@@ -14,6 +14,6 @@ Relay modules
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/driven_dpdt_bistable_relay.png" alt="driven_dpdt_bistable_relay" width="250" height="250"/>| driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver |

@@ -14,6 +14,6 @@ Various logos
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| faebryk | - |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/faebryk.png" alt="faebryk" width="250" height="250"/>| faebryk | - |

@@ -14,8 +14,8 @@ SWD and tag connect headers for programming and debugging
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
-| arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 |
-| swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout |
-| swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout |
+| Image | Module | Description |
+|-------|--------|-------------|
+|<img src="assets/arm_cortex_m_debug_header.png" alt="arm_cortex_m_debug_header" width="250" height="250"/>| arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 |
+|<img src="assets/swd_tc2030_idc_nl.png" alt="swd_tc2030_idc_nl" width="250" height="250"/>| swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout |
+|<img src="assets/swd_tc2030_idc_fp.png" alt="swd_tc2030_idc_fp" width="250" height="250"/>| swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout |
