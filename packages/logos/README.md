@@ -16,4 +16,4 @@ Various logos
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="assets/faebryk.png" alt="faebryk" width="250" height="250"/>| faebryk | - |
+|<img src="assets/faebryk.png" alt="faebryk" width="250"/>| faebryk | - |
