@@ -1,19 +1,44 @@
-#!/usr/bin/env -S uv run --script
-# /// script
-# dependencies = ["pyyaml", "typer", "jinja2"]
-# ///
-
 """
 Generate the README.md with updated list of packages
 """
 
+from typing import Tuple
 import yaml
 from pathlib import Path
 import logging
 import typer
 from jinja2 import Environment, FileSystemLoader
 
+from kicadcliwrapper.generated.kicad_cli import kicad_cli
+
 logger = logging.getLogger(__name__)
+
+
+def render_board_image(board_file: Path, output_folder: Path):
+    """Render PCB image from KiCad PCB."""
+    assert kicad_cli(kicad_cli.version()).exec().split(".")[0] == "9", (
+        "KiCad 9 is required"
+    )
+    assert board_file.suffix == ".kicad_pcb", (
+        "Board file must have .kicad_pcb extension"
+    )
+    assert output_folder.suffix == ".png", "Output must have .png extension"
+
+    kicad_cli(
+        kicad_cli.pcb(
+            kicad_cli.pcb.render(
+                INPUT_FILE=board_file.as_posix(),
+                output=output_folder.as_posix(),
+                width="1000",
+                height="1000",
+                side="top",
+                background="opaque",
+                quality="high",
+                zoom="0.8",
+                rotate="335,0,-45",
+            )
+        )
+    ).exec()
 
 
 def sanitize_markdown_cell(text):
@@ -74,10 +99,10 @@ def get_module_docstring(file_path, module_name):
         return "-"
 
 
-def find_module_file(package_dir, module_entry):
+def find_module_file(package_dir, module_entry) -> Tuple[Path, str]:
     """Find the module file from the entry point."""
     if not module_entry or ":" not in module_entry:
-        return None
+        raise ValueError(f"Invalid module entry: {module_entry}")
 
     module_path, module_name = module_entry.split(":")
     # Use the actual file name from the entry point
@@ -144,10 +169,27 @@ def main(
                         else:
                             build_description = "-"
 
+                    pcb_file = (
+                        package_dir
+                        / "layouts"
+                        / f"{build_name}"
+                        / f"{build_name}.kicad_pcb"
+                    )
+                    assets_dir = package_dir / "assets"
+                    assets_dir.mkdir(parents=False, exist_ok=True)
+                    image_file = assets_dir / f"{build_name}.png"
+                    if pcb_file.exists():
+                        render_board_image(pcb_file, image_file)
+                    else:
+                        logger.warning(f"PCB file not found: {pcb_file}")
+
                     package_data["modules"].append(
                         {
                             "name": build_name,
                             "description": sanitize_markdown_cell(build_description),
+                            "image": f"assets/{build_name}.png"
+                            if image_file.exists()
+                            else None,
                         }
                     )
 

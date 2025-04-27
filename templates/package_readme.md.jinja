@@ -14,8 +14,8 @@
 
 ### Module List
 
-| Module | Description |
-|--------|-------------|
+| Image | Module | Description |
+|-------|--------|-------------|
 {% for module in package.modules -%}
-| {{ module.name | md_cell }} | {{ module.description | md_cell }} |
+| {%- if module.image -%}<img src="{{ module.image }}" alt="{{ module.name }}" width="250" height="250"/>{%- else -%}-{% endif -%} | {{ module.name | md_cell }} | {{ module.description | md_cell }} |
 {% endfor %}

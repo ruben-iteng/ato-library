@@ -9,6 +9,10 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "jinja2>=3.1.6",
+    "kicadcliwrapper>=1.1.0",
     "pre-commit>=4.2.0",
+    "pyyaml>=6.0.2",
+    "typer>=0.15.2",
     "uv>=0.6.14",
 ]
