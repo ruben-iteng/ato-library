@@ -1,0 +1,19 @@
+import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR, Capacitor
+
+module AiP74LVC1T45:
+    """
+    Single channel bidirectional buffer.
+    1.2V-5.5V logic levels.
+    SOT-23-6
+    """
+    buffer = new Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR
+    buffer.lcsc_id = "C5162251"
+
+    decoupling_capacitor_a = new Capacitor
+    decoupling_capacitor_b = new Capacitor
+    decoupling_capacitor_a.capacitance = 100nF +/-20%
+    decoupling_capacitor_a.package = "C0402"
+    decoupling_capacitor_b.capacitance = 100nF +/-20%
+    decoupling_capacitor_b.package = "C0402"
+    buffer.power_a ~ decoupling_capacitor_a.power
+    buffer.power_b ~ decoupling_capacitor_b.power

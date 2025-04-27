@@ -1,7 +1,7 @@
 import LDO, ElectricLogic, ElectricPower, Capacitor
 
 module LDO_5V_to_3V3:
-    """5V to 3.3V LDO"""
+    """5V to 3.3V 250mA (max 500mA) LDO"""
 
     # external interfaces
     power_in = new ElectricPower

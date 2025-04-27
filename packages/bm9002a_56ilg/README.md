@@ -1,11 +1,11 @@
-# connectors
+# bm9002a_56ilg
 
-Various connectors
+BM9002A-56ILG microcontroller
 
 ## Package Information
 
 - Version: 0.1.0
-- Total Modules: 5
+- Total Modules: 1
 - Author(s): Ruben Iteng
 - License: MIT
 - Homepage: https://github.com/ruben-iteng/ato-library
@@ -16,8 +16,4 @@ Various connectors
 
 | Module | Description |
 |--------|-------------|
-| screw_terminal_3_81mm_2p | - |
-| screw_terminal_3_81mm_3p | - |
-| screw_terminal_3_81mm_4p | - |
-| screw_terminal_3_81mm_5p | - |
-| addressable_led_connector | - |
+| cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. |

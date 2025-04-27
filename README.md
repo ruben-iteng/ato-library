@@ -8,26 +8,33 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
-| [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
-|  | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
-|  | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
-|  | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
-| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
-|  | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
-| [connectors](packages/connectors/README.md) | 6 modules | Various connectors | 0.1.0 |
+| [bm9002a_56ilg](packages/bm9002a_56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0 |
+|  | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
+| [connectors](packages/connectors/README.md) | 5 modules | Various connectors | 0.1.0 |
 |  | screw_terminal_3_81mm_2p | - | |
 |  | screw_terminal_3_81mm_3p | - | |
 |  | screw_terminal_3_81mm_4p | - | |
 |  | screw_terminal_3_81mm_5p | - | |
 |  | addressable_led_connector | - | |
-|  | usb_2_0_type_c | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection | |
-| [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
-|  | faebryk | - | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
 |  | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 |  | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 |  | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
-| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.0 |
-|  | 5v_to_3v3 | 5V to 3.3V LDO | |
+| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.0 |
+|  | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.0 |
 |  | isolated_ina228 | INA228 with I2C and power isolation. | |
+| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.0 |
+|  | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
+| [logic](packages/logic/README.md) | 1 module | Digital logic related components and modules | 0.1.0 |
+|  | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+| [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
+|  | faebryk | - | |
+| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
+|  | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
+| [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
+|  | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
+|  | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
+|  | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
+| [usb](packages/usb/README.md) | 1 module | USB connectors and circuitry | 0.1.0 |
+|  | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |

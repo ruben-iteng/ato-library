@@ -1,0 +1,26 @@
+requires-atopile: "^0.5.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  cbm9002a_56ilg_reference_design:
+    entry: BM9002A_56ILG.py:BM9002A_56ILG_ReferenceDesign
+
+package:
+  identifier: ruben-iteng/bm9002a_56ilg
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Iteng
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: BM9002A-56ILG microcontroller
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
+
+dependencies:
+- type: registry
+  identifier: atopile/buttons
+  release: 0.1.0

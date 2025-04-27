@@ -1,14 +1,17 @@
-import USB2_0, ElectricPower, ElectricSignal, Electrical, Resistor, TECH_PUBLIC_USBLC6_2SC6, Capacitor
+import USB2_0, ElectricPower, ElectricSignal, Electrical, Resistor
+import Fuse, TECH_PUBLIC_USBLC6_2SC6, Capacitor
 
-module USB2_0TypeC:
+module USB2_0TypeCDataPower:
     """
     USB 2.0 Type-C connector
     - 5V PD compatible
     - ESD protection
+    - Fuse [500mA(hold), 1A(trip)]
     """
 
     # external interfaces
     usb = new USB2_0
+    power = new ElectricPower
 
     # components
     connector = new USBTypeC16PinConnector
@@ -16,11 +19,14 @@ module USB2_0TypeC:
     cc2_resistor = new Resistor
     esd_protection = new TECH_PUBLIC_USBLC6_2SC6
     esd_decoupling_capacitor = new Capacitor
+    fused_usb = new FusedUSB2_0
 
     # connections
-    connector.usb ~ esd_protection.usb_in; esd_protection.usb_out ~ usb
-    usb.usb_if.buspower ~ connector.power_vbus
-    usb.usb_if.buspower.lv ~ connector.shield
+    connector.usb ~ fused_usb.usb_in
+    fused_usb.usb_out ~ esd_protection.usb_in
+    esd_protection.usb_out ~ usb
+    connector.power_vbus ~ connector.usb.usb_if.buspower
+    connector.shield ~ usb.usb_if.buspower.lv
 
     connector.cc1 ~ cc1_resistor.p1; cc1_resistor.p2 ~ connector.GND
     connector.cc2 ~ cc2_resistor.p1; cc2_resistor.p2 ~ connector.GND
@@ -35,6 +41,19 @@ module USB2_0TypeC:
 
     esd_decoupling_capacitor.capacitance = 100nF +/- 10%
     esd_decoupling_capacitor.package = "C0402"
+
+module FusedUSB2_0:
+    """Connects two USB2_0 interfaces with a fuse in between"""
+
+    usb_in = new USB2_0
+    usb_out = new USB2_0
+    fuse = new BHFUSE_BSMD0805_050_15V
+
+    # connections
+    usb_in.usb_if.buspower.hv ~ fuse.P1; fuse.P2 ~ usb_out.usb_if.buspower.hv
+    usb_in.usb_if.buspower.lv ~ usb_out.usb_if.buspower.lv
+    usb_in.usb_if.d ~ usb_out.usb_if.d
+
 
 component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
     """16 pin USB type-C connector"""
@@ -59,6 +78,8 @@ component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
     usb.usb_if.d.n ~ DN1
     usb.usb_if.d.p ~ DP2
     usb.usb_if.d.n ~ DN2
+    power_vbus.hv ~ VBUS
+    power_vbus.lv ~ GND
 
 component SHOU_HAN_TYPE_C_16PIN_2MD073:
     """Common 16 pin USB type-C connector"""
@@ -83,3 +104,18 @@ component SHOU_HAN_TYPE_C_16PIN_2MD073:
     SHELL ~ pin 14
     signal VBUS ~ pin 2
     VBUS ~ pin 11
+
+component BHFUSE_BSMD0805_050_15V from Fuse:
+    """BHFUSE_BSMD0805_050_15V component"""
+    lcsc_id = "C883109"
+    manufacturer = "BHFUSE"
+    mpn = "BSMD0805-050-15V"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2305121423_BHFUSE-BSMD0805-050-15V_C883109.pdf"
+    designator_prefix = "F"
+
+    # parameters
+    trip_current = 1A to 1.1A
+
+    # pins
+    signal P1 ~ pin 1
+    signal P2 ~ pin 2

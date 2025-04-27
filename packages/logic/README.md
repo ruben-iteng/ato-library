@@ -1,11 +1,11 @@
-# connectors
+# logic
 
-Various connectors
+Digital logic related components and modules
 
 ## Package Information
 
 - Version: 0.1.0
-- Total Modules: 5
+- Total Modules: 1
 - Author(s): Ruben Iteng
 - License: MIT
 - Homepage: https://github.com/ruben-iteng/ato-library
@@ -16,8 +16,4 @@ Various connectors
 
 | Module | Description |
 |--------|-------------|
-| screw_terminal_3_81mm_2p | - |
-| screw_terminal_3_81mm_3p | - |
-| screw_terminal_3_81mm_4p | - |
-| screw_terminal_3_81mm_5p | - |
-| addressable_led_connector | - |
+| AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 |

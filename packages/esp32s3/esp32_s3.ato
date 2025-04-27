@@ -1,0 +1,207 @@
+import ElectricLogic, ElectricPower, I2C, SPI, UART_Base, JTAG, USB2_0, Capacitor
+from "atopile/buttons/buttons.ato" import ButtonSKRPACE010, ButtonPullup
+
+module ESP32_S3_WROOM_1_U_ReferenceDesign from ESP32_S3_WROOM_1_U:
+    """
+    ESP32 S3 WROOM-1 module with build-in antenna and supporting components
+    - 32MB flash
+    - 2MB PSRAM
+    """
+
+    # components
+    boot_switch = new ButtonSKRPACE010
+    reset_switch = new ButtonPullup
+    reset_rc_capacitor = new Capacitor
+    decoupling_capacitor_bulk = new Capacitor
+    decoupling_capacitor_small = new Capacitor
+
+    # connections
+    power_3v3 ~ decoupling_capacitor_bulk.power
+    power_3v3 ~ decoupling_capacitor_small.power
+
+    boot_switch.in ~ power_3v3.lv
+    boot_switch.out ~ gpio0.line
+
+    reset_switch.output.reference ~ power_3v3
+    reset_switch.output.line ~ enable.line
+    reset_switch.btn -> ButtonSKRPACE010
+    reset_rc_capacitor.power.hv ~ reset_switch.output.line
+    reset_rc_capacitor.power.lv ~ reset_switch.output.reference.lv
+
+    # parameters
+    reset_rc_capacitor.value = 1uF +/- 20%
+    reset_rc_capacitor.package = "C0402"
+    decoupling_capacitor_bulk.value = 22uF +/- 20%
+    decoupling_capacitor_bulk.package = "C0805"
+    decoupling_capacitor_small.value = 100nF +/- 20%
+    decoupling_capacitor_small.package = "C0402"
+
+
+module ESP32_S3_WROOM_1_U:
+    """
+    Espressif ESP32 S3 WROOM-1 module
+    - build-in antenna
+    - 32MB flash
+    - 2MB PSRAM
+    """
+    ic = new Espressif_Systems_ESP32_S3_WROOM_1_N16R2
+
+    # external interfaces
+    power_3v3 = new ElectricPower
+    i2c = new I2C
+    spi = new SPI
+    spi_cs = new ElectricLogic
+    uart = new UART_Base
+    jtag = new JTAG
+    enable = new ElectricLogic
+    usb = new USB2_0
+
+    gpio0 = new ElectricLogic
+    gpio1 = new ElectricLogic
+    gpio2 = new ElectricLogic
+    gpio3 = new ElectricLogic
+    gpio4 = new ElectricLogic
+    gpio5 = new ElectricLogic
+    gpio6 = new ElectricLogic
+    gpio7 = new ElectricLogic
+    gpio8 = new ElectricLogic
+    gpio9 = new ElectricLogic
+    gpio10 = new ElectricLogic
+    gpio11 = new ElectricLogic
+    gpio12 = new ElectricLogic
+    gpio13 = new ElectricLogic
+    gpio14 = new ElectricLogic
+    gpio15 = new ElectricLogic
+    gpio16 = new ElectricLogic
+    gpio17 = new ElectricLogic
+    gpio18 = new ElectricLogic
+    gpio19 = new ElectricLogic
+    gpio20 = new ElectricLogic
+    gpio21 = new ElectricLogic
+    # --
+    gpio35 = new ElectricLogic
+    gpio36 = new ElectricLogic
+    gpio37 = new ElectricLogic
+    gpio38 = new ElectricLogic
+    gpio39 = new ElectricLogic
+    gpio40 = new ElectricLogic
+    gpio41 = new ElectricLogic
+    gpio42 = new ElectricLogic
+    # --
+    gpio45 = new ElectricLogic
+    gpio46 = new ElectricLogic
+    gpio47 = new ElectricLogic
+    gpio48 = new ElectricLogic
+
+    # connections
+    gpio0.line ~ ic.27 # strapping pin, default pull-up, boot mode
+    gpio1.line ~ ic.39
+    gpio2.line ~ ic.38
+    gpio3.line ~ ic.15 # strapping pin, default pull-down, JTAG source
+    gpio4.line ~ ic.4
+    gpio5.line ~ ic.5
+    gpio6.line ~ ic.6
+    gpio7.line ~ ic.7
+    gpio8.line ~ ic.12
+    gpio9.line ~ ic.17
+    gpio10.line ~ ic.18
+    gpio11.line ~ ic.19
+    gpio12.line ~ ic.20
+    gpio13.line ~ ic.21
+    gpio14.line ~ ic.22
+    gpio15.line ~ ic.8
+    gpio16.line ~ ic.9
+    gpio17.line ~ ic.10
+    gpio18.line ~ ic.11
+    gpio19.line ~ ic.13
+    gpio20.line ~ ic.14
+    gpio21.line ~ ic.23
+    # ~
+    gpio35.line ~ ic.28
+    gpio36.line ~ ic.29
+    gpio37.line ~ ic.30
+    gpio38.line ~ ic.31
+    gpio39.line ~ ic.32
+    gpio40.line ~ ic.33
+    gpio41.line ~ ic.34
+    gpio42.line ~ ic.35
+    # ~
+    gpio45.line ~ ic.26 # strapping pin, default pull-down
+    gpio46.line ~ ic.16 # strapping pin, default pull-down
+    gpio47.line ~ ic.24
+    gpio48.line ~ ic.25
+
+    power_3v3.hv ~ ic.2
+    power_3v3.lv ~ ic.1
+    power_3v3.lv ~ ic.41 # EPAD
+    power_3v3.lv ~ ic.40
+
+    enable.line ~ ic.3
+
+    uart.rx.line ~ ic.37
+    uart.tx.line ~ ic.36
+
+    usb.usb_if.d.n ~ gpio19
+    usb.usb_if.d.p ~ gpio20
+
+    spi.sclk ~ gpio12
+    spi.mosi ~ gpio11
+    spi.miso ~ gpio13
+    spi_cs ~ gpio10
+
+    jtag.tck ~ gpio39
+    jtag.tms ~ gpio42
+    jtag.tdi ~ gpio41
+    jtag.tdo ~ gpio40
+    jtag.vtref ~ power_3v3
+
+component Espressif_Systems_ESP32_S3_WROOM_1_N16R2:
+    """Espressif_Systems_ESP32_S3_WROOM_1_N16R2 component"""
+    lcsc_id = "C2913205"
+    manufacturer = "Espressif Systems"
+    mpn = "ESP32-S3-WROOM-1-N16R2"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281845_Espressif-Systems-ESP32-S3-WROOM-1-N16R2_C2913205.pdf"
+    designator_prefix = "U"
+
+    # pins
+    pin 41
+    pin 40
+    pin 39
+    pin 38
+    pin 37
+    pin 36
+    pin 35
+    pin 34
+    pin 33
+    pin 32
+    pin 31
+    pin 30
+    pin 29
+    pin 28
+    pin 27
+    pin 26
+    pin 25
+    pin 24
+    pin 23
+    pin 22
+    pin 21
+    pin 20
+    pin 19
+    pin 18
+    pin 17
+    pin 16
+    pin 15
+    pin 14
+    pin 13
+    pin 12
+    pin 11
+    pin 10
+    pin 9
+    pin 8
+    pin 7
+    pin 6
+    pin 5
+    pin 4
+    pin 3
+    pin 2
+    pin 1

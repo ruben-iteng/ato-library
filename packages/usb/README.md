@@ -1,11 +1,11 @@
-# connectors
+# usb
 
-Various connectors
+USB connectors and circuitry
 
 ## Package Information
 
 - Version: 0.1.0
-- Total Modules: 5
+- Total Modules: 1
 - Author(s): Ruben Iteng
 - License: MIT
 - Homepage: https://github.com/ruben-iteng/ato-library
@@ -16,8 +16,4 @@ Various connectors
 
 | Module | Description |
 |--------|-------------|
-| screw_terminal_3_81mm_2p | - |
-| screw_terminal_3_81mm_3p | - |
-| screw_terminal_3_81mm_4p | - |
-| screw_terminal_3_81mm_5p | - |
-| addressable_led_connector | - |
+| usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] |

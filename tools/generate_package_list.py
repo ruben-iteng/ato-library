@@ -186,7 +186,9 @@ def main(
     # Generate main README
     try:
         main_template = env.get_template("main_readme.md.jinja")
-        main_readme = main_template.render(packages=packages_data)
+        main_readme = main_template.render(
+            packages=sorted(packages_data, key=lambda x: x["name"])
+        )
 
         with open("README.md", "w") as f:
             f.write(main_readme)

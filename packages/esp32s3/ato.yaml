@@ -1,0 +1,27 @@
+requires-atopile: "^0.5.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  esp32_s3_wroom_reference_design:
+    entry: esp32_s3.ato:ESP32_S3_WROOM_1_U_ReferenceDesign
+
+
+package:
+  identifier: ruben-iteng/esp32s3
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Iteng
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: ESP32 S3 microcontroller
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
+
+dependencies:
+- type: registry
+  identifier: atopile/buttons
+  release: 0.1.0

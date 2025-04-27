@@ -21,9 +21,6 @@ builds:
   addressable_led_connector:
     entry: power.ato:AddressableLEDConnector
 
-  usb_2_0_type_c:
-    entry: usb.ato:USB2_0TypeC
-
 package:
   identifier: ruben-iteng/connectors
   repository: https://github.com/ruben-iteng/ato-library

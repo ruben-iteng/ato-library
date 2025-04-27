@@ -16,4 +16,4 @@ Various Low Dropout Regulators (LDOs)
 
 | Module | Description |
 |--------|-------------|
-| 5v_to_3v3 | 5V to 3.3V LDO |
+| 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO |
