@@ -113,6 +113,7 @@ def find_module_file(package_dir, module_entry) -> Tuple[Path, str]:
 
 def main(
     debug: bool = typer.Option(False, "-d", "--debug", help="Enable debug logging"),
+    image: bool = typer.Option(False, help="Generate board renders"),
 ):
     """Generate the README.md with updated list of packages."""
     # Set up logging based on debug flag
@@ -178,10 +179,11 @@ def main(
                     assets_dir = package_dir / "assets"
                     assets_dir.mkdir(parents=False, exist_ok=True)
                     image_file = assets_dir / f"{build_name}.png"
-                    if pcb_file.exists():
-                        render_board_image(pcb_file, image_file)
-                    else:
-                        logger.warning(f"PCB file not found: {pcb_file}")
+                    if image:
+                        if pcb_file.exists():
+                            render_board_image(pcb_file, image_file)
+                        else:
+                            logger.warning(f"PCB file not found: {pcb_file}")
 
                     package_data["modules"].append(
                         {

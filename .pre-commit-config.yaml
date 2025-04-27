@@ -31,7 +31,7 @@ repos:
     hooks:
       - id: generate-package-list
         name: Generate Package List
-        entry: /usr/bin/env -S uv run tools/generate_package_list.py
+        entry: /usr/bin/env -S uv run tools/generate_package_list.py --no-image
         language: script
         pass_filenames: false
         files: \.(kicad_pcb|py|ato|jinja)$
