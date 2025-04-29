@@ -8,7 +8,9 @@ paths:
 builds:
   esp32_s3_wroom_reference_design:
     entry: esp32_s3.ato:ESP32_S3_WROOM_1_U_ReferenceDesign
-
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 package:
   identifier: ruben-iteng/esp32s3

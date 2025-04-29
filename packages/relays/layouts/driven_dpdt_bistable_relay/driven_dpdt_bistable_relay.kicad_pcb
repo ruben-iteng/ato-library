@@ -87,19 +87,19 @@
         )
     )
     (net 0 "")
-    (net 1 "line-2")
+    (net 1 "line-5")
     (net 2 "net")
     (net 3 "gnd-1")
-    (net 4 "line-1")
-    (net 5 "line-5")
-    (net 6 "line")
+    (net 4 "line-6")
+    (net 5 "line-1")
+    (net 6 "line-2")
     (net 7 "hv")
-    (net 8 "line-4")
-    (net 9 "line-3")
+    (net 8 "line-3")
+    (net 9 "line-7")
     (net 10 "led_indicator_b.led-cathode")
     (net 11 "led_indicator_a.led-cathode")
-    (net 12 "line-6")
-    (net 13 "line-7")
+    (net 12 "line-4")
+    (net 13 "line")
     (net 14 "hv-1")
     (net 15 "gnd")
     (footprint "atopile:LED0603-RD-c81ffb"
@@ -109,7 +109,7 @@
         (property "Reference" "D1"
             (at 0 1.75 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "15d9222f-1410-46a7-ab88-5d62c305beb7")
             (effects
                 (font
@@ -407,6 +407,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -419,6 +420,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -433,7 +435,7 @@
             (at 0.8 0 180)
             (size 0.8 0.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 13 "line-7")
+            (net 13 "line")
             (uuid "b7b75351-e64e-4121-9126-60d4c80088a6")
         )
         (embedded_fonts no)
@@ -445,7 +447,7 @@
         (property "Reference" "R1"
             (at 0 -1.75 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "15611434-1caa-45a5-a08f-a9a6330465a2")
             (effects
                 (font
@@ -679,6 +681,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -691,6 +694,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -717,7 +721,7 @@
         (property "Reference" "C8"
             (at -2.5 0 0)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "4381481d-4de7-4bc0-a15b-1839a6786d83")
             (effects
                 (font
@@ -995,6 +999,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1007,6 +1012,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1033,7 +1039,7 @@
         (property "Reference" "C5"
             (at 2.25 0 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "3d0c43c8-356a-41f9-b058-1322003962eb")
             (effects
                 (font
@@ -1311,6 +1317,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1323,6 +1330,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1349,7 +1357,7 @@
         (property "Reference" "U7"
             (at -3.75 2.75 0)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "980245cf-05b5-4304-bdaf-54522758f8d0")
             (effects
                 (font
@@ -1570,6 +1578,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1582,6 +1591,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1596,14 +1606,14 @@
             (at -0.63 2.68 180)
             (size 0.63 1.86)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 13 "line-7")
+            (net 13 "line")
             (uuid "99193c1e-b58a-46a1-a305-903b46266077")
         )
         (pad "3" smd oval
             (at 0.63 2.68 180)
             (size 0.63 1.86)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 12 "line-6")
+            (net 12 "line-4")
             (uuid "7ced1007-374e-4083-b036-3e599143aae6")
         )
         (pad "4" smd oval
@@ -1650,7 +1660,7 @@
         (property "Reference" "R3"
             (at 0 1.5 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "8162be0c-9f70-4ee0-ad51-e4d6fe4e6829")
             (effects
                 (font
@@ -1884,6 +1894,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1896,6 +1907,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -1922,7 +1934,7 @@
         (property "Reference" "D2"
             (at 0 -1.5 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "6cb45d95-1c1e-4c33-9be3-ca92f5a13c52")
             (effects
                 (font
@@ -2220,6 +2232,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2232,6 +2245,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2246,7 +2260,7 @@
             (at 0.8 0 180)
             (size 0.8 0.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 12 "line-6")
+            (net 12 "line-4")
             (uuid "7d4da6d7-feeb-4ac1-86a2-022307bbedc8")
         )
         (embedded_fonts no)
@@ -2258,7 +2272,7 @@
         (property "Reference" "C6"
             (at 2.25 0 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "d5bba45f-de88-4a98-864e-c11095d8ffb7")
             (effects
                 (font
@@ -2536,6 +2550,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2548,6 +2563,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2574,7 +2590,7 @@
         (property "Reference" "RELAY1"
             (at 6 0 0)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "64b93256-6f34-41fc-812e-9e9bfe43cb60")
             (effects
                 (font
@@ -2865,6 +2881,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2877,6 +2894,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -2891,42 +2909,42 @@
             (at -0.6 3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 8 "line-4")
+            (net 8 "line-3")
             (uuid "4446b4bc-df27-46d7-a28d-a62a47e838f9")
         )
         (pad "3" smd rect
             (at 1.6 3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 5 "line-5")
+            (net 5 "line-1")
             (uuid "e338f6f1-4ff4-4dd1-a5eb-e4fb58258145")
         )
         (pad "4" smd rect
             (at 3.8 3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 9 "line-3")
+            (net 9 "line-7")
             (uuid "d8ecdd11-583d-4121-803d-1d71cc1cf2d9")
         )
         (pad "5" smd rect
             (at 3.8 -3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 6 "line")
+            (net 6 "line-2")
             (uuid "3c3083a7-c4db-4c40-bfe8-fd84562f52ed")
         )
         (pad "6" smd rect
             (at 1.6 -3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 4 "line-1")
+            (net 4 "line-6")
             (uuid "362d2163-faa7-405a-ba4e-04a48bff8986")
         )
         (pad "7" smd rect
             (at -0.6 -3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 1 "line-2")
+            (net 1 "line-5")
             (uuid "e19c7c23-8a9f-4ac4-b2ff-6cd229f6347b")
         )
         (pad "8" smd rect

@@ -8,6 +8,9 @@ paths:
 builds:
   5v_to_3v3:
     entry: ldos.ato:LDO_5V_to_3V3
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 
 package:

@@ -8,6 +8,9 @@ paths:
 builds:
   usb_2_0_type_c_data_power:
     entry: usb.ato:USB2_0TypeCDataPower
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 package:
   identifier: ruben-iteng/usb

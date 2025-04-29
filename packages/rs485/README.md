@@ -6,7 +6,7 @@ RS485 related modules
 
 - Version: 0.1.0
 - Total Modules: 3
-- Author(s): Ruben Iteng
+- Author(s): Ruben Baldewsing
 - License: MIT
 - Homepage: https://github.com/ruben-iteng/ato-library
 

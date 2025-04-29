@@ -8,6 +8,9 @@ paths:
 builds:
   AiP74LVC1T45:
     entry: voltage_translation.ato:AiP74LVC1T45
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 
 package:

@@ -8,13 +8,9 @@ paths:
 builds:
   driven_dpdt_bistable_relay:
     entry: relays.ato:DrivenDPDTBistableRelay
-    description: |
-      Bistable DPDT relay with driver and indicator LEDs
-      - 5V coil power
-      - 5V/3.3V logic power
-      - 2A contact carry current
-      - TC118S DC motor driver (H-bridge) as relay driver
-
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 package:
   identifier: ruben-iteng/relays

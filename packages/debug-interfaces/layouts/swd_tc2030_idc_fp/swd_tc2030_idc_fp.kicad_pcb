@@ -86,9 +86,9 @@
     (net 0 "")
     (net 1 "line")
     (net 2 "gnd")
-    (net 3 "line-3")
-    (net 4 "line-2")
-    (net 5 "line-1")
+    (net 3 "line-2")
+    (net 4 "line-1")
+    (net 5 "line-3")
     (net 6 "hv")
     (footprint "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
         (layer "F.Cu")
@@ -97,7 +97,7 @@
         (property "Reference" "U1"
             (at 0 5 0)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "f0ecbfe4-afd0-40c6-bc04-2f0f388e1bb2")
             (effects
                 (font
@@ -248,6 +248,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -311,7 +312,7 @@
             (at -1.27 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 3 "line-3")
+            (net 3 "line-2")
             (uuid "a166afca-da26-4e70-8eb4-033185f287c1")
         )
         (pad "3" connect circle
@@ -325,7 +326,7 @@
             (at 0 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 5 "line-1")
+            (net 5 "line-3")
             (uuid "6909bc0f-dc8d-41d1-8f1a-f628a3fa8e05")
         )
         (pad "5" connect circle
@@ -339,7 +340,7 @@
             (at 1.27 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 4 "line-2")
+            (net 4 "line-1")
             (uuid "c6d7c4bf-8d40-4dd6-98ad-e2c5a2677c2e")
         )
         (embedded_fonts no)

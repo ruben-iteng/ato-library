@@ -6,7 +6,7 @@ Digital logic related components and modules
 
 - Version: 0.1.0
 - Total Modules: 1
-- Author(s): Ruben Iteng
+- Author(s): Ruben Baldewsing
 - License: MIT
 - Homepage: https://github.com/ruben-iteng/ato-library
 

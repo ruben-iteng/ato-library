@@ -87,13 +87,13 @@
         )
     )
     (net 0 "")
-    (net 1 "line-2")
-    (net 2 "line")
-    (net 3 "line-3")
-    (net 4 "line-4")
+    (net 1 "line-3")
+    (net 2 "line-1")
+    (net 3 "line")
+    (net 4 "line-2")
     (net 5 "hv")
     (net 6 "gnd")
-    (net 7 "line-1")
+    (net 7 "line-4")
     (footprint "atopile:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL-294f77"
         (layer "F.Cu")
         (uuid "16135e5b-524a-42f7-a042-363a4642524b")
@@ -317,28 +317,28 @@
             (at -1.91 2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 2 "line")
+            (net 2 "line-1")
             (uuid "4383c7a4-647e-4422-bfe3-98bec369a8d5")
         )
         (pad "2" smd oval
             (at -0.63 2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "line-1")
+            (net 7 "line-4")
             (uuid "b225b85e-005e-4d6d-9c9d-37be1952f0b3")
         )
         (pad "3" smd oval
             (at 0.63 2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "line-1")
+            (net 7 "line-4")
             (uuid "26da4dfe-1c52-4155-b8d2-972026831938")
         )
         (pad "4" smd oval
             (at 1.9 2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 3 "line-3")
+            (net 3 "line")
             (uuid "f434b762-b2b0-49ec-9aec-baca856eecc1")
         )
         (pad "5" smd oval
@@ -352,14 +352,14 @@
             (at 0.63 -2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 4 "line-4")
+            (net 4 "line-2")
             (uuid "b9b129a5-3521-4987-b943-a1e0e69c9fbc")
         )
         (pad "7" smd oval
             (at -0.63 -2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 1 "line-2")
+            (net 1 "line-3")
             (uuid "3880cc62-f7e3-4bab-9817-ec6c79e88660")
         )
         (pad "8" smd oval
@@ -378,7 +378,7 @@
         (property "Reference" "R2"
             (at 0 -4 90)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "f0ed658b-4129-45fd-a07b-64eac948a608")
             (effects
                 (font
@@ -612,6 +612,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -624,6 +625,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -631,7 +633,7 @@
             (at -0.43 0 270)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "line-1")
+            (net 7 "line-4")
             (uuid "d7b9c470-1b6b-405b-b274-da1f59322670")
         )
         (pad "2" smd rect
@@ -659,7 +661,7 @@
                 )
             )
         )
-        (property "Value" "121Ω ±1% 62.5mW"
+        (property "Value" "120Ω ±1% 62.5mW"
             (at 0 4 0)
             (layer "F.Fab")
             (hide no)
@@ -707,7 +709,7 @@
                 )
             )
         )
-        (property "LCSC" "C25080"
+        (property "LCSC" "C114758"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -719,7 +721,7 @@
                 )
             )
         )
-        (property "Partnumber" "0402WGF1210TCE"
+        (property "Partnumber" "RC0402FR-07120RL"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -731,7 +733,7 @@
                 )
             )
         )
-        (property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+        (property "Manufacturer" "YAGEO"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -743,7 +745,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 121Ω 0402 Chip Resistor - Surface Mount ROHS"
+        (property "JLCPCB description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 120Ω 0402 Chip Resistor - Surface Mount ROHS"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -779,7 +781,7 @@
                 )
             )
         )
-        (property "PARAM_resistance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 119.79000002704561, \"max\": 122.20999997295439}}]}}, \"unit\": \"ohm\"}}"
+        (property "PARAM_resistance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 118.80000002682209, \"max\": 121.19999997317791}}]}}, \"unit\": \"ohm\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -879,14 +881,14 @@
             (at -0.43 0 180)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 4 "line-4")
+            (net 4 "line-2")
             (uuid "1138a10c-568f-45e2-a972-c4147cb4c6a2")
         )
         (pad "2" smd rect
             (at 0.43 0 180)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 1 "line-2")
+            (net 1 "line-3")
             (uuid "fa7e45d9-3407-4dff-9328-b10044df3651")
         )
         (embedded_fonts no)

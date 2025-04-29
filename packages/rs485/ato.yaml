@@ -8,12 +8,21 @@ paths:
 builds:
   bus_protection:
     entry: rs485.ato:RS485BusProtection
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
   transceiver:
     entry: rs485.ato:RS485Transceiver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
   isolated_transceiver:
     entry: rs485.ato:IsolatedUARTRS485
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 package:
   identifier: ruben-iteng/rs485
