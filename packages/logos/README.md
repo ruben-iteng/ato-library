@@ -16,4 +16,4 @@ Various logos
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="assets/faebryk.png" alt="faebryk" width="250"/>| faebryk | - |
+|<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk.png" alt="faebryk" width="250"/>| faebryk | - |

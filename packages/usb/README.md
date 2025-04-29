@@ -16,4 +16,4 @@ USB connectors and circuitry
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="assets/usb_2_0_type_c_data_power.png" alt="usb_2_0_type_c_data_power" width="250"/>| usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] |
+|<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_2_0_type_c_data_power.png" alt="usb_2_0_type_c_data_power" width="250"/>| usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] |

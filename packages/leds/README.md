@@ -16,4 +16,4 @@ Various LED components and modules
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/>| addressable_led_connector | - |
+|<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/>| addressable_led_connector | - |
