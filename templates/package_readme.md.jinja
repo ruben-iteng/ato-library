@@ -17,5 +17,5 @@
 | Image | Module | Description |
 |-------|--------|-------------|
 {% for module in package.modules -%}
-| {%- if module.image -%}<img src="{{ module.image }}" alt="{{ module.name }}" width="250"/>{%- else -%}-{% endif -%} | {{ module.name | md_cell }} | {{ module.description | md_cell }} |
+| {%- if module.image -%}<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/{{ package.name }}/{{ module.image }}" alt="{{ module.name }}" width="250"/>{%- else -%}-{% endif -%} | {{ module.name | md_cell }} | {{ module.description | md_cell }} |
 {% endfor %}
