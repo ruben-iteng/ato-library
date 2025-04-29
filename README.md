@@ -8,7 +8,7 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
-| [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0 |
+| [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0-alpha |
 | <img src="packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250"/> | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
 | <img src="packages/debug-interfaces/assets/arm_cortex_m_debug_header.png" alt="arm_cortex_m_debug_header" width="250"/> | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |

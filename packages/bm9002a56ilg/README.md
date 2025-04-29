@@ -4,7 +4,7 @@ BM9002A-56ILG microcontroller
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.0-alpha
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
