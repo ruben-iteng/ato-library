@@ -8,13 +8,16 @@ paths:
 builds:
   cbm9002a_56ilg_reference_design:
     entry: BM9002A_56ILG.py:BM9002A_56ILG_ReferenceDesign
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
 
 package:
-  identifier: ruben-iteng/bm9002a_56ilg
+  identifier: ruben-iteng/bm9002a56ilg
   repository: https://github.com/ruben-iteng/ato-library
   version: "0.1.0"
   authors:
-    - name: Ruben Iteng
+    - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: BM9002A-56ILG microcontroller
   license: MIT
