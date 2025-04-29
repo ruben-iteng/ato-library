@@ -8,14 +8,8 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
-| [bm9002a_56ilg](packages/bm9002a_56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0 |
-| <img src="packages/bm9002a_56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250"/> | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
-| [connectors](packages/connectors/README.md) | 5 modules | Various connectors | 0.1.0 |
-| <img src="packages/connectors/assets/screw_terminal_3_81mm_2p.png" alt="screw_terminal_3_81mm_2p" width="250"/> | screw_terminal_3_81mm_2p | - | |
-| <img src="packages/connectors/assets/screw_terminal_3_81mm_3p.png" alt="screw_terminal_3_81mm_3p" width="250"/> | screw_terminal_3_81mm_3p | - | |
-| <img src="packages/connectors/assets/screw_terminal_3_81mm_4p.png" alt="screw_terminal_3_81mm_4p" width="250"/> | screw_terminal_3_81mm_4p | - | |
-| <img src="packages/connectors/assets/screw_terminal_3_81mm_5p.png" alt="screw_terminal_3_81mm_5p" width="250"/> | screw_terminal_3_81mm_5p | - | |
-| <img src="packages/connectors/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/> | addressable_led_connector | - | |
+| [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0 |
+| <img src="packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250"/> | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
 | <img src="packages/debug-interfaces/assets/arm_cortex_m_debug_header.png" alt="arm_cortex_m_debug_header" width="250"/> | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | <img src="packages/debug-interfaces/assets/swd_tc2030_idc_nl.png" alt="swd_tc2030_idc_nl" width="250"/> | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
@@ -26,6 +20,8 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | <img src="packages/ina228/assets/isolated_ina228.png" alt="isolated_ina228" width="250"/> | isolated_ina228 | INA228 with I2C and power isolation. | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.0 |
 | <img src="packages/ldos/assets/5v_to_3v3.png" alt="5v_to_3v3" width="250"/> | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
+| [leds](packages/leds/README.md) | 1 module | Various LED components and modules | 0.1.0 |
+| <img src="packages/leds/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/> | addressable_led_connector | - | |
 | [logic](packages/logic/README.md) | 1 module | Digital logic related components and modules | 0.1.0 |
 | <img src="packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |

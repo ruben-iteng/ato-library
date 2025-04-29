@@ -1,0 +1,24 @@
+requires-atopile: "^0.5.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  addressable_led_connector:
+    entry: addressable_leds.ato:AddressableLEDConnector
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+package:
+  identifier: ruben-iteng/leds
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: Various LED components and modules
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
