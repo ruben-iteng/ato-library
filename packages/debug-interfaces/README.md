@@ -4,7 +4,7 @@ SWD and tag connect headers for programming and debugging
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 3
 - Author(s): Ruben Baldewsing
 - License: MIT

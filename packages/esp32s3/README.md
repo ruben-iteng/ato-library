@@ -4,7 +4,7 @@ ESP32 S3 microcontroller
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
