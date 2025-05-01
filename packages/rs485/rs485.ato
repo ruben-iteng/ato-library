@@ -35,7 +35,6 @@ module RS485Transceiver:
     uart_rs485_converter = new MaxLinear_SP3485EN_L_TR
     termination_resistor = new Resistor
     bypass_capacitor = new Capacitor
-    pull_down_resistor = new Resistor
 
     # connections
     uart ~ uart_rs485_converter.uart
@@ -50,17 +49,11 @@ module RS485Transceiver:
 
     power ~ bypass_capacitor.power
 
-    read_enable ~ pull_down_resistor.p1
-    power.lv ~ pull_down_resistor.p2
-
     # parametrization
     termination_resistor.resistance = 120ohm +/- 5%
     termination_resistor.package = "R0402"
     bypass_capacitor.value = 100nF +/- 20%
     bypass_capacitor.package = "C0402"
-
-    pull_down_resistor.resistance = 10kohm +/- 10%
-    pull_down_resistor.package = "R0402"
 
 component MaxLinear_SP3485EN_L_TR from UART_RS485:
     """3.3V (5V compatible)RS485 transceiver"""
