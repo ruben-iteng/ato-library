@@ -11,6 +11,7 @@ builds:
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
+    keep-net-names: true
 
 package:
   identifier: ruben-iteng/esp32s3
