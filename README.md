@@ -10,23 +10,23 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 |---------|---------|-------------|---------|
 | [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0-alpha |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250"/> | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
-| [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.0 |
+| [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/arm_cortex_m_debug_header.png" alt="arm_cortex_m_debug_header" width="250"/> | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png" alt="swd_tc2030_idc_nl" width="250"/> | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_fp.png" alt="swd_tc2030_idc_fp" width="250"/> | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
-| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.0 |
+| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32s3/assets/esp32_s3_wroom_reference_design.png" alt="esp32_s3_wroom_reference_design" width="250"/> | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png" alt="isolated_ina228" width="250"/> | isolated_ina228 | INA228 with I2C and power isolation. | |
-| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.0 |
+| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png" alt="5v_to_3v3" width="250"/> | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
-| [leds](packages/leds/README.md) | 1 module | Various LED components and modules | 0.1.0 |
+| [leds](packages/leds/README.md) | 1 module | Various LED components and modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/> | addressable_led_connector | - | |
-| [logic](packages/logic/README.md) | 1 module | Digital logic related components and modules | 0.1.0 |
+| [logic](packages/logic/README.md) | 1 module | Digital logic related components and modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk.png" alt="faebryk" width="250"/> | faebryk | - | |
-| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.0 |
+| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay.png" alt="driven_dpdt_bistable_relay" width="250"/> | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
 | [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/bus_protection.png" alt="bus_protection" width="250"/> | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
