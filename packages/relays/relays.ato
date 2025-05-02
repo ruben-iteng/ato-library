@@ -122,6 +122,37 @@ module DrivenDPDTBistableRelay:
     relay.normally_closed_b ~ normally_closed_b
     relay.normally_open_b ~ normally_open_b
 
+
+module DrivenDPDTBistableRelayScrewTerminal:
+    """
+    DrivenDPDTBistableRelay with screw terminal interface
+    """
+
+    # external interfaces
+    power = new ElectricPower
+    coil_power = new ElectricPower
+
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    # components
+    relay = new DrivenDPDTBistableRelay
+    screw_terminal = new _Cixi_Kefa_Elec_KF250T_5_0_23P
+
+    # connections
+    relay.power ~ power
+    relay.coil_power ~ coil_power
+    relay.input_a ~ input_a
+    relay.input_b ~ input_b
+
+    relay.normally_closed_a ~ screw_terminal.PA1
+    relay.common_a ~ screw_terminal.PA2
+    relay.normally_open_a ~ screw_terminal.PA3
+
+    relay.normally_closed_b ~ screw_terminal.PB1
+    relay.common_b ~ screw_terminal.PB2
+    relay.normally_open_b ~ screw_terminal.PB3
+
 component G6KU2FYTRDC5 from DPDT_Relay:
     """Omron Electronics G6KU_2F_Y_TR_DC5 bistable relay"""
     lcsc_id = "C2153173"
@@ -166,3 +197,20 @@ component Shenzhen_Fuman_Elec_TC118S:
 
     input_a.line ~ pin 2
     input_b.line ~ pin 3
+
+component _Cixi_Kefa_Elec_KF250T_5_0_23P:
+    """Double layer push terminal 2x3 pin"""
+    lcsc_id = "C976537"
+    manufacturer = "Cixi Kefa Elec"
+    mpn = "KF250T-5.0-2*3P"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303170930_Cixi-Kefa-Elec-KF250T-5-0-2-3P_C976537.pdf"
+    designator_prefix = "CN"
+
+    # pins
+    signal PA1 ~ pin 1
+    signal PA2 ~ pin 3
+    signal PA3 ~ pin 5
+
+    signal PB1 ~ pin 2
+    signal PB2 ~ pin 4
+    signal PB3 ~ pin 6
