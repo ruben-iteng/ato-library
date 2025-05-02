@@ -27,7 +27,7 @@ builds:
 package:
   identifier: ruben-iteng/debug-interfaces
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.0"
+  version: "0.1.1"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
