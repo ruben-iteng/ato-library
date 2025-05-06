@@ -87,7 +87,7 @@
         )
     )
     (net 0 "")
-    (net 1 "line-5")
+    (net 1 "line-6")
     (net 2 "net")
     (net 3 "gnd")
     (net 4 "line")
@@ -2930,7 +2930,7 @@
             (at 3.8 -3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 6 "line-2")
+            (net 6 "line-1")
             (uuid "3c3083a7-c4db-4c40-bfe8-fd84562f52ed")
         )
         (pad "6" smd rect
@@ -2944,7 +2944,7 @@
             (at -0.6 -3.5 270)
             (size 0.8 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 1 "line-5")
+            (net 1 "line-6")
             (uuid "e19c7c23-8a9f-4ac4-b2ff-6cd229f6347b")
         )
         (pad "8" smd rect

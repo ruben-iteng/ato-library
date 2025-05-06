@@ -26,8 +26,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk.png" alt="faebryk" width="250"/> | faebryk | - | |
-| [relays](packages/relays/README.md) | 1 module | Relay modules | 0.1.1 |
+| [relays](packages/relays/README.md) | 2 modules | Relay modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay.png" alt="driven_dpdt_bistable_relay" width="250"/> | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
+| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay_push_terminal.png" alt="driven_dpdt_bistable_relay_push_terminal" width="250"/> | driven_dpdt_bistable_relay_push_terminal | DrivenDPDTBistableRelay with push terminal | |
 | [rs485](packages/rs485/README.md) | 3 modules | RS485 related modules | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/bus_protection.png" alt="bus_protection" width="250"/> | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/transceiver.png" alt="transceiver" width="250"/> | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
