@@ -1,15 +1,17 @@
-# This workflow is used to publish packages to the GitHub Package Registry
-# It is manually triggered and only runs on the main branch
+# This workflow is used to build and test packages
+# It is triggered by push, pull_request, or manual workflow_dispatch
 
-name: Publish Packages
+name: Build and Test
 
 on:
-  workflow_dispatch:
+  push:
+  pull_request:
 
 jobs:
   define-packages:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    # Skip all jobs if PR is in draft
+    if: github.event.pull_request.draft == false
 
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
@@ -19,38 +21,33 @@ jobs:
 
       - name: Discover Packages
         id: packages
+        # find all directories with an ato.yaml from the current directory and output the list as a json array
         run: |
           echo "packages=$(find . -name "ato.yaml" -exec dirname {} \; | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
 
-  build-and-publish:
+  build:
+    permissions:
+      contents: read
+      packages: read
     runs-on: ubuntu-latest
     needs: define-packages
-    if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
         package: ${{ fromJSON(needs.define-packages.outputs.packages) }}
       fail-fast: false
 
-    permissions:
-      id-token: write
-      contents: read
-      packages: read
-
     steps:
       - uses: actions/checkout@v4
 
+      # FIXME: handle deps properly
+      # ideally it'd determine if the package is in the same repo and, if so,
+      # install via file instead
       - uses: atopile/setup-atopile@v1
         with:
+          # ato-config: "packages/${{ matrix.package }}/ato.yaml"
           version: "main"
 
       - run: ato sync
         working-directory: ${{ matrix.package }}
       - run: ato build
         working-directory: ${{ matrix.package }}
-
-      - uses: atopile/publish-package@v1
-        with:
-          atopile-version: "main"
-          package-entrypoint: ${{ matrix.package }}
-          skip-duplicate-versions: true
-          package-version: "" # Use the embedded version key
