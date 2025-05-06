@@ -1,0 +1,29 @@
+requires-atopile: "^0.5.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  rotary_encoder_advanced:
+    entry: rotary_encoders.ato:RotaryEncoderAdvanced
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+package:
+  identifier: ruben-iteng/switches
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: Rotary encoders, switches, and other switch like components and modules
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
+
+dependencies:
+- type: registry
+  identifier: ruben-iteng/logic
+  release: 0.1.1

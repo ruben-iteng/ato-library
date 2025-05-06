@@ -1,0 +1,100 @@
+import ElectricPower, ElectricLogic, Electrical, Capacitor, Resistor, FilterElectricalRC
+from "ruben-iteng/logic/schmitt_triggers.ato" import SN74LVC3G14DCUR
+
+module RotaryEncoderAdvanced:
+    """
+    Rotary encoder + switchwith debouncing and hysteresis.
+
+    Specialize the rotary encoder in your application:
+    rot_encoder = new RotaryEncoderAdvanced
+    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2
+    """
+
+    # external interfaces
+    a = new ElectricLogic
+    b = new ElectricLogic
+    switch = new ElectricLogic
+    power = new ElectricPower
+
+    # components
+    encoder = new RotaryEncoderSwitch
+    buffer = new SN74LVC3G14DCUR
+    pull_up_a = new Resistor
+    pull_up_b = new Resistor
+    pull_up_switch = new Resistor
+    rc_a = new FilterElectricalRC
+    rc_b = new FilterElectricalRC
+    rc_switch = new FilterElectricalRC
+
+    pull_up_a.resistance = 10kohm +/- 1%
+    pull_up_a.package = "R0201"
+    pull_up_b.resistance = 10kohm +/- 1%
+    pull_up_b.package = "R0201"
+    pull_up_switch.resistance = 10kohm +/- 1%
+    pull_up_switch.package = "R0201"
+
+    # RC values for ~ 160Hz -3dB cutoff frequency
+    rc_a.resistor.package = "R0201"
+    rc_a.resistor.resistance = 10kohm +/- 1%
+    rc_a.capacitor.package = "C0201"
+    rc_a.capacitor.lcsc_id = "C2846674" # TODO: remove
+    #rc_a.capacitor.capacitance = 100nF +/- 20%
+    rc_b.resistor.package = "R0201"
+    rc_b.resistor.resistance = 10kohm +/- 1%
+    rc_b.capacitor.package = "C0201"
+    rc_b.capacitor.lcsc_id = "C2846674" # TODO: remove
+    #rc_b.capacitor.capacitance = 100nF +/- 20%
+    rc_switch.resistor.package = "R0201"
+    rc_switch.resistor.resistance = 10kohm +/- 1%
+    rc_switch.capacitor.package = "C0201"
+    rc_switch.capacitor.lcsc_id = "C2846674" # TODO: remove
+    #rc_switch.capacitor.capacitance = 100nF +/- 20%
+
+    # connections
+    power ~ buffer.power
+    encoder.a ~ pull_up_a.p1; pull_up_a.p2 ~ power.hv
+    encoder.a~ rc_a.in_.line; rc_a.out ~ buffer.a1; buffer.y1 ~ a
+    encoder.b ~ pull_up_b.p1; pull_up_b.p2 ~ power.hv
+    encoder.b~ rc_b.in_.line; rc_b.out ~ buffer.a2; buffer.y2 ~ b
+    encoder.switch ~ pull_up_switch.p1; pull_up_switch.p2 ~ power.hv
+    encoder.switch ~ rc_switch.in_.line; rc_switch.out ~ buffer.a3; buffer.y3 ~ switch
+    encoder.common ~ power.lv
+    power.lv ~ rc_a.in_.reference.lv
+    power.lv ~ rc_b.in_.reference.lv
+    power.lv ~ rc_switch.in_.reference.lv
+
+
+component RotaryEncoderSwitch from RotaryEncoder:
+    """
+    Rotary encoder + switch
+    """
+
+    # external interfaces
+    switch = new Electrical
+
+component RotaryEncoder:
+    """
+    Rotary encoder
+    """
+
+    # external interfaces
+    a = new Electrical
+    b = new Electrical
+    common = new Electrical
+
+component ALPSALPINE_EC11E15244B2 from RotaryEncoderSwitch:
+    """ALPSALPINE_EC11E15244B2 component"""
+    lcsc_id = "C470754"
+    manufacturer = "ALPSALPINE"
+    mpn = "EC11E15244B2"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_ALPSALPINE-EC11E15244B2_C470754.pdf"
+    designator_prefix = "SW"
+
+    # pins
+    switch ~ pin E
+    common ~ pin D
+    common ~ pin C
+    a ~ pin B
+    b ~ pin A
+    common ~ pin 6
+    common ~ pin 7
