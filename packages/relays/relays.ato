@@ -123,9 +123,9 @@ module DrivenDPDTBistableRelay:
     relay.normally_open_b ~ normally_open_b
 
 
-module DrivenDPDTBistableRelayScrewTerminal:
+module DrivenDPDTBistableRelayPushTerminal:
     """
-    DrivenDPDTBistableRelay with screw terminal interface
+    DrivenDPDTBistableRelay with push terminal
     """
 
     # external interfaces
