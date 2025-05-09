@@ -19,8 +19,8 @@ module ESP32_S3_WROOM_1_U_ReferenceDesign from ESP32_S3_WROOM_1_U:
     power_3v3 ~ decoupling_capacitor_bulk.power
     power_3v3 ~ decoupling_capacitor_small.power
 
-    boot_switch.in ~ power_3v3.lv
-    boot_switch.out ~ gpio0.line
+    boot_switch.input ~ power_3v3.lv
+    boot_switch.output ~ gpio[0].line
 
     reset_switch.output.reference ~ power_3v3
     reset_switch.output.line ~ enable.line
@@ -56,80 +56,45 @@ module ESP32_S3_WROOM_1_U:
     enable = new ElectricLogic
     usb = new USB2_0
 
-    gpio0 = new ElectricLogic
-    gpio1 = new ElectricLogic
-    gpio2 = new ElectricLogic
-    gpio3 = new ElectricLogic
-    gpio4 = new ElectricLogic
-    gpio5 = new ElectricLogic
-    gpio6 = new ElectricLogic
-    gpio7 = new ElectricLogic
-    gpio8 = new ElectricLogic
-    gpio9 = new ElectricLogic
-    gpio10 = new ElectricLogic
-    gpio11 = new ElectricLogic
-    gpio12 = new ElectricLogic
-    gpio13 = new ElectricLogic
-    gpio14 = new ElectricLogic
-    gpio15 = new ElectricLogic
-    gpio16 = new ElectricLogic
-    gpio17 = new ElectricLogic
-    gpio18 = new ElectricLogic
-    gpio19 = new ElectricLogic
-    gpio20 = new ElectricLogic
-    gpio21 = new ElectricLogic
-    # --
-    gpio35 = new ElectricLogic
-    gpio36 = new ElectricLogic
-    gpio37 = new ElectricLogic
-    gpio38 = new ElectricLogic
-    gpio39 = new ElectricLogic
-    gpio40 = new ElectricLogic
-    gpio41 = new ElectricLogic
-    gpio42 = new ElectricLogic
-    # --
-    gpio45 = new ElectricLogic
-    gpio46 = new ElectricLogic
-    gpio47 = new ElectricLogic
-    gpio48 = new ElectricLogic
+    gpio = new ElectricLogic[49] # 22-34, 43, 44, are not exposed on the module
 
     # connections
-    gpio0.line ~ ic.27 # strapping pin, default pull-up, boot mode
-    gpio1.line ~ ic.39
-    gpio2.line ~ ic.38
-    gpio3.line ~ ic.15 # strapping pin, default pull-down, JTAG source
-    gpio4.line ~ ic.4
-    gpio5.line ~ ic.5
-    gpio6.line ~ ic.6
-    gpio7.line ~ ic.7
-    gpio8.line ~ ic.12
-    gpio9.line ~ ic.17
-    gpio10.line ~ ic.18
-    gpio11.line ~ ic.19
-    gpio12.line ~ ic.20
-    gpio13.line ~ ic.21
-    gpio14.line ~ ic.22
-    gpio15.line ~ ic.8
-    gpio16.line ~ ic.9
-    gpio17.line ~ ic.10
-    gpio18.line ~ ic.11
-    gpio19.line ~ ic.13
-    gpio20.line ~ ic.14
-    gpio21.line ~ ic.23
+    gpio[0].line ~ ic.27 # strapping pin, default pull-up, boot mode
+    gpio[1].line ~ ic.39
+    gpio[2].line ~ ic.38
+    gpio[3].line ~ ic.15 # strapping pin, default pull-down, JTAG source
+    gpio[4].line ~ ic.4
+    gpio[5].line ~ ic.5
+    gpio[6].line ~ ic.6
+    gpio[7].line ~ ic.7
+    gpio[8].line ~ ic.12
+    gpio[9].line ~ ic.17
+    gpio[10].line ~ ic.18
+    gpio[11].line ~ ic.19
+    gpio[12].line ~ ic.20
+    gpio[13].line ~ ic.21
+    gpio[14].line ~ ic.22
+    gpio[15].line ~ ic.8
+    gpio[16].line ~ ic.9
+    gpio[17].line ~ ic.10
+    gpio[18].line ~ ic.11
+    gpio[19].line ~ ic.13
+    gpio[20].line ~ ic.14
+    gpio[21].line ~ ic.23
     # ~
-    gpio35.line ~ ic.28
-    gpio36.line ~ ic.29
-    gpio37.line ~ ic.30
-    gpio38.line ~ ic.31
-    gpio39.line ~ ic.32
-    gpio40.line ~ ic.33
-    gpio41.line ~ ic.34
-    gpio42.line ~ ic.35
+    gpio[35].line ~ ic.28
+    gpio[36].line ~ ic.29
+    gpio[37].line ~ ic.30
+    gpio[38].line ~ ic.31
+    gpio[39].line ~ ic.32
+    gpio[40].line ~ ic.33
+    gpio[41].line ~ ic.34
+    gpio[42].line ~ ic.35
     # ~
-    gpio45.line ~ ic.26 # strapping pin, default pull-down
-    gpio46.line ~ ic.16 # strapping pin, default pull-down
-    gpio47.line ~ ic.24
-    gpio48.line ~ ic.25
+    gpio[45].line ~ ic.26 # strapping pin, default pull-down
+    gpio[46].line ~ ic.16 # strapping pin, default pull-down
+    gpio[47].line ~ ic.24
+    gpio[48].line ~ ic.25
 
     power_3v3.hv ~ ic.2
     power_3v3.lv ~ ic.1
@@ -141,18 +106,18 @@ module ESP32_S3_WROOM_1_U:
     uart.rx.line ~ ic.37
     uart.tx.line ~ ic.36
 
-    usb.usb_if.d.n ~ gpio19
-    usb.usb_if.d.p ~ gpio20
+    usb.usb_if.d.n ~ gpio[19]
+    usb.usb_if.d.p ~ gpio[20]
 
-    spi.sclk ~ gpio12
-    spi.mosi ~ gpio11
-    spi.miso ~ gpio13
-    spi_cs ~ gpio10
+    spi.sclk ~ gpio[12]
+    spi.mosi ~ gpio[11]
+    spi.miso ~ gpio[13]
+    spi_cs ~ gpio[10]
 
-    jtag.tck ~ gpio39
-    jtag.tms ~ gpio42
-    jtag.tdi ~ gpio41
-    jtag.tdo ~ gpio40
+    jtag.tck ~ gpio[39]
+    jtag.tms ~ gpio[42]
+    jtag.tdi ~ gpio[41]
+    jtag.tdo ~ gpio[40]
     jtag.vtref ~ power_3v3
 
 component Espressif_Systems_ESP32_S3_WROOM_1_N16R2:
