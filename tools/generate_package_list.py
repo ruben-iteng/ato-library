@@ -114,6 +114,7 @@ def find_module_file(package_dir, module_entry) -> Tuple[Path, str]:
 def main(
     debug: bool = typer.Option(False, "-d", "--debug", help="Enable debug logging"),
     image: bool = typer.Option(False, help="Generate board renders"),
+    package_name: str = typer.Option(None, help="Name of the package to process"),
 ):
     """Generate the README.md with updated list of packages."""
     # Set up logging based on debug flag
@@ -123,7 +124,15 @@ def main(
     packages_data = []
 
     # Find all directories with ato.yaml
-    for package_dir in packages_dir.iterdir():
+    if package_name:
+        package_dirs = [packages_dir / package_name]
+        if not package_dirs[0].is_dir():
+            logger.error(f"Package [{package_name}] not found in [{packages_dir}]")
+            raise typer.Abort()
+    else:
+        package_dirs = packages_dir.iterdir()
+
+    for package_dir in package_dirs:
         if not package_dir.is_dir():
             continue
 
