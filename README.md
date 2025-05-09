@@ -23,10 +23,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/> | addressable_led_connector | - | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led.png" alt="addressable_led" width="250"/> | addressable_led | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        indicator = new AddressableLED<br>        indicator.led -> WS2812B_5050_Black | |
-
 | [logic](packages/logic/README.md) | 3 modules | Digital logic related components and modules | 0.1.1 |
-| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
-| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/SN74LVC3G14DCUR.png" alt="SN74LVC3G14DCUR" width="250"/> | SN74LVC3G14DCUR | - | |
+| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45.png" alt="aip74lvc1t45" width="250"/> | aip74lvc1t45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc.png" alt="sn74lvc3g14dc" width="250"/> | sn74lvc3g14dc | - | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540.png" alt="iso1540" width="250"/> | iso1540 | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk.png" alt="faebryk" width="250"/> | faebryk | - | |
@@ -39,6 +38,6 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/isolated_transceiver.png" alt="isolated_transceiver" width="250"/> | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
 | [switches](packages/switches/README.md) | 1 module | Rotary encoders, switches, and other switch like components and modules | 0.1.0 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/switches/assets/rotary_encoder_advanced.png" alt="rotary_encoder_advanced" width="250"/> | rotary_encoder_advanced | Rotary encoder + switchwith debouncing and hysteresis.<br><br>    Specialize the rotary encoder in your application:<br>    rot_encoder = new RotaryEncoderAdvanced<br>    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2 | |
-| [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.1.0 |
+| [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_2_0_type_c_data_power.png" alt="usb_2_0_type_c_data_power" width="250"/> | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_pd_power_sink.png" alt="usb_pd_power_sink" width="250"/> | usb_pd_power_sink | USB PD power sink with Type-C connector<br>    <br>    Set the requested PD voltages as follows:<br>    9V  -> resistance = 6.8kohm<br>    12V -> resistance = 24kohm<br>    15V -> resistance = 56kohm<br>    20V -> resistance = DNP<br>    pd_sink = new USBPDPowerSink<br>    pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1% | |

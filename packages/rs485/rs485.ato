@@ -1,3 +1,5 @@
+#pragma experiment("BRIDGE_CONNECT")
+
 import Analog_Devices_ADM2587EBRWZ_ReferenceDesign
 import RS485_Bus_Protection
 import UART_Base, RS485HalfDuplex, ElectricLogic, ElectricPower, UART_RS485
@@ -44,8 +46,7 @@ module RS485Transceiver:
 
     rs485 ~ uart_rs485_converter.rs485
 
-    rs485.diff_pair.p.line ~ termination_resistor.p1
-    rs485.diff_pair.n.line ~ termination_resistor.p2
+    rs485.diff_pair.p.line ~> termination_resistor ~> rs485.diff_pair.n.line
 
     power ~ bypass_capacitor.power
 
