@@ -20,8 +20,10 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png" alt="isolated_ina228" width="250"/> | isolated_ina228 | INA228 with I2C and power isolation. | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png" alt="5v_to_3v3" width="250"/> | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
-| [leds](packages/leds/README.md) | 1 module | Various LED components and modules | 0.1.1 |
+| [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png" alt="addressable_led_connector" width="250"/> | addressable_led_connector | - | |
+| <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led.png" alt="addressable_led" width="250"/> | addressable_led | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        indicator = new AddressableLED<br>        indicator.led -> WS2812B_5050_Black | |
+
 | [logic](packages/logic/README.md) | 3 modules | Digital logic related components and modules | 0.1.1 |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/AiP74LVC1T45.png" alt="AiP74LVC1T45" width="250"/> | AiP74LVC1T45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | <img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/SN74LVC3G14DCUR.png" alt="SN74LVC3G14DCUR" width="250"/> | SN74LVC3G14DCUR | - | |

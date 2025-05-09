@@ -1,6 +1,126 @@
-import ElectricPower, ElectricLogic
+import ElectricPower, ElectricLogic, Capacitor
 
-component AddressableLEDConnector from Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+module AddressableLED:
+    """
+    Addressable LED with decoupling capacitors.
+
+    Usage:
+    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED
+
+    module MyProject:
+        ...
+        indicator = new AddressableLED
+        indicator.led -> WS2812B_5050_Black
+
+    """
+
+    power = new ElectricPower
+    data_in = new ElectricLogic
+    data_out = new ElectricLogic
+
+    capacitor = new Capacitor
+    led = new _AddressableLED
+
+    capacitor.package = "C0402"
+    capacitor.capacitance = 100nF +/- 20%
+
+    power ~ capacitor.power
+    power ~ led.power
+    data_in ~ led.data_in
+    data_out ~ led.data_out
+
+component WS2812B_5050_Black from _WS2812B:
+    """WS2812B addressable LED in 5050 black package"""
+    lcsc_id = "C2761795"
+    manufacturer = "Worldsemi"
+    mpn = "WS2812B-B/T"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2412041609_Worldsemi-WS2812B-B-T_C2761795.pdf"
+    designator_prefix = "LED"
+
+    # pins
+    power.hv ~ pin 1
+    data_out.line ~ pin 2
+    power.lv ~ pin 3
+    data_in.line ~ pin 4
+
+component WS2812B_1615 from _WS2812B:
+    """WS2812B addressable LED in 1615 package"""
+    lcsc_id = "C5349954"
+    manufacturer = "XINGLIGHT"
+    mpn = "XL-1615RGBC-WS2812B"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2504101957_XINGLIGHT-XL-1615RGBC-WS2812B_C5349954.pdf"
+    designator_prefix = "LED"
+
+    # pins
+    power.lv ~ pin 1
+    data_in.line ~ pin 2
+    power.hv ~ pin 3
+    data_out.line ~ pin 4
+
+component SK6812MINI_E from _SK6812:
+    """SK6812 addressable LED in 3528 countersunk upside down package"""
+    lcsc_id = "C5149201"
+    manufacturer = "NORMAND"
+    mpn = "SK6812MINI-E"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2412101523_OPSCO-Optoelectronics-SK6812MINI-E_C5149201.pdf"
+    designator_prefix = "LED"
+
+    # pins
+    power.hv ~ pin 1
+    data_out.line ~ pin 2
+    power.lv ~ pin 3
+    data_in.line ~ pin 4
+
+component SK6812SIDE_A from _SK6812:
+    """SK6812 addressable LED in 4020 side-mounted package"""
+    lcsc_id = "C5378721"
+    manufacturer = "OPSCO Optoelectronics"
+    mpn = "SK6812SIDE-A"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2303300930_OPSCO-Optoelectronics-SK6812SIDE-A_C5378721.pdf"
+    designator_prefix = "LED"
+
+    # pins
+    data_in.line ~ pin 1
+    power.hv ~ pin 2
+    data_out.line ~ pin 3
+    power.lv ~ pin 4
+
+component SK6812_5050_RGBW from _SK6812:
+    """SK6812 addressable LED in 5050 package with RGB + NW-White LEDs"""
+    lcsc_id = "C5380880"
+    manufacturer = "OPSCO Optoelectronics"
+    mpn = "SKC6812RGBW-NW-B"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2309131055_OPSCO-Optoelectronics-SKC6812RGBW-NW-B_C5380880.pdf"
+    designator_prefix = "LED"
+
+    # pins
+    power.lv ~ pin 1
+    data_in.line ~ pin 2
+    power.hv ~ pin 3
+    data_out.line ~ pin 4
+
+
+component _AddressableLED:
+    """
+    Addressable LED base component
+    """
+
+    power = new ElectricPower
+    data_in = new ElectricLogic
+    data_out = new ElectricLogic
+
+component _WS2812B from _AddressableLED:
+    """
+    WS2812B Addressable LED base component
+    """
+
+component _SK6812 from _AddressableLED:
+    """
+    SK6812 Addressable LED base component
+    """
+
+
+component AddressableLEDConnector from _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
     """
     XT30 connector with 2 additional data pins.
     Wired for connecting to addressable LED strips.
@@ -15,7 +135,7 @@ component AddressableLEDConnector from Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
     data.line ~ pin 3
     clock.line ~ pin 4
 
-component Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+component _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
     """XT30 connector with 2 additional data pins"""
     lcsc_id = "C19268030"
     manufacturer = "Changzhou Amass Elec"
