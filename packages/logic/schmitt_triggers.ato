@@ -5,12 +5,8 @@ component SN74LVC3G14DCUR:
 
     # external interfaces
     power = new ElectricPower
-    a1 = new ElectricLogic
-    a2 = new ElectricLogic
-    a3 = new ElectricLogic
-    y1 = new ElectricLogic
-    y2 = new ElectricLogic
-    y3 = new ElectricLogic
+    a = new ElectricLogic[3]
+    y = new ElectricLogic[3]
 
     # components
     buffer = new _SN74LVC3G14DCUR
@@ -22,12 +18,12 @@ component SN74LVC3G14DCUR:
     # connections
     power ~ buffer.power
     power ~ decoupling_capacitor.power
-    buffer.a1 ~ a1.line
-    buffer.a2 ~ a2.line
-    buffer.a3 ~ a3.line
-    buffer.y1 ~ y1.line
-    buffer.y2 ~ y2.line
-    buffer.y3 ~ y3.line
+    buffer.a[0] ~ a[0]
+    buffer.a[1] ~ a[1]
+    buffer.a[2] ~ a[2]
+    buffer.y[0] ~ y[0]
+    buffer.y[1] ~ y[1]
+    buffer.y[2] ~ y[2]
 
 
 component _SN74LVC3G14DCUR from _74xx3G:
@@ -40,12 +36,12 @@ component _SN74LVC3G14DCUR from _74xx3G:
     assert power.voltage within 1.65 to 5.5V
 
     # pins
-    a1.line ~ pin 1
-    a2.line ~ pin 3
-    a3.line ~ pin 6
-    y1.line ~ pin 7
-    y2.line ~ pin 5
-    y3.line ~ pin 2
+    a[0].line ~ pin 1
+    a[1].line ~ pin 3
+    a[2].line ~ pin 6
+    y[0].line ~ pin 7
+    y[1].line ~ pin 5
+    y[2].line ~ pin 2
     power.hv ~ pin 8
     power.lv ~ pin 4
 
@@ -54,16 +50,12 @@ component _74xx3G:
     designator_prefix = "U"
 
     power = new ElectricPower
-    a1 = new ElectricLogic
-    a2 = new ElectricLogic
-    a3 = new ElectricLogic
-    y1 = new ElectricLogic
-    y2 = new ElectricLogic
-    y3 = new ElectricLogic
+    a = new ElectricLogic[3]
+    y = new ElectricLogic[3]
 
-    a1.reference ~ power
-    a2.reference ~ power
-    a3.reference ~ power
-    y1.reference ~ power
-    y2.reference ~ power
-    y3.reference ~ power
+    a[0].reference ~ power
+    a[1].reference ~ power
+    a[2].reference ~ power
+    y[0].reference ~ power
+    y[1].reference ~ power
+    y[2].reference ~ power

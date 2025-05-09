@@ -1,4 +1,4 @@
-requires-atopile: "^0.5.0"
+requires-atopile: "^0.7.0"
 
 paths:
   src: "."
@@ -6,23 +6,24 @@ paths:
   footprints: ./footprints
 
 builds:
-  AiP74LVC1T45:
+  aip74lvc1t45:
     entry: voltage_translation.ato:AiP74LVC1T45
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  SN74LVC3G14DCUR:
+  sn74lvc3g14dc:
     entry: schmitt_triggers.ato:SN74LVC3G14DCUR
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
   iso1540:
-    entry: ISO1540.ato:ISO1540_ReferenceDesign
+    entry: iso1540.ato:ISO1540_ReferenceDesign
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
+
 
 package:
   identifier: ruben-iteng/logic
