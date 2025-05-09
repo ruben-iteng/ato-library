@@ -1,3 +1,6 @@
+#pragma experiment("FOR_LOOP")
+#pragma experiment("BRIDGE_CONNECT")
+
 import ElectricPower, ElectricLogic, Electrical, Capacitor, Resistor, FilterElectricalRC
 from "ruben-iteng/logic/schmitt_triggers.ato" import SN74LVC3G14DCUR
 
@@ -19,50 +22,31 @@ module RotaryEncoderAdvanced:
     # components
     encoder = new RotaryEncoderSwitch
     buffer = new SN74LVC3G14DCUR
-    pull_up_a = new Resistor
-    pull_up_b = new Resistor
-    pull_up_switch = new Resistor
-    rc_a = new FilterElectricalRC
-    rc_b = new FilterElectricalRC
-    rc_switch = new FilterElectricalRC
+    pull_ups = new Resistor[3]
+    rc_filters = new FilterElectricalRC[3]
 
-    pull_up_a.resistance = 10kohm +/- 1%
-    pull_up_a.package = "R0201"
-    pull_up_b.resistance = 10kohm +/- 1%
-    pull_up_b.package = "R0201"
-    pull_up_switch.resistance = 10kohm +/- 1%
-    pull_up_switch.package = "R0201"
+    for pull_up in pull_ups:
+        pull_up.resistance = 10kohm +/- 1%
+        pull_up.package = "R0201"
 
     # RC values for ~ 160Hz -3dB cutoff frequency
-    rc_a.resistor.package = "R0201"
-    rc_a.resistor.resistance = 10kohm +/- 1%
-    rc_a.capacitor.package = "C0201"
-    rc_a.capacitor.lcsc_id = "C2846674" # TODO: remove
-    #rc_a.capacitor.capacitance = 100nF +/- 20%
-    rc_b.resistor.package = "R0201"
-    rc_b.resistor.resistance = 10kohm +/- 1%
-    rc_b.capacitor.package = "C0201"
-    rc_b.capacitor.lcsc_id = "C2846674" # TODO: remove
-    #rc_b.capacitor.capacitance = 100nF +/- 20%
-    rc_switch.resistor.package = "R0201"
-    rc_switch.resistor.resistance = 10kohm +/- 1%
-    rc_switch.capacitor.package = "C0201"
-    rc_switch.capacitor.lcsc_id = "C2846674" # TODO: remove
-    #rc_switch.capacitor.capacitance = 100nF +/- 20%
+    for rc in rc_filters:
+        rc.resistor.package = "R0201"
+        rc.resistor.resistance = 10kohm +/- 1%
+        rc.capacitor.package = "C0201"
+        rc.capacitor.lcsc_id = "C2846674" # TODO: remove
+        #rc.capacitor.capacitance = 100nF +/- 20%
+        power.lv ~ rc.in_.reference.lv
 
     # connections
     power ~ buffer.power
-    encoder.a ~ pull_up_a.p1; pull_up_a.p2 ~ power.hv
-    encoder.a~ rc_a.in_.line; rc_a.out ~ buffer.a1; buffer.y1 ~ a
-    encoder.b ~ pull_up_b.p1; pull_up_b.p2 ~ power.hv
-    encoder.b~ rc_b.in_.line; rc_b.out ~ buffer.a2; buffer.y2 ~ b
-    encoder.switch ~ pull_up_switch.p1; pull_up_switch.p2 ~ power.hv
-    encoder.switch ~ rc_switch.in_.line; rc_switch.out ~ buffer.a3; buffer.y3 ~ switch
+    encoder.a ~> pull_ups[0] ~> power.hv
+    encoder.a ~ rc_filters[0].in_.line; rc_filters[0].out ~ buffer.a[0]; buffer.y[0] ~ a
+    encoder.b ~> pull_ups[1] ~> power.hv
+    encoder.b ~ rc_filters[1].in_.line; rc_filters[1].out ~ buffer.a[1]; buffer.y[1] ~ b
+    encoder.switch ~> pull_ups[2] ~> power.hv
+    encoder.switch ~ rc_filters[2].in_.line; rc_filters[2].out ~ buffer.a[2]; buffer.y[2] ~ switch
     encoder.common ~ power.lv
-    power.lv ~ rc_a.in_.reference.lv
-    power.lv ~ rc_b.in_.reference.lv
-    power.lv ~ rc_switch.in_.reference.lv
-
 
 component RotaryEncoderSwitch from RotaryEncoder:
     """
