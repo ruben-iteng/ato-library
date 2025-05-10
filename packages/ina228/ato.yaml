@@ -1,13 +1,13 @@
-requires-atopile: "^0.5.0"
+requires-atopile: ^0.5.0
 
 paths:
-  src: "."
+  src: .
   layout: ./layouts
   footprints: ./footprints
 
 builds:
   isolated_ina228:
-    entry: Isolated_INA228.py:Isolated_INA228
+    entry: Isolated_INA228.ato:Isolated_INA228
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -15,10 +15,20 @@ builds:
 package:
   identifier: ruben-iteng/ina228
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.0"
+  version: "0.1.1"
   authors:
-    - name: Ruben Baldewsing
-      email: 94007802+ruben-iteng@users.noreply.github.com
+  - name: Ruben Baldewsing
+    email: 94007802+ruben-iteng@users.noreply.github.com
   summary: INA228 low voltage power monitor with I2C interface
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library
+dependencies:
+- type: registry
+  identifier: ruben-iteng/dcdc-converters
+  release: 0.1.0
+- type: registry
+  identifier: ruben-iteng/logic
+  release: 0.1.0
+- type: registry
+  identifier: atopile/indicator-leds
+  release: 0.1.0

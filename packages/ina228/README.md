@@ -4,7 +4,7 @@ INA228 low voltage power monitor with I2C interface
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
@@ -16,4 +16,4 @@ INA228 low voltage power monitor with I2C interface
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png" alt="isolated_ina228" width="250"/>| isolated_ina228 | INA228 with I2C and power isolation. |
+|![isolated_ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png)| isolated_ina228 | INA228 with I2C and power isolation. |
