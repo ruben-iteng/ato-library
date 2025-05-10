@@ -11,6 +11,6 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 {% for package in packages -%}
 | [{{ package.name | md_cell }}](packages/{{ package.name }}/README.md) | {{ package.num_modules }} module{{'s' if package.num_modules != 1 else '' }} | {{ package.description | md_cell }} | {{ package.version | md_cell }} |
 {% for module in package.modules -%}
-| {% if module.image %}<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/{{ package.name }}/{{ module.image }}" alt="{{ module.name }}" width="250"/>{% endif %} | {{ module.name | md_cell }} | {{ module.description | md_cell }} | |
+| {% if module.image %}![{{ module.name }}](https://github.com/ruben-iteng/ato-library/raw/main/packages/{{ package.name }}/{{ module.image }}){% endif %} | {{ module.name | md_cell }} | {{ module.description | md_cell }} | |
 {% endfor -%}
 {% endfor -%}
