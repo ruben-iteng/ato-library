@@ -1,0 +1,47 @@
+import ElectricPower
+
+module DualBananaConnectors:
+    """
+    Dual banana connectors (Red and Black) with 3/4\" (19.05mm) spacing.
+    """
+
+    # external interfaces
+    power = new ElectricPower
+
+    # components
+    red_plug = new Changzhou_Amass_Elec_24_245_1
+    black_plug = new Changzhou_Amass_Elec_24_245_2
+
+    # connections
+    power.hv ~ red_plug.5
+    power.lv ~ black_plug.5
+
+component Changzhou_Amass_Elec_24_245_2:
+    """Black banana connector"""
+    lcsc_id = "C7437327"
+    manufacturer = "Changzhou Amass Elec"
+    mpn = "24.245.2"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307211803_Changzhou-Amass-Elec-24-245-2_C7437327.pdf"
+    designator_prefix = "J"
+
+    # pins
+    pin 5
+    pin 4
+    pin 3
+    pin 2
+    pin 1
+
+component Changzhou_Amass_Elec_24_245_1:
+    """Red banana connector"""
+    lcsc_id = "C7437326"
+    manufacturer = "Changzhou Amass Elec"
+    mpn = "24.245.1"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307191746_Changzhou-Amass-Elec-24-245-1_C7437326.pdf"
+    designator_prefix = "J"
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
