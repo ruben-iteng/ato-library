@@ -1,0 +1,81 @@
+import ElectricPower, I2C
+
+module QwiicVertical from QwiicConnector:
+    """
+    Vertical QWIIC connector
+    https://www.sparkfun.com/qwiic
+    """
+    connector = new JST_Sales_America_BM04B_SRSS_TBLFSN
+
+    power.lv ~ connector.1
+    power.hv ~ connector.2
+    i2c.sda.line ~ connector.3
+    i2c.scl.line ~ connector.4
+
+    power.lv ~ connector.0
+
+module QwiicHorizontal from QwiicConnector:
+    """
+    Horizontal QWIIC connector
+    https://www.sparkfun.com/qwiic
+    """
+    connector = new JST_Sales_America_SM04B_SRSS_TBLFSN
+
+    power.lv ~ connector.1
+    power.hv ~ connector.2
+    i2c.sda.line ~ connector.3
+    i2c.scl.line ~ connector.4
+
+    power.lv ~ connector.5
+    power.lv ~ connector.6
+
+component QwiicConnector:
+    """
+    JST SH1.0 4-pin connector with power and I2C
+    https://www.sparkfun.com/qwiic
+    """
+
+    logo = new QwiicLogo
+
+    power = new ElectricPower
+    i2c = new I2C
+
+    power.voltage = 3.3V +/- 1%
+    power.max_current = 226mA
+
+component QwiicLogo:
+    """
+    Qwiic silkscreen logo
+    """
+    footprint = "qwiic_6mm"
+
+component JST_Sales_America_BM04B_SRSS_TBLFSN:
+    """JST_Sales_America_BM04B_SRSS_TBLFSN component"""
+    lcsc_id = "C160390"
+    manufacturer = "JST Sales America"
+    mpn = "BM04B-SRSS-TB(LF)(SN)"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-BM04B-SRSS-TB-LF-SN_C160390.pdf"
+    designator_prefix = "CN"
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 0
+
+component JST_Sales_America_SM04B_SRSS_TBLFSN:
+    """JST_Sales_America_SM04B_SRSS_TBLFSN component"""
+    lcsc_id = "C160404"
+    manufacturer = "JST Sales America"
+    mpn = "SM04B-SRSS-TB(LF)(SN)"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf"
+    designator_prefix = "CN"
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6

@@ -13,6 +13,20 @@ builds:
     hide_designators: true
     keep-net-names: true
 
+  qwiic_vertical:
+    entry: qwiic.ato:QwiicVertical
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+    keep-net-names: true
+  
+  qwiic_horizontal:
+    entry: qwiic.ato:QwiicHorizontal
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+    keep-net-names: true
+
 package:
   identifier: ruben-iteng/connectors
   repository: https://github.com/ruben-iteng/ato-library
