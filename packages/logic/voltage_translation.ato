@@ -1,4 +1,6 @@
-import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR, Capacitor
+#pragma experiment("FOR_LOOP")
+
+import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR, Capacitor, ElectricPower, ElectricLogic
 
 module AiP74LVC1T45:
     """
@@ -17,3 +19,71 @@ module AiP74LVC1T45:
     decoupling_capacitor_b.package = "C0402"
     buffer.power_a ~ decoupling_capacitor_a.power
     buffer.power_b ~ decoupling_capacitor_b.power
+
+module DualBuffer:
+    """
+    Dual buffer.
+    """
+    # external interfaces
+    power = new ElectricPower
+    logic_in = new ElectricLogic[2]
+    logic_out = new ElectricLogic[2]
+
+    # components
+    buffer = new SN74LVC2G34DBVRUMW
+    decoupling_capacitor = new Capacitor
+    
+    # parameters
+    decoupling_capacitor.capacitance = 100nF +/-20%
+    decoupling_capacitor.package = "C0402"
+
+    # connections
+    power ~ decoupling_capacitor.power
+    power ~ buffer.power
+    logic_in[0] ~ buffer.logic_in[0]
+    logic_in[1] ~ buffer.logic_in[1]
+    logic_out[0] ~ buffer.logic_out[0]
+    logic_out[1] ~ buffer.logic_out[1]
+
+component SN74LVC2G34DBVRUMW from UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW:
+    """
+    74LVC2G34 dual buffer.
+    """
+
+    power = new ElectricPower
+    logic_in = new ElectricLogic[2]
+    logic_out = new ElectricLogic[2]
+
+    power.hv ~ VCC
+    power.lv ~ GND
+    logic_in[0].line ~ INA1
+    logic_in[1].line ~ INA2
+    logic_out[0].line ~ Y1
+    logic_out[1].line ~ Y2
+
+    power.voltage = 1.65V to 5.5V
+    for l_i in logic_in:
+        l_i.reference.voltage = 1.65V to 5.5V
+    for l_o in logic_out:
+        l_o.reference.voltage = power.voltage
+
+
+component UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW:
+    """
+    UMWYoutai_Semiconductor_Co_Ltd
+    SN74LVC2G34DBVRUMW Dual buffer
+    """
+    lcsc_id = "C7394039"
+    manufacturer = "UMW(Youtai Semiconductor Co., Ltd.)"
+    mpn = "SN74LVC2G34DBVR(UMW)"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403221055_UMW-Youtai-Semiconductor-Co---Ltd--SN74LVC2G34DBVR-UMW_C7394039.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal GND ~ pin 2
+    signal INA1 ~ pin 1
+    signal INA2 ~ pin 3
+    signal VCC ~ pin 5
+    signal Y1 ~ pin 6
+    signal Y2 ~ pin 4
+
