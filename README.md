@@ -10,6 +10,12 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 |---------|---------|-------------|---------|
 | [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0-alpha |
 | ![cbm9002a_56ilg_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png) | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
+| [connectors](packages/connectors/README.md) | 3 modules | Miscellaneous connectors | 0.1.0 |
+| ![dual_banana_connectors](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/dual_banana_connectors.png) | dual_banana_connectors | Dual banana connectors (Red and Black) with 3/4\" (19.05mm) spacing. | |
+| ![qwiic_vertical](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_vertical.png) | qwiic_vertical | Vertical QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
+| ![qwiic_horizontal](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_horizontal.png) | qwiic_horizontal | Horizontal QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
+| [dcdc-converters](packages/dcdc-converters/README.md) | 1 module | DCDC converters | 0.1.0 |
+| ![b0505s](https://github.com/ruben-iteng/ato-library/raw/main/packages/dcdc-converters/assets/b0505s.png) | b0505s | Isolated DCDC converter with shortcircuit protection<br>    - 5V input<br>    - 5V output<br>    - 1W power rating | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.2 |
 | ![arm_cortex_m_debug_header](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/arm_cortex_m_debug_header.png) | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | ![swd_tc2030_idc_nl](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png) | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
@@ -18,13 +24,14 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![esp32_s3_wroom_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32s3/assets/esp32_s3_wroom_reference_design.png) | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.1 |
 | ![isolated_ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png) | isolated_ina228 | INA228 with I2C and power isolation. | |
-| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.1.2 |
-| ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 250mA (max 500mA) LDO | |
+| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.0 |
+| ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
 | [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.2 |
 | ![addressable_led_connector](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png) | addressable_led_connector | - | |
 | ![addressable_led](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led.png) | addressable_led | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        indicator = new AddressableLED<br>        indicator.led -> WS2812B_5050_Black | |
-| [logic](packages/logic/README.md) | 3 modules | Digital logic related components and modules | 0.1.2 |
+| [logic](packages/logic/README.md) | 4 modules | Digital logic related components and modules | 0.1.3 |
 | ![aip74lvc1t45](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45.png) | aip74lvc1t45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+| ![dual_buffer](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/dual_buffer.png) | dual_buffer | Dual buffer. | |
 | ![sn74lvc3g14dc](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc.png) | sn74lvc3g14dc | - | |
 | ![iso1540](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540.png) | iso1540 | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.1 |
