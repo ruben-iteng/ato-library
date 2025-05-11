@@ -1,14 +1,14 @@
 import LDO, ElectricLogic, ElectricPower, Capacitor
 
 module LDO_5V_to_3V3:
-    """5V to 3.3V 250mA (max 500mA) LDO"""
+    """5V to 3.3V 600mA (max 1100mA) LDO"""
 
     # external interfaces
     power_in = new ElectricPower
     power_out = new ElectricPower
 
     # components
-    ldo = new MICRONENanjing_Micro_One_Elec_ME6216A33XG
+    ldo = new TECH_PUBLIC_TPAP2112K_3_3TRG1
     power_in_decoupling_capacitor = new Capacitor
     power_out_decoupling_capacitor = new Capacitor
 
@@ -21,26 +21,36 @@ module LDO_5V_to_3V3:
     power_out.hv ~ power_out_decoupling_capacitor.power.hv
     power_out.lv ~ power_out_decoupling_capacitor.power.lv
 
-    # parameters
-    #power_in_decoupling_capacitor.value = 100nF +/- 20%
-    power_in_decoupling_capacitor.lcsc_id = "C1525"
-    #power_out_decoupling_capacitor.value = 100nF +/- 20%
-    power_out_decoupling_capacitor.lcsc_id = "C1525"
+    ldo.enable.enable.line ~ power_in.hv
 
-component MICRONENanjing_Micro_One_Elec_ME6216A33XG from LDO:
-    """Simple 5V to 3.3V LDO nominal 250mA, max 500mA"""
-    lcsc_id = "C236655"
-    manufacturer = "MICRONE(Nanjing Micro One Elec)"
-    mpn = "ME6216A33XG"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_MICRONE-Nanjing-Micro-One-Elec-ME6216A33XG_C236655.pdf"
+    # parameters
+    power_in_decoupling_capacitor.value = 1uF +/- 20%
+    power_in_decoupling_capacitor.package = "C0402"
+    power_out_decoupling_capacitor.value = 1uF +/- 20%
+    power_out_decoupling_capacitor.package = "C0402"
+
+
+component TECH_PUBLIC_TPAP2112K_3_3TRG1 from LDO:
+    """Basic 5.5V to 3.3V LDO nominal 600mA, max 1.1A with enable pin"""
+    lcsc_id = "C3021085"
+    manufacturer = "TECH PUBLIC"
+    mpn = "TPAP2112K-3.3TRG1"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2205241716_TECH-PUBLIC-TPAP2112K-3-3TRG1_C3021085.pdf"
     designator_prefix = "U"
 
     # pins
-    power_in.hv ~ pin 3
-    power_out.hv ~ pin 2
-    power_out.lv ~ pin 1
+    enable.enable.line ~ pin 3
+    power_in.lv ~ pin 2
+    power_in.hv ~ pin 1
+    power_out.hv ~ pin 5
 
     # parameters
-    power_out.output_voltage = 3.3V +/- 1%
-    power_out.output_current = 250mA +/- 10%
-    power_in.voltage = 3.6V to 6V
+    max_input_voltage = 1.2V to 5.5V
+    dropout_voltage = 0.32V
+    output_voltage = 3.3V +/- 0.2%
+    ripple_rejection_ratio = 75dB to 80dB
+    output_current = 601mA to 1100mA
+    quiescent_current = 10uA
+    
+    
+    
