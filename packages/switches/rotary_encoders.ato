@@ -27,15 +27,14 @@ module RotaryEncoderAdvanced:
 
     for pull_up in pull_ups:
         pull_up.resistance = 10kohm +/- 1%
-        pull_up.package = "R0201"
+        pull_up.package = "R0402"
 
     # RC values for ~ 160Hz -3dB cutoff frequency
     for rc in rc_filters:
-        rc.resistor.package = "R0201"
+        rc.resistor.package = "R0402"
         rc.resistor.resistance = 10kohm +/- 1%
-        rc.capacitor.package = "C0201"
-        rc.capacitor.lcsc_id = "C2846674" # TODO: remove
-        #rc.capacitor.capacitance = 100nF +/- 20%
+        rc.capacitor.package = "C0402"
+        rc.cutoff_frequency = 160Hz +/- 15%
         power.lv ~ rc.in_.reference.lv
 
     # connections

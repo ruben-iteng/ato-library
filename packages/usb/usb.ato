@@ -9,7 +9,7 @@ from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorGreen
 module USBPDPowerSink:
     """
     USB PD power sink with Type-C connector
-    
+
     Set the requested PD voltages as follows:
     9V  -> resistance = 6.8kohm
     12V -> resistance = 24kohm
@@ -87,7 +87,7 @@ module CH224KReferenceDesign:
     controller.cc1 ~> cc[0]
     controller.cc2 ~> cc[1]
     controller.cfg[0].line ~> voltage_set_resistor ~> vbus.lv
-    
+
 
 module USB2_0TypeCDataPower:
     """
@@ -109,6 +109,7 @@ module USB2_0TypeCDataPower:
     fused_usb = new FusedUSB2_0
 
     # connections
+    power ~ usb.usb_if.buspower
     connector.usb ~ fused_usb.usb_in
     fused_usb.usb_out ~> esd_protection ~> usb
     connector.power_vbus ~ connector.usb.usb_if.buspower

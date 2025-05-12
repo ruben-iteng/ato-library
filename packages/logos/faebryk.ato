@@ -1,0 +1,4 @@
+module FaebrykLogo_8x9mm:
+    """faebryk Logo 8x9mm"""
+    footprint = "faebrykLogo_8x9mm"
+    designator_prefix = "LOGO"
