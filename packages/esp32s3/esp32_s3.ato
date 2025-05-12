@@ -119,6 +119,7 @@ module ESP32_S3_WROOM_1_U:
     jtag.tdi ~ gpio[41]
     jtag.tdo ~ gpio[40]
     jtag.vtref ~ power_3v3
+    jtag.n_trst ~ enable
 
 component Espressif_Systems_ESP32_S3_WROOM_1_N16R2:
     """Espressif_Systems_ESP32_S3_WROOM_1_N16R2 component"""

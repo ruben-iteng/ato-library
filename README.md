@@ -20,10 +20,10 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![arm_cortex_m_debug_header](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/arm_cortex_m_debug_header.png) | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | ![swd_tc2030_idc_nl](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png) | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 | ![swd_tc2030_idc_fp](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_fp.png) | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
-| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.2 |
+| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.3 |
 | ![esp32_s3_wroom_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32s3/assets/esp32_s3_wroom_reference_design.png) | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.1.1 |
-| ![isolated_ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png) | isolated_ina228 | INA228 with I2C and power isolation. | |
+| ![isolated_ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/isolated_ina228.png) | isolated_ina228 | - | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.0 |
 | ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
 | [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.2 |

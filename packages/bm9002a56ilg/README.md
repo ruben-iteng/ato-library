@@ -16,4 +16,4 @@ BM9002A-56ILG microcontroller
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|<img src="https://github.com/ruben-iteng/ato-library/raw/main/packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png" alt="cbm9002a_56ilg_reference_design" width="250"/>| cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. |
+|![cbm9002a_56ilg_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png)| cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. |
