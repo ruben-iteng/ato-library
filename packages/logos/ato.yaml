@@ -6,8 +6,8 @@ paths:
   footprints: ./footprints
 
 builds:
-  faebryk:
-    entry: faebrykLogo.py:faebrykLogo
+  faebryk_8x9mm:
+    entry: faebryk.ato:FaebrykLogo_8x9mm
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -16,7 +16,7 @@ builds:
 package:
   identifier: ruben-iteng/logos
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.1"
+  version: "0.1.2"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

@@ -62,7 +62,3 @@ module ISO1540_ReferenceDesign:
     decoupling_capacitor_isolated.package = "C0402"
     decoupling_capacitor_non_isolated.capacitance = 100nF +/- 20%
     decoupling_capacitor_non_isolated.package = "C0402"
-    
-    
-    
-    
