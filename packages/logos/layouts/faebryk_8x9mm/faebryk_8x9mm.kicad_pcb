@@ -84,9 +84,9 @@
         )
     )
     (net 0 "")
-    (footprint "atopile:faebrykLogo_8x9mm-fe4042"
+    (footprint "lib:faebrykLogo_8x9mm"
         (layer "F.Cu")
-        (uuid "8d9b28c3-dfc6-41b8-b687-99ec4642524b")
+        (uuid "a43feffa-70da-478a-b15f-da424642524b")
         (at 0 0 0)
         (property "Reference" "LOGO1"
             (at 0 0 0)
@@ -152,7 +152,7 @@
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "d9ee4a0f-891d-4a91-8a1d-00f14642524b")
+            (uuid "2280c0a1-3dca-4814-927f-b1f24642524b")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -164,7 +164,7 @@
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "96ae8866-fd85-4672-8fa7-b83e4642524b")
+            (uuid "9164cc55-0489-43e1-bea9-281d4642524b")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -176,7 +176,7 @@
         (fp_text user "FBRK:autoplaced"
             (at 0 0 0)
             (layer "User.5")
-            (uuid "776ea926-ade6-4d70-98e4-c0524642524b")
+            (uuid "4385edd3-d8ba-4cef-aee3-20b24642524b")
             (effects
                 (font
                     (size 0.125 0.125)

@@ -34,8 +34,8 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![dual_buffer](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/dual_buffer.png) | dual_buffer | Dual buffer. | |
 | ![sn74lvc3g14dc](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc.png) | sn74lvc3g14dc | - | |
 | ![iso1540](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540.png) | iso1540 | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
-| [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.1 |
-| ![faebryk](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk.png) | faebryk | - | |
+| [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.2 |
+| ![faebryk_8x9mm](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk_8x9mm.png) | faebryk_8x9mm | faebryk Logo 8x9mm | |
 | [relays](packages/relays/README.md) | 2 modules | Relay modules | 0.1.2 |
 | ![driven_dpdt_bistable_relay](https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay.png) | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
 | ![driven_dpdt_bistable_relay_push_terminal](https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay_push_terminal.png) | driven_dpdt_bistable_relay_push_terminal | DrivenDPDTBistableRelay with push terminal | |
