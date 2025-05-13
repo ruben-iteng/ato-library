@@ -1,4 +1,5 @@
 #pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("FOR_LOOP")
 
 import Analog_Devices_ADM2587EBRWZ_ReferenceDesign
 import RS485_Bus_Protection
@@ -73,3 +74,115 @@ component MaxLinear_SP3485EN_L_TR from UART_RS485:
     read_enable.line ~ pin 2
     uart.rx.line ~ pin 1
     power.hv ~ pin 8
+
+module IsolatedPoweredUARTRS485TranceiverDesignBlock:
+    """
+    Isolated powered UART to RS485 transceiver design block.
+    - 3.3V or 5V logic power
+    - 3.3V or 5V module power
+    - 0.5 Mbps UART
+    - Read enable/write enable input
+    - RS485 half duplex
+    - ANSI/ESDA/JEDEC JS-001 ESD protection
+    - JESD22-C101 CDM protection
+    """
+
+    # external interfaces
+    power = new ElectricPower
+    power_logic = new ElectricPower
+    uart = new UART_Base
+    read_enable = new ElectricLogic
+    rs485 = new RS485HalfDuplex
+
+    # components
+    transceiver = new Chipanalog_CA_IS2092A
+    power_decoupling_capacitors_small = new Capacitor[2]
+    power_decoupling_capacitors_big = new Capacitor[2]
+    logic_decoupling_capacitors = new Capacitor[2]
+
+    # connections
+    transceiver.power_isolated_out ~ power_decoupling_capacitors_big[1].power
+    transceiver.power_isolated_out ~ power_decoupling_capacitors_small[1].power
+    transceiver.power_isolated_in ~ logic_decoupling_capacitors[1].power
+    transceiver.power_isolated_out ~ transceiver.power_isolated_in
+
+    power ~ transceiver.power
+    power_logic ~ transceiver.power_logic
+    power ~ power_decoupling_capacitors_big[0].power
+    power ~ power_decoupling_capacitors_small[0].power
+    power_logic ~ logic_decoupling_capacitors[0].power
+
+    uart ~ transceiver.uart
+    read_enable ~ transceiver.read_enable
+    read_enable ~ transceiver.write_enable
+    rs485 ~ transceiver.rs485
+
+    # parameters
+    assert power.voltage within 3.3V to 5.5V
+    assert power_logic.voltage within 3.0V to 5.5V
+
+    for cap in power_decoupling_capacitors_big:
+        cap.capacitance = 10uF +/- 20%
+        cap.package = "C0402"
+
+    for cap in power_decoupling_capacitors_small:
+        cap.capacitance = 100nF +/- 20%
+        cap.package = "C0402"
+
+    for cap in logic_decoupling_capacitors:
+        cap.capacitance = 1uF +/- 20%
+        cap.package = "C0402"
+
+component Chipanalog_CA_IS2092A from IsolatedPoweredUARTRS485Tranceiver:
+    """
+    Galvanically-isolated RS-485 transceivers with built-in isolated DC-DC converter.
+    """
+    lcsc_id = "C18185406"
+    manufacturer = "Chipanalog"
+    mpn = "CA-IS2092A"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401261510_Chipanalog-CA-IS2092A_C18185406.pdf"
+
+    # extra external interfaces
+    voltage_select = new ElectricLogic
+    # Output voltage power_isolated_out/in select pin:
+    # power_isolated_out/in =5.0 V when voltage_select is shorted to power_isolated_in.hv;
+    # power_isolated_out/in =3.3 V when voltage_select is shorted to power_isolated_out.lv or floating;
+    # To improve the system's anti-interference ability, it is not recommended to float the voltage_select pins
+
+    # pins
+    rs485.diff_pair.p.line ~ pin 14
+    rs485.diff_pair.n.line ~ pin 15
+    write_enable.line ~ pin 3
+    uart.tx.line ~ pin 4
+    power.lv ~ pin 5
+    power_logic.lv ~ pin 8
+    power_isolated_in.lv ~ pin 9
+    power_isolated_out.lv ~ pin 12
+    read_enable.line ~ pin 2
+    uart.rx.line ~ pin 1
+    voltage_select.line ~ pin 13
+    power_logic.hv ~ pin 7
+    power.hv ~ pin 6
+    power_isolated_in.hv ~ pin 10
+    power_isolated_out.hv ~ pin 11
+
+    # connections
+    power.lv ~ power_logic.lv
+    power_isolated_out.lv ~ power_isolated_in.lv
+
+    # parameters
+    assert power_isolated_out.voltage within 3.3V to 5.5V
+
+component IsolatedPoweredUARTRS485Tranceiver:
+    """Isolated powered UART to RS485 transceiver"""
+    designator_prefix = "U"
+
+    # external interfaces
+    power = new ElectricPower
+    power_logic = new ElectricPower
+    power_isolated_out = new ElectricPower
+    power_isolated_in = new ElectricPower
+    uart = new UART_Base
+    read_enable = new ElectricLogic
+    write_enable = new ElectricLogic
+    rs485 = new RS485HalfDuplex
