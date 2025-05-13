@@ -16,6 +16,15 @@ module ESP32_C3_MINI_ufl_ReferenceDesign from ESP32_C3_MINI_1_ReferenceDesign:
     """
     ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4
 
+    # attatch extra gnd pins
+    power.lv ~ ic.54
+    power.lv ~ ic.55
+    power.lv ~ ic.56
+    power.lv ~ ic.57
+    power.lv ~ ic.58
+    power.lv ~ ic.59
+    power.lv ~ ic.60
+    power.lv ~ ic.61
 
 module ESP32_C3_MINI_1_ReferenceDesign from ESP32_C3_MINI_1:
     """
