@@ -1,0 +1,96 @@
+import Electrical
+import ElectricPower
+import ElectricLogic
+import Capacitor
+
+component Texas_Instruments_SN74CB3Q3251PWR_base_package:
+    """Texas Instruments SN74CB3Q3251PWR base package"""
+    manufacturer = "Texas Instruments"
+    datasheet_url = "https://www.ti.com/lit/ds/symlink/sn74cb3q3251.pdf"
+    designator_prefix = "U"
+
+    # pins
+    a = new Electrical
+    b = new Electrical[8]
+    gnd = new Electrical
+    oe = new Electrical
+    s0 = new Electrical
+    s1 = new Electrical
+    s2 = new Electrical
+    vcc = new Electrical
+
+
+component Texas_Instruments_SN74CB3Q3251PWR_package from Texas_Instruments_SN74CB3Q3251PWR_base_package:
+    """Texas Instruments SN74CB3Q3251PWR in TSSOP-16 package"""
+    lcsc_id = "C2869261"
+    mpn = "SN74CB3Q3251PWR"
+
+    # pins
+    pin 5 ~ a
+    pin 4 ~ b[0]
+    pin 3 ~ b[1]
+    pin 2 ~ b[2]
+    pin 1 ~ b[3]
+    pin 15 ~ b[4]
+    pin 14 ~ b[5]
+    pin 13 ~ b[6]
+    pin 12 ~ b[7]
+    pin 8 ~ gnd
+    pin 7 ~ oe
+    pin 11 ~ s0
+    pin 10 ~ s1
+    pin 9 ~ s2
+    pin 16 ~ vcc
+
+
+module Texas_Instruments_SN74CB3Q3251PWR_driver:
+    """
+    Texas Instruments SN74CB3Q3251PWR
+    1 to/from 8 FET multiplexer/demultiplexer
+    2.5V/3.3V low-voltage high-bandwidth bus switch
+    """
+    package = new Texas_Instruments_SN74CB3Q3251PWR_package
+
+    # external interfaces
+    a = new Electrical
+    b = new Electrical[8]
+    power = new ElectricPower
+    oe = new ElectricLogic
+    s0 = new ElectricLogic
+    s1 = new ElectricLogic
+    s2 = new ElectricLogic
+
+    # connections to package
+    package.a ~ a
+    package.b[0] ~ b[0]
+    package.b[1] ~ b[1]
+    package.b[2] ~ b[2]
+    package.b[3] ~ b[3]
+    package.b[4] ~ b[4]
+    package.b[5] ~ b[5]
+    package.b[6] ~ b[6]
+    package.b[7] ~ b[7]
+    package.gnd ~ power.lv
+    package.vcc ~ power.hv
+    package.oe ~ oe.line
+    package.s0 ~ s0.line
+    package.s1 ~ s1.line
+    package.s2 ~ s2.line
+
+module Texas_Instruments_SN74CB3Q3251PWR_reference_design:
+    """
+    Texas Instruments SN74CB3Q3251PWR reference design
+    1 to/from 8 FET multiplexer/demultiplexer
+    2.5V/3.3V low-voltage high-bandwidth bus switch
+    """
+
+    # components
+    mux = new Texas_Instruments_SN74CB3Q3251PWR_driver
+    decoupling_capacitor = new Capacitor
+
+    # connections
+    mux.power ~ decoupling_capacitor.power
+
+    # parameters
+    decoupling_capacitor.value = 100nF +/- 10%
+    decoupling_capacitor.package = "C0402"

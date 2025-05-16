@@ -32,11 +32,12 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.2 |
 | ![addressable_led_connector](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png) | addressable_led_connector | - | |
 | ![addressable_led](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led.png) | addressable_led | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        indicator = new AddressableLED<br>        indicator.led -> WS2812B_5050_Black | |
-| [logic](packages/logic/README.md) | 4 modules | Digital logic related components and modules | 0.1.3 |
+| [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.1.3 |
 | ![aip74lvc1t45](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45.png) | aip74lvc1t45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | ![dual_buffer](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/dual_buffer.png) | dual_buffer | Dual buffer. | |
 | ![sn74lvc3g14dc](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc.png) | sn74lvc3g14dc | - | |
 | ![iso1540](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540.png) | iso1540 | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
+| ![sn74cb3q3251pwr](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr.png) | sn74cb3q3251pwr | Texas Instruments SN74CB3Q3251PWR reference design<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.2 |
 | ![faebryk_8x9mm](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk_8x9mm.png) | faebryk_8x9mm | faebryk Logo 8x9mm | |
 | [relays](packages/relays/README.md) | 2 modules | Relay modules | 0.1.2 |

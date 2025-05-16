@@ -30,6 +30,12 @@ builds:
     keep_picked_parts: true
     hide_designators: true
 
+  sn74cb3q3251pwr:
+    entry: sn74cb3q3251pwr.ato:Texas_Instruments_SN74CB3Q3251PWR_reference_design
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
 package:
   identifier: ruben-iteng/logic
   repository: https://github.com/ruben-iteng/ato-library
