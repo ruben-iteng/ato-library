@@ -1,0 +1,39 @@
+requires-atopile: "^0.7.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  pca9554_driver:
+    entry: pca9554.ato:NXP_Semiconductors_PCA9554_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+  pca9554a_driver:
+    entry: pca9554.ato:NXP_Semiconductors_PCA9554A_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+  pca9536_driver:
+    entry: pca9536.ato:NXP_Semiconductors_PCA9536_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+  test:
+    entry: test.ato:Test
+    keep_picked_parts: true
+    hide_designators: true
+
+package:
+  identifier: ruben-iteng/nxp-semiconductors-pca95xx
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: NXP Semiconductors PCA95xx family of I2C I/O expanders
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library
