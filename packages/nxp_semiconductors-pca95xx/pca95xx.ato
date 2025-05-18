@@ -1,0 +1,35 @@
+#pragma experiment("MODULE_TEMPLATING")
+#pragma experiment("FOR_LOOP")
+#pragma experiment("BRIDGE_CONNECT")
+
+import Addressor
+import Capacitor
+import Electrical
+import ElectricLogic
+import ElectricPower
+import I2C
+
+component NXP_Semiconductors_PCA95xx_base_package:
+    """NXP Semiconductors PCA95xx base package"""
+    manufacturer = "NXP Semicon"
+    designator_prefix = "U"
+
+    # pins
+    scl = new Electrical
+    sda = new Electrical
+    vdd = new Electrical
+    vss = new Electrical
+
+
+module NXP_Semiconductors_PCA95xx_base_driver:
+    """NXP Semiconductors PCA95xx base driver"""
+
+    # external interfaces
+    i2c = new I2C
+    power = new ElectricPower
+
+    # parameters
+    assert power.voltage within 2.3V to 5.5V
+    assert i2c.frequency within 0Hz to 400kHz
+    power.required = True
+    i2c.required = True
