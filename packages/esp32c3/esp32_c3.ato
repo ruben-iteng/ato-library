@@ -4,17 +4,19 @@
 import ElectricLogic, ElectricPower, I2C, SPI, UART_Base, JTAG, USB2_0, Capacitor, Resistor, FilterElectricalRC
 from "atopile/buttons/buttons.ato" import ButtonSKRPACE010
 
-module ESP32_C3_MINI_ReferenceDesign from ESP32_C3_MINI_1_ReferenceDesign:
+
+module ESP32_C3_MINI_driver from ESP32_C3_MINI_1_driver:
     """
     ESP32 S3 WROOM-1 module with build-in antenna and supporting components
     """
-    ic -> Espressif_Systems_ESP32_C3_MINI_1_N4
+    ic -> Espressif_Systems_ESP32_C3_MINI_1_N4_package
 
-module ESP32_C3_MINI_ufl_ReferenceDesign from ESP32_C3_MINI_1_ReferenceDesign:
+
+module ESP32_C3_MINI_ufl_driver from ESP32_C3_MINI_1_driver:
     """
     ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components
     """
-    ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4
+    ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4_package
 
     # attatch extra gnd pins
     power.lv ~ ic.54
@@ -26,14 +28,15 @@ module ESP32_C3_MINI_ufl_ReferenceDesign from ESP32_C3_MINI_1_ReferenceDesign:
     power.lv ~ ic.60
     power.lv ~ ic.61
 
-module ESP32_C3_MINI_1_ReferenceDesign from ESP32_C3_MINI_1:
+
+module ESP32_C3_MINI_1_driver from ESP32_C3_MINI_1:
     """
     ESP32 S3 WROOM-1 module with build-in antenna and supporting components
 
     Choose between the u.fl antenna connector or the build-in antenna version:
     esp32c3 = new ESP32_C3_MINI_1_ReferenceDesign
-    esp32c3.ic -> Espressif_Systems_ESP32_C3_MINI_1_N4 # build-in antenna
-    esp32c3.ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4 # u.fl antenna
+    esp32c3.ic -> Espressif_Systems_ESP32_C3_MINI_1_N4_package # build-in antenna
+    esp32c3.ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4_package # u.fl antenna
     """
 
     # components
@@ -73,12 +76,13 @@ module ESP32_C3_MINI_1_ReferenceDesign from ESP32_C3_MINI_1:
     decoupling_capacitor_small.capacitance = 100nF +/- 10%
     decoupling_capacitor_small.package = "C0402"
 
+
 module ESP32_C3_MINI_1:
     """
     ESP32 C3 MINI module
     """
 
-    ic = new Espressif_Systems_ESP32_C3_MINI_1
+    ic = new Espressif_Systems_ESP32_C3_MINI_1_package_base
 
     # external interfaces
     power = new ElectricPower
@@ -91,7 +95,7 @@ module ESP32_C3_MINI_1:
 
     gpio = new ElectricLogic[22] # 11-17 are not exposed on the module
 
-    # connections
+    # connections to package
     gpio[0].line ~ ic.12
     gpio[1].line ~ ic.13
     gpio[2].line ~ ic.5 # strapping pin, default floating
@@ -155,7 +159,13 @@ module ESP32_C3_MINI_1:
     jtag.vtref ~ power
     jtag.n_trst ~ enable
 
-component Espressif_Systems_ESP32_C3_MINI_1:
+    # parameters
+    power.voltage = 3.3V +/- 10%
+
+    power.required = True
+
+
+component Espressif_Systems_ESP32_C3_MINI_1_package_base:
     """Base component for ESP32 C3 MINI module"""
     manufacturer = "Espressif Systems"
     datasheet_url = "https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf"
@@ -202,12 +212,14 @@ component Espressif_Systems_ESP32_C3_MINI_1:
     pin 52
     pin 53
 
-component Espressif_Systems_ESP32_C3_MINI_1_N4 from Espressif_Systems_ESP32_C3_MINI_1:
+
+component Espressif_Systems_ESP32_C3_MINI_1_N4_package from Espressif_Systems_ESP32_C3_MINI_1_package_base:
     """ESP32 C3 MINI module with build-in antenna"""
     lcsc_id = "C2838502"
     mpn = "ESP32-C3-MINI-1-N4"
 
-component Espressif_Systems_ESP32_C3_MINI_1U_H4 from Espressif_Systems_ESP32_C3_MINI_1:
+
+component Espressif_Systems_ESP32_C3_MINI_1U_H4_package from Espressif_Systems_ESP32_C3_MINI_1_package_base:
     """ESP32 C3 MINI module with u.fl antenna connector"""
     lcsc_id = "C3013922"
     mpn = "ESP32-C3-MINI-1U-H4"

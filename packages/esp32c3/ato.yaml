@@ -6,15 +6,15 @@ paths:
   footprints: ./footprints
 
 builds:
-  esp32_c3_mini_reference_design:
-    entry: esp32_c3.ato:ESP32_C3_MINI_ReferenceDesign
+  esp32_c3_mini_driver:
+    entry: esp32_c3.ato:ESP32_C3_MINI_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
     keep-net-names: true
 
-  esp32_c3_mini_ufl_reference_design:
-    entry: esp32_c3.ato:ESP32_C3_MINI_ufl_ReferenceDesign
+  esp32_c3_mini_ufl_driver:
+    entry: esp32_c3.ato:ESP32_C3_MINI_ufl_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -23,7 +23,7 @@ builds:
 package:
   identifier: ruben-iteng/esp32c3
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.0"
+  version: "0.2.0"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

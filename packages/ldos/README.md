@@ -4,7 +4,7 @@ Various Low Dropout Regulators (LDOs)
 
 ## Package Information
 
-- Version: 0.2.0
+- Version: 0.2.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT

@@ -1,6 +1,9 @@
-import ElectricPower, ElectricLogic, Capacitor
+import ElectricPower
+import ElectricLogic
+import Capacitor
 
-component SN74LVC3G14DCUR:
+
+component SN74LVC3G14DCUR_driver:
     """Texas Instruments SN74LVC3G14DCUR reference design"""
 
     # external interfaces
@@ -9,24 +12,29 @@ component SN74LVC3G14DCUR:
     y = new ElectricLogic[3]
 
     # components
-    buffer = new _SN74LVC3G14DCUR
+    package = new _SN74LVC3G14DCUR_package
     decoupling_capacitor = new Capacitor
 
     decoupling_capacitor.capacitance = 100nF +/- 20%
     decoupling_capacitor.package = "C0402"
 
-    # connections
-    power ~ buffer.power
+    # connections to package
+    power ~ package.power
+    package.a[0] ~ a[0]
+    package.a[1] ~ a[1]
+    package.a[2] ~ a[2]
+    package.y[0] ~ y[0]
+    package.y[1] ~ y[1]
+    package.y[2] ~ y[2]
+
+    # other connections
     power ~ decoupling_capacitor.power
-    buffer.a[0] ~ a[0]
-    buffer.a[1] ~ a[1]
-    buffer.a[2] ~ a[2]
-    buffer.y[0] ~ y[0]
-    buffer.y[1] ~ y[1]
-    buffer.y[2] ~ y[2]
+
+    # parameters
+    power.required = True
 
 
-component _SN74LVC3G14DCUR from _74xx3G:
+component _SN74LVC3G14DCUR_package from _74xx3G_package_base:
     """Texas_Instruments_SN74LVC3G14DCUR component"""
     lcsc_id = "C98856"
     manufacturer = "Texas Instruments"
@@ -45,7 +53,8 @@ component _SN74LVC3G14DCUR from _74xx3G:
     power.hv ~ pin 8
     power.lv ~ pin 4
 
-component _74xx3G:
+
+component _74xx3G_package_base:
     """3 gate schmitt trigger inverter"""
     designator_prefix = "U"
 

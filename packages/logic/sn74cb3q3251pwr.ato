@@ -1,3 +1,5 @@
+#pragma experiment("FOR_LOOP")
+
 import Electrical
 import ElectricPower
 import ElectricLogic
@@ -49,16 +51,16 @@ module Texas_Instruments_SN74CB3Q3251PWR_driver:
     1 to/from 8 FET multiplexer/demultiplexer
     2.5V/3.3V low-voltage high-bandwidth bus switch
     """
+    # components
+    decoupling_capacitor = new Capacitor
     package = new Texas_Instruments_SN74CB3Q3251PWR_package
 
     # external interfaces
     a = new Electrical
     b = new Electrical[8]
     power = new ElectricPower
-    oe = new ElectricLogic
-    s0 = new ElectricLogic
-    s1 = new ElectricLogic
-    s2 = new ElectricLogic
+    output_enable = new ElectricLogic
+    selector = new ElectricLogic[3]
 
     # connections to package
     package.a ~ a
@@ -72,25 +74,20 @@ module Texas_Instruments_SN74CB3Q3251PWR_driver:
     package.b[7] ~ b[7]
     package.gnd ~ power.lv
     package.vcc ~ power.hv
-    package.oe ~ oe.line
-    package.s0 ~ s0.line
-    package.s1 ~ s1.line
-    package.s2 ~ s2.line
-
-module Texas_Instruments_SN74CB3Q3251PWR_reference_design:
-    """
-    Texas Instruments SN74CB3Q3251PWR reference design
-    1 to/from 8 FET multiplexer/demultiplexer
-    2.5V/3.3V low-voltage high-bandwidth bus switch
-    """
-
-    # components
-    mux = new Texas_Instruments_SN74CB3Q3251PWR_driver
-    decoupling_capacitor = new Capacitor
+    package.oe ~ output_enable.line
+    package.s0 ~ selector[0].line
+    package.s1 ~ selector[1].line
+    package.s2 ~ selector[2].line
 
     # connections
-    mux.power ~ decoupling_capacitor.power
+    power ~ decoupling_capacitor.power
 
     # parameters
     decoupling_capacitor.value = 100nF +/- 10%
     decoupling_capacitor.package = "C0402"
+
+    power.required = True
+    output_enable.required = True
+    a.required = True
+    for selec in selector:
+        selec.required = True

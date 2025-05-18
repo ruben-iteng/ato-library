@@ -6,8 +6,8 @@ paths:
   footprints: ./footprints
 
 builds:
-  esp32_s3_wroom_reference_design:
-    entry: esp32_s3.ato:ESP32_S3_WROOM_1_U_ReferenceDesign
+  esp32_s3_wroom_driver:
+    entry: esp32_s3.ato:ESP32_S3_WROOM_1_U_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -16,7 +16,7 @@ builds:
 package:
   identifier: ruben-iteng/esp32s3
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.3"
+  version: "0.2.0"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

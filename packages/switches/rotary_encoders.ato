@@ -47,6 +47,11 @@ module RotaryEncoderAdvanced:
     encoder.switch ~ rc_filters[2].in_.line; rc_filters[2].out ~ buffer.a[2]; buffer.y[2] ~ switch
     encoder.common ~ power.lv
 
+    # parameters
+    power.required = True
+    a.required = True
+    b.required = True
+
 component RotaryEncoderSwitch from RotaryEncoder:
     """
     Rotary encoder + switch

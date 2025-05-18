@@ -1,6 +1,9 @@
 import ElectricPower, ElectricLogic, Capacitor
 
-module AddressableLED:
+from "components/BridgableLogic.py" import BridgableLogic
+
+
+module AddressableLED_driver from BridgableLogic:
     """
     Addressable LED with decoupling capacitors.
 
@@ -9,27 +12,35 @@ module AddressableLED:
 
     module MyProject:
         ...
-        indicator = new AddressableLED
-        indicator.led -> WS2812B_5050_Black
+        leds = new AddressableLED[3]
 
+        power = new ElectricPower
+        data_in = new ElectricLogic
+
+        for led in leds:
+            led -> WS2812B_5050_Black
+            led.power ~ power
+
+        data_in ~> leds[0] ~> leds[1] ~> leds[2]
     """
 
     power = new ElectricPower
-    data_in = new ElectricLogic
-    data_out = new ElectricLogic
 
     capacitor = new Capacitor
-    led = new _AddressableLED
+    package = new _AddressableLED_package
 
     capacitor.package = "C0402"
     capacitor.capacitance = 100nF +/- 20%
 
     power ~ capacitor.power
-    power ~ led.power
-    data_in ~ led.data_in
-    data_out ~ led.data_out
+    power ~ package.power
+    data_in ~ package.data_in
+    data_out ~ package.data_out
 
-component WS2812B_5050_Black from _WS2812B:
+    power.required = True
+    data_in.required = True
+
+component WS2812B_5050_Black from _WS2812B_package:
     """WS2812B addressable LED in 5050 black package"""
     lcsc_id = "C2761795"
     manufacturer = "Worldsemi"
@@ -43,7 +54,8 @@ component WS2812B_5050_Black from _WS2812B:
     power.lv ~ pin 3
     data_in.line ~ pin 4
 
-component WS2812B_1615 from _WS2812B:
+
+component WS2812B_1615 from _WS2812B_package:
     """WS2812B addressable LED in 1615 package"""
     lcsc_id = "C5349954"
     manufacturer = "XINGLIGHT"
@@ -57,7 +69,8 @@ component WS2812B_1615 from _WS2812B:
     power.hv ~ pin 3
     data_out.line ~ pin 4
 
-component SK6812MINI_E from _SK6812:
+
+component SK6812MINI_E from _SK6812_package:
     """SK6812 addressable LED in 3528 countersunk upside down package"""
     lcsc_id = "C5149201"
     manufacturer = "NORMAND"
@@ -71,7 +84,8 @@ component SK6812MINI_E from _SK6812:
     power.lv ~ pin 3
     data_in.line ~ pin 4
 
-component SK6812SIDE_A from _SK6812:
+
+component SK6812SIDE_A from _SK6812_package:
     """SK6812 addressable LED in 4020 side-mounted package"""
     lcsc_id = "C5378721"
     manufacturer = "OPSCO Optoelectronics"
@@ -85,7 +99,8 @@ component SK6812SIDE_A from _SK6812:
     data_out.line ~ pin 3
     power.lv ~ pin 4
 
-component SK6812_5050_RGBW from _SK6812:
+
+component SK6812_5050_RGBW from _SK6812_package:
     """SK6812 addressable LED in 5050 package with RGB + NW-White LEDs"""
     lcsc_id = "C5380880"
     manufacturer = "OPSCO Optoelectronics"
@@ -100,7 +115,7 @@ component SK6812_5050_RGBW from _SK6812:
     data_out.line ~ pin 4
 
 
-component _AddressableLED:
+component _AddressableLED_package:
     """
     Addressable LED base component
     """
@@ -109,18 +124,20 @@ component _AddressableLED:
     data_in = new ElectricLogic
     data_out = new ElectricLogic
 
-component _WS2812B from _AddressableLED:
+
+component _WS2812B_package from _AddressableLED_package:
     """
     WS2812B Addressable LED base component
     """
 
-component _SK6812 from _AddressableLED:
+
+component _SK6812_package from _AddressableLED_package:
     """
     SK6812 Addressable LED base component
     """
 
 
-component AddressableLEDConnector from _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+component AddressableLEDConnector_driver from _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B_package:
     """
     XT30 connector with 2 additional data pins.
     Wired for connecting to addressable LED strips.
@@ -135,7 +152,11 @@ component AddressableLEDConnector from _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
     data.line ~ pin 3
     clock.line ~ pin 4
 
-component _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B:
+    power.required = True
+    data.required = True
+
+
+component _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B_package:
     """XT30 connector with 2 additional data pins"""
     lcsc_id = "C19268030"
     manufacturer = "Changzhou Amass Elec"

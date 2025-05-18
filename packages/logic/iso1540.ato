@@ -1,6 +1,10 @@
-import ElectricPower, ElectricLogic, Capacitor, I2C
+import ElectricPower
+import ElectricLogic
+import Capacitor
+import I2C
 
-component ISO1540:
+
+component ISO1540_package:
     """
     Low-Power Bidirectional I2C Isolator
     """
@@ -30,7 +34,7 @@ component ISO1540:
     assert power_isolated.voltage within 3.0V to 5.5V
 
 
-module ISO1540_ReferenceDesign:
+module ISO1540_driver:
     """
     ISO1540 low-power bidirectional I2C isolators.
     - 3.0V to 5.5V power and signal levels
@@ -44,15 +48,15 @@ module ISO1540_ReferenceDesign:
     i2c_non_isolated = new I2C
 
     # components
-    isolator = new ISO1540
+    package = new ISO1540_package
     decoupling_capacitor_isolated = new Capacitor
     decoupling_capacitor_non_isolated = new Capacitor
 
     # connections
-    isolator.power_isolated ~ power_isolated
-    isolator.i2c_isolated ~ i2c_isolated
-    isolator.power_non_isolated ~ power_non_isolated
-    isolator.i2c_non_isolated ~ i2c_non_isolated
+    package.power_isolated ~ power_isolated
+    package.i2c_isolated ~ i2c_isolated
+    package.power_non_isolated ~ power_non_isolated
+    package.i2c_non_isolated ~ i2c_non_isolated
 
     power_isolated ~ decoupling_capacitor_isolated.power
     power_non_isolated ~ decoupling_capacitor_non_isolated.power
