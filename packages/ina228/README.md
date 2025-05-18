@@ -16,4 +16,4 @@ INA228 low voltage power monitor with I2C interface
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|-| ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert |
+|![ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/ina228.png)| ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert |
