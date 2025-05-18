@@ -1,0 +1,118 @@
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("FOR_LOOP")
+
+import ElectricPower
+import Electrical
+import ElectricLogic
+import Capacitor
+
+component Analog_Devices_MAX14778_package:
+    """Maxim_Integrated_MAX14778ETPplusT package"""
+    lcsc_id = "C1121866"
+    manufacturer = "Maxim Integrated"
+    mpn = "MAX14778ETP+T"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131730_Analog-Devices-Inc--Maxim-Integrated-MAX14778ETP-T_C1121866.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal A0 ~ pin 6
+    signal A1 ~ pin 7
+    signal A2 ~ pin 8
+    signal A3 ~ pin 9
+    signal ACOM ~ pin 5
+    signal B0 ~ pin 20
+    signal B1 ~ pin 19
+    signal B2 ~ pin 18
+    signal B3 ~ pin 17
+    signal BCOM ~ pin 1
+    signal ENA ~ pin 10
+    signal ENB ~ pin 16
+    signal EP ~ pin 21
+    signal GND ~ pin 3
+    signal SA0 ~ pin 11
+    signal SA1 ~ pin 12
+    signal SB0 ~ pin 15
+    signal SB1 ~ pin 14
+    signal VDD ~ pin 13
+    signal VN ~ pin 4
+    signal VP ~ pin 2
+
+module Analog_Devices_MAX14778_Driver:
+    """Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer"""
+
+    package = new Analog_Devices_MAX14778_package
+
+    # components
+    decoupling_capacitor = new Capacitor
+    positive_charge_pump_capacitor = new Capacitor
+    negative_charge_pump_capacitor = new Capacitor
+
+    # external interfaces
+    power = new ElectricPower
+    selector_a = new ElectricLogic[2]
+    selector_b = new ElectricLogic[2]
+    enable_a = new ElectricLogic
+    enable_b = new ElectricLogic
+    common_a = new Electrical
+    common_b = new Electrical
+    output_a = new Electrical[4]
+    output_b = new Electrical[4]
+
+    # internal interfaces
+    _positive_charge_pump_output = new ElectricPower
+    _negative_charge_pump_output = new ElectricPower
+
+    # connections to package
+    package.A0 ~ output_a[0]
+    package.A1 ~ output_a[1]
+    package.A2 ~ output_a[2]
+    package.A3 ~ output_a[3]
+    package.B0 ~ output_b[0]
+    package.B1 ~ output_b[1]
+    package.B2 ~ output_b[2]
+    package.B3 ~ output_b[3]
+    package.BCOM ~ common_b
+    package.ACOM ~ common_a
+    package.SA0 ~ selector_a[0].line
+    package.SA1 ~ selector_a[1].line
+    package.SB0 ~ selector_b[0].line
+    package.SB1 ~ selector_b[1].line
+    package.ENA ~ enable_a.line
+    package.ENB ~ enable_b.line
+    package.EP ~ _negative_charge_pump_output.hv
+    package.VN ~ _negative_charge_pump_output.hv
+    package.VP ~ _positive_charge_pump_output.hv
+    package.VDD ~ power.hv
+    package.GND ~ power.lv
+
+    # connections power
+    _positive_charge_pump_output ~ positive_charge_pump_capacitor.power
+    _negative_charge_pump_output ~ negative_charge_pump_capacitor.power
+    power ~ decoupling_capacitor.power
+    power.lv ~ _negative_charge_pump_output.lv
+    power.lv ~ _positive_charge_pump_output.lv
+
+    # references
+    for selector in selector_a:
+        selector.reference ~ power
+    for selector in selector_b:
+        selector.reference ~ power
+    enable_a.reference ~ power
+    enable_b.reference ~ power
+
+    # parameters
+    assert power.voltage within 3.0V to 5.5V
+    assert _negative_charge_pump_output.voltage is 52V
+    assert _positive_charge_pump_output.voltage is 52V
+    decoupling_capacitor.capacitance = 100nF +/- 10%
+    decoupling_capacitor.package = "C0402"
+    positive_charge_pump_capacitor.capacitance = 100nF +/- 10%
+    assert positive_charge_pump_capacitor.max_voltage >= _positive_charge_pump_output.voltage * 1.5
+    positive_charge_pump_capacitor.package = "C0603"
+    negative_charge_pump_capacitor.capacitance = 100nF +/- 10%
+    assert negative_charge_pump_capacitor.max_voltage >= _negative_charge_pump_output.voltage * 1.5
+    negative_charge_pump_capacitor.package = "C0603"
+
+    power.required = True
+    enable_a.required = True
+    enable_b.required = True

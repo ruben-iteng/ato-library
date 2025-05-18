@@ -8,6 +8,8 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
+| [analog-devices-max14778](packages/analog-devices-max14778/README.md) | 1 module | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | 0.1.0 |
+| ![analog_devices_max14778_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/analog-devices-max14778/assets/analog_devices_max14778_driver.png) | analog_devices_max14778_driver | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | |
 | [connectors](packages/connectors/README.md) | 3 modules | Miscellaneous connectors | 0.1.0 |
 | ![dual_banana_connectors](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/dual_banana_connectors.png) | dual_banana_connectors | Dual banana connectors (Red and Black) with 3/4\" (19.05mm) spacing. | |
 | ![qwiic_vertical](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_vertical.png) | qwiic_vertical | Vertical QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
