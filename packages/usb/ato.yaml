@@ -7,7 +7,7 @@ paths:
 
 builds:
   usb_2_0_type_c_data_power:
-    entry: usb.ato:USB_2_0_TypeC_Data_Power
+    entry: usb.ato:USB2_0_TypeC_Data_Power
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true

@@ -99,7 +99,7 @@ module WCH_CH224K_driver:
     voltage_set_resistor.package = "R0402"
 
     vbus.required = True
-    usb_data.required = True
+    usb_data.d.required = True
     for c in cc:
         c.required = True
 

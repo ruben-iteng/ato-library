@@ -30,8 +30,8 @@ builds:
     keep_picked_parts: true
     hide_designators: true
 
-  sn74cb3q3251pwr:
-    entry: sn74cb3q3251pwr.ato:Texas_Instruments_SN74CB3Q3251PWR_reference_design
+  sn74cb3q3251pwr_driver:
+    entry: sn74cb3q3251pwr.ato:Texas_Instruments_SN74CB3Q3251PWR_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true

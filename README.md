@@ -37,7 +37,7 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 |  | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |
 |  | sn74lvc3g14dc_driver | - | |
 |  | iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
-| ![sn74cb3q3251pwr](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr.png) | sn74cb3q3251pwr | - | |
+|  | sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.2 |
 | ![faebryk_8x9mm](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk_8x9mm.png) | faebryk_8x9mm | faebryk Logo 8x9mm | |
 | [nxp_semiconductors-pca95xx](packages/nxp_semiconductors-pca95xx/README.md) | 4 modules | NXP Semiconductors PCA95xx family of I2C I/O expanders | 0.1.0 |
@@ -56,5 +56,5 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | [switches](packages/switches/README.md) | 1 module | Rotary encoders, switches, and other switch like components and modules | 0.1.2 |
 | ![rotary_encoder_advanced](https://github.com/ruben-iteng/ato-library/raw/main/packages/switches/assets/rotary_encoder_advanced.png) | rotary_encoder_advanced | Rotary encoder + switchwith debouncing and hysteresis.<br><br>    Specialize the rotary encoder in your application:<br>    rot_encoder = new RotaryEncoderAdvanced<br>    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2 | |
 | [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.2.0 |
-| ![usb_2_0_type_c_data_power](https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_2_0_type_c_data_power.png) | usb_2_0_type_c_data_power | - | |
+| ![usb_2_0_type_c_data_power](https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_2_0_type_c_data_power.png) | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |
 | ![usb_pd_power_sink](https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_pd_power_sink.png) | usb_pd_power_sink | USB PD power sink with Type-C connector<br><br>    Set the requested PD voltages as follows:<br>    9V  -> resistance = 6.8kohm<br>    12V -> resistance = 24kohm<br>    15V -> resistance = 56kohm<br>    20V -> resistance = DNP<br>    pd_sink = new USBPDPowerSink<br>    pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1% | |

@@ -88,8 +88,8 @@
     )
     (net 0 "")
     (net 2 "hv")
-    (net 4 "line-1")
-    (net 6 "line")
+    (net 4 "line")
+    (net 6 "line-1")
     (net 7 "gnd")
     (footprint "atopile:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN-d36980"
         (layer "F.Cu")
@@ -330,14 +330,14 @@
             (at 0.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 6 "line")
+            (net 6 "line-1")
             (uuid "bb3a7e43-0bef-45dd-8236-7e87876b07d9")
         )
         (pad "4" smd rect
             (at 1.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 4 "line-1")
+            (net 4 "line")
             (uuid "0a1f6dd1-c831-490e-acd7-7ce9e8627c09")
         )
         (pad "5" smd rect

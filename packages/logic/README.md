@@ -20,4 +20,4 @@ Digital logic related components and modules
 |-| sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. |
 |-| sn74lvc3g14dc_driver | - |
 |-| iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C |
-|![sn74cb3q3251pwr](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr.png)| sn74cb3q3251pwr | - |
+|-| sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch |
