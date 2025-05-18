@@ -1,15 +1,19 @@
 import ElectricLogic, ElectricPower, JTAG, SWD, Power
 
+
 module ARM_CORTEX_M_DEBUG_HEADER:
     """
     10 pin debug header with SWD pinout according to ARM Cortex M debug specification
     https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1
     """
+    # components
+    connector = new FTSH10501LDVKTR
+
+    # external interfaces
     swd = new SWD
     jtag = new JTAG
     ground_detect = new ElectricLogic
     reference = new ElectricPower
-    connector = new FTSH10501LDVKTR
 
     # jtag connections
     jtag.tms.line ~ connector.2
@@ -34,11 +38,15 @@ module ARM_CORTEX_M_DEBUG_HEADER:
 
     ground_detect.line ~ connector.9
 
+
 module SWD_TC2030_IDC_NL:
     """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout"""
+    # components
+    connector = new _TC2030_IDC_NL
+
+    # external interfaces
     swd = new SWD
     reference = new ElectricPower
-    connector = new _TC2030_IDC_NL
 
     # swd connections
     swd.dio.line ~ connector.2
@@ -51,12 +59,16 @@ module SWD_TC2030_IDC_NL:
     # common
     reference.hv ~ connector.1
     reference.gnd ~ connector.5
+
 
 module SWD_TC2030_IDC_FP:
     """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout"""
+    # components
+    connector = new _TC2030_IDC_FP
+
+    # external interfaces
     swd = new SWD
     reference = new ElectricPower
-    connector = new _TC2030_IDC_FP
 
     # swd connections
     swd.dio.line ~ connector.2
@@ -69,6 +81,7 @@ module SWD_TC2030_IDC_FP:
     # common
     reference.hv ~ connector.1
     reference.gnd ~ connector.5
+
 
 component FTSH10501LDVKTR:
     """Samtec FTSH_105_01_L_DV_K_TR connector with ARM cortex debug pinout"""
@@ -89,20 +102,19 @@ component FTSH10501LDVKTR:
     pin 9
     pin 10
 
-component _TC2030_IDC_NL:
+
+component _TC2030_IDC_NL from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern"""
     footprint = "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
 
-    pin 1
-    pin 2
-    pin 3
-    pin 4
-    pin 5
-    pin 6
 
-component _TC2030_IDC_FP:
+component _TC2030_IDC_FP from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with holes"""
     footprint = "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+
+
+component _TC2030_IDC:
+    """Tag-Connect TC2030-IDC (6-pin) landing pattern base"""
 
     pin 1
     pin 2

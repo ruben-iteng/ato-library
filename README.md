@@ -10,34 +10,34 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 |---------|---------|-------------|---------|
 | [analog-devices-max14778](packages/analog-devices-max14778/README.md) | 1 module | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | 0.1.0 |
 | ![analog_devices_max14778_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/analog-devices-max14778/assets/analog_devices_max14778_driver.png) | analog_devices_max14778_driver | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | |
-| [connectors](packages/connectors/README.md) | 3 modules | Miscellaneous connectors | 0.1.0 |
+| [connectors](packages/connectors/README.md) | 3 modules | Miscellaneous connectors | 0.2.0 |
 | ![dual_banana_connectors](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/dual_banana_connectors.png) | dual_banana_connectors | Dual banana connectors (Red and Black) with 3/4\" (19.05mm) spacing. | |
 | ![qwiic_vertical](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_vertical.png) | qwiic_vertical | Vertical QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
 | ![qwiic_horizontal](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_horizontal.png) | qwiic_horizontal | Horizontal QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
 | [dcdc-converters](packages/dcdc-converters/README.md) | 1 module | DCDC converters | 0.2.0 |
 | ![b0505s1wr3](https://github.com/ruben-iteng/ato-library/raw/main/packages/dcdc-converters/assets/b0505s1wr3.png) | b0505s1wr3 | EVISUN B0505S-1WR3 5V to 5V isolated DCDC converter with shortcircuit protection<br>    - 5V input<br>    - 5V output<br>    - 1W power rating | |
-| [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.1.2 |
+| [debug-interfaces](packages/debug-interfaces/README.md) | 3 modules | SWD and tag connect headers for programming and debugging | 0.2.0 |
 | ![arm_cortex_m_debug_header](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/arm_cortex_m_debug_header.png) | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | ![swd_tc2030_idc_nl](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png) | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 | ![swd_tc2030_idc_fp](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_fp.png) | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
-| [esp32c3](packages/esp32c3/README.md) | 2 modules | ESP32 C3 microcontroller | 0.1.0 |
-| ![esp32_c3_mini_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32c3/assets/esp32_c3_mini_reference_design.png) | esp32_c3_mini_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components | |
-| ![esp32_c3_mini_ufl_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32c3/assets/esp32_c3_mini_ufl_reference_design.png) | esp32_c3_mini_ufl_reference_design | ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components | |
-| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.1.3 |
-| ![esp32_s3_wroom_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32s3/assets/esp32_s3_wroom_reference_design.png) | esp32_s3_wroom_reference_design | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
+| [esp32c3](packages/esp32c3/README.md) | 2 modules | ESP32 C3 microcontroller | 0.2.0 |
+|  | esp32_c3_mini_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components | |
+|  | esp32_c3_mini_ufl_driver | ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components | |
+| [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.2.0 |
+|  | esp32_s3_wroom_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.2.0 |
 | ![ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/ina228.png) | ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert | |
-| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.0 |
+| [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.1 |
 | ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
-| [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.1.2 |
-| ![addressable_led_connector](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector.png) | addressable_led_connector | - | |
-| ![addressable_led](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led.png) | addressable_led | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        indicator = new AddressableLED<br>        indicator.led -> WS2812B_5050_Black | |
-| [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.1.4 |
-| ![aip74lvc1t45](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45.png) | aip74lvc1t45 | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
-| ![dual_buffer](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/dual_buffer.png) | dual_buffer | Dual buffer. | |
-| ![sn74lvc3g14dc](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc.png) | sn74lvc3g14dc | - | |
-| ![iso1540](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540.png) | iso1540 | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
-| ![sn74cb3q3251pwr](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr.png) | sn74cb3q3251pwr | Texas Instruments SN74CB3Q3251PWR reference design<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
+| [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.2.0 |
+|  | addressable_led_connector_driver | - | |
+|  | addressable_led_driver | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        leds = new AddressableLED[3]<br><br>        power = new ElectricPower<br>        data_in = new ElectricLogic<br><br>        for led in leds:<br>            led -> WS2812B_5050_Black<br>            led.power ~ power<br><br>        data_in ~> leds[0] ~> leds[1] ~> leds[2] | |
+| [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.2.0 |
+|  | aip74lvc1t45_driver | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+|  | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |
+|  | sn74lvc3g14dc_driver | - | |
+|  | iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
+|  | sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.2 |
 | ![faebryk_8x9mm](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk_8x9mm.png) | faebryk_8x9mm | faebryk Logo 8x9mm | |
 | [nxp_semiconductors-pca95xx](packages/nxp_semiconductors-pca95xx/README.md) | 4 modules | NXP Semiconductors PCA95xx family of I2C I/O expanders | 0.1.0 |
@@ -48,13 +48,13 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | [relays](packages/relays/README.md) | 2 modules | Relay modules | 0.1.2 |
 | ![driven_dpdt_bistable_relay](https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay.png) | driven_dpdt_bistable_relay | Bistable DPDT relay with driver and indicator LEDs<br>    - 5V coil power<br>    - 5V/3.3V logic power<br>    - 2A contact carry current<br>    - TC118S DC motor driver (H-bridge) as relay driver | |
 | ![driven_dpdt_bistable_relay_push_terminal](https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay_push_terminal.png) | driven_dpdt_bistable_relay_push_terminal | DrivenDPDTBistableRelay with push terminal | |
-| [rs485](packages/rs485/README.md) | 4 modules | RS485 related modules | 0.1.4 |
+| [rs485](packages/rs485/README.md) | 4 modules | RS485 related modules | 0.2.0 |
 | ![bus_protection](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/bus_protection.png) | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
-| ![transceiver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/transceiver.png) | transceiver | Simple UART to RS485 converter.<br>    UART and TNOW interface in, RS485 interface out. | |
-| ![isolated_transceiver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/isolated_transceiver.png) | isolated_transceiver | Isolated UART to half duplex RS485 interface | |
-| ![isolated_powered_transceiver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/isolated_powered_transceiver.png) | isolated_powered_transceiver | Isolated powered UART to RS485 transceiver design block.<br>    - 3.3V or 5V logic power<br>    - 3.3V or 5V module power<br>    - 0.5 Mbps UART<br>    - Read enable/write enable input<br>    - RS485 half duplex<br>    - ANSI/ESDA/JEDEC JS-001 ESD protection<br>    - JESD22-C101 CDM protection | |
+|  | maxlinear_sp3485en_driver | Simple UART to RS485 converter.<br>    UART and write enable interface in, RS485 interface out. | |
+|  | analog_devices_adm2587ebrwz_driver | Isolated UART to half duplex RS485 interface | |
+|  | chipanalog_is2092a_driver | Isolated powered UART to RS485 transceiver design block.<br>    - 3.3V or 5V logic power<br>    - 3.3V or 5V module power<br>    - 0.5 Mbps UART<br>    - Read enable/write enable input<br>    - RS485 half duplex<br>    - ANSI/ESDA/JEDEC JS-001 ESD protection<br>    - JESD22-C101 CDM protection | |
 | [switches](packages/switches/README.md) | 1 module | Rotary encoders, switches, and other switch like components and modules | 0.1.2 |
 | ![rotary_encoder_advanced](https://github.com/ruben-iteng/ato-library/raw/main/packages/switches/assets/rotary_encoder_advanced.png) | rotary_encoder_advanced | Rotary encoder + switchwith debouncing and hysteresis.<br><br>    Specialize the rotary encoder in your application:<br>    rot_encoder = new RotaryEncoderAdvanced<br>    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2 | |
-| [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.1.3 |
+| [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.2.0 |
 | ![usb_2_0_type_c_data_power](https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_2_0_type_c_data_power.png) | usb_2_0_type_c_data_power | USB 2.0 Type-C connector<br>    - 5V PD compatible<br>    - ESD protection<br>    - Fuse [500mA(hold), 1A(trip)] | |
 | ![usb_pd_power_sink](https://github.com/ruben-iteng/ato-library/raw/main/packages/usb/assets/usb_pd_power_sink.png) | usb_pd_power_sink | USB PD power sink with Type-C connector<br><br>    Set the requested PD voltages as follows:<br>    9V  -> resistance = 6.8kohm<br>    12V -> resistance = 24kohm<br>    15V -> resistance = 56kohm<br>    20V -> resistance = DNP<br>    pd_sink = new USBPDPowerSink<br>    pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1% | |

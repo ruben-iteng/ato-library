@@ -4,7 +4,7 @@ USB connectors and circuitry
 
 ## Package Information
 
-- Version: 0.1.3
+- Version: 0.2.0
 - Total Modules: 2
 - Author(s): Ruben Baldewsing
 - License: MIT

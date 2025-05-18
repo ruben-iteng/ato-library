@@ -4,7 +4,7 @@ Miscellaneous connectors
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.2.0
 - Total Modules: 3
 - Author(s): Ruben Baldewsing
 - License: MIT

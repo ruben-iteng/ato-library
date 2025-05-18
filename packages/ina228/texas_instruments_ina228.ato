@@ -10,6 +10,7 @@ import I2C
 from "components/ShuntedElectricPower.py" import ShuntedElectricPower
 from "components/CurrentSensor.py" import CurrentSensor
 
+
 component Texas_Instruments_INA228_package:
     """Texas Instruments INA228 package"""
     lcsc_id = "C2887910"

@@ -1,8 +1,11 @@
 #pragma experiment("FOR_LOOP")
 
-import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR, Capacitor, ElectricPower, ElectricLogic
+import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR
+import Capacitor
+import ElectricPower
+import ElectricLogic
 
-module AiP74LVC1T45:
+module AiP74LVC1T45_driver:
     """
     Single channel bidirectional buffer.
     1.2V-5.5V logic levels.
@@ -20,9 +23,11 @@ module AiP74LVC1T45:
     buffer.power_a ~ decoupling_capacitor_a.power
     buffer.power_b ~ decoupling_capacitor_b.power
 
-module DualBuffer:
+
+module SN74LVC2G34DBVRUMW_driver:
     """
-    Dual buffer.
+    UMWYoutai Semiconductor Co., Ltd.
+    74LVC2G34 Dual buffer.
     """
     # external interfaces
     power = new ElectricPower
@@ -30,7 +35,7 @@ module DualBuffer:
     logic_out = new ElectricLogic[2]
 
     # components
-    buffer = new SN74LVC2G34DBVRUMW
+    package = new SN74LVC2G34DBVRUMW_package
     decoupling_capacitor = new Capacitor
 
     # parameters
@@ -39,13 +44,17 @@ module DualBuffer:
 
     # connections
     power ~ decoupling_capacitor.power
-    power ~ buffer.power
-    logic_in[0] ~ buffer.logic_in[0]
-    logic_in[1] ~ buffer.logic_in[1]
-    logic_out[0] ~ buffer.logic_out[0]
-    logic_out[1] ~ buffer.logic_out[1]
+    power ~ package.power
+    logic_in[0] ~ package.logic_in[0]
+    logic_in[1] ~ package.logic_in[1]
+    logic_out[0] ~ package.logic_out[0]
+    logic_out[1] ~ package.logic_out[1]
 
-component SN74LVC2G34DBVRUMW from UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW:
+    # constraints
+    power.required = True
+
+
+component SN74LVC2G34DBVRUMW_package from UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW_package:
     """
     74LVC2G34 dual buffer.
     """
@@ -68,9 +77,9 @@ component SN74LVC2G34DBVRUMW from UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVR
         l_o.reference.voltage = power.voltage
 
 
-component UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW:
+component UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW_package:
     """
-    UMWYoutai_Semiconductor_Co_Ltd
+    UMWYoutai Semiconductor Co., Ltd
     SN74LVC2G34DBVRUMW Dual buffer
     """
     lcsc_id = "C7394039"

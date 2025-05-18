@@ -1,11 +1,12 @@
 import ElectricPower, I2C
 
-module QwiicVertical from QwiicConnector:
+
+module QwiicVertical_driver from QwiicConnector_driver_base:
     """
     Vertical QWIIC connector
     https://www.sparkfun.com/qwiic
     """
-    connector = new JST_Sales_America_BM04B_SRSS_TBLFSN
+    connector = new JST_Sales_America_BM04B_SRSS_TBLFSN_package
 
     power.lv ~ connector.1
     power.hv ~ connector.2
@@ -14,12 +15,13 @@ module QwiicVertical from QwiicConnector:
 
     power.lv ~ connector.0
 
-module QwiicHorizontal from QwiicConnector:
+
+module QwiicHorizontal_driver from QwiicConnector_driver_base:
     """
     Horizontal QWIIC connector
     https://www.sparkfun.com/qwiic
     """
-    connector = new JST_Sales_America_SM04B_SRSS_TBLFSN
+    connector = new JST_Sales_America_SM04B_SRSS_TBLFSN_package
 
     power.lv ~ connector.1
     power.hv ~ connector.2
@@ -29,7 +31,8 @@ module QwiicHorizontal from QwiicConnector:
     power.lv ~ connector.5
     power.lv ~ connector.6
 
-component QwiicConnector:
+
+module QwiicConnector_driver_base:
     """
     JST SH1.0 4-pin connector with power and I2C
     https://www.sparkfun.com/qwiic
@@ -43,13 +46,18 @@ component QwiicConnector:
     power.voltage = 3.3V +/- 1%
     power.max_current = 226mA
 
+    power.required = True
+    i2c.required = True
+
+
 component QwiicLogo:
     """
     Qwiic silkscreen logo
     """
     footprint = "qwiic_6mm"
 
-component JST_Sales_America_BM04B_SRSS_TBLFSN:
+
+component JST_Sales_America_BM04B_SRSS_TBLFSN_package:
     """JST_Sales_America_BM04B_SRSS_TBLFSN component"""
     lcsc_id = "C160390"
     manufacturer = "JST Sales America"
@@ -64,7 +72,8 @@ component JST_Sales_America_BM04B_SRSS_TBLFSN:
     pin 4
     pin 0
 
-component JST_Sales_America_SM04B_SRSS_TBLFSN:
+
+component JST_Sales_America_SM04B_SRSS_TBLFSN_package:
     """JST_Sales_America_SM04B_SRSS_TBLFSN component"""
     lcsc_id = "C160404"
     manufacturer = "JST Sales America"

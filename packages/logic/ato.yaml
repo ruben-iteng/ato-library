@@ -6,32 +6,32 @@ paths:
   footprints: ./footprints
 
 builds:
-  aip74lvc1t45:
-    entry: voltage_translation.ato:AiP74LVC1T45
+  aip74lvc1t45_driver:
+    entry: voltage_translation.ato:AiP74LVC1T45_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  dual_buffer:
-    entry: voltage_translation.ato:DualBuffer
+  sn74lvc2g34dbvrumw_driver:
+    entry: voltage_translation.ato:SN74LVC2G34DBVRUMW_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  sn74lvc3g14dc:
-    entry: schmitt_triggers.ato:SN74LVC3G14DCUR
+  sn74lvc3g14dc_driver:
+    entry: schmitt_triggers.ato:SN74LVC3G14DCUR_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  iso1540:
-    entry: iso1540.ato:ISO1540_ReferenceDesign
+  iso1540_driver:
+    entry: iso1540.ato:ISO1540_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  sn74cb3q3251pwr:
-    entry: sn74cb3q3251pwr.ato:Texas_Instruments_SN74CB3Q3251PWR_reference_design
+  sn74cb3q3251pwr_driver:
+    entry: sn74cb3q3251pwr.ato:Texas_Instruments_SN74CB3Q3251PWR_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -39,7 +39,7 @@ builds:
 package:
   identifier: ruben-iteng/logic
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.4"
+  version: "0.2.0"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

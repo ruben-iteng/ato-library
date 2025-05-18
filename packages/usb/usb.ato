@@ -1,12 +1,21 @@
 #pragma experiment("FOR_LOOP")
 #pragma experiment("BRIDGE_CONNECT")
 
-import USB2_0, USB2_0_IF, ElectricPower, ElectricLogic, ElectricSignal, Electrical, Resistor
-import Fuse, TECH_PUBLIC_USBLC6_2SC6, Capacitor
+import USB2_0
+import USB2_0_IF
+import ElectricPower
+import ElectricLogic
+import ElectricSignal
+import Electrical
+import Resistor
+import Fuse
+import TECH_PUBLIC_USBLC6_2SC6
+import Capacitor
 import WCHJiangsu_Qin_Heng_CH224K
+
 from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorGreen
 
-module USBPDPowerSink:
+module USB_PD_Power_Sink:
     """
     USB PD power sink with Type-C connector
 
@@ -24,8 +33,8 @@ module USBPDPowerSink:
     power_good = new ElectricLogic
 
     # components
-    connector = new USBTypeC16PinConnector
-    pd_trigger = new CH224KReferenceDesign
+    connector = new USB_TypeC_16Pin_Connector_driver
+    pd_trigger = new WCH_CH224K_driver
 
     # connections
     connector.usb.usb_if.d ~ pd_trigger.usb_data.d
@@ -35,7 +44,9 @@ module USBPDPowerSink:
     connector.shield ~ power.lv
     connector.power_vbus ~ power
 
-module CH224KReferenceDesign:
+    power.required = True
+
+module WCH_CH224K_driver:
     """
     USB PD and Other Fast Charging Protocol Sink Controller Reference Design
     Design is ment for connecting to a female USB Type-C connector.
@@ -45,7 +56,7 @@ module CH224KReferenceDesign:
     12V -> resistance = 24kohm
     15V -> resistance = 56kohm
     20V -> resistance = DNP
-    pd_trigger = new CH224KReferenceDesign
+    pd_trigger = new WCH_CH224K_driver
     pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
     """
 
@@ -63,17 +74,6 @@ module CH224KReferenceDesign:
     decoupling_capacitor = new Capacitor
     power_good_indicator = new LEDIndicatorGreen
 
-
-    # parameters
-    vdd_resistor.resistance = 1kohm +/- 1%
-    vdd_resistor.package = "R0402"
-    vbus_detect_resistor.resistance = 10kohm +/- 1%
-    vbus_detect_resistor.package = "R0402"
-    decoupling_capacitor.capacitance = 1uF +/- 20%
-    decoupling_capacitor.package = "C0402"
-    #voltage_set_resistor.resistance = 10kohm +/- 1%
-    voltage_set_resistor.package = "R0402"
-
     # connections
     vbus.hv ~> vbus_detect_resistor ~> controller.vbus_detect.line
     vbus.hv ~> vdd_resistor ~> controller.power.hv
@@ -88,8 +88,23 @@ module CH224KReferenceDesign:
     controller.cc2 ~> cc[1]
     controller.cfg[0].line ~> voltage_set_resistor ~> vbus.lv
 
+    # parameters
+    vdd_resistor.resistance = 1kohm +/- 1%
+    vdd_resistor.package = "R0402"
+    vbus_detect_resistor.resistance = 10kohm +/- 1%
+    vbus_detect_resistor.package = "R0402"
+    decoupling_capacitor.capacitance = 1uF +/- 20%
+    decoupling_capacitor.package = "C0402"
+    #voltage_set_resistor.resistance = 10kohm +/- 1%
+    voltage_set_resistor.package = "R0402"
 
-module USB2_0TypeCDataPower:
+    vbus.required = True
+    usb_data.d.required = True
+    for c in cc:
+        c.required = True
+
+
+module USB2_0_TypeC_Data_Power:
     """
     USB 2.0 Type-C connector
     - 5V PD compatible
@@ -102,7 +117,7 @@ module USB2_0TypeCDataPower:
     power = new ElectricPower
 
     # components
-    connector = new USBTypeC16PinConnector
+    connector = new USB_TypeC_16Pin_Connector_driver
     cc_resistors = new Resistor[2]
     esd_protection = new TECH_PUBLIC_USBLC6_2SC6
     esd_decoupling_capacitor = new Capacitor
@@ -128,6 +143,8 @@ module USB2_0TypeCDataPower:
     esd_decoupling_capacitor.capacitance = 100nF +/- 10%
     esd_decoupling_capacitor.package = "C0402"
 
+    power.required = True
+
 module FusedUSB2_0:
     """Connects two USB2_0 interfaces with a fuse in between"""
 
@@ -141,7 +158,7 @@ module FusedUSB2_0:
     usb_in.usb_if.d ~ usb_out.usb_if.d
 
 
-component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
+module USB_TypeC_16Pin_Connector_driver from SHOU_HAN_TYPE_C_16PIN_2MD073_package:
     """16 pin USB type-C connector"""
 
     # external interfaces
@@ -151,7 +168,7 @@ component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
     sbu = new ElectricSignal[2]
     shield = new Electrical
 
-    # connections
+    # connections to package
     usb.usb_if.buspower.gnd ~ GND
     cc[0].line ~ CC1
     cc[1].line ~ CC2
@@ -165,7 +182,8 @@ component USBTypeC16PinConnector from SHOU_HAN_TYPE_C_16PIN_2MD073:
     power_vbus.hv ~ VBUS
     power_vbus.lv ~ GND
 
-component SHOU_HAN_TYPE_C_16PIN_2MD073:
+
+component SHOU_HAN_TYPE_C_16PIN_2MD073_package:
     """Common 16 pin USB type-C connector"""
     lcsc_id = "C2765186"
     manufacturer = "SHOU HAN"
@@ -188,6 +206,7 @@ component SHOU_HAN_TYPE_C_16PIN_2MD073:
     SHELL ~ pin 14
     signal VBUS ~ pin 2
     VBUS ~ pin 11
+
 
 component BHFUSE_BSMD0805_050_15V from Fuse:
     """BHFUSE_BSMD0805_050_15V component"""

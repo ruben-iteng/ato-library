@@ -6,8 +6,35 @@ import RS485_Bus_Protection
 import UART_Base, RS485HalfDuplex, ElectricLogic, ElectricPower, UART_RS485
 import Resistor, Capacitor
 
-module IsolatedUARTRS485 from Analog_Devices_ADM2587EBRWZ_ReferenceDesign:
+
+module Analog_Devices_ADM2587EBRWZ_driver from Analog_Devices_ADM2587EBRWZ_ReferenceDesign:
     """Isolated UART to half duplex RS485 interface"""
+
+    # external interfaces
+    power_unisolated = new ElectricPower
+    power_isolated_out = new ElectricPower
+    power_isolated_in = new ElectricPower
+    uart = new UART_Base
+    read_enable = new ElectricLogic
+    write_enable = new ElectricLogic
+    rs485 = new RS485HalfDuplex
+
+    # connections
+    power_unisolated ~ transceiver.power_unisolated
+    power_isolated_out ~ transceiver.power_isolated_out
+    power_isolated_in ~ transceiver.power_isolated_in
+    uart ~ transceiver.uart
+    read_enable ~ transceiver.read_enable
+    write_enable ~ transceiver.write_enable
+    rs485 ~ transceiver.rs485
+
+    # parameters
+    power_unisolated.required = True
+    uart.required = True
+    read_enable.required = True
+    write_enable.required = True
+    rs485.required = True
+
 
 module RS485BusProtection from RS485_Bus_Protection:
     """
@@ -22,43 +49,57 @@ module RS485BusProtection from RS485_Bus_Protection:
     based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf
     """
 
-module RS485Transceiver:
+    # parameters
+    power.required = True
+    rs485_unprotected.required = True
+    rs485_protected.required = True
+    earth.required = True
+
+
+module MaxLinear_SP3485EN_driver from UART_RS485:
     """
     Simple UART to RS485 converter.
-    UART and TNOW interface in, RS485 interface out.
+    UART and write enable interface in, RS485 interface out.
     """
+    # components
+    package = new MaxLinear_SP3485EN_L_TR_package
+    termination_resistor = new Resistor
+    bypass_capacitor = new Capacitor
 
     # external interfaces
     uart = new UART_Base
     rs485 = new RS485HalfDuplex
-    read_enable = new ElectricLogic
+    write_enable = new ElectricLogic
     power = new ElectricPower
 
-    # components
-    uart_rs485_converter = new MaxLinear_SP3485EN_L_TR
-    termination_resistor = new Resistor
-    bypass_capacitor = new Capacitor
+    # connections to package
+    package.A ~> rs485.diff_pair.p.line
+    package.B ~> rs485.diff_pair.n.line
+    package.DI ~> uart.tx.line
+    package.RO ~> uart.rx.line
+    package.REh ~> read_enable.line
+    package.DE ~> write_enable.line
+    package.VCC ~> power.hv
+    package.GND ~> power.lv
 
     # connections
-    uart ~ uart_rs485_converter.uart
-    read_enable ~ uart_rs485_converter.read_enable
-    read_enable ~ uart_rs485_converter.write_enable
-    power ~ uart_rs485_converter.power
-
-    rs485 ~ uart_rs485_converter.rs485
-
     rs485.diff_pair.p.line ~> termination_resistor ~> rs485.diff_pair.n.line
-
     power ~ bypass_capacitor.power
 
     # parametrization
-    termination_resistor.resistance = 120ohm +/- 5%
+    termination_resistor.resistance = 120ohm +/- 1%
     termination_resistor.package = "R0402"
     bypass_capacitor.value = 100nF +/- 20%
     bypass_capacitor.package = "C0402"
 
-component MaxLinear_SP3485EN_L_TR from UART_RS485:
-    """3.3V (5V compatible)RS485 transceiver"""
+    power.required = True
+    uart.required = True
+    rs485.required = True
+    write_enable.required = True
+
+
+component MaxLinear_SP3485EN_L_TR_package:
+    """MaxLinear SP3485EN L TR package"""
     lcsc_id = "C8963"
     manufacturer = "MaxLinear"
     mpn = "SP3485EN-L/TR"
@@ -66,16 +107,17 @@ component MaxLinear_SP3485EN_L_TR from UART_RS485:
     designator_prefix = "U"
 
     # pins
-    rs485.diff_pair.p.line ~ pin 6
-    rs485.diff_pair.n.line ~ pin 7
-    write_enable.line ~ pin 3
-    uart.tx.line ~ pin 4
-    power.lv ~ pin 5
-    read_enable.line ~ pin 2
-    uart.rx.line ~ pin 1
-    power.hv ~ pin 8
+    signal A ~ pin 6
+    signal B ~ pin 7
+    signal DE ~ pin 3
+    signal DI ~ pin 4
+    signal GND ~ pin 5
+    signal REh ~ pin 2
+    signal RO ~ pin 1
+    signal VCC ~ pin 8
 
-module IsolatedPoweredUARTRS485TranceiverDesignBlock:
+
+module Chipanalog_IS2092A_driver from UART_RS485:
     """
     Isolated powered UART to RS485 transceiver design block.
     - 3.3V or 5V logic power
@@ -87,35 +129,57 @@ module IsolatedPoweredUARTRS485TranceiverDesignBlock:
     - JESD22-C101 CDM protection
     """
 
-    # external interfaces
-    power = new ElectricPower
-    power_logic = new ElectricPower
-    uart = new UART_Base
-    read_enable = new ElectricLogic
-    rs485 = new RS485HalfDuplex
-
     # components
-    transceiver = new Chipanalog_CA_IS2092A
+    package = new Chipanalog_CA_IS2092A_package
     power_decoupling_capacitors_small = new Capacitor[2]
     power_decoupling_capacitors_big = new Capacitor[2]
     logic_decoupling_capacitors = new Capacitor[2]
 
-    # connections
-    transceiver.power_isolated_out ~ power_decoupling_capacitors_big[1].power
-    transceiver.power_isolated_out ~ power_decoupling_capacitors_small[1].power
-    transceiver.power_isolated_in ~ logic_decoupling_capacitors[1].power
-    transceiver.power_isolated_out ~ transceiver.power_isolated_in
+    # external interfaces (not in UART_RS485)
+    power_logic = new ElectricPower
+    power_isolated_out = new ElectricPower
+    power_isolated_in = new ElectricPower
+    read_enable = new ElectricLogic
+    write_enable = new ElectricLogic
+    voltage_select = new ElectricLogic
+    # Output voltage power_isolated_out/in select pin:
+    # power_isolated_out/in =5.0 V when voltage_select is shorted to power_isolated_in.hv;
+    # power_isolated_out/in =3.3 V when voltage_select is shorted to power_isolated_out.lv or floating;
+    # To improve the system's anti-interference ability, it is not recommended to float the voltage_select pins
 
-    power ~ transceiver.power
-    power_logic ~ transceiver.power_logic
+    # connections to package
+    rs485.diff_pair.p.line ~ package.A
+    rs485.diff_pair.n.line ~ package.B
+    write_enable.line ~ package.DE
+    uart.tx.line ~ package.DI
+    power.lv ~ package.GND1
+    power_logic.lv ~ package.GND1
+    power_isolated_in.lv ~ package.GND2
+    power_isolated_out.lv ~ package.GND2
+    read_enable.line ~ package.REh
+    uart.rx.line ~ package.RO
+    voltage_select.line ~ package.SEL
+    power_logic.hv ~ package.VDDL
+    power.hv ~ package.VDDP
+    power_isolated_in.hv ~ package.VISOIN
+    power_isolated_out.hv ~ package.VISOOUT
+
+    # connections
+    power.lv ~ power_logic.lv
+    power_isolated_out.lv ~ power_isolated_in.lv
+
+    # parameters
+    assert power_isolated_out.voltage within 3.3V to 5.5V
+
+    # connections
+    power_isolated_out ~ power_decoupling_capacitors_big[1].power
+    power_isolated_out ~ power_decoupling_capacitors_small[1].power
+    power_isolated_in ~ logic_decoupling_capacitors[1].power
+    power_isolated_out ~ power_isolated_in
+
     power ~ power_decoupling_capacitors_big[0].power
     power ~ power_decoupling_capacitors_small[0].power
     power_logic ~ logic_decoupling_capacitors[0].power
-
-    uart ~ transceiver.uart
-    read_enable ~ transceiver.read_enable
-    read_enable ~ transceiver.write_enable
-    rs485 ~ transceiver.rs485
 
     # parameters
     assert power.voltage within 3.3V to 5.5V
@@ -133,56 +197,35 @@ module IsolatedPoweredUARTRS485TranceiverDesignBlock:
         cap.capacitance = 1uF +/- 20%
         cap.package = "C0402"
 
-component Chipanalog_CA_IS2092A from IsolatedPoweredUARTRS485Tranceiver:
-    """
-    Galvanically-isolated RS-485 transceivers with built-in isolated DC-DC converter.
-    """
+    power.required = True
+    power_logic.required = True
+    uart.required = True
+    rs485.required = True
+    read_enable.required = True
+    write_enable.required = True
+    voltage_select.required = True
+
+
+component Chipanalog_CA_IS2092A_package:
+    """Chipanalog CA IS2092A package"""
     lcsc_id = "C18185406"
     manufacturer = "Chipanalog"
     mpn = "CA-IS2092A"
     datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401261510_Chipanalog-CA-IS2092A_C18185406.pdf"
 
-    # extra external interfaces
-    voltage_select = new ElectricLogic
-    # Output voltage power_isolated_out/in select pin:
-    # power_isolated_out/in =5.0 V when voltage_select is shorted to power_isolated_in.hv;
-    # power_isolated_out/in =3.3 V when voltage_select is shorted to power_isolated_out.lv or floating;
-    # To improve the system's anti-interference ability, it is not recommended to float the voltage_select pins
-
     # pins
-    rs485.diff_pair.p.line ~ pin 14
-    rs485.diff_pair.n.line ~ pin 15
-    write_enable.line ~ pin 3
-    uart.tx.line ~ pin 4
-    power.lv ~ pin 5
-    power_logic.lv ~ pin 8
-    power_isolated_in.lv ~ pin 9
-    power_isolated_out.lv ~ pin 12
-    read_enable.line ~ pin 2
-    uart.rx.line ~ pin 1
-    voltage_select.line ~ pin 13
-    power_logic.hv ~ pin 7
-    power.hv ~ pin 6
-    power_isolated_in.hv ~ pin 10
-    power_isolated_out.hv ~ pin 11
-
-    # connections
-    power.lv ~ power_logic.lv
-    power_isolated_out.lv ~ power_isolated_in.lv
-
-    # parameters
-    assert power_isolated_out.voltage within 3.3V to 5.5V
-
-component IsolatedPoweredUARTRS485Tranceiver:
-    """Isolated powered UART to RS485 transceiver"""
-    designator_prefix = "U"
-
-    # external interfaces
-    power = new ElectricPower
-    power_logic = new ElectricPower
-    power_isolated_out = new ElectricPower
-    power_isolated_in = new ElectricPower
-    uart = new UART_Base
-    read_enable = new ElectricLogic
-    write_enable = new ElectricLogic
-    rs485 = new RS485HalfDuplex
+    signal A ~ pin 14
+    signal B ~ pin 15
+    signal DE ~ pin 3
+    signal DI ~ pin 4
+    signal GND1 ~ pin 5
+    GND1 ~ pin 8
+    signal GND2 ~ pin 9
+    GND2 ~ pin 12
+    signal REh ~ pin 2
+    signal RO ~ pin 1
+    signal SEL ~ pin 13
+    signal VDDL ~ pin 7
+    signal VDDP ~ pin 6
+    signal VISOIN ~ pin 10
+    signal VISOOUT ~ pin 11

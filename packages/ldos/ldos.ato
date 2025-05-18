@@ -1,4 +1,8 @@
-import LDO, ElectricLogic, ElectricPower, Capacitor
+import ElectricLogic
+import ElectricPower
+import Capacitor
+import LDO
+
 
 module LDO_5V_to_3V3:
     """5V to 3.3V 600mA (max 1100mA) LDO"""
@@ -28,6 +32,9 @@ module LDO_5V_to_3V3:
     power_in_decoupling_capacitor.package = "C0402"
     power_out_decoupling_capacitor.value = 1uF +/- 20%
     power_out_decoupling_capacitor.package = "C0402"
+
+    power_in.required = True
+    power_out.required = True
 
 
 component TECH_PUBLIC_TPAP2112K_3_3TRG1 from LDO:
