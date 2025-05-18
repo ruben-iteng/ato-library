@@ -33,7 +33,7 @@ component Texas_Instruments_INA228_package:
 
 module Texas_Instruments_INA228_driver from CurrentSensor:
     """
-    INA228 85-V, 20-bit, ultra-precise, I2C output 
+    INA228 85-V, 20-bit, ultra-precise, I2C output
     current/voltage/power/energy/charge monitor with alert
     """
 
@@ -74,7 +74,7 @@ module Texas_Instruments_INA228_driver from CurrentSensor:
     shunt.shunt.resistance = 15mohm +/-1% # TODO: set dynamically, now 10A/2.75A range
     assert shunt.shunt.resistance is 163.84mV / max_current
     assert shunt.shunt.max_power >= (max_current * shunt.shunt.resistance) * max_current
-    
+
     power.required = True
     power_source.required = True
     power_sink.required = True

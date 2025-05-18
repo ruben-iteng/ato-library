@@ -32,7 +32,7 @@ module DualBuffer:
     # components
     buffer = new SN74LVC2G34DBVRUMW
     decoupling_capacitor = new Capacitor
-    
+
     # parameters
     decoupling_capacitor.capacitance = 100nF +/-20%
     decoupling_capacitor.package = "C0402"
@@ -86,4 +86,3 @@ component UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW:
     signal VCC ~ pin 5
     signal Y1 ~ pin 6
     signal Y2 ~ pin 4
-
