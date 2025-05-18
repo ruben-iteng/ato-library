@@ -4,7 +4,7 @@ component ISO1540:
     """
     Low-Power Bidirectional I2C Isolator
     """
-    
+
     # external interfaces
     power_non_isolated = new ElectricPower
     i2c_non_isolated = new I2C
