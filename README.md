@@ -21,23 +21,23 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![swd_tc2030_idc_nl](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png) | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |
 | ![swd_tc2030_idc_fp](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_fp.png) | swd_tc2030_idc_fp | Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with SWD pinout | |
 | [esp32c3](packages/esp32c3/README.md) | 2 modules | ESP32 C3 microcontroller | 0.2.0 |
-|  | esp32_c3_mini_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components | |
-|  | esp32_c3_mini_ufl_driver | ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components | |
+| ![esp32_c3_mini_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32c3/assets/esp32_c3_mini_driver.png) | esp32_c3_mini_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components | |
+| ![esp32_c3_mini_ufl_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32c3/assets/esp32_c3_mini_ufl_driver.png) | esp32_c3_mini_ufl_driver | ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components | |
 | [esp32s3](packages/esp32s3/README.md) | 1 module | ESP32 S3 microcontroller | 0.2.0 |
-|  | esp32_s3_wroom_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
+| ![esp32_s3_wroom_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/esp32s3/assets/esp32_s3_wroom_driver.png) | esp32_s3_wroom_driver | ESP32 S3 WROOM-1 module with build-in antenna and supporting components<br>    - 32MB flash<br>    - 2MB PSRAM | |
 | [ina228](packages/ina228/README.md) | 1 module | INA228 low voltage power monitor with I2C interface | 0.2.0 |
 | ![ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/ina228.png) | ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.1 |
 | ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
 | [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.2.0 |
-|  | addressable_led_connector_driver | - | |
-|  | addressable_led_driver | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        leds = new AddressableLED[3]<br><br>        power = new ElectricPower<br>        data_in = new ElectricLogic<br><br>        for led in leds:<br>            led -> WS2812B_5050_Black<br>            led.power ~ power<br><br>        data_in ~> leds[0] ~> leds[1] ~> leds[2] | |
+| ![addressable_led_connector_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector_driver.png) | addressable_led_connector_driver | - | |
+| ![addressable_led_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_driver.png) | addressable_led_driver | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        leds = new AddressableLED[3]<br><br>        power = new ElectricPower<br>        data_in = new ElectricLogic<br><br>        for led in leds:<br>            led -> WS2812B_5050_Black<br>            led.power ~ power<br><br>        data_in ~> leds[0] ~> leds[1] ~> leds[2] | |
 | [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.2.0 |
-|  | aip74lvc1t45_driver | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
-|  | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |
-|  | sn74lvc3g14dc_driver | - | |
-|  | iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
-|  | sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
+| ![aip74lvc1t45_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45_driver.png) | aip74lvc1t45_driver | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
+| ![sn74lvc2g34dbvrumw_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc2g34dbvrumw_driver.png) | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |
+| ![sn74lvc3g14dc_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc3g14dc_driver.png) | sn74lvc3g14dc_driver | - | |
+| ![iso1540_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540_driver.png) | iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
+| ![sn74cb3q3251pwr_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr_driver.png) | sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.1.2 |
 | ![faebryk_8x9mm](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/faebryk_8x9mm.png) | faebryk_8x9mm | faebryk Logo 8x9mm | |
 | [nxp_semiconductors-pca95xx](packages/nxp_semiconductors-pca95xx/README.md) | 4 modules | NXP Semiconductors PCA95xx family of I2C I/O expanders | 0.1.0 |
@@ -50,9 +50,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![driven_dpdt_bistable_relay_push_terminal](https://github.com/ruben-iteng/ato-library/raw/main/packages/relays/assets/driven_dpdt_bistable_relay_push_terminal.png) | driven_dpdt_bistable_relay_push_terminal | DrivenDPDTBistableRelay with push terminal | |
 | [rs485](packages/rs485/README.md) | 4 modules | RS485 related modules | 0.2.0 |
 | ![bus_protection](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/bus_protection.png) | bus_protection | RS485 bus protection.<br>    - Overvoltage protection<br>    - Overcurrent protection<br>    - Common mode filter<br>    - Termination resistor<br>    - ESD protection<br>    - Lightning protection<br><br>    based on: https://www.mornsun-power.com/public/uploads/pdf/TD(H)541S485H.pdf | |
-|  | maxlinear_sp3485en_driver | Simple UART to RS485 converter.<br>    UART and write enable interface in, RS485 interface out. | |
-|  | analog_devices_adm2587ebrwz_driver | Isolated UART to half duplex RS485 interface | |
-|  | chipanalog_is2092a_driver | Isolated powered UART to RS485 transceiver design block.<br>    - 3.3V or 5V logic power<br>    - 3.3V or 5V module power<br>    - 0.5 Mbps UART<br>    - Read enable/write enable input<br>    - RS485 half duplex<br>    - ANSI/ESDA/JEDEC JS-001 ESD protection<br>    - JESD22-C101 CDM protection | |
+| ![maxlinear_sp3485en_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/maxlinear_sp3485en_driver.png) | maxlinear_sp3485en_driver | Simple UART to RS485 converter.<br>    UART and write enable interface in, RS485 interface out. | |
+| ![analog_devices_adm2587ebrwz_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/analog_devices_adm2587ebrwz_driver.png) | analog_devices_adm2587ebrwz_driver | Isolated UART to half duplex RS485 interface | |
+| ![chipanalog_is2092a_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/chipanalog_is2092a_driver.png) | chipanalog_is2092a_driver | Isolated powered UART to RS485 transceiver design block.<br>    - 3.3V or 5V logic power<br>    - 3.3V or 5V module power<br>    - 0.5 Mbps UART<br>    - Read enable/write enable input<br>    - RS485 half duplex<br>    - ANSI/ESDA/JEDEC JS-001 ESD protection<br>    - JESD22-C101 CDM protection | |
 | [switches](packages/switches/README.md) | 1 module | Rotary encoders, switches, and other switch like components and modules | 0.1.2 |
 | ![rotary_encoder_advanced](https://github.com/ruben-iteng/ato-library/raw/main/packages/switches/assets/rotary_encoder_advanced.png) | rotary_encoder_advanced | Rotary encoder + switchwith debouncing and hysteresis.<br><br>    Specialize the rotary encoder in your application:<br>    rot_encoder = new RotaryEncoderAdvanced<br>    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2 | |
 | [usb](packages/usb/README.md) | 2 modules | USB connectors and circuitry | 0.2.0 |
