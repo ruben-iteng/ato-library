@@ -1,0 +1,209 @@
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("MODULE_TEMPLATING")
+#pragma experiment("FOR_LOOP")
+
+import Addressor
+import Electrical
+import Capacitor
+import ElectricLogic
+import ElectricPower
+import I2C
+
+from "pca95xx.ato" import NXP_Semiconductors_PCA95xx_base_package, NXP_Semiconductors_PCA95xx_base_driver
+
+component NXP_Semiconductors_PCA9554x_base_package from NXP_Semiconductors_PCA95xx_base_package:
+    """NXP Semiconductors PCA9554/PCA9554A base package"""
+
+    # pins
+    io = new Electrical[8]
+    interrupt = new Electrical
+    A = new Electrical[3]
+
+
+component NXP_Semiconductors_PCA9554_base_package from NXP_Semiconductors_PCA9554x_base_package:
+    """NXP Semiconductors PCA9554 base package"""
+
+
+component NXP_Semiconductors_PCA9554A_base_package from NXP_Semiconductors_PCA9554x_base_package:
+    """NXP Semiconductors PCA9554A base package"""
+
+
+component NXP_Semiconductors_PCA9554PW_TSSOP16_package from NXP_Semiconductors_PCA9554_base_package:
+    """NXP Semiconductors PCA9554PW,118 TSSOP16 package"""
+    lcsc_id = "C17230"
+    mpn = "PCA9554PW,118"
+
+    # pins
+    pin 1 ~ A[0]
+    pin 2 ~ A[1]
+    pin 3 ~ A[2]
+    pin 13 ~ interrupt
+    pin 4 ~ io[0]
+    pin 5 ~ io[1]
+    pin 6 ~ io[2]
+    pin 7 ~ io[3]
+    pin 9 ~ io[4]
+    pin 10 ~ io[5]
+    pin 11 ~ io[6]
+    pin 12 ~ io[7]
+    pin 14 ~ scl
+    pin 15 ~ sda
+    pin 16 ~ vdd
+    pin 8 ~ vss
+
+
+component NXP_Semiconductors_PCA9554APW_TSSOP16_package from NXP_Semiconductors_PCA9554A_base_package:
+    """NXP Semiconductors PCA9554APW,118 TSSOP16 package"""
+    lcsc_id = "C86803"
+    mpn = "PCA9554APW,118"
+
+    # pins
+    pin 1 ~ A[0]
+    pin 2 ~ A[1]
+    pin 3 ~ A[2]
+    pin 13 ~ interrupt
+    pin 4 ~ io[0]
+    pin 5 ~ io[1]
+    pin 6 ~ io[2]
+    pin 7 ~ io[3]
+    pin 9 ~ io[4]
+    pin 10 ~ io[5]
+    pin 11 ~ io[6]
+    pin 12 ~ io[7]
+    pin 14 ~ scl
+    pin 15 ~ sda
+    pin 16 ~ vdd
+    pin 8 ~ vss
+
+
+component NXP_Semiconductors_PCA9554ABS_HVQFN16_4x4mm_package from NXP_Semiconductors_PCA9554A_base_package:
+    """NXP Semiconductors PCA9554ABS,118 HVQFN16(4x4mm) package"""
+    lcsc_id = "C2688054"
+    mpn = "PCA9554ABS,118"
+
+    # pins
+    pin 15 ~ A[0]
+    pin 16 ~ A[1]
+    pin 1 ~ A[2]
+    pin 17 ~ vss
+    pin 11 ~ interrupt
+    pin 2 ~ io[0]
+    pin 3 ~ io[1]
+    pin 4 ~ io[2]
+    pin 5 ~ io[3]
+    pin 7 ~ io[4]
+    pin 8 ~ io[5]
+    pin 9 ~ io[6]
+    pin 10 ~ io[7]
+    pin 12 ~ scl
+    pin 13 ~ sda
+    pin 14 ~ vdd
+    pin 6 ~ vss
+
+
+component NXP_Semiconductors_PCA9554BS_HVQFN16_4x4mm_package from NXP_Semiconductors_PCA9554_base_package:
+    """NXP Semiconductors PCA9554BS,118 HVQFN16(4x4mm) package"""
+    lcsc_id = "C2688892"
+    mpn = "PCA9554BS,118"
+
+    # pins
+    pin 15 ~ A[0]
+    pin 16 ~ A[1]
+    pin 1 ~ A[2]
+    pin 17 ~ vss
+    pin 11 ~ interrupt
+    pin 2 ~ io[0]
+    pin 3 ~ io[1]
+    pin 4 ~ io[2]
+    pin 5 ~ io[3]
+    pin 7 ~ io[4]
+    pin 8 ~ io[5]
+    pin 9 ~ io[6]
+    pin 10 ~ io[7]
+    pin 12 ~ scl
+    pin 13 ~ sda
+    pin 14 ~ vdd
+    pin 6 ~ vss
+
+module NXP_Semiconductors_PCA9554x_driver from NXP_Semiconductors_PCA95xx_base_driver:
+    """
+    NXP Semiconductors PCA9554/PCA9554A driver
+    """
+    package = new NXP_Semiconductors_PCA9554x_base_package
+
+    # external interfaces (not in base driver)
+    io = new ElectricLogic[8]
+    interrupt = new ElectricLogic
+
+    # Addressor
+    addressor = new Addressor<address_bits=3>
+    addressor.address_lines[0].line ~ package.A[0]
+    addressor.address_lines[1].line ~ package.A[1]
+    addressor.address_lines[2].line ~ package.A[2]
+    for address_line in addressor.address_lines:
+        address_line.reference ~ power
+    assert addressor.address is i2c.address
+
+    # connections to package
+    package.scl ~ i2c.scl.line
+    package.sda ~ i2c.sda.line
+    package.vdd ~ power.hv
+    package.vss ~ power.lv
+    package.io[0] ~ io[0].line
+    package.io[1] ~ io[1].line
+    package.io[2] ~ io[2].line
+    package.io[3] ~ io[3].line
+    package.io[4] ~ io[4].line
+    package.io[5] ~ io[5].line
+    package.io[6] ~ io[6].line
+    package.io[7] ~ io[7].line
+    package.interrupt ~ interrupt.line
+
+    # decoupling capacitor
+    decoupling_capacitor = new Capacitor
+    power.vcc ~> decoupling_capacitor ~> power.gnd
+    decoupling_capacitor.value = 100nF +/- 10%
+    decoupling_capacitor.package = "C0402"
+
+
+module NXP_Semiconductors_PCA9554_driver from NXP_Semiconductors_PCA9554x_driver:
+    """
+    NXP Semiconductors PCA9554
+    - 8-bit I2C-bus and SMBus I/O port with interrupt
+    - Same as PCA9554A except for I2C base address
+    - Operating power supply voltage range of 2.3 V to 5.5 V
+    - 5 V tolerant I/Os
+    - Polarity Inversion register
+    - Active LOW interrupt output
+    - Low standby current
+    - Noise filter on SCL/SDA inputs
+    - No glitch on power-up
+    - Internal power-on reset
+    - 8 I/O pins which default to 8 inputs
+    - 0 Hz to 400 kHz clock frequency
+    - ESD protection exceeds 2000 V HBM per JESD22-A114 and 1000 V CDM per JESD22-C101
+    - Latch-up testing is done to JEDEC Standard JESD78 which exceeds 100 mA
+    - AEC-Q100 compliance available
+    """
+    assert addressor.base is 0x20
+
+module NXP_Semiconductors_PCA9554A_driver from NXP_Semiconductors_PCA9554x_driver:
+    """
+    NXP Semiconductors PCA9554A
+    - 8-bit I2C-bus and SMBus I/O port with interrupt
+    - Same as PCA9554 except for I2C base address
+    - Operating power supply voltage range of 2.3 V to 5.5 V
+    - 5 V tolerant I/Os
+    - Polarity Inversion register
+    - Active LOW interrupt output
+    - Low standby current
+    - Noise filter on SCL/SDA inputs
+    - No glitch on power-up
+    - Internal power-on reset
+    - 8 I/O pins which default to 8 inputs
+    - 0 Hz to 400 kHz clock frequency
+    - ESD protection exceeds 2000 V HBM per JESD22-A114 and 1000 V CDM per JESD22-C101
+    - Latch-up testing is done to JEDEC Standard JESD78 which exceeds 100 mA
+    - AEC-Q100 compliance available
+    """
+    assert addressor.base is 0x38
