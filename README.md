@@ -8,6 +8,8 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 
 | Package | Modules | Description | Version |
 |---------|---------|-------------|---------|
+| [analog-devices-max14778](packages/analog-devices-max14778/README.md) | 1 module | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | 0.1.0 |
+| ![analog_devices_max14778_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/analog-devices-max14778/assets/analog_devices_max14778_driver.png) | analog_devices_max14778_driver | Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer | |
 | [bm9002a56ilg](packages/bm9002a56ilg/README.md) | 1 module | BM9002A-56ILG microcontroller | 0.1.0-alpha |
 | ![cbm9002a_56ilg_reference_design](https://github.com/ruben-iteng/ato-library/raw/main/packages/bm9002a56ilg/assets/cbm9002a_56ilg_reference_design.png) | cbm9002a_56ilg_reference_design | Reference design for the BM9002A_56ILG microcontroller. | |
 | [connectors](packages/connectors/README.md) | 3 modules | Miscellaneous connectors | 0.1.0 |
