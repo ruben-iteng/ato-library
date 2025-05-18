@@ -205,7 +205,7 @@ component Espressif_Systems_ESP32_C3_MINI_1:
 component Espressif_Systems_ESP32_C3_MINI_1_N4 from Espressif_Systems_ESP32_C3_MINI_1:
     """ESP32 C3 MINI module with build-in antenna"""
     lcsc_id = "C2838502"
-    mpn = "ESP32-C3-MINI-1-N4" 
+    mpn = "ESP32-C3-MINI-1-N4"
 
 component Espressif_Systems_ESP32_C3_MINI_1U_H4 from Espressif_Systems_ESP32_C3_MINI_1:
     """ESP32 C3 MINI module with u.fl antenna connector"""
@@ -219,4 +219,4 @@ component Espressif_Systems_ESP32_C3_MINI_1U_H4 from Espressif_Systems_ESP32_C3_
     pin 58
     pin 59
     pin 60
-    pin 61    
+    pin 61

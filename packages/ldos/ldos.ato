@@ -51,6 +51,3 @@ component TECH_PUBLIC_TPAP2112K_3_3TRG1 from LDO:
     ripple_rejection_ratio = 75dB to 80dB
     output_current = 601mA to 1100mA
     quiescent_current = 10uA
-    
-    
-    

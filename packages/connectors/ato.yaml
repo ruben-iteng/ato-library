@@ -19,7 +19,7 @@ builds:
     keep_picked_parts: true
     hide_designators: true
     keep-net-names: true
-  
+
   qwiic_horizontal:
     entry: qwiic.ato:QwiicHorizontal
     fail_on_drcs: false
