@@ -39,7 +39,7 @@ component Analog_Devices_MAX14778_package:
 
 module Analog_Devices_MAX14778_Driver:
     """Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer"""
-    
+
     package = new Analog_Devices_MAX14778_package
 
     # components
@@ -99,7 +99,7 @@ module Analog_Devices_MAX14778_Driver:
         selector.reference ~ power
     enable_a.reference ~ power
     enable_b.reference ~ power
-    
+
     # parameters
     assert power.voltage within 3.0V to 5.5V
     assert _negative_charge_pump_output.voltage is 52V
@@ -112,3 +112,7 @@ module Analog_Devices_MAX14778_Driver:
     negative_charge_pump_capacitor.capacitance = 100nF +/- 10%
     assert negative_charge_pump_capacitor.max_voltage >= _negative_charge_pump_output.voltage * 1.5
     negative_charge_pump_capacitor.package = "C0603"
+
+    power.required = True
+    enable_a.required = True
+    enable_b.required = True
