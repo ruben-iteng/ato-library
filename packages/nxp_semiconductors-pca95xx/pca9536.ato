@@ -80,7 +80,7 @@ module NXP_Semiconductors_PCA9536_driver from NXP_Semiconductors_PCA95xx_base_dr
     - 0 Hz to 400 kHz clock frequency
     - ESD protection exceeds 2000 V HBM per JESD22-A114, 200 V MM per JESD22-A115 and 1000 V CDM per JESD22-C101
     - Latch-up testing is done to JEDEC Standard JESD78 which exceeds 100 mA
-    
+
     3 package options:
     - HVSON8
     - TSSOP8

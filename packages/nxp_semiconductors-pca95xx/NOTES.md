@@ -7,7 +7,7 @@ import ElectricPower
 import I2C
 
 from "pca9554.ato" import NXP_Semiconductors_PCA9554_driver
-from "pca9554.ato" import NXP_Semiconductors_PCA9554PW_TSSOP16_package 
+from "pca9554.ato" import NXP_Semiconductors_PCA9554PW_TSSOP16_package
 from "pca9554.ato" import NXP_Semiconductors_PCA9554BS_HVQFN16_4x4mm_package
 
 from "pca9554.ato" import NXP_Semiconductors_PCA9554A_driver
@@ -67,7 +67,7 @@ module Test:
     # Connect IO expanders to power and I2C
     pca9536.power ~ power
     pca9536.i2c ~ i2c
-    
+
     # set parameters
     power.voltage = 3.3V +/- 10%
     i2c.frequency = 100kHz
