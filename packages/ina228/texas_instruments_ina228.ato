@@ -1,0 +1,81 @@
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("MODULE_TEMPLATING")
+
+import Addressor
+import Capacitor
+import ElectricLogic
+import ElectricPower
+import I2C
+
+from "components/ShuntedElectricPower.py" import ShuntedElectricPower
+from "components/CurrentSensor.py" import CurrentSensor
+
+component Texas_Instruments_INA228_package:
+    """Texas Instruments INA228 package"""
+    lcsc_id = "C2887910"
+    manufacturer = "Texas Instruments"
+    mpn = "INA228AIDGSR"
+    datasheet_url = "https://www.ti.com/cn/lit/gpn/ina228"
+    designator_prefix = "U"
+
+    # pins
+    signal A0 ~ pin 2
+    signal A1 ~ pin 1
+    signal ALERT ~ pin 3
+    signal GND ~ pin 7
+    signal IN_ ~ pin 9
+    signal INplus ~ pin 10
+    signal SCL ~ pin 5
+    signal SDA ~ pin 4
+    signal VBUS ~ pin 8
+    signal VS ~ pin 6
+
+
+module Texas_Instruments_INA228_driver from CurrentSensor:
+    """
+    INA228 85-V, 20-bit, ultra-precise, I2C output
+    current/voltage/power/energy/charge monitor with alert
+    """
+
+    # components
+    package = new Texas_Instruments_INA228_package
+    shunt = new ShuntedElectricPower<lowside=False, filtered=False>
+    decoupling_capacitor = new Capacitor
+    addressor = new Addressor<address_bits=2>
+
+    # external interfaces
+    power = new ElectricPower
+    i2c = new I2C
+    alert = new ElectricLogic
+
+    # external parameters
+    max_current: current
+
+    # connections to package
+    package.A0 ~ addressor.address_lines[0].line
+    package.A1 ~ addressor.address_lines[1].line
+    package.IN_ ~ shunt.shunt_sense.n.line
+    package.INplus ~ shunt.shunt_sense.p.line
+    package.SDA ~ i2c.sda.line
+    package.SCL ~ i2c.scl.line
+    package.VS ~ power.hv
+    package.GND ~ power.lv
+    package.VBUS ~ power_source.hv
+    package.ALERT ~ alert.line
+
+    # other connections
+    shunt.power_in ~ power_source
+    shunt.power_out ~ power_sink
+    power ~ decoupling_capacitor.power
+
+    # parameters
+    decoupling_capacitor.capacitance = 100nF +/- 10%
+    decoupling_capacitor.package = "C0402"
+    shunt.shunt.resistance = 15mohm +/-1% # TODO: set dynamically, now 10A/2.75A range
+    assert shunt.shunt.resistance is 163.84mV / max_current
+    assert shunt.shunt.max_power >= (max_current * shunt.shunt.resistance) * max_current
+
+    power.required = True
+    power_source.required = True
+    power_sink.required = True
+    i2c.required = True

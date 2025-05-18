@@ -1,0 +1,78 @@
+#pragma experiment("FOR_LOOP")
+#pragma experiment("BRIDGE_CONNECT")
+
+import ElectricPower
+import Regulator
+import Capacitor
+import Inductor
+
+component EVISUN_B0505S_1WR3_package:
+    """EVISUN_B0505S_1WR3 component"""
+    lcsc_id = "C7465178"
+    manufacturer = "EVISUN"
+    mpn = "B0505S-1WR3"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307211806_EVISUN-B0505S-1WR3_C7465178.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal _Vin ~ pin 1
+    signal plusVin ~ pin 2
+    signal _Vout ~ pin 3
+    signal plusVout ~ pin 4
+
+module EVISUN_B0505S_1WR3_driver from Regulator:
+    """
+    EVISUN B0505S-1WR3 5V to 5V isolated DCDC converter with shortcircuit protection
+    - 5V input
+    - 5V output
+    - 1W power rating
+    """
+    # components
+    package = new EVISUN_B0505S_1WR3_package
+    ferrites = new Inductor[2]
+    decoupling_capacitor_in = new Capacitor[2]
+    decoupling_capacitor_out = new Capacitor
+    anti_emi_capacitor = new Capacitor
+
+    # (external) interfaces
+    _power_in_unfiltered = new ElectricPower
+    _power_out_unfiltered = new ElectricPower
+
+    # connections to package
+    package._Vin ~ _power_in_unfiltered.lv
+    package._Vout ~ _power_out_unfiltered.lv
+    package.plusVin ~ _power_in_unfiltered.hv
+    package.plusVout ~ _power_out_unfiltered.hv
+
+    # other connections
+    _power_in_unfiltered ~ decoupling_capacitor_in[0].power
+    _power_in_unfiltered.hv ~> ferrites[0] ~> decoupling_capacitor_in[1].power.hv
+    decoupling_capacitor_in[1].power.hv ~ power_in.hv
+    _power_in_unfiltered.lv ~ power_in.lv
+    _power_in_unfiltered.lv ~ decoupling_capacitor_in[1].power.lv
+    _power_out_unfiltered ~ decoupling_capacitor_out.power
+    _power_out_unfiltered.hv ~> ferrites[1] ~> power_out.hv
+    _power_out_unfiltered.lv ~> power_out.lv
+    _power_in_unfiltered.lv ~> anti_emi_capacitor ~> power_out.lv
+
+    # parameters
+    for ferrite in ferrites:
+        # ferrite.inductance = 4.7uH +/-20%
+        # ferrite.max_current = 700mA
+        # ferrite.package = "C0603"
+        # TODO: remove when inductor picker is implemented
+        ferrite.lcsc_id = "C394952"
+
+    for cap in decoupling_capacitor_in:
+        cap.capacitance = 4.7nF +/-10%
+        cap.package = "C0603"
+    decoupling_capacitor_out.capacitance = 10uF +/-10%
+    decoupling_capacitor_out.package = "C0603"
+
+    # anti_emi_capacitor.capacitance = 270pF +/-20%
+    # assert anti_emi_capacitor.max_voltage >= 2kV
+    # TODO: Y5P not yet supported by picker
+    anti_emi_capacitor.lcsc_id = "C2914698"
+
+    power_in.required = True
+    power_out.required = True
