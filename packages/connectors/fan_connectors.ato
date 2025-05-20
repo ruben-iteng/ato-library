@@ -1,0 +1,47 @@
+import ElectricLogic
+import ElectricPower
+
+
+module Fan_Interface:
+    """
+    Fan interface for standard 4-pin 12v computer fans
+    """
+    # external interfaces
+    power = new ElectricPower
+    tach = new ElectricLogic
+    pwm = new ElectricLogic
+
+
+module Fan_4p_Connector:
+    """
+    Connector for standard 4-pin 12v computer fans
+    - 12V
+    - Tach
+    - PWM
+    """
+    # external interfaces
+    fan_interface = new Fan_Interface
+    connector = new HCTL_HC_2510_4A
+
+    # connections
+    fan_interface.pwm.line ~ connector.1
+    fan_interface.tach.line ~ connector.2
+    fan_interface.power.hv ~ connector.3
+    fan_interface.power.lv ~ connector.4
+
+
+component HCTL_HC_2510_4A:
+    """HCTL_HC_2510_4A component"""
+    lcsc_id = "C2982033"
+    manufacturer = "HCTL"
+    mpn = "HC-2510-4A"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2203111830_HCTL-HC-2510-4A_C2982033.pdf"
+    designator_prefix = "CN"
+
+    footprint = "CONN-TH_4P-P2.54_HCTL_HC-2510-4A"
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4

@@ -27,10 +27,17 @@ builds:
     hide_designators: true
     keep-net-names: true
 
+  fan_connector:
+    entry: fan_connectors.ato:Fan_4p_Connector
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+    keep-net-names: true
+
 package:
   identifier: ruben-iteng/connectors
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.0"
+  version: "0.2.1"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
