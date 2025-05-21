@@ -52,7 +52,7 @@ component TECH_PUBLIC_TPAP2112K_3_3TRG1 from LDO:
     power_out.hv ~ pin 5
 
     # parameters
-    max_input_voltage = 1.2V to 5.5V
+    assert power_in.voltage within 1.2V to 5.5V
     dropout_voltage = 0.32V
     output_voltage = 3.3V +/- 0.2%
     ripple_rejection_ratio = 75dB to 80dB

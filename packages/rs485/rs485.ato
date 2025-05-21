@@ -69,7 +69,6 @@ module MaxLinear_SP3485EN_driver from UART_RS485:
     # external interfaces
     uart = new UART_Base
     rs485 = new RS485HalfDuplex
-    write_enable = new ElectricLogic
     power = new ElectricPower
 
     # connections to package
@@ -96,7 +95,7 @@ module MaxLinear_SP3485EN_driver from UART_RS485:
     uart.required = True
     rs485.required = True
     write_enable.required = True
-
+    read_enable.required = True
 
 component MaxLinear_SP3485EN_L_TR_package:
     """MaxLinear SP3485EN L TR package"""
@@ -139,8 +138,6 @@ module Chipanalog_IS2092A_driver from UART_RS485:
     power_logic = new ElectricPower
     power_isolated_out = new ElectricPower
     power_isolated_in = new ElectricPower
-    read_enable = new ElectricLogic
-    write_enable = new ElectricLogic
     voltage_select = new ElectricLogic
     # Output voltage power_isolated_out/in select pin:
     # power_isolated_out/in =5.0 V when voltage_select is shorted to power_isolated_in.hv;
