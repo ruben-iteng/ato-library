@@ -4,7 +4,7 @@ RS485 related modules
 
 ## Package Information
 
-- Version: 0.2.0
+- Version: 0.2.1
 - Total Modules: 4
 - Author(s): Ruben Baldewsing
 - License: MIT
