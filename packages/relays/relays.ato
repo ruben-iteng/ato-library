@@ -54,7 +54,6 @@ module DrivenDPDTBistableRelay:
     # interfaces
     power = new ElectricPower
     assert power.voltage within 5V+/-10%
-    coil_power = new ElectricPower
 
     input_a = new ElectricLogic
     input_b = new ElectricLogic
@@ -69,28 +68,9 @@ module DrivenDPDTBistableRelay:
 
     # components
     relay = new G6KU2FYTRDC5
-    relay_driver = new Shenzhen_Fuman_Elec_TC118S
+    relay_driver = new Shenzhen_Fuman_Elec_TC118S_driver
     led_indicator_a = new LEDIndicator
     led_indicator_b = new LEDIndicator
-
-    # Bypass capacitors
-    power_5v_bypass_capacitor = new Capacitor
-    power_5v_bulk_capacitor = new Capacitor
-
-    power_5v_bypass_capacitor.power ~ power
-    power_5v_bulk_capacitor.power ~ power
-
-    power_5v_bypass_capacitor.package = "C0402"
-    power_5v_bulk_capacitor.package = "C0402"
-
-    power_5v_bypass_capacitor.value = 100nF +/- 20%
-    power_5v_bulk_capacitor.value = 220nF +/- 20%
-
-    # Relay filter capacitor
-    relay_filter_capacitor = new Capacitor
-    relay_filter_capacitor.power ~ relay_driver.motor_power_out
-    relay_filter_capacitor.package = "C0402"
-    relay_filter_capacitor.value = 100pF +/- 20%
 
     # led indicators
     led_indicator_a.led.led.lcsc_id = "C2286" # red
@@ -100,19 +80,16 @@ module DrivenDPDTBistableRelay:
     #led_indicator_b.led.led.brightness = 5millicandela +/- 10%
     led_indicator_b.led.current_limiting_resistor.package = "R0402"
 
-
-        # connections
-    coil_power ~ relay.coil
-
-    relay_driver.power ~ power
-    input_a.reference ~ power
-    input_b.reference ~ power
+    # connections
+    power ~ relay_driver.power
+    input_a.reference.lv ~ power.lv
+    input_b.reference.lv ~ power.lv
 
     relay_driver.input_a ~ input_a
     led_indicator_a.logic_in ~ input_a
     relay_driver.input_b ~ input_b
     led_indicator_b.logic_in ~ input_b
-    relay_driver.motor_power_out ~ relay.coil
+    relay_driver.motor_interface ~ relay.coil
 
     relay.common_a ~ common_a
     relay.normally_closed_a ~ normally_closed_a
@@ -130,7 +107,6 @@ module DrivenDPDTBistableRelayPushTerminal:
 
     # external interfaces
     power = new ElectricPower
-    coil_power = new ElectricPower
 
     input_a = new ElectricLogic
     input_b = new ElectricLogic
@@ -141,17 +117,16 @@ module DrivenDPDTBistableRelayPushTerminal:
 
     # connections
     relay.power ~ power
-    relay.coil_power ~ coil_power
     relay.input_a ~ input_a
     relay.input_b ~ input_b
 
-    relay.normally_closed_a ~ screw_terminal.PA1
-    relay.common_a ~ screw_terminal.PA2
-    relay.normally_open_a ~ screw_terminal.PA3
+    relay.normally_closed_a.line ~ screw_terminal.PA1
+    relay.common_a.line ~ screw_terminal.PA2
+    relay.normally_open_a.line ~ screw_terminal.PA3
 
-    relay.normally_closed_b ~ screw_terminal.PB1
-    relay.common_b ~ screw_terminal.PB2
-    relay.normally_open_b ~ screw_terminal.PB3
+    relay.normally_closed_b.line ~ screw_terminal.PB1
+    relay.common_b.line ~ screw_terminal.PB2
+    relay.normally_open_b.line ~ screw_terminal.PB3
 
 component G6KU2FYTRDC5 from DPDT_Relay:
     """Omron Electronics G6KU_2F_Y_TR_DC5 bistable relay"""
@@ -165,38 +140,73 @@ component G6KU2FYTRDC5 from DPDT_Relay:
     coil.vcc ~ pin 8
     coil.gnd ~ pin 1
 
-    normally_closed_a ~ pin 2
-    common_a ~ pin 3
-    normally_open_a ~ pin 4
+    normally_closed_a.line ~ pin 2
+    common_a.line ~ pin 3
+    normally_open_a.line ~ pin 4
 
-    normally_closed_b ~ pin 7
-    common_b ~ pin 6
-    normally_open_b ~ pin 5
+    normally_closed_b.line ~ pin 7
+    common_b.line ~ pin 6
+    normally_open_b.line ~ pin 5
 
-component Shenzhen_Fuman_Elec_TC118S:
-    """Shenzhen Fuman Elec TC118S dc motor driver"""
+module Shenzhen_Fuman_Elec_TC118S_driver:
+    """
+    Shenzhen Fuman Elec TC118S dc motor driver
+    - Single-channel built-in high-power MOS full-bridge driver
+    - Supports forward, reverse, stop, and brake functions
+    - Built-in efficient thermal response and thermal protection
+    - Low on-resistance (1.6Ω)
+    - Maximum continuous output current: 1.8A, peak current: 2.5A
+    """
+    # components
+    package = new Shenzhen_Fuman_Elec_TC118S_package
+    decoupling_capacitors = new Capacitor[2]
+    motor_filter_capacitor = new Capacitor
+
+    # external interfaces
+    power = new ElectricPower
+    motor_interface = new ElectricPower
+    input_a = new ElectricLogic
+    input_b = new ElectricLogic
+
+    # connections to package
+    power.vcc ~ package.VDD
+    power.gnd ~ package.PGND
+    power.gnd ~ package.AGND
+    motor_interface.vcc ~ package.OUTA
+    motor_interface.gnd ~ package.OUTB
+    input_a.line ~ package.INA
+    input_b.line ~ package.INB
+
+    # decoupling capacitors
+    decoupling_capacitors[0].power ~ power
+    decoupling_capacitors[0].capacitance = 100nF +/- 20%
+    decoupling_capacitors[0].package = "C0402"
+    decoupling_capacitors[1].power ~ power
+    decoupling_capacitors[1].capacitance = 4.7uF +/- 20%
+    decoupling_capacitors[1].max_voltage = 14V to 25V
+    motor_filter_capacitor.power ~ motor_interface
+    motor_filter_capacitor.capacitance = 100pF +/- 20%
+    motor_filter_capacitor.package = "C0402"
+
+    # parameters
+    assert power.voltage <= 7V
+
+component Shenzhen_Fuman_Elec_TC118S_package:
+    """Shenzhen Fuman Elec TC118S package"""
     lcsc_id = "C88308"
     manufacturer = "Shenzhen Fuman Elec"
     mpn = "TC118S"
     datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2204121200_Shenzhen-Fuman-Elec-TC118S_C88308.pdf"
     designator_prefix = "U"
 
-    # interfaces
-    power = new ElectricPower
-    motor_power_out = new ElectricPower
-    input_a = new ElectricLogic
-    input_b = new ElectricLogic
-
     # pins
-    power.vcc ~ pin 4
-    power.gnd ~ pin 7
-    power.gnd ~ pin 6
-
-    motor_power_out.vcc ~ pin 8
-    motor_power_out.gnd ~ pin 5
-
-    input_a.line ~ pin 2
-    input_b.line ~ pin 3
+    signal AGND ~ pin 6
+    signal INA ~ pin 2
+    signal INB ~ pin 3
+    signal OUTA ~ pin 8
+    signal OUTB ~ pin 5
+    signal PGND ~ pin 7
+    signal VDD ~ pin 4
 
 component _Cixi_Kefa_Elec_KF250T_5_0_23P:
     """Double layer push terminal 2x3 pin"""
