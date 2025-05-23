@@ -24,10 +24,16 @@ builds:
     keep_picked_parts: true
     hide_designators: true
 
+  segger_jlink_compact:
+    entry: segger.ato:SEGGER_JLink_Compact
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
 package:
   identifier: ruben-iteng/debug-interfaces
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.0"
+  version: "0.2.1"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
