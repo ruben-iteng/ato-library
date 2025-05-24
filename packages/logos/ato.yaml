@@ -16,10 +16,10 @@ builds:
 package:
   identifier: ruben-iteng/logos
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.2"
+  version: "0.1.3"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Various logos
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/logos/README.md
