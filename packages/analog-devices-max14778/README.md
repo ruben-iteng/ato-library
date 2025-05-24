@@ -4,11 +4,11 @@ Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/analog-devices-max14778/README.md
 
 ## Available Modules
 

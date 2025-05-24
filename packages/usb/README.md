@@ -4,11 +4,11 @@ USB connectors and circuitry
 
 ## Package Information
 
-- Version: 0.2.0
+- Version: 0.2.1
 - Total Modules: 2
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/usb/README.md
 
 ## Available Modules
 

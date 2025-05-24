@@ -4,7 +4,8 @@ import ElectricPower
 import JTAG
 import SWD
 
-component SEGGER_JLink_Compact:
+
+module SEGGER_JLink_Compact:
     """SEGGER J-Link compact PCBA mount"""
 
     # components

@@ -4,11 +4,11 @@ INA228 low voltage power monitor with I2C interface
 
 ## Package Information
 
-- Version: 0.2.0
+- Version: 0.2.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/ina228/README.md
 
 ## Available Modules
 

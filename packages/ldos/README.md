@@ -4,11 +4,11 @@ Various Low Dropout Regulators (LDOs)
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/ldos/README.md
 
 ## Available Modules
 

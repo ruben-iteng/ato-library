@@ -4,11 +4,11 @@ Miscellaneous connectors
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 4
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/connectors/README.md
 
 ## Available Modules
 

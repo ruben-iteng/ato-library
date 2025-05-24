@@ -4,11 +4,11 @@ Various logos
 
 ## Package Information
 
-- Version: 0.1.2
+- Version: 0.1.3
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/logos/README.md
 
 ## Available Modules
 
