@@ -21,13 +21,13 @@ builds:
 package:
   identifier: ruben-iteng/usb
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.0"
+  version: "0.2.1"
   authors:
   - name: Ruben Baldewsing
     email: 94007802+ruben-iteng@users.noreply.github.com
   summary: USB connectors and circuitry
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/usb/README.md
 dependencies:
 - type: registry
   identifier: atopile/indicator-leds

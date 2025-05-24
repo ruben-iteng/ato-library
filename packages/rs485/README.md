@@ -4,11 +4,11 @@ RS485 related modules
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 4
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/rs485/README.md
 
 ## Available Modules
 

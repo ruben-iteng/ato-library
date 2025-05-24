@@ -16,10 +16,10 @@ builds:
 package:
   identifier: ruben-iteng/analog-devices-max14778
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.0"
+  version: "0.1.1"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/analog-devices-max14778/README.md

@@ -4,11 +4,11 @@ NXP Semiconductors PCA95xx family of I2C I/O expanders
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 4
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/nxp_semiconductors-pca95xx/README.md
 
 ## Available Modules
 

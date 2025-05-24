@@ -30,10 +30,10 @@ builds:
 package:
   identifier: ruben-iteng/nxp-semiconductors-pca95xx
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.0"
+  version: "0.1.1"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: NXP Semiconductors PCA95xx family of I2C I/O expanders
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/nxp_semiconductors-pca95xx/README.md

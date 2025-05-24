@@ -4,11 +4,11 @@ Digital logic related components and modules
 
 ## Package Information
 
-- Version: 0.2.0
+- Version: 0.2.1
 - Total Modules: 5
 - Author(s): Ruben Baldewsing
 - License: MIT
-- Homepage: https://github.com/ruben-iteng/ato-library
+- Homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/logic/README.md
 
 ## Available Modules
 

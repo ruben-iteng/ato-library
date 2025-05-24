@@ -16,10 +16,10 @@ builds:
 package:
   identifier: ruben-iteng/ldos
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.1"
+  version: "0.2.2"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Various Low Dropout Regulators (LDOs)
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/ldos/README.md

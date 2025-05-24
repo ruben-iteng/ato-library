@@ -15,13 +15,13 @@ builds:
 package:
   identifier: ruben-iteng/microchip-emc2101
   repository: https://github.com/ruben-iteng/ato-library
-  version: 0.1.0
+  version: 0.1.1
   authors:
   - name: Ruben Baldewsing
     email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Microchip EMC2101 fan driver
   license: MIT
-  homepage: https://github.com/ruben-iteng/ato-library
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/microchip-emc2101/README.md
 dependencies:
 - type: registry
   identifier: ruben-iteng/connectors
