@@ -1,0 +1,121 @@
+import Electrical
+import ElectricLogic
+import ElectricPower
+import JTAG
+import SWD
+
+component SEGGER_JLink_Compact:
+    """SEGGER J-Link compact PCBA mount"""
+
+    # components
+    jlink = new SEGGER_JLink_Compact_PCBA
+    standoff = new _Sinhoo_SMTSO2530CTJ[2]
+    jlink_interface = new JLINK_Interface
+
+
+component SEGGER_JLink_Compact_PCBA:
+    """SEGGER J-Link compact PCBA footprint"""
+    footprint = "segger_jlink_compact"
+    designator_prefix = "MOD"
+
+
+component _Sinhoo_SMTSO2530CTJ:
+    """Sinhoo SMTSO2530CTJ M2.5 x 3.0mm standoff"""
+    lcsc_id = "C2915631"
+    manufacturer = "Sinhoo"
+    mpn = "SMTSO2530CTJ"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2111221230_Sinhoo-SMTSO2530CTJ_C2915631.pdf"
+    designator_prefix = "H"
+
+    contact = new Electrical
+
+    # pins
+    contact ~ pin 1
+    contact ~ pin 2
+    contact ~ pin 3
+    contact ~ pin 4
+
+
+module JLINK_Interface:
+    """
+    20 pin IDC header with J-Link interface pinout.
+    https://www.segger.com/products/debug-probes/j-link/technology/interface-description/
+    """
+
+    # external interfaces
+    jtag = new JTAG
+    swd = new SWD
+    target_power = new ElectricPower
+    return_test_clock = new ElectricLogic
+
+    # components
+    idc = new _Liansheng_BH_00019
+
+    # connections
+    # JTAG
+    idc.1 ~ jtag.vtref.hv
+    idc.3 ~ jtag.n_trst.line
+    idc.5 ~ jtag.tdi.line
+    idc.7 ~ jtag.tms.line
+    idc.9 ~ jtag.tck.line
+    idc.11 ~ return_test_clock.line
+    idc.13 ~ jtag.tdo.line
+    idc.15 ~ jtag.n_reset.line
+    idc.17 ~ jtag.dbgrq.line
+
+    # target power
+    idc.19 ~ target_power.hv
+
+    # SWD
+    idc.7 ~ swd.dio.line
+    idc.9 ~ swd.clk.line
+    idc.13 ~ swd.swo.line
+    idc.15 ~ swd.reset.line
+
+    # GND
+    idc.4 ~ target_power.gnd
+    idc.6 ~ target_power.gnd
+    idc.8 ~ target_power.gnd
+    idc.10 ~ target_power.gnd
+    idc.12 ~ target_power.gnd
+    # Pin 14-16 are on newer J-Link products used for firmware extension purposes.
+    # They can be left open or connected to ground.
+    # idc.14 ~ target_power.gnd
+    # idc.16 ~ target_power.gnd
+    # idc.18 ~ target_power.gnd
+    # idc.20 ~ target_power.gnd
+
+    # parameters
+    assert target_power.voltage <= 5.0V
+
+
+component _Liansheng_BH_00019:
+    """Liansheng BH-00019 2x10p 2.54mm pitch IDC header SMD"""
+    lcsc_id = "C2829930"
+    manufacturer = "Liansheng"
+    mpn = "BH-00019"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2105241719_Liansheng-BH-00019_C2829930.pdf"
+    designator_prefix = "J"
+
+    # pins
+    pin 1
+    pin 3
+    pin 5
+    pin 7
+    pin 9
+    pin 11
+    pin 13
+    pin 15
+    pin 17
+    pin 19
+
+    pin 20
+    pin 18
+    pin 16
+    pin 14
+    pin 12
+    pin 10
+    pin 8
+    pin 6
+    pin 4
+    pin 2
