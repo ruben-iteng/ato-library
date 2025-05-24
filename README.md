@@ -15,8 +15,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![qwiic_vertical](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_vertical.png) | qwiic_vertical | Vertical QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
 | ![qwiic_horizontal](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/qwiic_horizontal.png) | qwiic_horizontal | Horizontal QWIIC connector<br>    https://www.sparkfun.com/qwiic | |
 | ![fan_connector](https://github.com/ruben-iteng/ato-library/raw/main/packages/connectors/assets/fan_connector.png) | fan_connector | Connector for standard 4-pin 12v computer fans<br>    - 12V<br>    - Tach<br>    - PWM | |
-| [dcdc-converters](packages/dcdc-converters/README.md) | 1 module | DCDC converters | 0.2.0 |
+| [dcdc-converters](packages/dcdc-converters/README.md) | 2 modules | DCDC converters | 0.2.1 |
 | ![b0505s1wr3](https://github.com/ruben-iteng/ato-library/raw/main/packages/dcdc-converters/assets/b0505s1wr3.png) | b0505s1wr3 | EVISUN B0505S-1WR3 5V to 5V isolated DCDC converter with shortcircuit protection<br>    - 5V input<br>    - 5V output<br>    - 1W power rating | |
+| ![mpm3610-12vin-5vout](https://github.com/ruben-iteng/ato-library/raw/main/packages/dcdc-converters/assets/mpm3610-12vin-5vout.png) | mpm3610-12vin-5vout | MPM3610 with component parameters optimized for 12V input and 5V output | |
 | [debug-interfaces](packages/debug-interfaces/README.md) | 4 modules | SWD and tag connect headers for programming and debugging | 0.2.1 |
 | ![arm_cortex_m_debug_header](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/arm_cortex_m_debug_header.png) | arm_cortex_m_debug_header | 10 pin debug header with SWD pinout according to ARM Cortex M debug specification<br>    https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1 | |
 | ![swd_tc2030_idc_nl](https://github.com/ruben-iteng/ato-library/raw/main/packages/debug-interfaces/assets/swd_tc2030_idc_nl.png) | swd_tc2030_idc_nl | Tag-Connect TC2030-IDC-NL (6-pin) landing pattern with SWD pinout | |

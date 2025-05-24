@@ -1,0 +1,102 @@
+#pragma experiment("BRIDGE_CONNECT")
+
+import Capacitor
+import Resistor
+import ResistorVoltageDivider
+import ElectricPower
+import ElectricLogic
+import Regulator
+
+module MONOLITHIC_POWER_SYSTEMS_INC_MPM3610_12Vin_5Vout_driver from MONOLITHIC_POWER_SYSTEMS_INC_MPM3610_driver:
+    """
+    MPM3610 with component parameters optimized for 12V input and 5V output
+    """
+    # parameters
+    power_out.voltage = 5V +/- 0.1%
+    aam_resistor.resistance = 53.6kohm +/- 1%
+    feedback_voltage_divider.r_top.resistance = 100kohm +/- 1%
+    feedback_voltage_divider.r_bottom.resistance = 19.1kohm +/- 1%
+
+
+module MONOLITHIC_POWER_SYSTEMS_INC_MPM3610_driver from Regulator:
+    """
+    21V input, 1.2A output, synchronous step-down converter with integrated inductor
+    - 4.5V to 21V Operating Input Range
+    - 1.2A Continuous Load Current
+    - 200μA Low Quiescent Current
+    - 90mΩ/40mΩ Low RDS(ON) Internal Power MOSFETs
+    - Integrated Inductor
+    - Integrated VCC and Bootstrap Capacitors
+    - External AAM for Power-Save Mode Programming
+    - OCP with Hiccup
+    - Thermal Shutdown
+    - Output Adjustable from 0.8V
+    """
+    # components
+    package = new MONOLITHIC_POWER_SYSTEMS_INC__MPM3610GQV_Z_package
+    input_decoupling_capacitor = new Capacitor
+    output_decoupling_capacitor = new Capacitor
+    enable_resistor = new Resistor
+    aam_resistor = new Resistor
+    feedback_voltage_divider = new ResistorVoltageDivider
+
+    # external interfaces
+    enable = new ElectricLogic
+
+    # connections
+    package.IN ~ power_in.hv
+    package.OUT ~ power_out.hv
+    package.FB ~ feedback_voltage_divider.output.line
+    package.EN_SYNC ~ enable.line
+    package.PGND ~ power_in.lv
+    package.AGND ~ power_in.lv
+    package.PG ~> aam_resistor ~> power_in.lv
+
+    feedback_voltage_divider.power ~ power_out
+    enable.line ~> enable_resistor ~> power_in.hv
+    power_in ~ input_decoupling_capacitor.power
+    power_out ~ output_decoupling_capacitor.power
+
+    power_in.lv ~ power_out.lv
+
+    # parameters
+    assert power_in.voltage within 4.5V to 21V
+    assert power_out.voltage within 0.8V to 5.5V
+
+    aam_resistor.package = "R0402"
+    enable_resistor.resistance = 100kohm +/- 1%
+    enable_resistor.package = "R0402"
+    feedback_voltage_divider.r_bottom.package = "R0402"
+    feedback_voltage_divider.r_top.package = "R0402"
+    input_decoupling_capacitor.capacitance = 10uF +/- 10%
+    input_decoupling_capacitor.package = "C0805"
+    output_decoupling_capacitor.capacitance = 22uF +/- 10%
+    output_decoupling_capacitor.package = "C0805"
+
+    feedback_voltage_divider.r_bottom.resistance = 10kohm +/- 1%
+    feedback_voltage_divider.r_top.resistance = 10kohm +/- 1%
+    feedback_voltage_divider.r_bottom.package = "R0402"
+    feedback_voltage_divider.r_top.package = "R0402"
+
+
+component MONOLITHIC_POWER_SYSTEMS_INC__MPM3610GQV_Z_package:
+    """MONOLITHIC_POWER_SYSTEMS_INC__MPM3610GQV_Z package"""
+    lcsc_id = "C5183856"
+    manufacturer = "MONOLITHIC POWER SYSTEMS INC."
+    mpn = "MPM3610GQV-Z"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403221535_Monolithic-Power-Systems-MPM3610GQV-Z_C5183856.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal AGND ~ pin 3
+    signal BST ~ pin 11
+    signal EN_SYNC ~ pin 17
+    signal FB ~ pin 1
+    signal IN ~ pin 16
+    signal OUT ~ pin 9
+    signal PG ~ pin 18
+    signal PGND ~ pin 14
+    PGND ~ pin 13
+    PGND ~ pin 12
+    signal SW ~ pin 4
+    signal VCC ~ pin 2
