@@ -1,0 +1,83 @@
+#pragma experiment("FOR_LOOP")
+
+import ElectricPower
+import ElectricLogic
+import Capacitor
+
+
+module Texas_Instruments_LM66200_driver:
+    """
+    Texas Instruments LM66200 dual ideal diode with automatic switchover.
+    - Input voltage range: 1.6 V to 5.5 V
+    - Maximum continuous current: 2.5 A
+    - On-resistance: 40 mΩ (typical)
+    - Standby current: 50 nA (typical)
+    - Quiescent current: 1.32 μA (typical)
+    - Automatic diode switchover
+    - Controlled output slew rate:
+        - 1.3 ms (typical) at 3.3 V.
+    - Reverse current blocking when VOUT > VINx.
+    - Thermal shutdown.
+    """
+    # components
+    package = new Texas_Instruments_LM66200DRLR_package
+    power_in_decoupling_capacitors = new Capacitor[2]
+    power_out_decoupling_capacitor = new Capacitor
+
+    # external interfaces
+    power_in = new ElectricPower[2]
+    power_out = new ElectricPower
+    status = new ElectricLogic
+    enable = new ElectricLogic
+
+    # connections to package
+    package.GND ~ power_in[0].lv
+    package.ONh ~ enable.line
+    package.VIN1 ~ power_in[0].hv
+    package.VIN2 ~ power_in[1].hv
+    package.VOUT ~ power_out.hv
+    package.ST ~ status.line
+
+    # connections
+    power_in[0].lv ~ power_out.lv
+    power_in[1].lv ~ power_out.lv
+
+    power_in[0] ~ power_in_decoupling_capacitors[0].power
+    power_in[1] ~ power_in_decoupling_capacitors[1].power
+    power_out ~ power_out_decoupling_capacitor.power
+
+    # parameters
+    assert power_in[0].voltage within 1.6V to 5.5V
+    assert power_in[1].voltage within 1.6V to 5.5V
+    assert power_out.voltage within power_in[0].voltage
+    assert power_out.voltage within power_in[1].voltage
+
+    for cap in power_in_decoupling_capacitors:
+        cap.package = "C0402"
+        cap.capacitance = 100nF +/- 10%
+    power_out_decoupling_capacitor.package = "C0402"
+    power_out_decoupling_capacitor.capacitance = 100nF +/- 10%
+
+    # required interfaces
+    power_in[0].required = True
+    power_in[1].required = True
+    power_out.required = True
+    enable.required = True
+
+component Texas_Instruments_LM66200DRLR_package:
+    """Texas Instruments LM66200DRLR package"""
+    lcsc_id = "C3235556"
+    manufacturer = "Texas Instruments"
+    mpn = "LM66200DRLR"
+    datasheet_url = "https://www.ti.com/cn/lit/gpn/lm66200"
+    designator_prefix = "U"
+
+    # pins
+    signal GND ~ pin 1
+    GND ~ pin 5
+    signal ONh ~ pin 4
+    signal ST ~ pin 8
+    signal VIN1 ~ pin 3
+    signal VIN2 ~ pin 6
+    signal VOUT ~ pin 2
+    VOUT ~ pin 7

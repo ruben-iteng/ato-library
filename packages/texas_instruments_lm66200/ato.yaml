@@ -1,0 +1,24 @@
+requires-atopile: "^0.7.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  lm66200:
+    entry: texas_instruments_lm66200.ato:Texas_Instruments_LM66200_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+package:
+  identifier: ruben-iteng/texas-instruments-lm66200
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: Texas Instruments LM66200DRLR 1.6 V to 5 V, 2.5-A Dual Ideal Diode With Automatic Switchover
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/texas_instruments_lm66200/README.md
