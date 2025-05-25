@@ -4,7 +4,7 @@ ESP32 C3 microcontroller
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 2
 - Author(s): Ruben Baldewsing
 - License: MIT

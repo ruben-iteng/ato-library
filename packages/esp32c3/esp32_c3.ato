@@ -141,8 +141,8 @@ module ESP32_C3_MINI_1:
     uart.rx ~ gpio[20]
     uart.tx ~ gpio[21]
 
-    usb.usb_if.d.n ~ gpio[19]
-    usb.usb_if.d.p ~ gpio[20]
+    usb.usb_if.d.n ~ gpio[18]
+    usb.usb_if.d.p ~ gpio[19]
 
     # I2C and SPI are muxable to other gpio
     i2c.scl ~ gpio[6]
