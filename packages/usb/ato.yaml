@@ -6,14 +6,26 @@ paths:
   footprints: ./footprints
 
 builds:
-  usb_2_0_type_c_data_power:
-    entry: usb.ato:USB2_0_TypeC_Data_Power
+  usb_2_0_type_c_data_power_vertical_connector:
+    entry: usb.ato:USB2_0_TypeC_Data_Power_Vertical_Connector_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
 
-  usb_pd_power_sink:
-    entry: usb.ato:USB_PD_Power_Sink
+  usb_2_0_type_c_data_power_horizontal_connector:
+    entry: usb.ato:USB2_0_TypeC_Data_Power_Horizontal_Connector_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+  usb_pd_power_sink_horizontal_connector:
+    entry: usb.ato:USB_PD_Power_Sink_Horizontal_Connector_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+  usb_pd_power_sink_vertical_connector:
+    entry: usb.ato:USB_PD_Power_Sink_Vertical_Connector_driver
     fail_on_drcs: false
     keep_picked_parts: true
     hide_designators: true
@@ -21,7 +33,7 @@ builds:
 package:
   identifier: ruben-iteng/usb
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.1"
+  version: "0.3.0"
   authors:
   - name: Ruben Baldewsing
     email: 94007802+ruben-iteng@users.noreply.github.com
