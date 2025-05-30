@@ -13,9 +13,40 @@ import TECH_PUBLIC_USBLC6_2SC6
 import Capacitor
 import WCHJiangsu_Qin_Heng_CH224K
 
-from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorGreen
+from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorBlue
 
-module USB_PD_Power_Sink:
+
+module USB_PD_Power_Sink_Vertical_Connector_driver from USB_PD_Power_Sink_driver:
+    """
+    USB PD power sink with Vertical Type-C connector
+
+    Set the requested PD voltages as follows:
+    9V  -> resistance = 6.8kohm
+    12V -> resistance = 24kohm
+    15V -> resistance = 56kohm
+    20V -> resistance = DNP
+    pd_sink = new USBPDPowerSink
+    pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
+    """
+    connector -> USB_Type_C_Vertical_Connector_driver
+
+
+module USB_PD_Power_Sink_Horizontal_Connector_driver from USB_PD_Power_Sink_driver:
+    """
+    USB PD power sink with Horizontal Type-C connector
+
+    Set the requested PD voltages as follows:
+    9V  -> resistance = 6.8kohm
+    12V -> resistance = 24kohm
+    15V -> resistance = 56kohm
+    20V -> resistance = DNP
+    pd_sink = new USBPDPowerSink
+    pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
+    """
+    connector -> USB_Type_C_Horizontal_Connector_driver
+
+
+module USB_PD_Power_Sink_driver:
     """
     USB PD power sink with Type-C connector
 
@@ -26,6 +57,10 @@ module USB_PD_Power_Sink:
     20V -> resistance = DNP
     pd_sink = new USBPDPowerSink
     pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
+
+    Choose between vertical or horizontal connector:
+    connector -> USB_TypeC_Vertical_Connector_driver
+    connector -> USB_TypeC_Horizontal_Connector_driver
     """
 
     # external interfaces
@@ -33,7 +68,7 @@ module USB_PD_Power_Sink:
     power_good = new ElectricLogic
 
     # components
-    connector = new USB_TypeC_16Pin_Connector_driver
+    connector = new USB_TypeC_Connector_driver
     pd_trigger = new WCH_CH224K_driver
 
     # connections
@@ -72,7 +107,7 @@ module WCH_CH224K_driver:
     vdd_resistor = new Resistor
     vbus_detect_resistor = new Resistor
     decoupling_capacitor = new Capacitor
-    power_good_indicator = new LEDIndicatorGreen
+    power_good_indicator = new LEDIndicatorBlue
 
     # connections
     vbus.hv ~> vbus_detect_resistor ~> controller.vbus_detect.line
@@ -89,6 +124,7 @@ module WCH_CH224K_driver:
     controller.cfg[0].line ~> voltage_set_resistor ~> vbus.lv
 
     # parameters
+    assert vbus.voltage within 4.5V to 20.5V
     vdd_resistor.resistance = 1kohm +/- 1%
     vdd_resistor.package = "R0402"
     vbus_detect_resistor.resistance = 10kohm +/- 1%
@@ -104,12 +140,40 @@ module WCH_CH224K_driver:
         c.required = True
 
 
-module USB2_0_TypeC_Data_Power:
+module USB2_0_TypeC_Data_Power_Vertical_Connector_driver from USB2_0_TypeC_Data_Power_driver:
     """
     USB 2.0 Type-C connector
     - 5V PD compatible
     - ESD protection
     - Fuse [500mA(hold), 1A(trip)]
+    - Vertical USB Type-C connector
+    """
+    # connections to package
+    connector -> USB_Type_C_Vertical_Connector_driver
+
+
+module USB2_0_TypeC_Data_Power_Horizontal_Connector_driver from USB2_0_TypeC_Data_Power_driver:
+    """
+    USB 2.0 Type-C connector
+    - 5V PD compatible
+    - ESD protection
+    - Fuse [500mA(hold), 1A(trip)]
+    - Horizontal USB Type-C connector
+    """
+    # connections to package
+    connector -> USB_Type_C_Horizontal_Connector_driver
+
+
+module USB2_0_TypeC_Data_Power_driver:
+    """
+    USB 2.0 Type-C connector
+    - 5V PD compatible
+    - ESD protection
+    - Fuse [500mA(hold), 1A(trip)]
+
+    Choose between vertical or horizontal connector
+    connector -> USB_Type_C_Vertical_Connector_driver
+    connector -> USB_Type_C_Horizontal_Connector_driver
     """
 
     # external interfaces
@@ -117,7 +181,7 @@ module USB2_0_TypeC_Data_Power:
     power = new ElectricPower
 
     # components
-    connector = new USB_TypeC_16Pin_Connector_driver
+    connector = new USB_TypeC_Connector_driver
     cc_resistors = new Resistor[2]
     esd_protection = new TECH_PUBLIC_USBLC6_2SC6
     esd_decoupling_capacitor = new Capacitor
@@ -130,8 +194,8 @@ module USB2_0_TypeC_Data_Power:
     connector.power_vbus ~ connector.usb.usb_if.buspower
     connector.shield ~ usb.usb_if.buspower.lv
 
-    connector.cc[0].line ~> cc_resistors[0] ~> connector.GND
-    connector.cc[1].line ~> cc_resistors[1] ~> connector.GND
+    connector.cc[0].line ~> cc_resistors[0] ~> power.lv
+    connector.cc[1].line ~> cc_resistors[1] ~> power.lv
 
     esd_protection.usb_in.usb_if.buspower ~ esd_decoupling_capacitor.power
 
@@ -144,6 +208,7 @@ module USB2_0_TypeC_Data_Power:
     esd_decoupling_capacitor.package = "C0402"
 
     power.required = True
+
 
 module FusedUSB2_0:
     """Connects two USB2_0 interfaces with a fuse in between"""
@@ -158,9 +223,8 @@ module FusedUSB2_0:
     usb_in.usb_if.d ~ usb_out.usb_if.d
 
 
-module USB_TypeC_16Pin_Connector_driver from SHOU_HAN_TYPE_C_16PIN_2MD073_package:
-    """16 pin USB type-C connector"""
-
+module USB_TypeC_Connector_driver:
+    """USB type-C connector driver"""
     # external interfaces
     usb = new USB2_0
     power_vbus = new ElectricPower
@@ -168,28 +232,49 @@ module USB_TypeC_16Pin_Connector_driver from SHOU_HAN_TYPE_C_16PIN_2MD073_packag
     sbu = new ElectricSignal[2]
     shield = new Electrical
 
+
+module USB_Type_C_Horizontal_Connector_driver from USB_TypeC_Connector_driver:
+    """Horizontal USB type-C connector"""
+    package = new SHOU_HAN_TYPE_C_16PIN_2MD073_package
+
     # connections to package
-    usb.usb_if.buspower.gnd ~ GND
-    cc[0].line ~ CC1
-    cc[1].line ~ CC2
-    sbu[0].line ~ SBU1
-    sbu[1].line ~ SBU2
-    shield ~ SHELL
-    usb.usb_if.d.p.line ~ DP1
-    usb.usb_if.d.n.line ~ DN1
-    usb.usb_if.d.p.line ~ DP2
-    usb.usb_if.d.n.line ~ DN2
-    power_vbus.hv ~ VBUS
-    power_vbus.lv ~ GND
+    usb.usb_if.buspower.gnd ~ package.GND
+    cc[0].line ~ package.CC1
+    cc[1].line ~ package.CC2
+    sbu[0].line ~ package.SBU1
+    sbu[1].line ~ package.SBU2
+    shield ~ package.SHELL
+    usb.usb_if.d.p.line ~ package.DP1
+    usb.usb_if.d.n.line ~ package.DN1
+    usb.usb_if.d.p.line ~ package.DP2
+    usb.usb_if.d.n.line ~ package.DN2
+    power_vbus.hv ~ package.VBUS
+    power_vbus.lv ~ package.GND
+
+module USB_Type_C_Vertical_Connector_driver from USB_TypeC_Connector_driver:
+    """Vertical USB type-C connector"""
+    package = new Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_package
+
+    # connections to package
+    usb.usb_if.buspower.gnd ~ package.GND
+    cc[0].line ~ package.CC1
+    cc[1].line ~ package.CC2
+    shield ~ package.SHELL
+    usb.usb_if.d.p.line ~ package.DP1
+    usb.usb_if.d.n.line ~ package.DN1
+    usb.usb_if.d.p.line ~ package.DP2
+    usb.usb_if.d.n.line ~ package.DN2
+    power_vbus.hv ~ package.VBUS
+    power_vbus.lv ~ package.GND
 
 
 component SHOU_HAN_TYPE_C_16PIN_2MD073_package:
-    """Common 16 pin USB type-C connector"""
+    """Common horizontal 16 pin USB type-C connector"""
     lcsc_id = "C2765186"
     manufacturer = "SHOU HAN"
     mpn = "TYPE-C 16PIN 2MD(073)"
     datasheet_url = "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588920841703079936"
-    designator_prefix = "USB"
+    designator_prefix = "X"
 
     # pins
     signal CC1 ~ pin 4
@@ -206,6 +291,31 @@ component SHOU_HAN_TYPE_C_16PIN_2MD073_package:
     SHELL ~ pin 14
     signal VBUS ~ pin 2
     VBUS ~ pin 11
+
+component Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_package:
+    """Vertical 14 pin USB type-C connector"""
+    lcsc_id = "C168704"
+    manufacturer = "Jing Extension of the Electronic Co."
+    mpn = "918-418K2022Y40000"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2103051834_Jing-Extension-of-the-Electronic-Co--918-418K2022Y40000_C168704.pdf"
+    designator_prefix = "X"
+
+    # pins
+    signal SHELL ~ pin 0
+    signal CC1 ~ pin 12
+    signal CC2 ~ pin 5
+    signal DN2 ~ pin 3
+    signal DN1 ~ pin 10
+    signal DP2 ~ pin 4
+    signal DP1 ~ pin 11
+    signal GND ~ pin 1
+    GND ~ pin 7
+    GND ~ pin 8
+    GND ~ pin 14
+    signal VBUS ~ pin 2
+    VBUS ~ pin 6
+    VBUS ~ pin 9
+    VBUS ~ pin 13
 
 
 component BHFUSE_BSMD0805_050_15V from Fuse:
