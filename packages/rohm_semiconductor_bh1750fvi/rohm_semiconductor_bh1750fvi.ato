@@ -1,0 +1,84 @@
+#pragma experiment("MODULE_TEMPLATING")
+
+import Addressor
+import ElectricPower
+import ElectricSignal
+import I2C
+import Capacitor
+import FilterElectricalRC
+
+
+module ROHM_Semiconductor_BH1750FVI_TR_driver:
+    """
+    Digital ambient light sensor with I2C interface
+
+    - I2C bus Interface (f/s Mode Support)
+    - Spectral responsibility is approximately human eye response
+    - Illuminance to Digital Converter
+    - Wide range and High resolution (1 - 65535 lx)
+    - Low Current by power down function
+    - 50Hz/60Hz Light noise reject-function
+    - 1.8V Logic input interface
+    - No need any external parts
+    - Light source dependency is little (Incandescent Lamp, Fluorescent Lamp, Halogen Lamp, White LED, Sun Light)
+    - It is possible to select 2 type of I2C slave-address
+    - Adjustable measurement result for influence of optical window (It is possible to detect min. 0.11 lx, max. 100000 lx by using this function)
+    - Small measurement variation (+/- 20%)
+    - The influence of infrared is very small
+    """
+    package = new ROHM_Semiconductor_BH1750FVI_TR_package
+
+    # external interfaces
+    i2c = new I2C
+    power = new ElectricPower
+
+    # components
+    addressor = new Addressor<address_bits=1>
+    dvi_lowpass = new FilterElectricalRC
+    decoupling_capacitor = new Capacitor
+
+    # connections
+    power ~ decoupling_capacitor.power
+    power.hv ~ dvi_lowpass.in_.line
+    power ~ dvi_lowpass.in_.reference
+    power ~ addressor.address_lines[0].reference
+
+    i2c.scl.line ~ package.SCL
+    i2c.sda.line ~ package.SDA
+    power.hv ~ package.VCC
+    power.lv ~ package.GND
+    dvi_lowpass.out.line ~ package.DVI
+    power.lv ~ package.EP
+    addressor.address_lines[0].line ~ package.ADDR
+
+    # parameters
+    assert power.voltage within 2.4V to 3.6V
+    assert i2c.frequency <= 400kHz
+    assert addressor.base is 0x23
+    # assert addressor.offset is 0x39 # TODO: not supported yet
+    assert addressor.address is i2c.address
+
+    dvi_lowpass.resistor.resistance = 1kohm +/- 10%
+    dvi_lowpass.resistor.package = "R0402"
+    dvi_lowpass.capacitor.capacitance = 0.1uF +/- 10%
+    dvi_lowpass.capacitor.package = "C0402"
+    decoupling_capacitor.capacitance = 0.1uF +/- 10%
+    decoupling_capacitor.package = "C0402"
+
+
+component ROHM_Semiconductor_BH1750FVI_TR_package:
+    """ROHM Semiconductor BH1750FVI-TR package"""
+    lcsc_id = "C78960"
+    manufacturer = "ROHM Semicon"
+    mpn = "BH1750FVI-TR"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081611_ROHM-Semicon-BH1750FVI-TR_C78960.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal ADDR ~ pin 2
+    signal DVI ~ pin 5
+    signal EP ~ pin 7
+    signal GND ~ pin 3
+    signal SCL ~ pin 6
+    signal SDA ~ pin 4
+    signal VCC ~ pin 1

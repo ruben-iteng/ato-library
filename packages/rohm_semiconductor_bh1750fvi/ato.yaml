@@ -1,0 +1,24 @@
+requires-atopile: "^0.7.0"
+
+paths:
+  src: "."
+  layout: ./layouts
+  footprints: ./footprints
+
+builds:
+  bh1750_driver:
+    entry: rohm_semiconductor_bh1750fvi.ato:ROHM_Semiconductor_BH1750FVI_TR_driver
+    fail_on_drcs: false
+    keep_picked_parts: true
+    hide_designators: true
+
+package:
+  identifier: ruben-iteng/rohm-semiconductor-bh1750fvi
+  repository: https://github.com/ruben-iteng/ato-library
+  version: "0.1.0"
+  authors:
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
+  summary: ROHM Semiconductor BH1750FVI-TR Digital Ambient Light Sensor with I2C interface
+  license: MIT
+  homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/rohm_semiconductor_bh1750fvi/README.md
