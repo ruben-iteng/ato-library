@@ -47,7 +47,7 @@ jobs:
       - uses: atopile/setup-atopile@v1
         with:
           # ato-config: "packages/${{ matrix.package }}/ato.yaml"
-          version: "main"
+          version: "sha-4757b44"
 
       - run: ato sync
         working-directory: ${{ matrix.package }}
