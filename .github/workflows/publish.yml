@@ -41,7 +41,7 @@ jobs:
 
       - uses: atopile/setup-atopile@v1
         with:
-          version: "main"
+          version: "4757b44281566f44710a5e251a18e1b66f4957da"
 
       - run: ato sync
         working-directory: ${{ matrix.package }}
@@ -50,7 +50,7 @@ jobs:
 
       - uses: atopile/publish-package@v1
         with:
-          atopile-version: "main"
+          atopile-version: "4757b44281566f44710a5e251a18e1b66f4957da"
           package-entrypoint: ${{ matrix.package }}
           skip-duplicate-versions: true
           package-version: "" # Use the embedded version key
