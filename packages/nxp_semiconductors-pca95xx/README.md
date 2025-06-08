@@ -4,7 +4,7 @@ NXP Semiconductors PCA95xx family of I2C I/O expanders
 
 ## Package Information
 
-- Version: 0.1.1
+- Version: 0.1.2
 - Total Modules: 4
 - Author(s): Ruben Baldewsing
 - License: MIT
