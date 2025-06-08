@@ -4,7 +4,7 @@ Digital logic related components and modules
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 5
 - Author(s): Ruben Baldewsing
 - License: MIT
