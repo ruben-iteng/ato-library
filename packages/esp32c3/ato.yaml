@@ -3,27 +3,20 @@ requires-atopile: "^0.7.0"
 paths:
   src: "."
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
   esp32_c3_mini_driver:
     entry: esp32_c3.ato:ESP32_C3_MINI_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
-    keep-net-names: true
 
   esp32_c3_mini_ufl_driver:
     entry: esp32_c3.ato:ESP32_C3_MINI_ufl_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
-    keep-net-names: true
 
 package:
   identifier: ruben-iteng/esp32c3
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.2"
+  version: "0.2.3"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
