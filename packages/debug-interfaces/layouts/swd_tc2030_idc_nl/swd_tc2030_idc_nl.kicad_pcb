@@ -142,11 +142,11 @@
                 )
             )
         )
-        (property "__atopile_lib_fp_hash__" "c8c98225-f34a-cddd-b1dc-1d9f3449ec6e"
+        (property "__atopile_lib_fp_hash__" "3684e506-bd84-8491-f61c-ae4b62b9981b"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "3b95cc35-0e59-4558-a920-6a914642524b")
+            (uuid "5c719093-ddad-4342-9bd9-4c884642524b")
             (effects
                 (font
                     (size 0.125 0.125)

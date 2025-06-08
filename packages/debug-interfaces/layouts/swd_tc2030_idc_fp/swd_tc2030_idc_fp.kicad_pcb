@@ -86,9 +86,9 @@
     (net 0 "")
     (net 1 "line")
     (net 2 "gnd")
-    (net 3 "line-2")
-    (net 4 "line-3")
-    (net 5 "line-1")
+    (net 3 "line-1")
+    (net 4 "line-2")
+    (net 5 "line-3")
     (net 6 "hv")
     (footprint "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
         (layer "F.Cu")
@@ -142,11 +142,11 @@
                 )
             )
         )
-        (property "__atopile_lib_fp_hash__" "45868b9d-91f3-3c65-fd6d-ed21fd76746b"
+        (property "__atopile_lib_fp_hash__" "cc69fc70-1689-6093-a8f9-40926a3c81b3"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "e54269ce-5c3f-4fb6-a226-3ee84642524b")
+            (uuid "b998b050-9f43-4468-aef2-36454642524b")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -312,7 +312,7 @@
             (at -1.27 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 3 "line-2")
+            (net 3 "line-1")
             (uuid "a166afca-da26-4e70-8eb4-033185f287c1")
         )
         (pad "3" connect circle
@@ -326,7 +326,7 @@
             (at 0 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 5 "line-1")
+            (net 5 "line-3")
             (uuid "6909bc0f-dc8d-41d1-8f1a-f628a3fa8e05")
         )
         (pad "5" connect circle
@@ -340,7 +340,7 @@
             (at 1.27 -0.635 0)
             (size 0.7874 0.7874)
             (layers "F.Cu" "F.Mask")
-            (net 4 "line-3")
+            (net 4 "line-2")
             (uuid "c6d7c4bf-8d40-4dd6-98ad-e2c5a2677c2e")
         )
         (embedded_fonts no)
