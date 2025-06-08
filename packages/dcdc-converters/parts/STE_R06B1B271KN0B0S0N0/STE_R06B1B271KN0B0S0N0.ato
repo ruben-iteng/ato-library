@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component STE_R06B1B271KN0B0S0N0_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2914698", date="2025-06-08T09:59:22.368525+00:00", checksum="0bbd1a3e0b7dee8c3cf4288760baa7300c34144cf1d0ad6b02b7f1a0f32205ed">
+
+    trait is_atomic_part<manufacturer="STE", partnumber="R06B1B271KN0B0S0N0", footprint="CAP-TH_L6.0-W2.5-P5.00-D1.0.kicad_mod", symbol="R06B1B271KN0B0S0N0.kicad_sym", model="CAP-TH_L6.0-W2.5-P5.0.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2914698", manufacturer="STE", partno="R06B1B271KN0B0S0N0">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

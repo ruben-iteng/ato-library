@@ -1,0 +1,28 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component MONOLITHIC_POWER_SYSTEMS_INC_MPM3610GQV_Z_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C5183856", date="2025-06-08T09:59:24.107850+00:00", checksum="5b446339dd5474bd9c927e69bccae593e8e32d4f95e02970672cc385baace582">
+
+    trait is_atomic_part<manufacturer="MONOLITHIC POWER SYSTEMS INC.", partnumber="MPM3610GQV-Z", footprint="QFN-20_L5.0-W3.0-TL-MPM3610GQV-Z.kicad_mod", symbol="MPM3610GQV-Z.kicad_sym", model="QFN-20_L5.0-W3.0-TL-MPM3610GQV-Z.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5183856", manufacturer="MONOLITHIC POWER SYSTEMS INC.", partno="MPM3610GQV-Z">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal AGND ~ pin 3
+    signal BST ~ pin 11
+    signal EN_SYNC ~ pin 17
+    signal FB ~ pin 1
+    signal IN ~ pin 16
+    signal OUT ~ pin 9
+    signal PG ~ pin 18
+    signal PGND ~ pin 14
+    PGND ~ pin 13
+    PGND ~ pin 12
+    signal SW ~ pin 4
+    signal VCC ~ pin 2
