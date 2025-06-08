@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component FH_0603B103J500NT_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C124567", date="2025-06-08T15:01:46.948752+00:00", checksum="7eab25ba65c948be0fd98dbfb10886bca0e45592b71213d1be7939d2120e0214">
+
+    trait is_atomic_part<manufacturer="FH", partnumber="0603B103J500NT", footprint="C0603.kicad_mod", symbol="0603B103J500NT.kicad_sym">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C124567", manufacturer="FH", partno="0603B103J500NT">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

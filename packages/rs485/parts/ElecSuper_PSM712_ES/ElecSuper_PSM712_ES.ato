@@ -1,0 +1,19 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component ElecSuper_PSM712_ES_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C5180294", date="2025-06-08T15:01:32.893460+00:00", checksum="97d5bcce6b1373b6d9e69d06da546a6b632a40a3168102e0e88f1f116ac41827">
+
+    trait is_atomic_part<manufacturer="ElecSuper", partnumber="PSM712-ES", footprint="SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR.kicad_mod", symbol="PSM712-ES.kicad_sym">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5180294", manufacturer="ElecSuper", partno="PSM712-ES">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    pin 3
+    pin 1
+    pin 2
