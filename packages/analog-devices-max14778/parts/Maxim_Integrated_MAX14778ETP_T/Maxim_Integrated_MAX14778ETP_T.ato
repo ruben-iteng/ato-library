@@ -1,0 +1,37 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Maxim_Integrated_MAX14778ETP_T_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C1121866", date="2025-06-08T08:33:31.368559+00:00", checksum="5df05a62274baa5913e0f328ce2f7df43d91afbdb66e31e8435c5a507c7648a2">
+
+    trait is_atomic_part<manufacturer="Maxim Integrated", partnumber="MAX14778ETP+T", footprint="TQFN-20_L5.0-W5.0-P0.65-TL-EP3.1.kicad_mod", symbol="MAX14778ETP+T.kicad_sym", model="TQFN-20_L5.0-W5.0-P0.65-TL-EP3.1.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C1121866", manufacturer="Maxim Integrated", partno="MAX14778ETP+T">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A0 ~ pin 6
+    signal A1 ~ pin 7
+    signal A2 ~ pin 8
+    signal A3 ~ pin 9
+    signal ACOM ~ pin 5
+    signal B0 ~ pin 20
+    signal B1 ~ pin 19
+    signal B2 ~ pin 18
+    signal B3 ~ pin 17
+    signal BCOM ~ pin 1
+    signal ENA ~ pin 10
+    signal ENB ~ pin 16
+    signal EP ~ pin 21
+    signal GND ~ pin 3
+    signal SA0 ~ pin 11
+    signal SA1 ~ pin 12
+    signal SB0 ~ pin 15
+    signal SB1 ~ pin 14
+    signal VDD ~ pin 13
+    signal VN ~ pin 4
+    signal VP ~ pin 2
