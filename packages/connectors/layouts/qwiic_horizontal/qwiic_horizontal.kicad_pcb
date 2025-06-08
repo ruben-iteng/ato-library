@@ -356,7 +356,7 @@
         )
         (embedded_fonts no)
     )
-    (footprint "lib:qwiic_6mm"
+    (footprint "atopile:qwiic_6mm"
         (layer "F.Cu")
         (uuid "5534bca5-b849-4f3c-8f36-a6584642524b")
         (at 0 -4.25 0)
