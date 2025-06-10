@@ -9,7 +9,7 @@ component Samsung_Electro_Mechanics_CL21A106KAYNNNE_package:
 
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C15850", date="2025-06-08T09:59:26.279297+00:00", checksum="8028d93cddf45bd8041664d628260ee390f8290529e68e03d0a95f0c5dceeab7">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C15850", date="2025-06-09T20:46:00.778240+00:00", checksum="87c4bae41079092eddbbcd7a8bbe72ab71512099864d0eb7c486998ac4b774bb">
 
     trait is_atomic_part<manufacturer="Samsung Electro-Mechanics", partnumber="CL21A106KAYNNNE", footprint="C0805.kicad_mod", symbol="CL21A106KAYNNNE.kicad_sym", model="C0805_L2.0-W1.3-H1.3.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C15850", manufacturer="Samsung Electro-Mechanics", partno="CL21A106KAYNNNE">

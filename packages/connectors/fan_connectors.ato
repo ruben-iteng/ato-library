@@ -38,8 +38,6 @@ component HCTL_HC_2510_4A:
     datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2203111830_HCTL-HC-2510-4A_C2982033.pdf"
     designator_prefix = "CN"
 
-    footprint = "CONN-TH_4P-P2.54_HCTL_HC-2510-4A"
-
     # pins
     pin 1
     pin 2

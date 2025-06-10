@@ -226,9 +226,9 @@
 		)
 	)
 	(embedded_fonts no)
-	(model "./../footprints.3dshapes/J_Link_Compact_V1.0A.step"
+	(model "${KIPRJMOD}/../../parts/SEGGER_JLink_Compact/J_Link_Compact_V1.0A.step"
 		(offset
-			(xyz -16.9 -9.65 4.6)
+			(xyz -16.9 -9.65 5.6)
 		)
 		(scale
 			(xyz 1 1 1)

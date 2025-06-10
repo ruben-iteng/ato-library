@@ -87,11 +87,11 @@
         )
     )
     (net 0 "")
-    (net 2 "hv")
-    (net 4 "line")
-    (net 6 "line-1")
-    (net 7 "gnd")
-    (footprint "atopile:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN-d36980"
+    (net 1 "hv")
+    (net 2 "line-1")
+    (net 3 "line")
+    (net 4 "gnd")
+    (footprint "JST_Sales_America_SM04B_SRSS_TB_LF__SN:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN"
         (layer "F.Cu")
         (uuid "274f8f14-eede-487a-9410-fe064642524b")
         (at 0 0 0)
@@ -99,7 +99,7 @@
             (at 0 -5.94 0)
             (layer "F.SilkS")
             (hide yes)
-            (uuid "ed52a08a-afed-45e3-b35e-c7a704494f5f")
+            (uuid "2d8d1df1-2745-44d7-94f9-6d439b5195eb")
             (effects
                 (font
                     (size 1 1)
@@ -111,7 +111,7 @@
             (at 0 5.94 0)
             (layer "F.Fab")
             (hide no)
-            (uuid "4fefff86-7516-4349-8fd3-c5bcfa63e7c4")
+            (uuid "549ded42-a079-4046-b514-d827c7941197")
             (effects
                 (font
                     (size 1 1)
@@ -121,21 +121,9 @@
         )
         (property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf"
             (at 0 0 0)
-            (layer "User.9")
-            (hide yes)
-            (uuid "d2b5acce-1b73-4081-9d95-d5924642524b")
-            (effects
-                (font
-                    (size 0.125 0.125)
-                    (thickness 0.01875)
-                )
-            )
-        )
-        (property "Description" ""
-            (at 0 0 0)
             (layer "F.Fab")
             (hide yes)
-            (uuid "eb665b11-8cbe-43ce-b37c-31d2a53cb17c")
+            (uuid "8218b343-9449-4737-be14-ac34aad6a8d3")
             (effects
                 (font
                     (size 1.27 1.27)
@@ -143,11 +131,35 @@
                 )
             )
         )
-        (property "__atopile_lib_fp_hash__" "227254e0-5a73-7ef2-aacf-83e6b9bc6961"
+        (property "Description" ""
+            (at 0 0 0)
+            (layer "F.Fab")
+            (hide yes)
+            (uuid "85651c6c-dfd8-45cb-918b-828336d36826")
+            (effects
+                (font
+                    (size 1.27 1.27)
+                    (thickness 0.15)
+                )
+            )
+        )
+        (property "checksum" "005e6dc3038a599246199d51285475b6bd6f6dbc0b1845e8c7ea0725bfb4faea"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "0ef2c6bb-7d32-4952-8ec9-92d84642524b")
+            (uuid "20204103-f4c5-41e0-8da0-66ea5e6ec94d")
+            (effects
+                (font
+                    (size 0.125 0.125)
+                    (thickness 0.01875)
+                )
+            )
+        )
+        (property "__atopile_lib_fp_hash__" "daaac122-8194-c9c6-07d4-e25da2aa4e39"
+            (at 0 0 0)
+            (layer "User.9")
+            (hide yes)
+            (uuid "86e005e3-a06e-4788-b48a-f34a4642524b")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -224,7 +236,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "571fc55f-8152-4706-acda-9925d8a4f474")
+            (uuid "a8f268b5-8399-4d46-b031-119ed08956cd")
         )
         (fp_line
             (start -2.02 2.46)
@@ -234,7 +246,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "d88ad1ac-c6f9-4ec2-82b7-be91c61b1eb2")
+            (uuid "b19a4449-877f-486d-9793-bb683d3f4cb1")
         )
         (fp_line
             (start -1.94 -1.8)
@@ -244,7 +256,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "d58dbb47-7fe1-4576-9c1a-8bd95b5319bc")
+            (uuid "7c06e994-9501-4732-a567-147d473c3652")
         )
         (fp_line
             (start 2.04 -1.8)
@@ -254,7 +266,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "6e32a7bd-7021-43ae-ba7d-5150d077dc5e")
+            (uuid "d6984d93-1ac4-41fd-88ec-b8cdca696197")
         )
         (fp_line
             (start 2.96 -1.8)
@@ -264,7 +276,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "31a46bd3-c6b3-4056-a9c0-f399eaac5a88")
+            (uuid "7f820479-a577-465c-8ccc-e2b4f724705d")
         )
         (fp_circle
             (center -2.5 -1.31)
@@ -275,7 +287,7 @@
             )
             (fill no)
             (layer "F.SilkS")
-            (uuid "3ef70b2d-71e3-435c-9e48-944e840a2f94")
+            (uuid "4659e4de-ea27-40df-88f5-ccfc8a7a3bdc")
         )
         (fp_circle
             (center -1.54 -2.38)
@@ -286,7 +298,7 @@
             )
             (fill no)
             (layer "Cmts.User")
-            (uuid "3af8a6c8-3720-4573-8fd5-20af923651bd")
+            (uuid "8e583203-a0ae-4c30-8476-c88a1bf648c5")
         )
         (fp_circle
             (center -3 -2.46)
@@ -297,12 +309,25 @@
             )
             (fill no)
             (layer "F.Fab")
-            (uuid "da63236c-7c35-4d1b-9fed-99d359b2b552")
+            (uuid "fe682614-8161-4536-ab9c-6a9496dd59b5")
+        )
+        (fp_text user "${REFERENCE}"
+            (at 0 -5.94 0)
+            (layer "F.SilkS")
+            (uuid "2d8d1df1-2745-44d7-94f9-6d439b5195eb")
+            (effects
+                (font
+                    (size 1 1)
+                    (thickness 0.15)
+                )
+                (hide yes)
+            )
+            (unlocked no)
         )
         (fp_text user "${REFERENCE}"
             (at 0 0 0)
             (layer "F.Fab")
-            (uuid "ef2df374-7271-4095-b774-5788f18bb009")
+            (uuid "01827658-aa81-4d2e-a3c8-8090b2394700")
             (effects
                 (font
                     (size 1 1)
@@ -316,47 +341,58 @@
             (at -1.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "gnd")
-            (uuid "90f1da76-6888-423a-b30d-2b5bf5cf5041")
+            (net 4 "gnd")
+            (uuid "6474d0f3-9eeb-471c-b206-ebfebbe5d1ec")
         )
         (pad "2" smd rect
             (at -0.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 2 "hv")
-            (uuid "9163bd95-941c-4478-a66e-d15cfd0d324a")
+            (net 1 "hv")
+            (uuid "f9ce136b-4c60-44bc-9c16-1e904d26662c")
         )
         (pad "3" smd rect
             (at 0.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 6 "line-1")
-            (uuid "bb3a7e43-0bef-45dd-8236-7e87876b07d9")
+            (net 3 "line")
+            (uuid "f1868a37-9d64-473a-bee5-7c1953b7df05")
         )
         (pad "4" smd rect
             (at 1.5 -1.94 0)
             (size 0.6 1.55)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 4 "line")
-            (uuid "0a1f6dd1-c831-490e-acd7-7ce9e8627c09")
+            (net 2 "line-1")
+            (uuid "37495132-8422-42ea-b9fd-26ac721a6357")
         )
         (pad "5" smd rect
             (at 2.8 1.94 0)
             (size 1.2 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "gnd")
-            (uuid "ce0d282a-9667-450e-aee3-8512967830a1")
+            (net 4 "gnd")
+            (uuid "6e49a909-7827-424e-8332-142378205bcc")
         )
         (pad "6" smd rect
             (at -2.8 1.94 0)
             (size 1.2 1.8)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 7 "gnd")
-            (uuid "ead750dc-2504-46d7-bbf0-1d88af820cdf")
+            (net 4 "gnd")
+            (uuid "c8f0aa11-45a2-44e8-85b3-71182c3c022d")
         )
         (embedded_fonts no)
+        (model "${KIPRJMOD}/../../parts/JST_Sales_America_SM04B_SRSS_TB_LF__SN/CONN-SMD_SR1.00-WS-4P.step"
+            (offset
+                (xyz -1.5 -0.5 0)
+            )
+            (scale
+                (xyz 1 1 1)
+            )
+            (rotate
+                (xyz 0 0 0)
+            )
+        )
     )
-    (footprint "atopile:qwiic_6mm"
+    (footprint "Sparkfun_QWIIC_Logo:qwiic_6mm"
         (layer "F.Cu")
         (uuid "5534bca5-b849-4f3c-8f36-a6584642524b")
         (at 0 -4.25 0)
@@ -408,11 +444,11 @@
                 )
             )
         )
-        (property "__atopile_lib_fp_hash__" "87d7182d-7b52-4911-551d-73de866a7f5a"
+        (property "__atopile_lib_fp_hash__" "d5134a8f-6d12-92b9-05fc-770d84a722a0"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "a7b2931e-a2c9-4051-993e-f1364642524b")
+            (uuid "29b2dd40-5164-42e4-af30-a6a54642524b")
             (effects
                 (font
                     (size 0.125 0.125)

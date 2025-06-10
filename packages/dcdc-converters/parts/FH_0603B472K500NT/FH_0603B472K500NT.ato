@@ -9,7 +9,7 @@ component FH_0603B472K500NT_package:
 
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C53987", date="2025-06-08T09:59:23.182356+00:00", checksum="ddb105fb894448c42100e6bc410fd839c971a21b94e005f4862dc5e1b279147e">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C53987", date="2025-06-09T20:45:56.091140+00:00", checksum="670c5d200d5a72e9bad78e9f720bda295af6682ebf7571eec5a27e8c73dace9b">
 
     trait is_atomic_part<manufacturer="FH", partnumber="0603B472K500NT", footprint="C0603.kicad_mod", symbol="0603B472K500NT.kicad_sym", model="C0603_L1.6-W0.8-H0.8.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C53987", manufacturer="FH", partno="0603B472K500NT">

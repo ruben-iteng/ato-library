@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "New_Library")(type "KiCad")(uri "/home/ruben/Documents/repos/atopile_projects/Apps/ato-library/packages/logos/parts/faebryk/New_Library.kicad_sym")(options "")(descr ""))
+)

@@ -3,10 +3,10 @@
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
-	(property "Reference" "CN1"
+	(property "Reference" "REF**"
 		(at 0 -4 0)
 		(layer "F.SilkS")
-		(uuid "f0aa928d-aff8-4273-87b2-0ca20f8da001")
+		(uuid "460c811b-bf15-4427-b4d9-4c118689dd20")
 		(effects
 			(font
 				(size 1 1)
@@ -14,10 +14,10 @@
 			)
 		)
 	)
-	(property "Value" ""
+	(property "Value" "CONN-TH_4P-P2.54_HCTL_HC-2510-4A"
 		(at 0 4 0)
 		(layer "F.Fab")
-		(uuid "2a4fd230-5db1-49bf-88a0-51e211e24f08")
+		(uuid "af8a158c-76e5-4308-9a97-8088b16f55d3")
 		(effects
 			(font
 				(size 1 1)
@@ -29,7 +29,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e52ab269-cb5b-481e-b190-77ddfb33e680")
+		(uuid "d9d225b8-ba69-495e-996e-ce23dd8f9c0b")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -41,7 +41,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ecb3ff72-2cc8-4ab1-8689-3af17d00dbe9")
+		(uuid "e445a453-910e-4e28-89e6-e8a94a1ccb50")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -49,71 +49,11 @@
 			)
 		)
 	)
-	(property "__atopile_lib_fp_hash__" "8ac97c11-5c99-55b2-ef7a-5e236264b57d"
+	(property "checksum" "6e4c5c3db9586936b424cc84e118e32c28051867789a37ae948297c34bd176c7"
 		(at 0 0 0)
 		(layer "User.9")
 		(hide yes)
-		(uuid "c8838b7d-9726-434d-bf44-8ae9169eb0b2")
-		(effects
-			(font
-				(size 0.125 0.125)
-				(thickness 0.01875)
-			)
-		)
-	)
-	(property "LCSC" "C2982033"
-		(at 0 0 0)
-		(layer "User.9")
-		(hide yes)
-		(uuid "5ab18a02-b203-47d5-8334-f384cc3c0604")
-		(effects
-			(font
-				(size 0.125 0.125)
-				(thickness 0.01875)
-			)
-		)
-	)
-	(property "Manufacturer" "HCTL"
-		(at 0 0 0)
-		(layer "User.9")
-		(hide yes)
-		(uuid "5e526ed5-6730-4e56-a93b-8bdc4d56a58b")
-		(effects
-			(font
-				(size 0.125 0.125)
-				(thickness 0.01875)
-			)
-		)
-	)
-	(property "Partnumber" "HC-2510-4A"
-		(at 0 0 0)
-		(layer "User.9")
-		(hide yes)
-		(uuid "b780b185-5605-4ad2-a1e1-81773a1200b6")
-		(effects
-			(font
-				(size 0.125 0.125)
-				(thickness 0.01875)
-			)
-		)
-	)
-	(property "JLCPCB description" "1x4P 4P 1 Tin 2.54mm 4 -25℃~+85℃ Brass 4A Direct Insert Plugin,P=2.54mm  Wire To Board Connector ROHS"
-		(at 0 0 0)
-		(layer "User.9")
-		(hide yes)
-		(uuid "17fdd3e8-31f0-4c57-bdb4-11781b7bb53c")
-		(effects
-			(font
-				(size 0.125 0.125)
-				(thickness 0.01875)
-			)
-		)
-	)
-	(property "atopile_address" "connector"
-		(at 0 0 0)
-		(layer "User.9")
-		(hide yes)
-		(uuid "018e6f91-dcad-40b1-bf1c-7cb20520ae37")
+		(uuid "80c9262d-d918-4e84-9ff8-ec454110726c")
 		(effects
 			(font
 				(size 0.125 0.125)
@@ -126,21 +66,31 @@
 		(start -5.1 -2.6)
 		(end -5.1 3.3)
 		(stroke
-			(width 0.25)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "2d9b3dfe-9e9d-4088-aebd-755b17dda5bf")
+		(uuid "abf6796c-e486-41c5-b8eb-02d8aac8e4f6")
 	)
 	(fp_line
 		(start -5.1 -2.6)
 		(end 5.2 -2.6)
 		(stroke
-			(width 0.25)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "a3a73dba-e1db-4f5d-ad00-df50cf3005b6")
+		(uuid "28a15b49-e2d6-448f-98f7-ba16b661c5e9")
+	)
+	(fp_line
+		(start -3.75 -2.55)
+		(end -3.75 -1.65)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "eebb8ed6-9b2b-4858-9945-39b85b083273")
 	)
 	(fp_line
 		(start -3.7 -2)
@@ -150,27 +100,47 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "f770bca4-c493-4611-9068-8728a6834ecd")
+		(uuid "007f8fcb-e619-45ca-8f98-a148506cb199")
+	)
+	(fp_line
+		(start 3.55 -2.55)
+		(end 3.55 -1.65)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "479a9021-0f09-4010-9393-ea96bca57c34")
+	)
+	(fp_line
+		(start 3.55 -1.65)
+		(end -3.75 -1.65)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e9cc72f5-78b9-4522-a40d-7cc8ff398757")
 	)
 	(fp_line
 		(start 5.2 -2.6)
 		(end 5.2 3.3)
 		(stroke
-			(width 0.25)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "a227f5d3-a956-474b-8390-8bef5075d9c0")
+		(uuid "120396f9-5f2d-41fa-9095-cfc9788bea8a")
 	)
 	(fp_line
 		(start 5.2 3.3)
 		(end -5.1 3.3)
 		(stroke
-			(width 0.25)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "d35ae760-8108-4da2-b5a6-952371d47072")
+		(uuid "a00b3659-29e2-4c52-9948-64b634033a81")
 	)
 	(fp_circle
 		(center -5.08 3.2)
@@ -181,12 +151,23 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "13568880-6d6a-40cc-b2b2-2f4c01046d74")
+		(uuid "eaadf0e1-d21a-4e45-8959-cfc2ed2767d2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(uuid "460c811b-bf15-4427-b4d9-4c118689dd20")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "13de1f40-6b4c-42bb-8c0e-3f05cb1b8bea")
+		(uuid "d4aaee5e-6fe4-4c59-bc0c-e7d0542cea09")
 		(effects
 			(font
 				(size 1 1)
@@ -200,7 +181,7 @@
 		(drill 1.100023)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "2b112633-160b-44d7-b72a-d8b81b66c50e")
+		(uuid "2ed11e5f-bbfb-4f75-acc2-a9fecc450374")
 	)
 	(pad "2" thru_hole circle
 		(at -1.27 0)
@@ -208,7 +189,7 @@
 		(drill 1.100023)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "cbddae8a-578c-478d-a017-b41c8fc90cb7")
+		(uuid "7e0e255d-8f71-4462-8776-51b9545dbe04")
 	)
 	(pad "3" thru_hole circle
 		(at 1.27 0)
@@ -216,7 +197,7 @@
 		(drill 1.100023)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "56e7fcc4-e6ee-4df1-9dbe-3f134257363b")
+		(uuid "58d7acfd-332c-4f2e-89e4-116e0051def6")
 	)
 	(pad "4" thru_hole circle
 		(at 3.81 0)
@@ -224,7 +205,18 @@
 		(drill 1.100023)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "ffcd3aad-8ec8-4848-bb5b-687d5104d2cd")
+		(uuid "f7e7c099-d1d7-43cc-9632-8946e684547e")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/../../parts/HCTL_HC_2510_4A/CONN-TH_4P-P2.54_HCTL_HC-2510-4A.step"
+		(offset
+			(xyz 0 -0.35 1.65)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
 )

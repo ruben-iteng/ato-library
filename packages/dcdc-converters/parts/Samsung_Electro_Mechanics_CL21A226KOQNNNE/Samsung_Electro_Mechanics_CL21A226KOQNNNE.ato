@@ -7,7 +7,7 @@ import is_auto_generated
 component Samsung_Electro_Mechanics_CL21A226KOQNNNE_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C296720", date="2025-06-08T09:59:26.318628+00:00", checksum="c8752f5347b1d7520fd1f872f5f3b0e94ed2a60064a1105f4538a75a504cc090">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C296720", date="2025-06-09T20:46:00.844080+00:00", checksum="ccb4134f3f616702e6344894482a16cebd9163161e6ee583239c1c4a573e59e6">
 
     trait is_atomic_part<manufacturer="Samsung Electro-Mechanics", partnumber="CL21A226KOQNNNE", footprint="C0805.kicad_mod", symbol="CL21A226KOQNNNE.kicad_sym", model="C0805_L2.0-W1.3-H1.3.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C296720", manufacturer="Samsung Electro-Mechanics", partno="CL21A226KOQNNNE">

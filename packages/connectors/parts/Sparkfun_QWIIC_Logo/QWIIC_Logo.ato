@@ -1,0 +1,7 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import is_atomic_part
+
+component QWIIC_Logo_6mm_package:
+    trait is_atomic_part<manufacturer="Sparkfun", partnumber="QWIIC_Logo", footprint="qwiic_6mm.kicad_mod", symbol="qwiic.kicad_sym">
+    trait has_designator_prefix<prefix="LOGO">

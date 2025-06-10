@@ -1,0 +1,176 @@
+(footprint "ROHM_Semicon_BH1750FVI_TR:WSOF-6_L2.6-W1.6-P0.50-TL-EP"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4.5 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "280da153-28ed-4ea3-b623-05b9d150735d")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "WSOF-6_L2.6-W1.6-P0.50-TL-EP"
+        (at 0 4.5 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "6611c77c-b887-4152-b7ba-dbf27fb5604f")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "525dfd368b15b453b21be6ba66209457224e9efbb74cc3f8d4fed0abc4720832"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "941adbbe-c63e-4250-a888-9d686bae531f")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -1.58 -0.88)
+        (end 1.58 -0.88)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "26eaa85d-e758-4010-99d1-00732c7f91f2")
+    )
+    (fp_line
+        (start -1.58 0.88)
+        (end 1.58 0.88)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "84bc8cc2-606d-4bf9-8675-266bb14d6275")
+    )
+    (fp_circle
+        (center -1.98 -0.5)
+        (end -1.91 -0.5)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.SilkS")
+        (uuid "ba53a901-f47e-4a79-ac0a-76fe20cba16c")
+    )
+    (fp_circle
+        (center -1.8 -0.5)
+        (end -1.73 -0.5)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "fa38e5e0-7e3a-408a-86f2-c3d3eb0a7e19")
+    )
+    (fp_circle
+        (center -1.5 -0.8)
+        (end -1.47 -0.8)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "427d5ff3-b1f3-401b-a600-a2c165df7650")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "2eb64857-b890-4246-a574-f7b6228149d5")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4.5 0)
+        (layer "F.SilkS")
+        (uuid "280da153-28ed-4ea3-b623-05b9d150735d")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at -1.43 -0.5 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "9a91d4bd-db5a-496d-930d-864ef8de8717")
+    )
+    (pad "2" smd rect
+        (at -1.43 0 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "5ef29bc9-3e99-49f4-9a4b-d7d0dc892f85")
+    )
+    (pad "3" smd rect
+        (at -1.43 0.5 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "dba57c8e-aa0b-47e4-85db-f38225554d31")
+    )
+    (pad "4" smd rect
+        (at 1.43 0.5 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "ac13b090-f2c4-45f2-8357-3f5daebfd14e")
+    )
+    (pad "5" smd rect
+        (at 1.43 0 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "c08c58f0-36c9-46fa-9e4f-e70ef71075fb")
+    )
+    (pad "6" smd rect
+        (at 1.43 -0.5 0)
+        (size 0.51 0.28)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "340c83e7-74f8-4235-925f-dc5c8e2900f2")
+    )
+    (pad "7" smd rect
+        (at 0 0 0)
+        (size 1.5 1.2)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "8fab3a50-4b12-496f-ad7f-975741440c4f")
+    )
+    (model "${KIPRJMOD}/../../parts/ROHM_Semicon_BH1750FVI_TR/WSOF-6_L1.6-W2.6-H0.8-P0.50.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)
