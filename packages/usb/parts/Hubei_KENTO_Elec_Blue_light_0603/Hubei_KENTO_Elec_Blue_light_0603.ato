@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Hubei_KENTO_Elec_Blue_light_0603_package:
+    """0603"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2288", date="2025-06-08T11:53:16.679510+00:00", checksum="31f53f2f73b4c9c132de7028d0d0b3e660399241aa24e599979de7c11d7300bc">
+
+    trait is_atomic_part<manufacturer="Hubei KENTO Elec", partnumber="Blue light 0603", footprint="LED0603-RD.kicad_mod", symbol="Bluelight0603.kicad_sym", model="LED0603-RD-YELLOW.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2288", manufacturer="Hubei KENTO Elec", partno="Blue light 0603">
+    trait has_designator_prefix<prefix="LED">
+
+    # pins
+    signal A ~ pin 2
+    signal K ~ pin 1

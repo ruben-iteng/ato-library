@@ -1,0 +1,164 @@
+(footprint "FOJAN_FRC2512J2R7_TS:R2512"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "3701a29a-2e96-49f5-9a81-18d21c344c89")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "R2512"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "9f2eed3b-ed43-4d0e-bd8d-816ab413ed08")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "5fad92ca575f6be73ae2881e1b23c04eb3a81b288f354ff0ae8c81530571f571"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "af6cb26f-f261-4ed6-a8b8-58beddd0745d")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start 2.5 1.96)
+        (end 3.94 1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "843bdfb6-b4e3-43ab-9f2e-1f79c576615a")
+    )
+    (fp_line
+        (start 3.94 1.96)
+        (end 3.94 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7b6f1159-7411-41d3-ad0c-7fe05b5a4e56")
+    )
+    (fp_line
+        (start 3.94 -1.96)
+        (end 2.5 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "2d7c8ced-cd84-48fd-bd02-b06d26381874")
+    )
+    (fp_line
+        (start -2.5 1.96)
+        (end -3.94 1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "28da1a01-3e26-417b-b943-8c08207dc542")
+    )
+    (fp_line
+        (start -3.94 1.96)
+        (end -3.94 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "96dbeefb-2dbb-4075-82fe-3b600255999f")
+    )
+    (fp_line
+        (start -3.94 -1.96)
+        (end -2.5 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "b42e7272-932e-4c5b-b0a9-40e302e4243e")
+    )
+    (fp_circle
+        (center -3.18 1.6)
+        (end -3.15 1.6)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "961d5491-f694-49d0-b7a9-8a03ed390dfc")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "243984d3-3f7e-40fb-a583-3cbdc289e155")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "3701a29a-2e96-49f5-9a81-18d21c344c89")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 3.07 0 0)
+        (size 1.28 3.46)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "f85a8b91-e6db-4554-b8ce-7b44a8af131a")
+    )
+    (pad "1" smd rect
+        (at -3.07 0 0)
+        (size 1.28 3.46)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "ff74d489-d834-4730-ae01-97c44017d28c")
+    )
+    (model "${KIPRJMOD}/../../build/cache/parts/easyeda/C2960733/R2512_L6.3-W3.2-H0.6.step"
+        (offset
+            (xyz 0.08 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

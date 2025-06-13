@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component HCTL_HC_2510_4A_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2982033", date="2025-06-08T23:04:09.188309+00:00", checksum="5b212234bc475b6b3d84ea56b72ee6ae5859abc4e826ce0ff3a71a1ce9c113ba">
+
+    trait is_atomic_part<manufacturer="HCTL", partnumber="HC-2510-4A", footprint="CONN-TH_4P-P2.54_HCTL_HC-2510-4A.kicad_mod", symbol="HC-2510-4A.kicad_sym", model="CONN-TH_4P-P2.54_HCTL_HC-2510-4A.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2982033", manufacturer="HCTL", partno="HC-2510-4A">
+    trait has_designator_prefix<prefix="CN">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4

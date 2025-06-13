@@ -1,7 +1,17 @@
 #pragma experiment("BRIDGE_CONNECT")
 #pragma experiment("FOR_LOOP")
 
-import ElectricLogic, ElectricPower, I2C, SPI, UART_Base, JTAG, USB2_0, Capacitor, Resistor, FilterElectricalRC
+import ElectricLogic
+import ElectricPower
+import I2C
+import SPI
+import UART_Base
+import JTAG
+import USB2_0
+import Capacitor
+import Resistor
+import FilterElectricalRC
+
 from "atopile/buttons/buttons.ato" import ButtonSKRPACE010
 
 

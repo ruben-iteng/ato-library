@@ -1,27 +1,22 @@
-requires-atopile: "^0.7.0"
+requires-atopile: "^0.9.0"
 
 paths:
   src: "."
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
   b0505s1wr3:
     entry: evisun_b0505s1wr3.ato:EVISUN_B0505S_1WR3_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   mpm3610-12vin-5vout:
     entry: monolithic_power_systems_inc-mpm3610.ato:MONOLITHIC_POWER_SYSTEMS_INC_MPM3610_12Vin_5Vout_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
 package:
   identifier: ruben-iteng/dcdc-converters
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.1"
+  version: "0.2.2"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

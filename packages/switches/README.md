@@ -4,7 +4,7 @@ Rotary encoders, switches, and other switch like components and modules
 
 ## Package Information
 
-- Version: 0.1.3
+- Version: 0.1.4
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT

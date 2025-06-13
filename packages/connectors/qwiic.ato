@@ -1,5 +1,7 @@
-import ElectricPower, I2C
+import ElectricPower
+import I2C
 
+from "parts/Sparkfun_QWIIC_Logo/QWIIC_Logo.ato" import QWIIC_Logo_6mm_package
 
 module QwiicVertical_driver from QwiicConnector_driver_base:
     """
@@ -38,7 +40,7 @@ module QwiicConnector_driver_base:
     https://www.sparkfun.com/qwiic
     """
 
-    logo = new QwiicLogo
+    logo = new QWIIC_Logo_6mm_package
 
     power = new ElectricPower
     i2c = new I2C
@@ -48,13 +50,6 @@ module QwiicConnector_driver_base:
 
     power.required = True
     i2c.required = True
-
-
-component QwiicLogo:
-    """
-    Qwiic silkscreen logo
-    """
-    footprint = "qwiic_6mm"
 
 
 component JST_Sales_America_BM04B_SRSS_TBLFSN_package:

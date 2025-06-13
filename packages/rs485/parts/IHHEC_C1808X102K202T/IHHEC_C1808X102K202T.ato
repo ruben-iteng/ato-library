@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component IHHEC_C1808X102K202T_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C106126", date="2025-06-08T15:01:32.263312+00:00", checksum="85de88c224116d0a30ef4e8ceb0bb334d2d2d359594d54734c22a8af0aef0395">
+
+    trait is_atomic_part<manufacturer="IHHEC", partnumber="C1808X102K202T", footprint="C1808.kicad_mod", symbol="C1808X102K202T.kicad_sym">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C106126", manufacturer="IHHEC", partno="C1808X102K202T">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

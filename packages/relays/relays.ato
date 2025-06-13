@@ -214,7 +214,7 @@ component _Cixi_Kefa_Elec_KF250T_5_0_23P:
     manufacturer = "Cixi Kefa Elec"
     mpn = "KF250T-5.0-2*3P"
     datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303170930_Cixi-Kefa-Elec-KF250T-5-0-2-3P_C976537.pdf"
-    designator_prefix = "CN"
+    designator_prefix = "J"
 
     # pins
     signal PA1 ~ pin 1

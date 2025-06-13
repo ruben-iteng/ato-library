@@ -4,7 +4,7 @@ Microchip EMC2101 fan driver
 
 ## Package Information
 
-- Version: 0.1.1
+- Version: 0.1.2
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT

@@ -1,0 +1,6 @@
+from "parts/faebryk_Logo_8x9mm/Logo_8x9mm.ato" import faebryk_Logo_8x9mm_package
+
+module Test:
+    """Test module"""
+
+    logo = new faebryk_Logo_8x9mm_package

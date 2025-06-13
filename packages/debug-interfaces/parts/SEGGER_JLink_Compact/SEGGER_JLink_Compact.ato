@@ -1,0 +1,7 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import is_atomic_part
+
+component SEGGER_JLink_Compact_package:
+    trait is_atomic_part<manufacturer="SEGGER", partnumber="JLink_Compact", footprint="segger_jlink_compact.kicad_mod", symbol="segger_jlink_compact.kicad_sym", model="J_Link_Compact_V1.0A.step">
+    trait has_designator_prefix<prefix="MOD">

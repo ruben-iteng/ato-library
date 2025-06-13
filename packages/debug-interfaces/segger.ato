@@ -4,20 +4,16 @@ import ElectricPower
 import JTAG
 import SWD
 
+from "parts/SEGGER_JLink_Compact/SEGGER_JLink_Compact.ato" import SEGGER_JLink_Compact_package
+
 
 module SEGGER_JLink_Compact:
     """SEGGER J-Link compact PCBA mount"""
 
     # components
-    jlink = new SEGGER_JLink_Compact_PCBA
+    jlink = new SEGGER_JLink_Compact_package
     standoff = new _Sinhoo_SMTSO2530CTJ[2]
     jlink_interface = new JLINK_Interface
-
-
-component SEGGER_JLink_Compact_PCBA:
-    """SEGGER J-Link compact PCBA footprint"""
-    footprint = "segger_jlink_compact"
-    designator_prefix = "MOD"
 
 
 component _Sinhoo_SMTSO2530CTJ:

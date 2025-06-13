@@ -1,0 +1,36 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Analog_Devices_ADM2587EBRWZ_REEL7_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C12081", date="2025-06-08T15:01:45.258664+00:00", checksum="38d26224d0b35770fa2c7da930e9179bf761ccf15983016ad2a41d0f93b944c3">
+
+    trait is_atomic_part<manufacturer="Analog Devices", partnumber="ADM2587EBRWZ-REEL7", footprint="SOIC-20_L13.0-W7.6-P1.27-LS10.3-BL.kicad_mod", symbol="ADM2587EBRWZ-REEL7.kicad_sym">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C12081", manufacturer="Analog Devices", partno="ADM2587EBRWZ-REEL7">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A ~ pin 18
+    signal B ~ pin 17
+    signal DE ~ pin 6
+    signal GND1 ~ pin 1
+    GND1 ~ pin 3
+    GND1 ~ pin 9
+    GND1 ~ pin 10
+    signal GND2 ~ pin 11
+    GND2 ~ pin 14
+    GND2 ~ pin 16
+    GND2 ~ pin 20
+    signal RXD ~ pin 4
+    signal TXD ~ pin 7
+    signal VCC ~ pin 2
+    VCC ~ pin 8
+    signal VISOIN ~ pin 19
+    signal VISOOUT ~ pin 12
+    signal Y ~ pin 13
+    signal Z ~ pin 15
+    signal nRE ~ pin 5

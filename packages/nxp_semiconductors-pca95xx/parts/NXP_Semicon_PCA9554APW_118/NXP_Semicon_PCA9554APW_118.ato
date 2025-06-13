@@ -1,0 +1,32 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component NXP_Semicon_PCA9554APW_118_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C86803", date="2025-06-08T09:39:24.898262+00:00", checksum="41abc6d41e803c0d19773684af935d05c952b40ae08ebc8637943d106d13a45b">
+
+    trait is_atomic_part<manufacturer="NXP Semicon", partnumber="PCA9554APW,118", footprint="TSSOP-16_L5.0-W4.4-P0.65-LS6.4-BL.kicad_mod", symbol="PCA9554APW,118.kicad_sym", model="TSSOP-16_L5.0-W4.4-H1.0-LS6.4-P0.65.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C86803", manufacturer="NXP Semicon", partno="PCA9554APW,118">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A0 ~ pin 1
+    signal A1 ~ pin 2
+    signal A2 ~ pin 3
+    signal IO0 ~ pin 4
+    signal IO1 ~ pin 5
+    signal IO2 ~ pin 6
+    signal IO3 ~ pin 7
+    signal IO4 ~ pin 9
+    signal IO5 ~ pin 10
+    signal IO6 ~ pin 11
+    signal IO7 ~ pin 12
+    signal SCL ~ pin 14
+    signal SDA ~ pin 15
+    signal VDD ~ pin 16
+    signal VSS ~ pin 8
+    signal nINT ~ pin 13

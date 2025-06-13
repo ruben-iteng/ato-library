@@ -4,7 +4,7 @@ Texas Instruments LM66200DRLR 1.6 V to 5 V, 2.5-A Dual Ideal Diode With Automati
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT
