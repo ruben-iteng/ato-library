@@ -4,7 +4,7 @@ Relay modules
 
 ## Package Information
 
-- Version: 0.2.1
+- Version: 0.2.2
 - Total Modules: 3
 - Author(s): Ruben Baldewsing
 - License: MIT

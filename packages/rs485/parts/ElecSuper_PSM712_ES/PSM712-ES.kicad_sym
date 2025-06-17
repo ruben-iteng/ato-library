@@ -1,0 +1,271 @@
+(kicad_symbol_lib
+    (version 1)
+    (generator "faebryk")
+    (symbol "PSM712-ES"
+        (property "Reference" "U"
+            (id 0)
+            (at 0 12.7 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide no)
+            )
+        )
+        (property "Value" "PSM712-ES"
+            (id 1)
+            (at 0 -10.16 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide no)
+            )
+        )
+        (property "Footprint" "C5180294:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
+            (id 2)
+            (at 0 -12.7 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide yes)
+            )
+        )
+        (property "LCSC Part" "C5180294"
+            (id 5)
+            (at 0 -15.24 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide yes)
+            )
+        )
+        (property "checksum" "b61f86cefc736d1a04ae5e97ca43f112d20644cc4e106b1bab7c0a6f5a3e0c50"
+            (at 0 0 0)
+            (effects
+                (font
+                    (size 0 0)
+                )
+                (hide yes)
+            )
+        )
+        (in_bom yes)
+        (on_board yes)
+        (symbol "PSM712-ES_0_1"
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy -0.51 3.3)
+                    (xy -0.51 3.3)
+                    (xy -1.02 3.81)
+                    (xy -4.06 3.81)
+                    (xy -4.57 4.32)
+                    (xy -4.57 4.32)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy 4.57 3.3)
+                    (xy 4.57 3.3)
+                    (xy 4.06 3.81)
+                    (xy 1.02 3.81)
+                    (xy 0.51 4.32)
+                    (xy 0.51 4.32)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy -4.57 -2.03)
+                    (xy -4.57 -2.03)
+                    (xy -4.06 -2.54)
+                    (xy -1.02 -2.54)
+                    (xy -0.51 -3.05)
+                    (xy -0.51 -3.05)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy 0.51 -2.03)
+                    (xy 0.51 -2.03)
+                    (xy 1.02 -2.54)
+                    (xy 4.06 -2.54)
+                    (xy 4.57 -3.05)
+                    (xy 4.57 -3.05)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy -2.54 0)
+                    (xy -2.54 5.08)
+                    (xy 2.54 5.08)
+                    (xy 2.54 0)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type background)
+                )
+                (pts
+                    (xy -1.27 1.27)
+                    (xy -2.54 3.81)
+                    (xy -3.81 1.27)
+                    (xy -1.27 1.27)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type background)
+                )
+                (pts
+                    (xy 3.81 1.27)
+                    (xy 2.54 3.81)
+                    (xy 1.27 1.27)
+                    (xy 3.81 1.27)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type background)
+                )
+                (pts
+                    (xy -3.81 0)
+                    (xy -2.54 -2.54)
+                    (xy -1.27 0)
+                    (xy -3.81 0)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type background)
+                )
+                (pts
+                    (xy 1.27 0)
+                    (xy 2.54 -2.54)
+                    (xy 3.81 0)
+                    (xy 1.27 0)
+                )
+            )
+            (pin unspecified line
+                (at 0 7.62 270)
+                (length 2.54)
+                (name "3"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+                (number "3"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+            )
+            (pin unspecified line
+                (at -2.54 -5.08 90)
+                (length 2.54)
+                (name "1"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+                (number "1"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+            )
+            (pin unspecified line
+                (at 2.54 -5.08 90)
+                (length 2.54)
+                (name "2"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+                (number "2"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+            )
+        )
+    )
+)

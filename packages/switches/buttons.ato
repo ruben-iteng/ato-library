@@ -1,0 +1,88 @@
+#pragma experiment("BRIDGE_CONNECT")
+
+import Resistor
+import ElectricSignal
+import Button
+import ElectricLogic
+import ElectricPower
+
+component ButtonSKRPACE010 from Button:
+    """
+    Small SMD button
+    """
+    lcsc_id = "C139797"
+    # Pin mapping
+    unnamed[0] ~ pin 1
+    unnamed[0] ~ pin 2
+    unnamed[1] ~ pin 3
+    unnamed[1] ~ pin 4
+
+component ButtonSKTDLDE010 from Button:
+    """
+    Small SMD right angle button
+    """
+    lcsc_id = "C115365"
+    # Pin mapping
+    unnamed[0] ~ pin 1
+    unnamed[1] ~ pin 2
+
+module ButtonPullup:
+    """
+    Button where the output is pulled up to reference.hv via a resistor
+    """
+    btn = new Button
+    output = new ElectricSignal
+    pullup = new Resistor
+
+    # Connections
+    output.line ~ btn.unnamed[0]
+    output.line ~> pullup ~> output.reference.hv
+    btn.unnamed[1] ~ output.reference.lv
+
+    # Configure pullup
+    pullup.resistance = 10kohms +/- 20%
+    pullup.package = "R0402"
+
+
+module ButtonPulldown:
+    """
+    Button where the output is pulled down to reference.gnd via a resistor
+    """
+    btn = new Button
+    output = new ElectricSignal
+    pulldown = new Resistor
+
+    # Connections
+    output.line ~ btn.unnamed[0]
+    output.line ~> pulldown ~> output.reference.lv
+    btn.unnamed[1] ~ output.reference.hv
+
+    # Configure pulldown
+    pulldown.resistance = 10kohms +/- 20%
+    pulldown.package = "R0402"
+
+
+module Test:
+    """
+    Test module for buttons
+    """
+    # Make and configure buttons
+    btn_pullup_vertical = new ButtonPullup
+    btn_pullup_vertical.btn -> ButtonSKRPACE010
+
+    btn_pullup_horizontal = new ButtonPullup
+    btn_pullup_horizontal.btn -> ButtonSKTDLDE010
+
+    btn_pulldown_vertical = new ButtonPulldown
+    btn_pulldown_vertical.btn -> ButtonSKRPACE010
+
+    btn_pulldown_horizontal = new ButtonPulldown
+    btn_pulldown_horizontal.btn -> ButtonSKTDLDE010
+
+    # Create example signals
+    enable = new ElectricLogic
+    power = new ElectricPower
+    enable.reference ~ power # Typically done inside a driver
+
+    # Connect button
+    enable ~ btn_pullup_vertical.output

@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Omron_Electronics_G6KU_2F_Y_TR_DC5_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2153173", date="2025-06-17T14:26:40.844594+00:00", checksum="6f1d126152f087b5eb446aede3f4c3101b5a13b19053b1cf22545455be0e54a4">
+
+    trait is_atomic_part<manufacturer="Omron Electronics", partnumber="G6KU-2F-Y-TR DC5", footprint="RELAY-SMD_G6KU-2F-Y.kicad_mod", symbol="G6KU-2F-Y-TRDC5.kicad_sym", model="RELAY-SMD_G6KU-2F-Y.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2153173", manufacturer="Omron Electronics", partno="G6KU-2F-Y-TR DC5">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    pin 8
+    pin 7
+    pin 6
+    pin 5
+    pin 4
+    pin 3
+    pin 2
+    pin 1

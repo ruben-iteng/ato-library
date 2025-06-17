@@ -1,0 +1,164 @@
+(footprint "Vishay_Intertech_RCV20101M00FKEFAT:R2010"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "e4e542aa-9265-427e-96d0-0bec0a8febf2")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "R2010"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "c4492cc7-b451-4c02-9639-e3b805ac0d21")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "689e5099d20ef53b15026390c0716da3dfd35139fd830f14efea3e2fae744b5b"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "e9ea5e96-23fd-4546-bca0-84257d854284")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 1.83 1.58)
+        (end 3.26 1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "622834c9-be3d-4c64-80a1-9ab04635ad28")
+    )
+    (fp_line
+        (start 3.26 1.58)
+        (end 3.26 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "b75ae3e4-f6d2-4c66-b3ea-a0d6350d1009")
+    )
+    (fp_line
+        (start 3.26 -1.58)
+        (end 1.83 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "0bd17aca-49ce-4b4c-a409-63af7c860918")
+    )
+    (fp_line
+        (start -1.83 1.58)
+        (end -3.26 1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "173f4447-ba96-432d-822a-fe6928186568")
+    )
+    (fp_line
+        (start -3.26 1.58)
+        (end -3.26 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "cb53bd54-b48a-4fb9-82ba-a0b8c90626c7")
+    )
+    (fp_line
+        (start -3.26 -1.58)
+        (end -1.83 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "6c39ab3d-8eb8-4023-8065-5cb36e488b51")
+    )
+    (fp_circle
+        (center -2.5 1.25)
+        (end -2.47 1.25)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "b61d39de-1600-4575-ac30-9359bb42d912")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "d55999a8-081d-4df4-8c8f-3c40e931cd1b")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "e4e542aa-9265-427e-96d0-0bec0a8febf2")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 2.39 0 0)
+        (size 1.28 2.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "b08db584-9692-4bb9-acbc-d6099975df84")
+    )
+    (pad "1" smd rect
+        (at -2.39 0 0)
+        (size 1.28 2.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "9620c657-98ee-4d04-8200-b5e17d14513e")
+    )
+    (model "${KIPRJMOD}/../../parts/Vishay_Intertech_RCV20101M00FKEFAT/R2010_L5.0-W2.5-H0.6.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

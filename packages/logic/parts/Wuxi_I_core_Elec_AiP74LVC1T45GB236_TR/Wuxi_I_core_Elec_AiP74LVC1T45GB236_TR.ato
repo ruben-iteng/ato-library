@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C5162251", date="2025-06-17T17:56:42.070141+00:00", checksum="0ef42aaab1a39e69303d06251fcde3a8280994ef3274b6683f5c6a419abcf134">
+
+    trait is_atomic_part<manufacturer="Wuxi I-core Elec", partnumber="AiP74LVC1T45GB236.TR", footprint="SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL.kicad_mod", symbol="AIP74LVC1T45GB236.TR.kicad_sym", model="SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5162251", manufacturer="Wuxi I-core Elec", partno="AiP74LVC1T45GB236.TR">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A ~ pin 3
+    signal B ~ pin 4
+    signal DIR ~ pin 5
+    signal GND ~ pin 2
+    signal VCCA ~ pin 1
+    signal VCCB ~ pin 6

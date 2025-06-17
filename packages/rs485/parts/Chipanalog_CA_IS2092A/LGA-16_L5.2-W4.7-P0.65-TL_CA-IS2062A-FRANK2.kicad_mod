@@ -1,0 +1,230 @@
+(footprint "Chipanalog_CA_IS2092A:LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -6.279999999999999 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "710858fd-794b-4cb5-8a84-dd4f71aaf632")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2"
+        (at 0 6.279999999999999 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "ac3c5102-5d10-47c7-8676-8d5548b81b72")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "c3afb5f0ed4895d8939f5ef07166ba8d940ac7fef421058cd2f67642aacf6d6e"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "0e603033-6398-425c-aa8b-fc8d48ded03e")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start -2.4 -2.68)
+        (end 2.4 -2.68)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "0d27fec6-fcb6-4416-8683-3d8927841b64")
+    )
+    (fp_line
+        (start -2.4 2.68)
+        (end 2.4 2.68)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "696a0c9c-9824-43b0-83f7-6906a66374d8")
+    )
+    (fp_circle
+        (center -2.32 -2.6)
+        (end -2.29 -2.6)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "c7bcfb02-7916-4c20-bfe1-bd3c6440bf3a")
+    )
+    (fp_circle
+        (center -2.54 -2.29)
+        (end -2.42 -2.29)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "ab79e498-0b06-49f8-acb4-7d541f0a7d20")
+    )
+    (fp_circle
+        (center -2.79 -2.79)
+        (end -2.69 -2.79)
+        (stroke
+            (width 0.2)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.SilkS")
+        (uuid "09dc8720-e8ab-4193-90bf-1e4e6bb96518")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "295f0fd0-7a6c-481f-b231-c80f0b753eb0")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -6.279999999999999 0)
+        (layer "F.SilkS")
+        (uuid "710858fd-794b-4cb5-8a84-dd4f71aaf632")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at -2.19 -2.28 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "9610eec6-f705-4fc3-bce8-6642b799d1da")
+    )
+    (pad "2" smd rect
+        (at -2.19 -1.63 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "2bfe4599-8abf-475a-9fef-8cd73bab242a")
+    )
+    (pad "3" smd rect
+        (at -2.19 -0.98 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "6cc7aad1-f642-4234-b0e9-0265ebeee3cb")
+    )
+    (pad "4" smd rect
+        (at -2.19 -0.33 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "8e467347-9407-4773-8288-3d33bafecc74")
+    )
+    (pad "5" smd rect
+        (at -2.19 0.33 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "248fecff-78de-47d6-8c3c-c5e60d1875b4")
+    )
+    (pad "6" smd rect
+        (at -2.19 0.98 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "9590ac3c-c33e-42b0-b516-7d2384b6d49e")
+    )
+    (pad "7" smd rect
+        (at -2.19 1.63 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "438d021f-6ce3-4249-8358-8037495442bc")
+    )
+    (pad "8" smd rect
+        (at -2.19 2.28 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "4d88597f-a015-4c5a-9b1a-b552b112c7e2")
+    )
+    (pad "9" smd rect
+        (at 2.19 2.28 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "538f34c2-7a54-4f25-a359-de41e1cb4938")
+    )
+    (pad "10" smd rect
+        (at 2.19 1.63 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "03723df7-d729-4a60-8043-b4781ab9040b")
+    )
+    (pad "11" smd rect
+        (at 2.19 0.98 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "2f767358-0d71-494d-89f4-7f5566bd0f9a")
+    )
+    (pad "12" smd rect
+        (at 2.19 0.33 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "cbf5f9d7-ce89-4cd8-b4e2-218f1f35c77c")
+    )
+    (pad "13" smd rect
+        (at 2.19 -0.33 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "5b5ff6d0-707b-4e3b-aefd-437461e7fbc4")
+    )
+    (pad "14" smd rect
+        (at 2.19 -0.98 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "1b6e8f2e-0cbb-4658-aa42-d99791726e10")
+    )
+    (pad "15" smd rect
+        (at 2.19 -1.63 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "3fab67d7-1f42-4ea2-b2f6-905f095e7266")
+    )
+    (pad "16" smd rect
+        (at 2.19 -2.28 0)
+        (size 0.98 0.36)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "51d04a84-7114-4996-8737-083650917731")
+    )
+    (model "${KIPRJMOD}/../../parts/Chipanalog_CA_IS2092A/LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.STEP"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

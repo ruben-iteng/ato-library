@@ -1,0 +1,164 @@
+(footprint "TA_I_Tech_RLP25FEGR015:R2512"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "06c4c1f2-8d21-4051-973c-92d455aaa568")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "R2512"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "4eeb198a-adf0-46dd-9cea-4af5bcaaa897")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "7987230f53ebc0fa0f3aba461e4ebedc0dc5e2f46aaa4806c0fac29a7e7bef8c"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "4e985677-eeb8-4883-b521-5fc676e1542f")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 2.5 1.96)
+        (end 3.94 1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "2ce5f75a-02b5-4160-aa4a-d61d61d15dfa")
+    )
+    (fp_line
+        (start 3.94 1.96)
+        (end 3.94 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f9043197-7397-404d-ad8b-b5042286ead1")
+    )
+    (fp_line
+        (start 3.94 -1.96)
+        (end 2.5 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "40df9c46-87dd-42eb-9a1d-35603161594d")
+    )
+    (fp_line
+        (start -2.5 1.96)
+        (end -3.94 1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "23afc30b-a0b3-4607-ac9f-4d546920e55d")
+    )
+    (fp_line
+        (start -3.94 1.96)
+        (end -3.94 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "4cf94ae7-3c7e-4cfd-8db7-7b9c2561e4e2")
+    )
+    (fp_line
+        (start -3.94 -1.96)
+        (end -2.5 -1.96)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "41cca6b2-748a-4aef-9b6a-1ddf0fa3d5c0")
+    )
+    (fp_circle
+        (center -3.18 1.6)
+        (end -3.15 1.6)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "3c8aea10-b3d9-43c7-900b-eed05ef0e3f8")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "4ce39468-cc3f-4e1d-8db9-1d41b3ad1a66")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "06c4c1f2-8d21-4051-973c-92d455aaa568")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 3.07 0 0)
+        (size 1.28 3.46)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "c83d349f-b7ac-4875-a0f7-220173c6c930")
+    )
+    (pad "1" smd rect
+        (at -3.07 0 0)
+        (size 1.28 3.46)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "15c69136-705e-480e-acd8-6e4b88304eaa")
+    )
+    (model "${KIPRJMOD}/../../parts/TA_I_Tech_RLP25FEGR015/R2512_L6.3-W3.2-H0.6.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Vishay_Intertech_RCV20101M00FKEFAT_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C1513439", date="2025-06-17T09:29:07.391460+00:00", checksum="cb53d74326ecfd35dc77f518fe330c7077487a00f9b321d0804dadcfa45c6eb8">
+
+    trait is_atomic_part<manufacturer="Vishay Intertech", partnumber="RCV20101M00FKEFAT", footprint="R2010.kicad_mod", symbol="RCV20101M00FKEFAT.kicad_sym", model="R2010_L5.0-W2.5-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C1513439", manufacturer="Vishay Intertech", partno="RCV20101M00FKEFAT">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 2
+    pin 1

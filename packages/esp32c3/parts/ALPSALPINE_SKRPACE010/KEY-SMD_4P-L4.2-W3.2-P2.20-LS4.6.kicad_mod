@@ -1,0 +1,198 @@
+(footprint "ALPSALPINE_SKRPACE010:KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -5.07 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "7d7d116c-73f1-4902-aa66-f8e4ee4c5966")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6"
+        (at 0 5.07 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "cbda0f6d-dde0-480c-a00e-f2390ec67faf")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "ec4db978fa7fb09c366ea6634befb6e67cf29573ff991250d9cba4c5323779c8"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "0b17361e-e6cc-4e77-9dd8-3e090be4f940")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -0.51 -1.02)
+        (end 0.51 -1.02)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7e085198-c5f8-4a75-bb9e-9a606d0e3bf7")
+    )
+    (fp_line
+        (start -0.51 1.02)
+        (end 0.51 1.02)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "d0c5759c-260e-413d-81f5-9c59439d61cd")
+    )
+    (fp_line
+        (start 2.2 -0.54)
+        (end 2.2 0.54)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "a9540839-8219-416a-a1bc-8bc8ab288de4")
+    )
+    (fp_line
+        (start 1.37 -1.52)
+        (end -1.37 -1.52)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "1a3b9127-36c9-4edb-be51-19347b9cacbc")
+    )
+    (fp_line
+        (start -2.2 -0.54)
+        (end -2.2 0.54)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "edc1d96b-b7d7-42e7-ac00-41c9b0cbbe92")
+    )
+    (fp_line
+        (start -1.38 1.55)
+        (end 1.38 1.55)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f716a786-190d-4ca8-b1a9-0fe0bb294741")
+    )
+    (fp_arc
+        (start 0.51 1.02)
+        (mid 1.53 6.245698675651501e-17)
+        (end 0.5100000000000001 -1.02)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f3c7d0cf-cbd4-4c9e-887e-c44ac532051e")
+    )
+    (fp_arc
+        (start -0.51 -1.02)
+        (mid -1.53 -6.245698675651501e-17)
+        (end -0.5100000000000001 1.02)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f76bb92c-b5fc-4209-8e06-899b79759b5e")
+    )
+    (fp_circle
+        (center -2.3 -1.6)
+        (end -2.27 -1.6)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "c643a950-1a77-4ed0-8d07-5d45cc06030d")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "1bf16c7b-2794-40d5-9ae6-e970c7cca494")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -5.07 0)
+        (layer "F.SilkS")
+        (uuid "7d7d116c-73f1-4902-aa66-f8e4ee4c5966")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at -2.1 -1.07 0)
+        (size 1.05 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "24173d4c-c951-4141-afbb-71b23c376e67")
+    )
+    (pad "2" smd rect
+        (at 2.1 -1.07 0)
+        (size 1.05 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "44b7af23-de9d-4e78-b794-456998e69907")
+    )
+    (pad "3" smd rect
+        (at -2.1 1.07 0)
+        (size 1.05 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "ba4df34f-83d8-4dcf-b185-0c121a027066")
+    )
+    (pad "4" smd rect
+        (at 2.1 1.07 0)
+        (size 1.05 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "26938bc9-a349-4101-b173-3a98d0271a6d")
+    )
+    (model "${KIPRJMOD}/../../parts/ALPSALPINE_SKRPACE010/KEY-SMD_4P-L4.2-W3.2-H2.5-LS4.6-P2.2.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

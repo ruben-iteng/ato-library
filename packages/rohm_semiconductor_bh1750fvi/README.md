@@ -4,7 +4,7 @@ ROHM Semiconductor BH1750FVI-TR Digital Ambient Light Sensor with I2C interface
 
 ## Package Information
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Total Modules: 1
 - Author(s): Ruben Baldewsing
 - License: MIT

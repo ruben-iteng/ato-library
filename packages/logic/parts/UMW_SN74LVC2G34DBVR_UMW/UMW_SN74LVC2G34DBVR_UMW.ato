@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component UMW_SN74LVC2G34DBVR_UMW_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C7394039", date="2025-06-08T12:02:39.897506+00:00", checksum="f949eab99402cbc1386120ff2b91ec1523fea498bc0d77f97d277ac731afd4f3">
+
+    trait is_atomic_part<manufacturer="UMW", partnumber="SN74LVC2G34DBVR(UMW)", footprint="SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod", symbol="SN74LVC2G34DBVR(UMW).kicad_sym", model="SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C7394039", manufacturer="UMW", partno="SN74LVC2G34DBVR(UMW)">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 2
+    signal INA1 ~ pin 1
+    signal INA2 ~ pin 3
+    signal VCC ~ pin 5
+    signal Y1 ~ pin 6
+    signal Y2 ~ pin 4

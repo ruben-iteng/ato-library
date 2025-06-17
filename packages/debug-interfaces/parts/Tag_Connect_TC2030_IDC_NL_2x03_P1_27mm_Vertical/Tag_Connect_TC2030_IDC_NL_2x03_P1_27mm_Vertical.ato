@@ -1,0 +1,8 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import is_atomic_part
+
+
+component Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical:
+    trait is_atomic_part<manufacturer="Tag Connect", partnumber="TC2030_IDC_NL_2x03_P1_27mm_Vertical", footprint="Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical.kicad_mod", symbol="Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical.kicad_sym">
+    trait has_designator_prefix<prefix="TC">
