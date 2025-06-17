@@ -7,7 +7,7 @@ import is_auto_generated
 component MaxLinear_SP3485EN_L_TR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C8963", date="2025-06-17T09:29:11.194834+00:00", checksum="f1edab8fe6f6c28ed9549341e2751e16ee3f871b59a1c6302aca84552a15b44e">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C8963", date="2025-06-17T09:29:11.194834+00:00", checksum="f1edab8fe6f6c28ed9549341e2751e16ee3f871b59a1c6302aca84552a15b44e">
 
     trait is_atomic_part<manufacturer="MaxLinear", partnumber="SP3485EN-L/TR", footprint="SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL.kicad_mod", symbol="SP3485EN-L_TR.kicad_sym", model="SOIC-8_L4.9-W3.9-H1.7-LS6.0-P1.27.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C8963", manufacturer="MaxLinear", partno="SP3485EN-L/TR">

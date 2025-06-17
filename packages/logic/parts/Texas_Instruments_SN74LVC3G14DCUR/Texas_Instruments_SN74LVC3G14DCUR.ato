@@ -7,7 +7,7 @@ import is_auto_generated
 component Texas_Instruments_SN74LVC3G14DCUR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C98856", date="2025-06-08T12:02:41.288480+00:00", checksum="414ef3d2e88774f2f8d778aad12d1a40e34e273382b0a3ab7537da7921c04140">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C98856", date="2025-06-08T12:02:41.288480+00:00", checksum="414ef3d2e88774f2f8d778aad12d1a40e34e273382b0a3ab7537da7921c04140">
 
     trait is_atomic_part<manufacturer="Texas Instruments", partnumber="SN74LVC3G14DCUR", footprint="VSSOP-8_L2.3-W2.0-P0.50-LS3.1-BR.kicad_mod", symbol="SN74LVC3G14DCUR.kicad_sym", model="VSSOP-8_L2.3-W2.0-P0.50-LS3.1-BL.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C98856", manufacturer="Texas Instruments", partno="SN74LVC3G14DCUR">

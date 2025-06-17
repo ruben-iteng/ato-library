@@ -7,7 +7,7 @@ import is_auto_generated
 component Texas_Instruments_SN74CB3Q3251PWR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C2869261", date="2025-06-08T12:02:44.200283+00:00", checksum="6e517e242f86d86851f2fa426f4a03ba66f5cbd3e39abde78b712df3c76c532e">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2869261", date="2025-06-08T12:02:44.200283+00:00", checksum="6e517e242f86d86851f2fa426f4a03ba66f5cbd3e39abde78b712df3c76c532e">
 
     trait is_atomic_part<manufacturer="Texas Instruments", partnumber="SN74CB3Q3251PWR", footprint="TSSOP-16_L5.0-W4.4-P0.64-LS6.4-BL.kicad_mod", symbol="SN74CB3Q3251PWR.kicad_sym", model="TSSOP-16_L5.0-W4.4-P0.64-LS6.4-BL.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2869261", manufacturer="Texas Instruments", partno="SN74CB3Q3251PWR">

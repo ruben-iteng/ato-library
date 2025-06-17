@@ -7,7 +7,7 @@ import is_auto_generated
 component TECH_PUBLIC_TPAP2112K_3_3TRG1_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C3021085", date="2025-06-08T09:34:47.391728+00:00", checksum="c0cb74a14cca4ac1eb3150973e26c5b1dd3ab1fdc5c15c80d2579c8a2247535f">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C3021085", date="2025-06-08T09:34:47.391728+00:00", checksum="c0cb74a14cca4ac1eb3150973e26c5b1dd3ab1fdc5c15c80d2579c8a2247535f">
 
     trait is_atomic_part<manufacturer="TECH PUBLIC", partnumber="TPAP2112K-3.3TRG1", footprint="SOT-23-5_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod", symbol="TPAP2112K-3.3TRG1.kicad_sym", model="SOT-23-5_L2.9-W1.6-P0.95-LS2.8-BR.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C3021085", manufacturer="TECH PUBLIC", partno="TPAP2112K-3.3TRG1">

@@ -7,7 +7,7 @@ import is_auto_generated
 component Espressif_Systems_ESP32_C3_MINI_1_N4_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C2838502", date="2025-06-17T17:43:58.636138+00:00", checksum="bf6f9ecb7bc0fb7ac3e37ee5844cb8f7b5084cb1798ec3bd36905e8e9ee74a8f">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2838502", date="2025-06-17T17:43:58.636138+00:00", checksum="bf6f9ecb7bc0fb7ac3e37ee5844cb8f7b5084cb1798ec3bd36905e8e9ee74a8f">
 
     trait is_atomic_part<manufacturer="Espressif Systems", partnumber="ESP32-C3-MINI-1-N4", footprint="WIFIM-SMD_ESP32-C3-MINI-1.kicad_mod", symbol="ESP32-C3-MINI-1-N4.kicad_sym", model="WIFIM-SMD_ESP32-C3-MINI-1.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2838502", manufacturer="Espressif Systems", partno="ESP32-C3-MINI-1-N4">

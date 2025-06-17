@@ -7,7 +7,7 @@ import is_auto_generated
 component ALPSALPINE_SKTDLDE010_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C115365", date="2025-06-17T15:25:39.150994+00:00", checksum="6bad69d28a9b57ec52a7079c5dd96ccb1c4877cb281b79a364eac5c0f5c03f1d">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C115365", date="2025-06-17T15:25:39.150994+00:00", checksum="6bad69d28a9b57ec52a7079c5dd96ccb1c4877cb281b79a364eac5c0f5c03f1d">
 
     trait is_atomic_part<manufacturer="ALPSALPINE", partnumber="SKTDLDE010", footprint="KEY-SMD_SKTDLDE010.kicad_mod", symbol="SKTDLDE010.kicad_sym">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C115365", manufacturer="ALPSALPINE", partno="SKTDLDE010">

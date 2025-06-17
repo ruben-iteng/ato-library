@@ -7,9 +7,9 @@ import is_auto_generated
 component ALPSALPINE_SKRPACE010_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C139797", date="2025-06-17T15:25:39.443927+00:00", checksum="7dd3672111b9809bf392e3f5d9fa35c979290b71e54bbb93ed9b553e475f9cdb">
+    trait is_auto_generated<system="ato_part", source="easyeda:C139797", date="2025-06-17T21:15:03.576324+00:00", checksum="28d0106609c11aa27f901e7e8dd630cb55ed89c286b8760a001763e853a60098">
 
-    trait is_atomic_part<manufacturer="ALPSALPINE", partnumber="SKRPACE010", footprint="KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6.kicad_mod", symbol="SKRPACE010.kicad_sym">
+    trait is_atomic_part<manufacturer="ALPSALPINE", partnumber="SKRPACE010", footprint="KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6.kicad_mod", symbol="SKRPACE010.kicad_sym", model="KEY-SMD_4P-L4.2-W3.2-H2.5-LS4.6-P2.2.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C139797", manufacturer="ALPSALPINE", partno="SKRPACE010">
     trait has_designator_prefix<prefix="SW">
 
