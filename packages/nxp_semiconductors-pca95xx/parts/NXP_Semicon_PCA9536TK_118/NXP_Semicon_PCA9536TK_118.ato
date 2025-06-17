@@ -7,10 +7,10 @@ import is_auto_generated
 component NXP_Semicon_PCA9536TK_118_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C2652283", date="2025-06-08T09:39:24.611199+00:00", checksum="ce6161c257322685468432a1a267d3edc5d745e19e6bc1b8c26f264b37877d4c">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2652283", date="2025-06-08T09:39:24.611199+00:00", checksum="ce6161c257322685468432a1a267d3edc5d745e19e6bc1b8c26f264b37877d4c">
 
-    trait is_atomic_part<manufacturer="NXP Semicon", partnumber="PCA9536TK,118", footprint="HVSON-8_L3.0-W3.0-P0.50-BL-EP.kicad_mod", symbol="PCA9536TK,118.kicad_sym", model="HVSON-8_L3.0-W3.0-P0.50-BL-EP.step">
-    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2652283", manufacturer="NXP Semicon", partno="PCA9536TK,118">
+    trait is_atomic_part<manufacturer="NXP Semicon", partnumber="PCA9536TK_118", footprint="HVSON-8_L3.0-W3.0-P0.50-BL-EP.kicad_mod", symbol="PCA9536TK_118.kicad_sym", model="HVSON-8_L3.0-W3.0-P0.50-BL-EP.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2652283", manufacturer="NXP Semicon", partno="PCA9536TK_118">
     trait has_designator_prefix<prefix="U">
 
     # pins

@@ -9,18 +9,21 @@ builds:
     entry: rotary_encoders.ato:RotaryEncoderAdvanced
     hide_designators: true
 
+  test:
+    entry: buttons.ato:Test
+
 package:
   identifier: ruben-iteng/switches
   repository: https://github.com/ruben-iteng/ato-library
   version: 0.1.4
   authors:
-  - name: Ruben Baldewsing
-    email: 94007802+ruben-iteng@users.noreply.github.com
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Rotary encoders, switches, and other switch like components and modules
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/switches/README.md
 
 dependencies:
-- type: registry
-  identifier: ruben-iteng/logic
-  release: 0.1.3
+  - type: registry
+    identifier: ruben-iteng/logic
+    release: 0.2.2

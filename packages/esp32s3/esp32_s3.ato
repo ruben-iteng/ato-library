@@ -1,3 +1,5 @@
+#pragma experiment("BRIDGE_CONNECT")
+
 import ElectricLogic
 import ElectricPower
 import I2C
@@ -7,7 +9,8 @@ import JTAG
 import USB2_0
 import Capacitor
 
-from "atopile/buttons/buttons.ato" import ButtonSKRPACE010, ButtonPullup
+from "ruben-iteng/switches/buttons.ato" import ButtonSKRPACE010
+from "ruben-iteng/switches/buttons.ato" import ButtonPullup
 
 
 module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
@@ -19,6 +22,7 @@ module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
 
     # components
     boot_switch = new ButtonSKRPACE010
+    boot_rc_capacitor = new Capacitor
     reset_switch = new ButtonPullup
     reset_rc_capacitor = new Capacitor
     decoupling_capacitor_bulk = new Capacitor
@@ -28,11 +32,12 @@ module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
     power ~ decoupling_capacitor_bulk.power
     power ~ decoupling_capacitor_small.power
 
-    boot_switch.input ~ power.lv
-    boot_switch.output ~ gpio[0].line
+    boot_switch.unnamed[0] ~ power.lv
+    boot_switch.unnamed[1] ~ gpio[0].line
+    boot_switch.unnamed[1] ~> boot_rc_capacitor ~> power.lv
 
     reset_switch.output.reference ~ power
-    reset_switch.output.line ~ enable.line
+    reset_switch.output ~ enable
     reset_switch.btn -> ButtonSKRPACE010
     reset_rc_capacitor.power.hv ~ reset_switch.output.line
     reset_rc_capacitor.power.lv ~ reset_switch.output.reference.lv
@@ -65,7 +70,7 @@ module ESP32_S3_WROOM_1_U_driver_base:
     enable = new ElectricLogic
     usb = new USB2_0
 
-    gpio = new ElectricLogic[49] # 22-34, 43, 44, are not exposed on the module
+    gpio = new ElectricLogic[49] # 22-34 are not exposed on the module
 
     # connections
     gpio[0].line ~ package.27 # strapping pin, default pull-up, boot mode
@@ -99,6 +104,8 @@ module ESP32_S3_WROOM_1_U_driver_base:
     gpio[40].line ~ package.33
     gpio[41].line ~ package.34
     gpio[42].line ~ package.35
+    gpio[43].line ~ package.36
+    gpio[44].line ~ package.37
     # ~
     gpio[45].line ~ package.26 # strapping pin, default pull-down
     gpio[46].line ~ package.16 # strapping pin, default pull-down
@@ -112,8 +119,8 @@ module ESP32_S3_WROOM_1_U_driver_base:
 
     enable.line ~ package.3
 
-    uart.rx.line ~ package.37
-    uart.tx.line ~ package.36
+    uart.rx ~ gpio[44]
+    uart.tx ~ gpio[43]
 
     usb.usb_if.d.n ~ gpio[19]
     usb.usb_if.d.p ~ gpio[20]

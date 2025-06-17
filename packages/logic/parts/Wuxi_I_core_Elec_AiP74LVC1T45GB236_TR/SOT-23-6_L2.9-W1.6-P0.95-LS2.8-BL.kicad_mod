@@ -9,7 +9,7 @@
         (at 0 -5.15 0)
         (layer "F.SilkS")
         (hide no)
-        (uuid "949f26bb-9bbf-430d-95b3-215f23e8f6bb")
+        (uuid "86339f3b-7055-44c8-af31-786d342711b2")
         (effects
             (font
                 (size 1 1)
@@ -21,7 +21,7 @@
         (at 0 5.15 0)
         (layer "F.Fab")
         (hide no)
-        (uuid "6b77219c-70e6-4052-8676-4384861d5cc1")
+        (uuid "88340b13-c413-4932-8f2a-f8cb03c790d2")
         (effects
             (font
                 (size 1 1)
@@ -29,11 +29,11 @@
             )
         )
     )
-    (property "checksum" "286e76c79734ab4b304bd3558923ff5d25a6aac16a9d673c958e6a5da7247b38"
+    (property "checksum" "9329210a4ef8908a099f968f82628d03f36b50ebecd71b9397f7b6f0fd495467"
         (at 0 0 0)
         (layer "User.9")
         (hide no)
-        (uuid "8300d7d6-08a8-4ce7-a147-5832314e5200")
+        (uuid "5dfd58ce-a26a-4337-aa7d-1011177612dc")
         (effects
             (font
                 (size 0.125 0.125)
@@ -51,7 +51,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "0b15ca3d-df10-4d24-8883-c2c834abdec7")
+        (uuid "61f67e79-017e-41dd-b6cf-00fcaf95d733")
     )
     (fp_line
         (start -1.54 0.89)
@@ -61,7 +61,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "d77a981b-35c6-405b-9ccd-59e0c8460047")
+        (uuid "67d5ecb4-f5c4-4384-a2bb-65d62aa42239")
     )
     (fp_circle
         (center -1.46 1.4)
@@ -72,7 +72,7 @@
         )
         (fill no)
         (layer "F.Fab")
-        (uuid "2d42845c-214e-4737-8bb5-9fe4df811e06")
+        (uuid "ca4235d9-8d48-4d1a-b752-2666bb399632")
     )
     (fp_circle
         (center -0.92 1.68)
@@ -83,7 +83,7 @@
         )
         (fill no)
         (layer "Cmts.User")
-        (uuid "d2427a41-0f32-4995-8ae2-cacead38ebba")
+        (uuid "914ef3eb-d57f-441d-ba94-5f1151ea0fd2")
     )
     (fp_circle
         (center -1.67 1.3)
@@ -94,12 +94,12 @@
         )
         (fill no)
         (layer "F.SilkS")
-        (uuid "98da2ca5-cf1c-4a86-a8c9-ca3385920b5d")
+        (uuid "b738a1b6-5336-4931-a0b8-5acd054adff2")
     )
     (fp_text user "%R"
         (at 0 0 0)
         (layer "F.Fab")
-        (uuid "102e5b07-9457-4a91-be1a-5fdf4f6c88e6")
+        (uuid "33990ecc-b495-4ab6-89b0-c5979aca4811")
         (effects
             (font
                 (size 1 1)
@@ -111,7 +111,7 @@
     (fp_text user "${REFERENCE}"
         (at 0 -5.15 0)
         (layer "F.SilkS")
-        (uuid "949f26bb-9bbf-430d-95b3-215f23e8f6bb")
+        (uuid "86339f3b-7055-44c8-af31-786d342711b2")
         (effects
             (font
                 (size 1 1)
@@ -124,37 +124,37 @@
         (at -0.95 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "faef04e5-aa21-4015-bb70-f966763c62a9")
+        (uuid "f7a11963-432b-4776-9430-35d59b855145")
     )
     (pad "2" smd rect
         (at 0 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "eccc4560-801c-413e-bb09-5f04b623543d")
+        (uuid "eef85606-ff36-4a64-973a-5827a0f943b1")
     )
     (pad "3" smd rect
         (at 0.95 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "8d7e55c2-04e5-4034-8fc4-528195d0a7d0")
+        (uuid "c3dd8733-c246-480e-9158-ef0a60e12133")
     )
     (pad "4" smd rect
         (at 0.95 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "1ab03f20-52a5-4f34-812a-a0020e72f097")
+        (uuid "05f43bd8-bc68-4065-b105-a181de3b0d8b")
     )
     (pad "5" smd rect
         (at 0 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "855ace28-e06b-4774-b219-73ccb7a3e3d5")
+        (uuid "41386979-73f1-4adb-b74d-903b51eb60a5")
     )
     (pad "6" smd rect
         (at -0.95 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "905d9712-061c-46f3-9298-cb92a219356e")
+        (uuid "edf254b9-28d2-47ae-a9ca-99cbb5443194")
     )
     (model "${KIPRJMOD}/../../parts/Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step"
         (offset

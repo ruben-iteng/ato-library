@@ -7,7 +7,7 @@ import is_auto_generated
 component Texas_Instruments_INA228AIDGSR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C2887910", date="2025-06-09T20:48:02.728577+00:00", checksum="0d08d69b234c869ff43fe5de237a76119ea99807cb1f2b0964a239b2d1983cd8">
+    # trait is_auto_generated<system="ato_part", source="easyeda:C2887910", date="2025-06-09T20:48:02.728577+00:00", checksum="0d08d69b234c869ff43fe5de237a76119ea99807cb1f2b0964a239b2d1983cd8">
 
     trait is_atomic_part<manufacturer="Texas Instruments", partnumber="INA228AIDGSR", footprint="VSSOP-10_L3.0-W3.0-P0.50-LS4.9-BL.kicad_mod", symbol="INA228AIDGSR.kicad_sym", model="VSSOP-10_L3.0-W3.0-H1.1-LS4.9-P0.50.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2887910", manufacturer="Texas Instruments", partno="INA228AIDGSR">

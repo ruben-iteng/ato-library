@@ -9,9 +9,9 @@ component Brightking_Elec_3RL090M_5_S_package:
 
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C78322", date="2025-06-08T15:01:31.978357+00:00", checksum="8c3277839f09dddf968f63ff650d985c816be82223bc574a423419b19cdc1711">
+    trait is_auto_generated<system="ato_part", source="easyeda:C78322", date="2025-06-17T09:29:06.712815+00:00", checksum="0cd7c26a0800a2f0aa7df5f959cb0c6a4e921fcd84ab012c41c69aaa5bb1c356">
 
-    trait is_atomic_part<manufacturer="Brightking Elec ", partnumber="3RL090M-5-S", footprint="DIO-DT-SMD_L7.2-W5.0.kicad_mod", symbol="3RL090M-5-S.kicad_sym">
+    trait is_atomic_part<manufacturer="Brightking Elec ", partnumber="3RL090M-5-S", footprint="DIO-DT-SMD_L7.2-W5.0.kicad_mod", symbol="3RL090M-5-S.kicad_sym", model="DIO-DT-SMD_L7.2-W5.0.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C78322", manufacturer="Brightking Elec ", partno="3RL090M-5-S">
     trait has_designator_prefix<prefix="TV">
 

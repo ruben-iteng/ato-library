@@ -32,9 +32,15 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/ina228.png) | ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.3 |
 | ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
-| [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.2.2 |
+| [leds](packages/leds/README.md) | 8 modules | Various (addressable) LED components and modules | 0.2.2 |
 | ![addressable_led_connector_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector_driver.png) | addressable_led_connector_driver | - | |
 | ![addressable_led_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_driver.png) | addressable_led_driver | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        leds = new AddressableLED[3]<br><br>        power = new ElectricPower<br>        data_in = new ElectricLogic<br><br>        for led in leds:<br>            led -> WS2812B_5050_Black<br>            led.power ~ power<br><br>        data_in ~> leds[0] ~> leds[1] ~> leds[2] | |
+|  | red | Hubei KENTO Elec KT-0603B Blue LED | |
+|  | green | Hubei KENTO Elec KT-0603B Blue LED | |
+|  | blue | Hubei KENTO Elec KT-0603B Blue LED | |
+|  | yellow | Hubei KENTO Elec KT-0603B Blue LED | |
+|  | yellow_green | Hubei KENTO Elec KT-0603B Blue LED | |
+|  | white | Hubei KENTO Elec KT-0603B Blue LED | |
 | [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.2.2 |
 | ![aip74lvc1t45_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45_driver.png) | aip74lvc1t45_driver | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | ![sn74lvc2g34dbvrumw_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc2g34dbvrumw_driver.png) | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |
@@ -42,7 +48,7 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![iso1540_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/iso1540_driver.png) | iso1540_driver | ISO1540 low-power bidirectional I2C isolators.<br>    - 3.0V to 5.5V power and signal levels<br>    - up to 100Mhz I2C | |
 | ![sn74cb3q3251pwr_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74cb3q3251pwr_driver.png) | sn74cb3q3251pwr_driver | Texas Instruments SN74CB3Q3251PWR<br>    1 to/from 8 FET multiplexer/demultiplexer<br>    2.5V/3.3V low-voltage high-bandwidth bus switch | |
 | [logos](packages/logos/README.md) | 1 module | Various logos | 0.2.0 |
-| ![test](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/test.png) | test | Test module | |
+|  | faebryk_logo_8x9mm | faebryk Logo 8x9mm | |
 | [microchip-emc2101](packages/microchip-emc2101/README.md) | 1 module | Microchip EMC2101 fan driver | 0.1.2 |
 | ![microchip_emc2101_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/microchip-emc2101/assets/microchip_emc2101_driver.png) | microchip_emc2101_driver | MicrochipEMC2101 fan driver<br>    Automatic Beta Compensation<br>    - Resistance Error Correction<br>    - Self-programming with available SMBus compatible EEPROM<br>    - Selectable PWM or DAC fan driver output<br>    - Temperature Monitors<br>      - External channel ±1°C accuracy<br>      - Internal channel ±2°C accuracy<br>    - 3.3 Volt Operation (5 Volt Tolerant Input Buffers)<br>    - SMBus 2.0 Compliant Interface, supports TIMEOUT | |
 | [nxp_semiconductors-pca95xx](packages/nxp_semiconductors-pca95xx/README.md) | 4 modules | NXP Semiconductors PCA95xx family of I2C I/O expanders | 0.1.2 |
@@ -61,8 +67,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![maxlinear_sp3485en_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/maxlinear_sp3485en_driver.png) | maxlinear_sp3485en_driver | Simple UART to RS485 converter.<br>    UART and write enable interface in, RS485 interface out. | |
 | ![analog_devices_adm2587ebrwz_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/analog_devices_adm2587ebrwz_driver.png) | analog_devices_adm2587ebrwz_driver | Isolated UART to half duplex RS485 interface | |
 | ![chipanalog_is2092a_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/rs485/assets/chipanalog_is2092a_driver.png) | chipanalog_is2092a_driver | Isolated powered UART to RS485 transceiver design block.<br>    - 3.3V or 5V logic power<br>    - 3.3V or 5V module power<br>    - 0.5 Mbps UART<br>    - Read enable/write enable input<br>    - RS485 half duplex<br>    - ANSI/ESDA/JEDEC JS-001 ESD protection<br>    - JESD22-C101 CDM protection | |
-| [switches](packages/switches/README.md) | 1 module | Rotary encoders, switches, and other switch like components and modules | 0.1.4 |
+| [switches](packages/switches/README.md) | 2 modules | Rotary encoders, switches, and other switch like components and modules | 0.1.4 |
 | ![rotary_encoder_advanced](https://github.com/ruben-iteng/ato-library/raw/main/packages/switches/assets/rotary_encoder_advanced.png) | rotary_encoder_advanced | Rotary encoder + switchwith debouncing and hysteresis.<br><br>    Specialize the rotary encoder in your application:<br>    rot_encoder = new RotaryEncoderAdvanced<br>    rot_encoder.encoder -> ALPSALPINE_EC11E15244B2 | |
+|  | test | Test module for buttons | |
 | [texas_instruments_lm66200](packages/texas_instruments_lm66200/README.md) | 1 module | Texas Instruments LM66200DRLR 1.6 V to 5 V, 2.5-A Dual Ideal Diode With Automatic Switchover | 0.1.1 |
 | ![lm66200](https://github.com/ruben-iteng/ato-library/raw/main/packages/texas_instruments_lm66200/assets/lm66200.png) | lm66200 | Texas Instruments LM66200 dual ideal diode with automatic switchover.<br>    - Input voltage range: 1.6 V to 5.5 V<br>    - Maximum continuous current: 2.5 A<br>    - On-resistance: 40 mΩ (typical)<br>    - Standby current: 50 nA (typical)<br>    - Quiescent current: 1.32 μA (typical)<br>    - Automatic diode switchover<br>    - Controlled output slew rate:<br>        - 1.3 ms (typical) at 3.3 V.<br>    - Reverse current blocking when VOUT > VINx.<br>    - Thermal shutdown. | |
 | [usb](packages/usb/README.md) | 4 modules | USB connectors and circuitry | 0.3.1 |

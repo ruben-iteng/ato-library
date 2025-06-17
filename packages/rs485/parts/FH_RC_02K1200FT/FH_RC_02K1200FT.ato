@@ -7,9 +7,9 @@ import is_auto_generated
 component FH_RC_02K1200FT_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C140206", date="2025-06-08T15:01:44.031287+00:00", checksum="29d0518f9c1f34b1d6f09e02b4c008ed097a272c793d7d37a7fff50fe4e53552">
+    trait is_auto_generated<system="ato_part", source="easyeda:C140206", date="2025-06-17T09:29:12.338293+00:00", checksum="22d74de99ae3e404b4af93e72e27ee65cf67216ffc22d864bc5c88829ea90a5d">
 
-    trait is_atomic_part<manufacturer="FH", partnumber="RC-02K1200FT", footprint="R0402.kicad_mod", symbol="RC-02K1200FT.kicad_sym">
+    trait is_atomic_part<manufacturer="FH", partnumber="RC-02K1200FT", footprint="R0402.kicad_mod", symbol="RC-02K1200FT.kicad_sym", model="R0402_L1.0-W0.5-H0.4.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C140206", manufacturer="FH", partno="RC-02K1200FT">
     trait has_designator_prefix<prefix="R">
 

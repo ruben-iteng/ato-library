@@ -27,3 +27,8 @@ package:
   summary: Relay modules
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/relays/README.md
+
+dependencies:
+  - type: registry
+    identifier: ruben-iteng/leds
+    release: 0.2.2

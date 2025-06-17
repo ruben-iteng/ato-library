@@ -9,7 +9,7 @@
         (at 0 -4 0)
         (layer "F.SilkS")
         (hide no)
-        (uuid "6a4ec139-97aa-4752-8dd4-2dfa071079d6")
+        (uuid "29db18a1-37cb-4f0b-bb7c-9c568c57a8f2")
         (effects
             (font
                 (size 1 1)
@@ -21,7 +21,7 @@
         (at 0 4 0)
         (layer "F.Fab")
         (hide no)
-        (uuid "1d3b55aa-103e-43e9-b5a0-f2c31a07df68")
+        (uuid "2b55ab7e-75bd-47c1-960b-0998d623f5ee")
         (effects
             (font
                 (size 1 1)
@@ -29,11 +29,11 @@
             )
         )
     )
-    (property "checksum" "d2fb04e2e9e875d192f967c9e8066fb6a4fb47e72b005b963312525d4966dc11"
+    (property "checksum" "92e079f9d1334f588ddb127873738a56bad1b8f57794e6d8826a1dbb9b5fecef"
         (at 0 0 0)
         (layer "User.9")
         (hide no)
-        (uuid "c689b676-c907-49ee-ac18-b8fcf71cc675")
+        (uuid "0ff340ef-4e79-4b6f-af81-7a4eff7fc976")
         (effects
             (font
                 (size 0.125 0.125)
@@ -51,7 +51,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "ddb0335d-ed92-4f12-b7f0-d576707ba16d")
+        (uuid "4ef64f34-5244-4f65-8e32-3bd973b8e437")
     )
     (fp_line
         (start 0.21 0.33)
@@ -61,7 +61,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "453d05be-505f-478e-9a6c-5d6365490e67")
+        (uuid "269ef0b9-352b-4f0e-9139-9773b12e9536")
     )
     (fp_line
         (start 0.22 -0.35)
@@ -71,7 +71,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "322d83b6-c4f4-414d-adb9-01dbbcba1b26")
+        (uuid "fa1ca71d-80fc-4b83-93ba-99e3418142ab")
     )
     (fp_line
         (start 0.22 -0.34)
@@ -81,7 +81,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "4131490f-7b2c-47d6-9e5c-e0f4da0a0d1c")
+        (uuid "4d547ea3-35f6-45ed-8448-338a2d12ba9d")
     )
     (fp_line
         (start 0.22 -0.35)
@@ -91,7 +91,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "e39c2db7-4eab-4830-a16a-d66e70a40021")
+        (uuid "1bd9aafb-66c2-44de-8ef4-2fcfd1aa120f")
     )
     (fp_line
         (start 0.24 -0.75)
@@ -101,7 +101,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "6075a5b3-89e2-4b7f-b03a-6eb2ed9bbf28")
+        (uuid "07c732e4-0fbb-469a-8dcd-ecd0e05d6571")
     )
     (fp_line
         (start 0.24 0.75)
@@ -111,7 +111,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "1d42a5b5-6564-424f-bb8a-535a1a66b2c4")
+        (uuid "6696a8a0-3334-4d28-a698-e76057999e72")
     )
     (fp_line
         (start 1.39 -0.75)
@@ -121,7 +121,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "7dfcf899-336f-47c9-a655-a835815ff62d")
+        (uuid "8c1d4344-025b-479b-8ba5-50b29ac9ae1a")
     )
     (fp_line
         (start -0.14 0.75)
@@ -131,7 +131,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "ad481c4e-b16f-4861-bfa9-59d2bb040c7b")
+        (uuid "2c292308-f698-402c-849a-6359baff4cb4")
     )
     (fp_line
         (start -1.49 0.35)
@@ -141,7 +141,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "56c2d40d-f12f-4d15-bb9e-0099ba9d4f0d")
+        (uuid "9d69bb5d-ce33-4f13-9b84-be9e761e5e16")
     )
     (fp_line
         (start -1.49 0.45)
@@ -151,7 +151,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "5eec0959-469d-4f22-9961-7f5ec9b573be")
+        (uuid "7f27637b-d5ee-414c-8a8c-54199476a5b7")
     )
     (fp_line
         (start -1.49 -0.35)
@@ -161,7 +161,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "2b2f5ae7-d49c-40ab-89ca-5dac93407362")
+        (uuid "f4b58990-bd0e-4a35-9be1-e1b7f0a0cf95")
     )
     (fp_line
         (start -1.49 -0.35)
@@ -171,7 +171,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "3e761dd9-8b60-4ea9-801d-8c84933561be")
+        (uuid "867ce426-e874-4c2d-ba6b-6b9cc13a91de")
     )
     (fp_line
         (start -1.49 -0.45)
@@ -181,7 +181,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "0bc39706-ff80-41ff-8f1e-32ea2acf0a14")
+        (uuid "d9b3fa46-34be-408e-bb6f-2e5d746daafe")
     )
     (fp_line
         (start -0.14 -0.75)
@@ -191,7 +191,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "39dca092-4b66-4758-8976-868212f6a58d")
+        (uuid "b4cfe7d4-58c2-42fb-babf-f5830324d861")
     )
     (fp_line
         (start 0.22 0)
@@ -201,7 +201,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "90600610-4033-4fea-95a9-a23237a3008d")
+        (uuid "d8531602-d6d0-44ec-a81b-fee4a0358672")
     )
     (fp_circle
         (center -0.8 0.4)
@@ -212,12 +212,12 @@
         )
         (fill no)
         (layer "F.Fab")
-        (uuid "16b32c0e-63b5-4a35-aa17-852ab212106a")
+        (uuid "07d351d5-e969-4e8b-8799-a41117db6aa8")
     )
     (fp_text user "%R"
         (at 0 0 0)
         (layer "F.Fab")
-        (uuid "f4d3814a-e0f7-417e-8709-f4a0eefdd1f3")
+        (uuid "900c13a2-e717-4d63-8890-134b75a036c7")
         (effects
             (font
                 (size 1 1)
@@ -229,7 +229,7 @@
     (fp_text user "${REFERENCE}"
         (at 0 -4 0)
         (layer "F.SilkS")
-        (uuid "6a4ec139-97aa-4752-8dd4-2dfa071079d6")
+        (uuid "29db18a1-37cb-4f0b-bb7c-9c568c57a8f2")
         (effects
             (font
                 (size 1 1)
@@ -242,13 +242,13 @@
         (at 0.8 0 90)
         (size 0.8 0.8)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "5e27e170-3fd5-41da-a389-7fe126bdf05e")
+        (uuid "8ea4d5be-98dd-4878-b47c-086311f9fbd7")
     )
     (pad "1" smd rect
         (at -0.8 0 90)
         (size 0.8 0.8)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "7611a9e5-6c04-4ac3-80b7-d5ea316f97ed")
+        (uuid "1db4bcd0-957b-4f51-b261-6900637dce28")
     )
     (model "${KIPRJMOD}/../../parts/Hubei_KENTO_Elec_Blue_light_0603/LED0603-RD-YELLOW.STEP"
         (offset

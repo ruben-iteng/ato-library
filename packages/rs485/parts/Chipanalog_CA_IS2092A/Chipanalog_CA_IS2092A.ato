@@ -7,9 +7,9 @@ import is_auto_generated
 component Chipanalog_CA_IS2092A_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C18185406", date="2025-06-08T15:01:51.872742+00:00", checksum="ab997e66ce58e3d7fd846b489aec27a69549392f3d78febc3ae3dff4b589a3ee">
+    trait is_auto_generated<system="ato_part", source="easyeda:C18185406", date="2025-06-17T09:29:21.917854+00:00", checksum="5afeeaa39c83243cf3c7a2d5fee706f07434abea5822e441bfb48beb739dc1a6">
 
-    trait is_atomic_part<manufacturer="Chipanalog", partnumber="CA-IS2092A", footprint="LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.kicad_mod", symbol="CA-IS2092A.kicad_sym">
+    trait is_atomic_part<manufacturer="Chipanalog", partnumber="CA-IS2092A", footprint="LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.kicad_mod", symbol="CA-IS2092A.kicad_sym", model="LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C18185406", manufacturer="Chipanalog", partno="CA-IS2092A">
     trait has_designator_prefix<prefix="U">
 

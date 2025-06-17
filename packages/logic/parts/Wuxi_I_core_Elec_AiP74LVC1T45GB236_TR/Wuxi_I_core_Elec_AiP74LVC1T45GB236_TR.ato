@@ -7,7 +7,7 @@ import is_auto_generated
 component Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C5162251", date="2025-06-08T12:02:38.545130+00:00", checksum="a0fd2b5fc1fe51a46c0132357e111f37b05a76e5151f7a04928cf2004a0ff452">
+    trait is_auto_generated<system="ato_part", source="easyeda:C5162251", date="2025-06-17T17:56:42.070141+00:00", checksum="0ef42aaab1a39e69303d06251fcde3a8280994ef3274b6683f5c6a419abcf134">
 
     trait is_atomic_part<manufacturer="Wuxi I-core Elec", partnumber="AiP74LVC1T45GB236.TR", footprint="SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL.kicad_mod", symbol="AIP74LVC1T45GB236.TR.kicad_sym", model="SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5162251", manufacturer="Wuxi I-core Elec", partno="AiP74LVC1T45GB236.TR">

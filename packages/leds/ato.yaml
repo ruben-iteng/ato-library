@@ -12,6 +12,19 @@ builds:
     entry: addressable_leds.ato:AddressableLED_driver
     hide_designators: true
 
+  red:
+    entry: indicator_leds.ato:LEDIndicatorRed
+  green:
+    entry: indicator_leds.ato:LEDIndicatorGreen
+  blue:
+    entry: indicator_leds.ato:LEDIndicatorBlue
+  yellow:
+    entry: indicator_leds.ato:LEDIndicatorYellow
+  yellow_green:
+    entry: indicator_leds.ato:LEDIndicatorYellowGreen
+  white:
+    entry: indicator_leds.ato:LEDIndicatorWhite
+
 package:
   identifier: ruben-iteng/leds
   repository: https://github.com/ruben-iteng/ato-library

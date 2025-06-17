@@ -4,10 +4,9 @@ paths:
   src: "."
   layout: ./layouts
 builds:
-  test:
-    entry: logos.ato:Test
+  faebryk_logo_8x9mm:
+    entry: logos.ato:faebryk_logo_8x9mm
     hide_designators: true
-
 
 package:
   identifier: ruben-iteng/logos

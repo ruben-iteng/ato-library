@@ -23,5 +23,5 @@ package:
 
 dependencies:
   - type: registry
-    identifier: atopile/buttons
-    release: 0.1.1
+    identifier: ruben-iteng/switches
+    release: 0.1.4

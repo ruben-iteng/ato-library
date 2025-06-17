@@ -1,4 +1,11 @@
-import ElectricPower, ElectricSignal, ElectricLogic, Capacitor, LEDIndicator
+import ElectricPower
+import ElectricSignal
+import ElectricLogic
+import Capacitor
+
+from "ruben-iteng/leds/indicator_leds.ato" import LEDIndicatorRed
+from "ruben-iteng/leds/indicator_leds.ato" import LEDIndicatorGreen
+
 
 module SPST_Relay from Relay:
     """Single Pole Single Throw Relay"""
@@ -69,16 +76,8 @@ module DrivenDPDTBistableRelay:
     # components
     relay = new G6KU2FYTRDC5
     relay_driver = new Shenzhen_Fuman_Elec_TC118S_driver
-    led_indicator_a = new LEDIndicator
-    led_indicator_b = new LEDIndicator
-
-    # led indicators
-    led_indicator_a.led.led.lcsc_id = "C2286" # red
-    #led_indicator_a.led.led.brightness = 5millicandela +/- 10%
-    led_indicator_a.led.current_limiting_resistor.package = "R0402"
-    led_indicator_b.led.led.lcsc_id = "C12624" # green
-    #led_indicator_b.led.led.brightness = 5millicandela +/- 10%
-    led_indicator_b.led.current_limiting_resistor.package = "R0402"
+    led_indicator_a = new LEDIndicatorRed
+    led_indicator_b = new LEDIndicatorGreen
 
     # connections
     power ~ relay_driver.power
@@ -86,9 +85,11 @@ module DrivenDPDTBistableRelay:
     input_b.reference.lv ~ power.lv
 
     relay_driver.input_a ~ input_a
-    led_indicator_a.logic_in ~ input_a
+    led_indicator_a.power.hv ~ input_a.line
+    led_indicator_a.power.lv ~ input_a.reference.lv
     relay_driver.input_b ~ input_b
-    led_indicator_b.logic_in ~ input_b
+    led_indicator_b.power.hv ~ input_b.line
+    led_indicator_b.power.lv ~ input_b.reference.lv
     relay_driver.motor_interface ~ relay.coil
 
     relay.common_a ~ common_a

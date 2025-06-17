@@ -1,0 +1,25 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Shenzhen_Fuman_Elec_TC118S_package:
+    """TC118S"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C88308", date="2025-06-17T14:26:38.926846+00:00", checksum="5c6627cdc5c587a8af144e671d655b34d2f90ce7fe17661ca7d7f4385fcca04e">
+
+    trait is_atomic_part<manufacturer="Shenzhen Fuman Elec", partnumber="TC118S", footprint="SOP-8_L4.9-W3.9-P1.27-LS6.0-BL.kicad_mod", symbol="TC118S.kicad_sym", model="SOP-8_L4.9-W3.9-P1.27-LS6.0-BL-1.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C88308", manufacturer="Shenzhen Fuman Elec", partno="TC118S">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal AGND ~ pin 6
+    signal INA ~ pin 2
+    signal INB ~ pin 3
+    signal OUTA ~ pin 8
+    signal OUTB ~ pin 5
+    signal PGND ~ pin 7
+    signal VDD ~ pin 4

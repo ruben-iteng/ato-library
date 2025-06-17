@@ -25,6 +25,6 @@ package:
   homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/esp32c3/README.md
 
 dependencies:
-- type: registry
-  identifier: atopile/buttons
-  release: 0.1.1
+  - type: registry
+    identifier: ruben-iteng/switches
+    release: 0.1.4

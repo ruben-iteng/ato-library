@@ -12,7 +12,7 @@ import Capacitor
 import Resistor
 import FilterElectricalRC
 
-from "atopile/buttons/buttons.ato" import ButtonSKRPACE010
+from "ruben-iteng/switches/buttons.ato" import ButtonSKRPACE010
 
 
 module ESP32_C3_MINI_driver from ESP32_C3_MINI_1_driver:
@@ -61,11 +61,11 @@ module ESP32_C3_MINI_1_driver from ESP32_C3_MINI_1:
     power ~ decoupling_capacitor_bulk.power
     power ~ decoupling_capacitor_small.power
 
-    boot_switch.input ~ power.lv
-    boot_switch.output ~ gpio[9].line
+    boot_switch.unnamed[0] ~ gpio[9].line
+    boot_switch.unnamed[1] ~ power.lv
 
-    reset_switch.input ~ power.lv
-    reset_switch.output ~ enable.line
+    reset_switch.unnamed[0] ~ enable.line
+    reset_switch.unnamed[1] ~ power.lv
     reset_rc_filter.in_.line ~ power.hv
     reset_rc_filter.out ~ enable
     reset_rc_filter.in_.reference ~ power

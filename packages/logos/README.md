@@ -16,4 +16,4 @@ Various logos
 
 | Image | Module | Description |
 |-------|--------|-------------|
-|![test](https://github.com/ruben-iteng/ato-library/raw/main/packages/logos/assets/test.png)| test | Test module |
+|-| faebryk_logo_8x9mm | faebryk Logo 8x9mm |

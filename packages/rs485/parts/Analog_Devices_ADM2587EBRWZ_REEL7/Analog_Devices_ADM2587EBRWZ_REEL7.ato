@@ -7,9 +7,9 @@ import is_auto_generated
 component Analog_Devices_ADM2587EBRWZ_REEL7_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C12081", date="2025-06-08T15:01:45.258664+00:00", checksum="38d26224d0b35770fa2c7da930e9179bf761ccf15983016ad2a41d0f93b944c3">
+    trait is_auto_generated<system="ato_part", source="easyeda:C12081", date="2025-06-17T09:29:13.779780+00:00", checksum="7de625d20dc7c22c0e7ad241c4fd2b0fc2a420dfab0f33f041fe772fcf6ee804">
 
-    trait is_atomic_part<manufacturer="Analog Devices", partnumber="ADM2587EBRWZ-REEL7", footprint="SOIC-20_L13.0-W7.6-P1.27-LS10.3-BL.kicad_mod", symbol="ADM2587EBRWZ-REEL7.kicad_sym">
+    trait is_atomic_part<manufacturer="Analog Devices", partnumber="ADM2587EBRWZ-REEL7", footprint="SOIC-20_L13.0-W7.6-P1.27-LS10.3-BL.kicad_mod", symbol="ADM2587EBRWZ-REEL7.kicad_sym", model="SOIC-20_L12.8-W7.5-H2.7-LS10.3-P1.27.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C12081", manufacturer="Analog Devices", partno="ADM2587EBRWZ-REEL7">
     trait has_designator_prefix<prefix="U">
 

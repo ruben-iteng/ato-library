@@ -1,5 +1,11 @@
-import ElectricLogic, ElectricPower, JTAG, SWD, Power
+import ElectricLogic
+import ElectricPower
+import JTAG
+import SWD
+import Power
 
+from "parts/Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical/Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical.ato" import Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical
+from "parts/Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical/Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical.ato" import Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical
 
 module ARM_CORTEX_M_DEBUG_HEADER:
     """
@@ -105,12 +111,12 @@ component FTSH10501LDVKTR:
 
 component _TC2030_IDC_NL from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern"""
-    footprint = "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+    footprint = new Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical
 
 
 component _TC2030_IDC_FP from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with holes"""
-    footprint = "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+    footprint = new Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical
 
 
 component _TC2030_IDC:

@@ -22,4 +22,4 @@ package:
 dependencies:
   - type: registry
     identifier: ruben-iteng/connectors
-    release: 0.2.2
+    release: 0.2.3

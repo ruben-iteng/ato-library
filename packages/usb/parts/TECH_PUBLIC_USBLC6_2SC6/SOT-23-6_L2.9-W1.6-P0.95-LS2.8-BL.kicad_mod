@@ -9,7 +9,7 @@
         (at 0 -5.15 0)
         (layer "F.SilkS")
         (hide no)
-        (uuid "d4793aa0-604a-4290-8e49-e5ff54ce1704")
+        (uuid "7a233aa6-3ee3-4980-9517-49457f0a8920")
         (effects
             (font
                 (size 1 1)
@@ -21,7 +21,7 @@
         (at 0 5.15 0)
         (layer "F.Fab")
         (hide no)
-        (uuid "b55f5649-9add-4f43-a6d0-89df69ab25ca")
+        (uuid "ec8e6805-f293-4493-bc67-75387fc6e797")
         (effects
             (font
                 (size 1 1)
@@ -29,11 +29,11 @@
             )
         )
     )
-    (property "checksum" "632a7967c7906a58114e03953895dd929ec9effb4e0b4d53fa720a0581edaf01"
+    (property "checksum" "7a05fe16ec0b44cf539901760298dfdf977d412e602bee23ea15e5d54ac16a4f"
         (at 0 0 0)
         (layer "User.9")
         (hide no)
-        (uuid "ab3d8a73-8109-4348-86e4-a8d15f1e16e3")
+        (uuid "11aa10c0-fd2c-4047-b1ee-26ad5fd09647")
         (effects
             (font
                 (size 0.125 0.125)
@@ -51,7 +51,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "cb305239-3fff-4d1f-a192-510fa28181d2")
+        (uuid "217d7388-4bf5-4013-941d-b3bb0a2e1e4f")
     )
     (fp_line
         (start -1.54 0.89)
@@ -61,7 +61,7 @@
             (type solid)
         )
         (layer "F.SilkS")
-        (uuid "4ed8d37f-c1e9-4d03-bca8-50d5c8801366")
+        (uuid "f5b0a9ee-293c-4b53-9cfd-845ce44342e9")
     )
     (fp_circle
         (center -1.46 1.4)
@@ -72,7 +72,7 @@
         )
         (fill no)
         (layer "F.Fab")
-        (uuid "8c12fa4e-1222-4eef-81a7-e4cd81c3a3d8")
+        (uuid "432ebb87-a45f-4c5a-8eb3-e7c43a38841d")
     )
     (fp_circle
         (center -0.92 1.68)
@@ -83,7 +83,7 @@
         )
         (fill no)
         (layer "Cmts.User")
-        (uuid "0010b13c-7807-4270-9997-8c011b60e4dd")
+        (uuid "47d4c4eb-b4cb-4cb9-aa2a-55e55867cb6a")
     )
     (fp_circle
         (center -1.67 1.3)
@@ -94,12 +94,12 @@
         )
         (fill no)
         (layer "F.SilkS")
-        (uuid "0ad8122d-398d-4c68-ad28-159dfcb3d5a2")
+        (uuid "0da6cf5d-909a-4a44-91c3-6453727bcd2b")
     )
     (fp_text user "%R"
         (at 0 0 0)
         (layer "F.Fab")
-        (uuid "43ca28f2-e68a-428a-bd59-573761ed95d2")
+        (uuid "02d35751-9632-44a2-aeec-540c2fb35034")
         (effects
             (font
                 (size 1 1)
@@ -111,7 +111,7 @@
     (fp_text user "${REFERENCE}"
         (at 0 -5.15 0)
         (layer "F.SilkS")
-        (uuid "d4793aa0-604a-4290-8e49-e5ff54ce1704")
+        (uuid "7a233aa6-3ee3-4980-9517-49457f0a8920")
         (effects
             (font
                 (size 1 1)
@@ -124,37 +124,37 @@
         (at -0.95 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "1ed79a00-5477-4a00-9e36-45e1d3c5a3da")
+        (uuid "2ac242bd-d870-481b-bae3-50441377a2cb")
     )
     (pad "2" smd rect
         (at 0 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "506cb759-0a84-454a-9f46-307d097df56f")
+        (uuid "4c94532d-7930-4d5b-bf94-c0ace51f3372")
     )
     (pad "3" smd rect
         (at 0.95 1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "b2664baa-74db-486d-b4fe-e5e701425816")
+        (uuid "b486edaa-a210-4d38-a80b-c95e1268a1d4")
     )
     (pad "4" smd rect
         (at 0.95 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "fa1a4d7a-800d-47d5-a303-5ed4524c4ad5")
+        (uuid "1b1958b6-29b9-4acd-a84c-651467eb7f88")
     )
     (pad "5" smd rect
         (at 0 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "9963f954-8278-4939-b4fa-5e4d22051bcd")
+        (uuid "b3b1b784-1eb9-4c11-9105-f3b416ba327d")
     )
     (pad "6" smd rect
         (at -0.95 -1.15 0)
         (size 0.53 1.07)
         (layers "F.Cu" "F.Paste" "F.Mask")
-        (uuid "16a6489a-0c37-4c31-8190-c754fa0dd412")
+        (uuid "dc41549c-10dd-4f23-8bf2-72a00cf625b2")
     )
     (model "${KIPRJMOD}/../../parts/TECH_PUBLIC_USBLC6_2SC6/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step"
         (offset
