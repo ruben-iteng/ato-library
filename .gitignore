@@ -84,5 +84,4 @@ pip-delete-this-directory.txt
 
 # Minimize KiCAD metadata
 *.kicad_sch
-fp-lib-table
 *.kicad_pro

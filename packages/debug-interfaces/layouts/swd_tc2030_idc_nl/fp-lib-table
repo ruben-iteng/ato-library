@@ -1,0 +1,10 @@
+(fp_lib_table
+    (version 7)
+    (lib
+        (name "Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical")
+        (options "")
+        (descr "ato-library: part lib: Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical")
+    )
+)
