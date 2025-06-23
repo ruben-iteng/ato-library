@@ -7,7 +7,7 @@ import is_auto_generated
 component Texas_Instruments_LM66200DRLR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C3235556", date="2025-06-08T12:00:58.606541+00:00", checksum="cc15d17dba585a65433be25ffee49b7185e659126b1811e87e7bce13c1d2b902">
+    trait is_auto_generated<system="ato_part", source="easyeda:C3235556", date="2025-06-23T19:48:22.035518+00:00", checksum="9c1503ada4e6a98e57330902540cf79dc7bc283f1dd42bbe81934b083f4ae42d">
 
     trait is_atomic_part<manufacturer="Texas Instruments", partnumber="LM66200DRLR", footprint="SOT-583-8_L2.1-W1.2-P0.50-LS1.6-BL.kicad_mod", symbol="LM66200DRLR.kicad_sym", model="SOT-583-8_L2.1-W1.2-P0.50-LS1.6-BL.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C3235556", manufacturer="Texas Instruments", partno="LM66200DRLR">

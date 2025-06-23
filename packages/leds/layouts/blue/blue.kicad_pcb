@@ -97,8 +97,8 @@
         (property "Reference" "U1"
             (at 0 -4 0)
             (layer "F.SilkS")
-            (hide no)
-            (uuid "8b28ebf3-4bf4-4761-923f-66b678ef047e")
+            (hide yes)
+            (uuid "dbaf6462-6c9d-49df-a21e-5b6e890e8953")
             (effects
                 (font
                     (size 1 1)
@@ -110,7 +110,7 @@
             (at 0 4 0)
             (layer "F.Fab")
             (hide no)
-            (uuid "e496a704-ffeb-4604-8bf1-810141dce31c")
+            (uuid "879475ca-b939-4640-84f4-e365f7ff016e")
             (effects
                 (font
                     (size 1 1)
@@ -142,11 +142,11 @@
                 )
             )
         )
-        (property "checksum" "ff3a6771cee23d698c87de730a464d6d2c4c884669e33cefce9edec42255e66d"
+        (property "checksum" "b103e6e658392059c1948402df1e8786cb1b88653a96bd0a913b1b08e025ee38"
             (at 0 0 0)
             (layer "User.9")
             (hide no)
-            (uuid "3c12247e-74f8-47ef-87fa-20d98912286d")
+            (uuid "fb43adc9-5f2c-43ff-8ce8-61789966aad4")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -155,11 +155,11 @@
                 (hide yes)
             )
         )
-        (property "__atopile_lib_fp_hash__" "35913210-49d6-4dd7-9100-9a9a030e9af1"
+        (property "__atopile_lib_fp_hash__" "25d56fbd-3a6d-448c-84b4-0ba644ada23c"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
-            (uuid "6ea908e0-d12f-4b4d-b608-2b574642524b")
+            (uuid "0011385d-627e-4f51-9e37-cb0c4642524b")
             (effects
                 (font
                     (size 0.125 0.125)
@@ -248,7 +248,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "222f250d-483a-46e1-a9d8-de8090df24ca")
+            (uuid "73e7ab7a-2444-45f0-8348-9246b79ac4e4")
         )
         (fp_line
             (start 0.21 0.33)
@@ -258,7 +258,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "1c1826d2-c5a6-454e-97b6-8836f30a2783")
+            (uuid "d5e80178-cb31-46cc-b3d3-f280b55b3b9d")
         )
         (fp_line
             (start 0.22 -0.35)
@@ -268,7 +268,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "4884b347-4617-46c8-8c4f-54701679a28b")
+            (uuid "db8d9899-35cb-4c00-9eb7-7056daebb05c")
         )
         (fp_line
             (start 0.22 -0.34)
@@ -278,7 +278,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "37581160-336e-469f-b838-d2d8b074b8a2")
+            (uuid "84104857-94e8-4c39-85d6-fcaf420c547f")
         )
         (fp_line
             (start 0.22 -0.35)
@@ -288,7 +288,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "7eed6932-10d2-4a57-8426-ec97977289bc")
+            (uuid "2bafea43-4b0c-43b4-8d47-2de87003bfef")
         )
         (fp_line
             (start 0.24 -0.75)
@@ -298,7 +298,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "2efc8744-164e-4d2d-9781-738733c97987")
+            (uuid "ae40d80f-7ec7-4962-bcb8-d24860c728a7")
         )
         (fp_line
             (start 0.24 0.75)
@@ -308,7 +308,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "3d88b210-b01a-4acb-8b85-e3eec92fc7d2")
+            (uuid "45650d3c-a200-41c6-bdf7-9f8a0b41f22a")
         )
         (fp_line
             (start 1.39 -0.75)
@@ -318,7 +318,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "daa13c4f-fca6-4048-84a2-bc0cbf5721e3")
+            (uuid "75203f7a-6d8b-44c8-a5c9-39d67d3df139")
         )
         (fp_line
             (start -0.14 0.75)
@@ -328,7 +328,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "afce3e9e-530a-4391-b0df-5bd4c946edfc")
+            (uuid "3ec18052-aeac-485b-bf7d-4f2076ef30cc")
         )
         (fp_line
             (start -1.49 0.35)
@@ -338,7 +338,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "e436362a-d951-472f-9e1e-89e89e3c5186")
+            (uuid "000d4a6f-9146-4047-abe3-447b7e8e4719")
         )
         (fp_line
             (start -1.49 0.45)
@@ -348,7 +348,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "5f79b780-7c8b-44d5-9903-b29f7f27a323")
+            (uuid "ae8bcb16-0a6e-4f9b-8d5e-c5bb6dc4a939")
         )
         (fp_line
             (start -1.49 -0.35)
@@ -358,7 +358,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "c839d364-d706-4c1b-874b-b82a9f7e09cc")
+            (uuid "2aed7474-1387-439c-ac8f-e0c1703a690f")
         )
         (fp_line
             (start -1.49 -0.35)
@@ -368,7 +368,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "0563eb88-1e0f-4228-b0c1-1f4d41f916a0")
+            (uuid "64d8051c-49ba-40cb-9a4f-19b553eca213")
         )
         (fp_line
             (start -1.49 -0.45)
@@ -378,7 +378,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "e3e15590-ff72-4eef-b82e-367f76dd727f")
+            (uuid "c8f4f76c-a644-46d3-ad05-dc482aac83bc")
         )
         (fp_line
             (start -0.14 -0.75)
@@ -388,7 +388,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "70fe4e6b-d03d-408c-acd4-ab6773b4515a")
+            (uuid "8206b2e0-73e8-40fb-a2d4-92495dcaca15")
         )
         (fp_line
             (start 0.22 0)
@@ -398,7 +398,7 @@
                 (type solid)
             )
             (layer "F.SilkS")
-            (uuid "1ba10e40-4e71-45e2-8c84-23f99fc84d19")
+            (uuid "4a253ddd-05c3-4ca2-b860-65f321cb25e6")
         )
         (fp_circle
             (center -0.8 0.4)
@@ -409,12 +409,12 @@
             )
             (fill no)
             (layer "F.Fab")
-            (uuid "0e146938-74ee-4e1f-ac3f-68060e1f4c5c")
+            (uuid "386fffd8-5d95-4a4c-ac89-bc27582f986b")
         )
         (fp_text user "%R"
             (at 0 0 0)
             (layer "F.Fab")
-            (uuid "3e812d10-9f0f-4f90-941f-336ee8d93790")
+            (uuid "64c92252-0787-4590-87ad-872f91c92588")
             (effects
                 (font
                     (size 1 1)
@@ -426,12 +426,13 @@
         (fp_text user "${REFERENCE}"
             (at 0 -4 0)
             (layer "F.SilkS")
-            (uuid "8b28ebf3-4bf4-4761-923f-66b678ef047e")
+            (uuid "dbaf6462-6c9d-49df-a21e-5b6e890e8953")
             (effects
                 (font
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -440,14 +441,14 @@
             (size 0.8 0.8)
             (layers "F.Cu" "F.Paste" "F.Mask")
             (net 3 "anode")
-            (uuid "99895400-521d-4f42-ade4-d2b9e8157f22")
+            (uuid "ff8add01-738c-4399-9a19-aef7927fe117")
         )
         (pad "1" smd rect
             (at -0.8 0 90)
             (size 0.8 0.8)
             (layers "F.Cu" "F.Paste" "F.Mask")
             (net 1 "cathode")
-            (uuid "639deda2-269c-431e-b364-909995422a4a")
+            (uuid "b973e041-9b71-43ce-84f5-b5146749a079")
         )
         (model "${KIPRJMOD}/../../parts/Hubei_KENTO_Elec_Blue_light_0603/LED0603-RD-YELLOW.STEP"
             (offset
@@ -468,7 +469,7 @@
         (property "Reference" "R1"
             (at 0 -4 0)
             (layer "F.SilkS")
-            (hide no)
+            (hide yes)
             (uuid "aba25677-bf7d-425c-895c-7411031ce106")
             (effects
                 (font
@@ -702,6 +703,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )
@@ -714,6 +716,7 @@
                     (size 1 1)
                     (thickness 0.15)
                 )
+                (hide yes)
             )
             (unlocked no)
         )

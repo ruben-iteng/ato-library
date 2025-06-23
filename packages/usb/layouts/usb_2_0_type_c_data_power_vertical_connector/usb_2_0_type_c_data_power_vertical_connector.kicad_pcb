@@ -89,11 +89,11 @@
     (net 0 "")
     (net 1 "hv-1")
     (net 2 "gnd")
-    (net 3 "line-2")
-    (net 4 "line")
-    (net 5 "line-3")
+    (net 3 "line")
+    (net 4 "line-3")
+    (net 5 "line-1")
     (net 6 "hv")
-    (net 7 "line-1")
+    (net 7 "line-2")
     (footprint "Samsung_Electro_Mechanics_CL05B104KO5NNNC:C0402"
         (layer "F.Cu")
         (uuid "53d73026-9585-464b-ac7b-f5214642524b")
@@ -972,7 +972,7 @@
             (at -0.95 1.15 180)
             (size 0.53 1.07)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 7 "line-1")
+            (net 7 "line-2")
             (uuid "2ac242bd-d870-481b-bae3-50441377a2cb")
         )
         (pad "2" smd rect
@@ -986,14 +986,14 @@
             (at 0.95 1.15 180)
             (size 0.53 1.07)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 4 "line")
+            (net 4 "line-3")
             (uuid "b486edaa-a210-4d38-a80b-c95e1268a1d4")
         )
         (pad "4" smd rect
             (at 0.95 -1.15 180)
             (size 0.53 1.07)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 4 "line")
+            (net 4 "line-3")
             (uuid "1b1958b6-29b9-4acd-a84c-651467eb7f88")
         )
         (pad "5" smd rect
@@ -1007,7 +1007,7 @@
             (at -0.95 -1.15 180)
             (size 0.53 1.07)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 7 "line-1")
+            (net 7 "line-2")
             (uuid "dc41549c-10dd-4f23-8bf2-72a00cf625b2")
         )
         (model "${KIPRJMOD}/../../parts/TECH_PUBLIC_USBLC6_2SC6/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step"
@@ -1297,7 +1297,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 7 "line-1")
+            (net 7 "line-2")
             (uuid "42c24269-43b1-4a79-bd87-c05af540863f")
         )
         (pad "4" thru_hole circle
@@ -1305,7 +1305,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 4 "line")
+            (net 4 "line-3")
             (uuid "2bc345e5-941d-431b-9950-b27629d4ed9b")
         )
         (pad "5" thru_hole circle
@@ -1313,7 +1313,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 5 "line-3")
+            (net 5 "line-1")
             (uuid "96826a42-d381-4d42-a7a8-5d1c02e31843")
         )
         (pad "6" thru_hole circle
@@ -1353,7 +1353,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 7 "line-1")
+            (net 7 "line-2")
             (uuid "15507ec7-1865-457c-999c-5bd35005a7b7")
         )
         (pad "11" thru_hole circle
@@ -1361,7 +1361,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 4 "line")
+            (net 4 "line-3")
             (uuid "0e9501f9-b643-4141-af25-cdded5cc329a")
         )
         (pad "12" thru_hole circle
@@ -1369,7 +1369,7 @@
             (size 0.7 0.7)
             (drill 0.4499864)
             (layers "*.Cu" "*.Mask")
-            (net 3 "line-2")
+            (net 3 "line")
             (uuid "946203b1-9422-4804-a4c9-6cb2ecd914b8")
         )
         (pad "13" thru_hole circle
@@ -1713,7 +1713,7 @@
             (at -0.43 0 90)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 3 "line-2")
+            (net 3 "line")
             (uuid "339ced31-1463-46fe-b569-2fa6f7db134b")
         )
         (model "${KIPRJMOD}/../../parts/UNI_ROYAL_0402WGF5101TCE/R0402_L1.0-W0.5-H0.4.step"
@@ -2009,7 +2009,7 @@
             (at -0.43 0 90)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 5 "line-3")
+            (net 5 "line-1")
             (uuid "339ced31-1463-46fe-b569-2fa6f7db134b")
         )
         (model "${KIPRJMOD}/../../parts/UNI_ROYAL_0402WGF5101TCE/R0402_L1.0-W0.5-H0.4.step"

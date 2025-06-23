@@ -7,7 +7,7 @@ import is_auto_generated
 component Texas_Instruments_ISO1540DR_package:
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C179739", date="2025-06-08T12:02:42.800402+00:00", checksum="6b28532c9103099ac2f0e138c1c1aebe39adb7ba4da8c583b6a4d44be9c2543d">
+    trait is_auto_generated<system="ato_part", source="easyeda:C179739", date="2025-06-23T19:48:30.728006+00:00", checksum="184ff7b674b443cf097ee286b3dbf2978991deb48e93ff4d0581984386d97faa">
 
     trait is_atomic_part<manufacturer="Texas Instruments", partnumber="ISO1540DR", footprint="SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL.kicad_mod", symbol="ISO1540DR.kicad_sym", model="SOIC-8_L4.9-W3.9-H1.7-LS6.0-P1.27.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C179739", manufacturer="Texas Instruments", partno="ISO1540DR">

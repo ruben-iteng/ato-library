@@ -50,7 +50,8 @@ jobs:
 
       - uses: atopile/publish-package@v1
         with:
-          atopile-version: "main"
           package-entrypoint: ${{ matrix.package }}
           skip-duplicate-versions: true
           package-version: "" # Use the embedded version key
+          atopile-version: "main"
+          ato-config: ${{ matrix.package }}/ato.yaml

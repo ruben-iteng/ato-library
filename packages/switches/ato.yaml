@@ -11,6 +11,7 @@ builds:
 
   test:
     entry: buttons.ato:Test
+    hide_designators: true
 
 package:
   identifier: ruben-iteng/switches

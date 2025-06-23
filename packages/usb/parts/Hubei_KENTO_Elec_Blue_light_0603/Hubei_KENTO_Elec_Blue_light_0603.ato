@@ -9,7 +9,7 @@ component Hubei_KENTO_Elec_Blue_light_0603_package:
 
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C2288", date="2025-06-17T17:44:22.411369+00:00", checksum="f39e76e583d42f7e24d6dd3e1b3342301d3a15f19b100faf09b22cbd473d513b">
+    trait is_auto_generated<system="ato_part", source="easyeda:C2288", date="2025-06-23T19:48:41.696504+00:00", checksum="2eee84f89d99e4d909e2999fe6263566da5e9f309e9a3f711cfb06a0b933bc29">
 
     trait is_atomic_part<manufacturer="Hubei KENTO Elec", partnumber="Blue light 0603", footprint="LED0603-RD.kicad_mod", symbol="Bluelight0603.kicad_sym", model="LED0603-RD-YELLOW.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2288", manufacturer="Hubei KENTO Elec", partno="Blue light 0603">
