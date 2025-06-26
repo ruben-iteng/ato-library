@@ -88,7 +88,7 @@
     )
     (net 0 "")
     (net 1 "ST")
-    (net 2 "ONh")
+    (net 2 "nON")
     (net 3 "VOUT")
     (net 4 "hv")
     (net 5 "gnd")
@@ -354,7 +354,7 @@
             (at 0.75 0.64 0)
             (size 0.28 0.68)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 2 "ONh")
+            (net 2 "nON")
             (uuid "51f1aaa1-a588-4aa9-8ece-61ab88436438")
         )
         (pad "5" smd rect
