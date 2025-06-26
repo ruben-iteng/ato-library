@@ -89,7 +89,7 @@
     (net 0 "")
     (net 1 "VDDL")
     (net 2 "DE")
-    (net 3 "REh")
+    (net 3 "nRE")
     (net 4 "gnd-1")
     (net 5 "gnd")
     (net 6 "net")
@@ -983,7 +983,7 @@
             (at -2.19 -1.63 90)
             (size 0.98 0.36)
             (layers "F.Cu" "F.Paste" "F.Mask")
-            (net 3 "REh")
+            (net 3 "nRE")
             (uuid "a685fc5c-efe1-4c9e-a6eb-27422d84867c")
         )
         (pad "3" smd rect

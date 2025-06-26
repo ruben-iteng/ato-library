@@ -92,7 +92,7 @@
     (net 3 "DE")
     (net 4 "gnd")
     (net 5 "DI")
-    (net 6 "REh")
+    (net 6 "nRE")
     (net 7 "A")
     (net 8 "VCC")
     (footprint "MaxLinear_SP3485EN_L_TR:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
@@ -350,7 +350,7 @@
             (at -0.63 2.71 0)
             (size 0.57 1.95)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 6 "REh")
+            (net 6 "nRE")
             (uuid "df336590-0796-4d76-b9a8-0edc68e509c4")
         )
         (pad "3" smd oval

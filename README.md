@@ -32,15 +32,9 @@ This is a monorepo for various [ato](https://docs.atopile.io) and [fabll](https:
 | ![ina228](https://github.com/ruben-iteng/ato-library/raw/main/packages/ina228/assets/ina228.png) | ina228 | INA228 85-V, 20-bit, ultra-precise, I2C output<br>    current/voltage/power/energy/charge monitor with alert | |
 | [ldos](packages/ldos/README.md) | 1 module | Various Low Dropout Regulators (LDOs) | 0.2.3 |
 | ![5v_to_3v3](https://github.com/ruben-iteng/ato-library/raw/main/packages/ldos/assets/5v_to_3v3.png) | 5v_to_3v3 | 5V to 3.3V 600mA (max 1100mA) LDO | |
-| [leds](packages/leds/README.md) | 8 modules | Various (addressable) LED components and modules | 0.2.2 |
+| [leds](packages/leds/README.md) | 2 modules | Various (addressable) LED components and modules | 0.2.2 |
 | ![addressable_led_connector_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_connector_driver.png) | addressable_led_connector_driver | - | |
 | ![addressable_led_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/addressable_led_driver.png) | addressable_led_driver | Addressable LED with decoupling capacitors.<br><br>    Usage:<br>    from "ruben-iteng/ato-library/leds/addressable_leds.ato" import AddressableLED<br><br>    module MyProject:<br>        ...<br>        leds = new AddressableLED[3]<br><br>        power = new ElectricPower<br>        data_in = new ElectricLogic<br><br>        for led in leds:<br>            led -> WS2812B_5050_Black<br>            led.power ~ power<br><br>        data_in ~> leds[0] ~> leds[1] ~> leds[2] | |
-| ![red](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/red.png) | red | Hubei KENTO Elec KT-0603B Blue LED | |
-| ![green](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/green.png) | green | Hubei KENTO Elec KT-0603B Blue LED | |
-| ![blue](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/blue.png) | blue | Hubei KENTO Elec KT-0603B Blue LED | |
-| ![yellow](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/yellow.png) | yellow | Hubei KENTO Elec KT-0603B Blue LED | |
-| ![yellow_green](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/yellow_green.png) | yellow_green | Hubei KENTO Elec KT-0603B Blue LED | |
-| ![white](https://github.com/ruben-iteng/ato-library/raw/main/packages/leds/assets/white.png) | white | Hubei KENTO Elec KT-0603B Blue LED | |
 | [logic](packages/logic/README.md) | 5 modules | Digital logic related components and modules | 0.2.2 |
 | ![aip74lvc1t45_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/aip74lvc1t45_driver.png) | aip74lvc1t45_driver | Single channel bidirectional buffer.<br>    1.2V-5.5V logic levels.<br>    SOT-23-6 | |
 | ![sn74lvc2g34dbvrumw_driver](https://github.com/ruben-iteng/ato-library/raw/main/packages/logic/assets/sn74lvc2g34dbvrumw_driver.png) | sn74lvc2g34dbvrumw_driver | UMWYoutai Semiconductor Co., Ltd.<br>    74LVC2G34 Dual buffer. | |

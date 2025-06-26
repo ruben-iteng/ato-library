@@ -6,6 +6,8 @@ import RS485_Bus_Protection
 import UART_Base, RS485HalfDuplex, ElectricLogic, ElectricPower, UART_RS485
 import Resistor, Capacitor
 
+from "parts/Chipanalog_CA_IS2092A/Chipanalog_CA_IS2092A.ato" import Chipanalog_CA_IS2092A_package
+from "parts/MaxLinear_SP3485EN_L_TR/MaxLinear_SP3485EN_L_TR.ato" import MaxLinear_SP3485EN_L_TR_package
 
 module Analog_Devices_ADM2587EBRWZ_driver from Analog_Devices_ADM2587EBRWZ_ReferenceDesign:
     """Isolated UART to half duplex RS485 interface"""
@@ -76,7 +78,7 @@ module MaxLinear_SP3485EN_driver from UART_RS485:
     package.B ~> rs485.diff_pair.n.line
     package.DI ~> uart.tx.line
     package.RO ~> uart.rx.line
-    package.REh ~> read_enable.line
+    package.nRE ~> read_enable.line
     package.DE ~> write_enable.line
     package.VCC ~> power.hv
     package.GND ~> power.lv
@@ -96,24 +98,6 @@ module MaxLinear_SP3485EN_driver from UART_RS485:
     rs485.required = True
     write_enable.required = True
     read_enable.required = True
-
-component MaxLinear_SP3485EN_L_TR_package:
-    """MaxLinear SP3485EN L TR package"""
-    lcsc_id = "C8963"
-    manufacturer = "MaxLinear"
-    mpn = "SP3485EN-L/TR"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_MaxLinear-SP3485EN-L-TR_C8963.pdf"
-    designator_prefix = "U"
-
-    # pins
-    signal A ~ pin 6
-    signal B ~ pin 7
-    signal DE ~ pin 3
-    signal DI ~ pin 4
-    signal GND ~ pin 5
-    signal REh ~ pin 2
-    signal RO ~ pin 1
-    signal VCC ~ pin 8
 
 
 module Chipanalog_IS2092A_driver from UART_RS485:
@@ -153,7 +137,7 @@ module Chipanalog_IS2092A_driver from UART_RS485:
     power_logic.lv ~ package.GND1
     power_isolated_in.lv ~ package.GND2
     power_isolated_out.lv ~ package.GND2
-    read_enable.line ~ package.REh
+    read_enable.line ~ package.nRE
     uart.rx.line ~ package.RO
     voltage_select.line ~ package.SEL
     power_logic.hv ~ package.VDDL
@@ -201,28 +185,3 @@ module Chipanalog_IS2092A_driver from UART_RS485:
     read_enable.required = True
     write_enable.required = True
     voltage_select.required = True
-
-
-component Chipanalog_CA_IS2092A_package:
-    """Chipanalog CA IS2092A package"""
-    lcsc_id = "C18185406"
-    manufacturer = "Chipanalog"
-    mpn = "CA-IS2092A"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401261510_Chipanalog-CA-IS2092A_C18185406.pdf"
-
-    # pins
-    signal A ~ pin 14
-    signal B ~ pin 15
-    signal DE ~ pin 3
-    signal DI ~ pin 4
-    signal GND1 ~ pin 5
-    GND1 ~ pin 8
-    signal GND2 ~ pin 9
-    GND2 ~ pin 12
-    signal REh ~ pin 2
-    signal RO ~ pin 1
-    signal SEL ~ pin 13
-    signal VDDL ~ pin 7
-    signal VDDP ~ pin 6
-    signal VISOIN ~ pin 10
-    signal VISOOUT ~ pin 11
