@@ -1,5 +1,6 @@
 import ElectricPower
-
+from "parts/Changzhou_Amass_Elec_24_245_1/Changzhou_Amass_Elec_24_245_1.ato" import Changzhou_Amass_Elec_24_245_1_package
+from "parts/Changzhou_Amass_Elec_24_245_2/Changzhou_Amass_Elec_24_245_2.ato" import Changzhou_Amass_Elec_24_245_2_package
 
 module DualBananaConnectors_driver:
     """
@@ -18,29 +19,3 @@ module DualBananaConnectors_driver:
     power.lv ~ black_plug.5
 
     power.required = True
-
-
-component Changzhou_Amass_Elec_24_245_2_package from Changzhou_Amass_Elec_24_245_package_base:
-    """Black banana connector"""
-    lcsc_id = "C7437327"
-    mpn = "24.245.2"
-
-
-component Changzhou_Amass_Elec_24_245_1_package from Changzhou_Amass_Elec_24_245_package_base:
-    """Red banana connector"""
-    lcsc_id = "C7437326"
-    mpn = "24.245.1"
-
-
-component Changzhou_Amass_Elec_24_245_package_base:
-    """Base for banana connectors"""
-    manufacturer = "Changzhou Amass Elec"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307191746_Changzhou-Amass-Elec-24-245-1_C7437326.pdf"
-    designator_prefix = "J"
-
-    # pins
-    pin 1
-    pin 2
-    pin 3
-    pin 4
-    pin 5

@@ -5,13 +5,14 @@ import is_atomic_part
 import is_auto_generated
 
 component Changzhou_Amass_Elec_24_245_1_package:
+    """Red banana connector"""
     # This trait marks this file as auto-generated
     # If you want to manually change it, remove the trait
     # trait is_auto_generated<system="ato_part", source="easyeda:C7437326", date="2025-06-08T09:33:04.332159+00:00", checksum="1b491744fdd66691efb27661765e9b7c2f156266a70963aa7ac5a6979c0053de">
 
     trait is_atomic_part<manufacturer="Changzhou Amass Elec", partnumber="24.245.1", footprint="ANT-TH_L33.0-W12.0_RED.kicad_mod", symbol="24.245.1.kicad_sym", model="ANT-TH_L33.0-W12.0_RED.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C7437326", manufacturer="Changzhou Amass Elec", partno="24.245.1">
-    trait has_designator_prefix<prefix="CN">
+    trait has_designator_prefix<prefix="J">
 
     # pins
     pin 1
