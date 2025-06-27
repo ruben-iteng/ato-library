@@ -35,4 +35,11 @@
         (options "")
         (descr "atopile: part lib: JST_Sales_America_SM04B_SRSS_TB_LF__SN")
     )
+    (lib
+        (name "PINREX_744_81_04TG20")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/PINREX_744_81_04TG20")
+        (options "")
+        (descr "atopile: part lib: PINREX_744_81_04TG20")
+    )
 )

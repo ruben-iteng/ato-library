@@ -18,7 +18,7 @@ builds:
     hide_designators: true
 
   fan_connector:
-    entry: fan_connectors.ato:Fan_4p_Connector
+    entry: fan_connectors.ato:Fan_4p_Connector_driver
     hide_designators: true
 
 package:

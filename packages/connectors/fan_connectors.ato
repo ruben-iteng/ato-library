@@ -1,6 +1,8 @@
 import ElectricLogic
 import ElectricPower
 
+from "parts/PINREX_744_81_04TG20/PINREX_744_81_04TG20.ato" import PINREX_744_81_04TG20_package
+
 
 module Fan_Interface:
     """
@@ -12,7 +14,7 @@ module Fan_Interface:
     pwm = new ElectricLogic
 
 
-module Fan_4p_Connector:
+module Fan_4p_Connector_driver:
     """
     Connector for standard 4-pin 12v computer fans
     - 12V
@@ -21,25 +23,10 @@ module Fan_4p_Connector:
     """
     # external interfaces
     fan_interface = new Fan_Interface
-    connector = new HCTL_HC_2510_4A
+    connector = new PINREX_744_81_04TG20_package
 
     # connections
-    fan_interface.pwm.line ~ connector.1
-    fan_interface.tach.line ~ connector.2
-    fan_interface.power.hv ~ connector.3
-    fan_interface.power.lv ~ connector.4
-
-
-component HCTL_HC_2510_4A:
-    """HCTL_HC_2510_4A component"""
-    lcsc_id = "C2982033"
-    manufacturer = "HCTL"
-    mpn = "HC-2510-4A"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2203111830_HCTL-HC-2510-4A_C2982033.pdf"
-    designator_prefix = "CN"
-
-    # pins
-    pin 1
-    pin 2
-    pin 3
-    pin 4
+    fan_interface.pwm.line ~ connector.4
+    fan_interface.tach.line ~ connector.3
+    fan_interface.power.hv ~ connector.2
+    fan_interface.power.lv ~ connector.1
