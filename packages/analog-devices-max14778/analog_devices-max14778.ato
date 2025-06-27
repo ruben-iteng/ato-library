@@ -6,41 +6,13 @@ import Electrical
 import ElectricLogic
 import Capacitor
 
-component Analog_Devices_MAX14778_package:
-    """Maxim_Integrated_MAX14778ETPplusT package"""
-    lcsc_id = "C1121866"
-    manufacturer = "Maxim Integrated"
-    mpn = "MAX14778ETP+T"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131730_Analog-Devices-Inc--Maxim-Integrated-MAX14778ETP-T_C1121866.pdf"
-    designator_prefix = "U"
+from "parts/Maxim_Integrated_MAX14778ETP_T/Maxim_Integrated_MAX14778ETP_T.ato" import Maxim_Integrated_MAX14778ETP_T_package
 
-    # pins
-    signal A0 ~ pin 6
-    signal A1 ~ pin 7
-    signal A2 ~ pin 8
-    signal A3 ~ pin 9
-    signal ACOM ~ pin 5
-    signal B0 ~ pin 20
-    signal B1 ~ pin 19
-    signal B2 ~ pin 18
-    signal B3 ~ pin 17
-    signal BCOM ~ pin 1
-    signal ENA ~ pin 10
-    signal ENB ~ pin 16
-    signal EP ~ pin 21
-    signal GND ~ pin 3
-    signal SA0 ~ pin 11
-    signal SA1 ~ pin 12
-    signal SB0 ~ pin 15
-    signal SB1 ~ pin 14
-    signal VDD ~ pin 13
-    signal VN ~ pin 4
-    signal VP ~ pin 2
 
 module Analog_Devices_MAX14778_Driver:
     """Analog Devices MAX14778 dual 4:1 +/-25V above/below the rails analog multiplexer"""
 
-    package = new Analog_Devices_MAX14778_package
+    package = new Maxim_Integrated_MAX14778ETP_T_package
 
     # components
     decoupling_capacitor = new Capacitor

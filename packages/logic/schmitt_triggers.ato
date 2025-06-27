@@ -2,6 +2,8 @@ import ElectricPower
 import ElectricLogic
 import Capacitor
 
+from "parts/Texas_Instruments_SN74LVC3G14DCUR/Texas_Instruments_SN74LVC3G14DCUR.ato" import Texas_Instruments_SN74LVC3G14DCUR_package
+
 
 component SN74LVC3G14DCUR_driver:
     """Texas Instruments SN74LVC3G14DCUR reference design"""
@@ -12,59 +14,24 @@ component SN74LVC3G14DCUR_driver:
     y = new ElectricLogic[3]
 
     # components
-    package = new _SN74LVC3G14DCUR_package
+    package = new Texas_Instruments_SN74LVC3G14DCUR_package
     decoupling_capacitor = new Capacitor
 
     decoupling_capacitor.capacitance = 100nF +/- 20%
     decoupling_capacitor.package = "C0402"
 
     # connections to package
-    power ~ package.power
-    package.a[0] ~ a[0]
-    package.a[1] ~ a[1]
-    package.a[2] ~ a[2]
-    package.y[0] ~ y[0]
-    package.y[1] ~ y[1]
-    package.y[2] ~ y[2]
+    package.VCC ~ power.hv
+    package.GND ~ power.lv
+    package.P1A ~ a[0].line
+    package.P2A ~ a[1].line
+    package.P3A ~ a[2].line
+    package.P1Y ~ y[0].line
+    package.P2Y ~ y[1].line
+    package.P3Y ~ y[2].line
 
     # other connections
     power ~ decoupling_capacitor.power
 
     # parameters
     power.required = True
-
-
-component _SN74LVC3G14DCUR_package from _74xx3G_package_base:
-    """Texas_Instruments_SN74LVC3G14DCUR component"""
-    lcsc_id = "C98856"
-    manufacturer = "Texas Instruments"
-    mpn = "SN74LVC3G14DCUR"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_1809131529_Texas-Instruments-SN74LVC3G14DCUR_C98856.pdf"
-
-    assert power.voltage within 1.65 to 5.5V
-
-    # pins
-    a[0].line ~ pin 1
-    a[1].line ~ pin 3
-    a[2].line ~ pin 6
-    y[0].line ~ pin 7
-    y[1].line ~ pin 5
-    y[2].line ~ pin 2
-    power.hv ~ pin 8
-    power.lv ~ pin 4
-
-
-component _74xx3G_package_base:
-    """3 gate schmitt trigger inverter"""
-    designator_prefix = "U"
-
-    power = new ElectricPower
-    a = new ElectricLogic[3]
-    y = new ElectricLogic[3]
-
-    a[0].reference ~ power
-    a[1].reference ~ power
-    a[2].reference ~ power
-    y[0].reference ~ power
-    y[1].reference ~ power
-    y[2].reference ~ power

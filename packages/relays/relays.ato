@@ -6,6 +6,9 @@ import Capacitor
 from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorRed
 from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorGreen
 
+from "parts/Shenzhen_Fuman_Elec_TC118S/Shenzhen_Fuman_Elec_TC118S.ato" import Shenzhen_Fuman_Elec_TC118S_package
+from "parts/Cixi_Kefa_Elec_KF250T_5_0_2_3P/Cixi_Kefa_Elec_KF250T_5_0_2_3P.ato" import Cixi_Kefa_Elec_KF250T_5_0_2_3P_package
+from "parts/Omron_Electronics_G6KU_2F_Y_TR_DC5/Omron_Electronics_G6KU_2F_Y_TR_DC5.ato" import Omron_Electronics_G6KU_2F_Y_TR_DC5_package
 
 module SPST_Relay from Relay:
     """Single Pole Single Throw Relay"""
@@ -74,7 +77,7 @@ module DrivenDPDTBistableRelay:
     normally_open_b = new ElectricSignal
 
     # components
-    relay = new G6KU2FYTRDC5
+    relay = new Omron_Electronics_G6KU_2F_Y_TR_DC5_driver
     relay_driver = new Shenzhen_Fuman_Elec_TC118S_driver
     led_indicator_a = new LEDIndicatorRed
     led_indicator_b = new LEDIndicatorGreen
@@ -114,40 +117,39 @@ module DrivenDPDTBistableRelayPushTerminal:
 
     # components
     relay = new DrivenDPDTBistableRelay
-    screw_terminal = new _Cixi_Kefa_Elec_KF250T_5_0_23P
+    screw_terminal = new Cixi_Kefa_Elec_KF250T_5_0_23P_driver
 
     # connections
     relay.power ~ power
     relay.input_a ~ input_a
     relay.input_b ~ input_b
 
-    relay.normally_closed_a.line ~ screw_terminal.PA1
-    relay.common_a.line ~ screw_terminal.PA2
-    relay.normally_open_a.line ~ screw_terminal.PA3
+    relay.normally_closed_a.line ~ screw_terminal.PA[0]
+    relay.common_a.line ~ screw_terminal.PA[1]
+    relay.normally_open_a.line ~ screw_terminal.PA[2]
 
-    relay.normally_closed_b.line ~ screw_terminal.PB1
-    relay.common_b.line ~ screw_terminal.PB2
-    relay.normally_open_b.line ~ screw_terminal.PB3
+    relay.normally_closed_b.line ~ screw_terminal.PB[0]
+    relay.common_b.line ~ screw_terminal.PB[1]
+    relay.normally_open_b.line ~ screw_terminal.PB[2]
 
-component G6KU2FYTRDC5 from DPDT_Relay:
+component Omron_Electronics_G6KU_2F_Y_TR_DC5_driver from DPDT_Relay:
     """Omron Electronics G6KU_2F_Y_TR_DC5 bistable relay"""
-    lcsc_id = "C2153173"
-    manufacturer = "Omron Electronics"
-    mpn = "G6KU-2F-Y-TR DC5"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2211281630_Omron-Electronics-G6KU-2F-Y-TR-DC5_C2153173.pdf"
-    designator_prefix = "RELAY"
+    package = new Omron_Electronics_G6KU_2F_Y_TR_DC5_package
 
+    # connections to package
+    coil.vcc ~ package.8
+    coil.gnd ~ package.1
+
+    normally_closed_a.line ~ package.2
+    common_a.line ~ package.3
+    normally_open_a.line ~ package.4
+
+    normally_closed_b.line ~ package.7
+    common_b.line ~ package.6
+    normally_open_b.line ~ package.5
+
+    # parameters
     assert coil.voltage within 5V+/-10%
-    coil.vcc ~ pin 8
-    coil.gnd ~ pin 1
-
-    normally_closed_a.line ~ pin 2
-    common_a.line ~ pin 3
-    normally_open_a.line ~ pin 4
-
-    normally_closed_b.line ~ pin 7
-    common_b.line ~ pin 6
-    normally_open_b.line ~ pin 5
 
 module Shenzhen_Fuman_Elec_TC118S_driver:
     """
@@ -192,36 +194,20 @@ module Shenzhen_Fuman_Elec_TC118S_driver:
     # parameters
     assert power.voltage <= 7V
 
-component Shenzhen_Fuman_Elec_TC118S_package:
-    """Shenzhen Fuman Elec TC118S package"""
-    lcsc_id = "C88308"
-    manufacturer = "Shenzhen Fuman Elec"
-    mpn = "TC118S"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2204121200_Shenzhen-Fuman-Elec-TC118S_C88308.pdf"
-    designator_prefix = "U"
 
-    # pins
-    signal AGND ~ pin 6
-    signal INA ~ pin 2
-    signal INB ~ pin 3
-    signal OUTA ~ pin 8
-    signal OUTB ~ pin 5
-    signal PGND ~ pin 7
-    signal VDD ~ pin 4
-
-component _Cixi_Kefa_Elec_KF250T_5_0_23P:
+component Cixi_Kefa_Elec_KF250T_5_0_23P_driver:
     """Double layer push terminal 2x3 pin"""
-    lcsc_id = "C976537"
-    manufacturer = "Cixi Kefa Elec"
-    mpn = "KF250T-5.0-2*3P"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2303170930_Cixi-Kefa-Elec-KF250T-5-0-2-3P_C976537.pdf"
-    designator_prefix = "J"
+    package = new Cixi_Kefa_Elec_KF250T_5_0_2_3P_package
+
+    # external interfaces
+    PA = new ElectricSignal[3]
+    PB = new ElectricSignal[3]
 
     # pins
-    signal PA1 ~ pin 1
-    signal PA2 ~ pin 3
-    signal PA3 ~ pin 5
+    PA[0] ~ package.1
+    PA[1] ~ package.3
+    PA[2] ~ package.5
 
-    signal PB1 ~ pin 2
-    signal PB2 ~ pin 4
-    signal PB3 ~ pin 6
+    PB[0] ~ package.2
+    PB[1] ~ package.4
+    PB[2] ~ package.6

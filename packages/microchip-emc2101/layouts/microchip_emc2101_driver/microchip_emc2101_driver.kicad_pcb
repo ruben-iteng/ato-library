@@ -89,7 +89,7 @@
     (net 0 "")
     (net 1 "SMDATA")
     (net 2 "SMCLK")
-    (net 3 "ALERTh_TACH")
+    (net 3 "nALERT_TACH")
     (net 4 "gnd")
     (net 5 "FAN")
     (net 6 "DP")
@@ -1034,7 +1034,7 @@
             (at 0.33 -2.3 0)
             (size 0.41 1.4)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 3 "ALERTh_TACH")
+            (net 3 "nALERT_TACH")
             (uuid "e7502403-af3a-4a02-8b56-5030090e3ca5")
         )
         (pad "7" smd rect
@@ -1601,7 +1601,7 @@
             (at -0.43 0 270)
             (size 0.57 0.54)
             (layers "F.Cu" "F.Mask" "F.Paste")
-            (net 3 "ALERTh_TACH")
+            (net 3 "nALERT_TACH")
             (uuid "5f0a1c27-db45-4684-954a-132485cc18b1")
         )
         (pad "2" smd rect

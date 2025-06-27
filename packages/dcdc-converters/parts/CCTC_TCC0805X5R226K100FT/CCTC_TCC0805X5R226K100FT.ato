@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component CCTC_TCC0805X5R226K100FT_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C380336", date="2025-06-27T13:37:35.500131+00:00", checksum="15d7006c214d1a9bbf589c873cc11cbbdc14ee1b459eb8d599684c3dc3e66135">
+
+    trait is_atomic_part<manufacturer="CCTC", partnumber="TCC0805X5R226K100FT", footprint="C0805.kicad_mod", symbol="TCC0805X5R226K100FT.kicad_sym", model="C0805_L2.0-W1.3-H1.3.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C380336", manufacturer="CCTC", partno="TCC0805X5R226K100FT">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

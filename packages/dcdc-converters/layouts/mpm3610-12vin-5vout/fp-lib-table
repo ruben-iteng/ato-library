@@ -84,4 +84,11 @@
         (options "")
         (descr "atopile: part lib: UNI_ROYAL_0402WGF1003TCE")
     )
+    (lib
+        (name "CCTC_TCC0805X5R226K100FT")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/CCTC_TCC0805X5R226K100FT")
+        (options "")
+        (descr "atopile: part lib: CCTC_TCC0805X5R226K100FT")
+    )
 )
