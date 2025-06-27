@@ -13,7 +13,7 @@ import TECH_PUBLIC_USBLC6_2SC6
 import Capacitor
 import WCHJiangsu_Qin_Heng_CH224K
 
-from "atopile/indicator-leds/indicator_leds.ato" import LEDIndicatorBlue
+from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorBlue
 
 
 module USB_PD_Power_Sink_Vertical_Connector_driver from USB_PD_Power_Sink_driver:

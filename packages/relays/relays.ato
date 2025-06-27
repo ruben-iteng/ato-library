@@ -3,8 +3,8 @@ import ElectricSignal
 import ElectricLogic
 import Capacitor
 
-from "atopile/indicator-leds/indicator_leds.ato" import LEDIndicatorRed
-from "atopile/indicator-leds/indicator_leds.ato" import LEDIndicatorGreen
+from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorRed
+from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorGreen
 
 
 module SPST_Relay from Relay:
