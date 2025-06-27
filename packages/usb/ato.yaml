@@ -34,5 +34,5 @@ package:
 
 dependencies:
   - type: registry
-    identifier: ruben-iteng/leds
-    release: 0.2.2
+    identifier: atopile/indicator-leds
+    release: 0.1.2
