@@ -2,7 +2,7 @@
 #pragma experiment("BRIDGE_CONNECT")
 
 import ElectricPower, ElectricLogic, Electrical, Capacitor, Resistor, FilterElectricalRC
-from "ruben-iteng/logic/schmitt_triggers.ato" import SN74LVC3G14DCUR
+from "ruben-iteng/logic/schmitt_triggers.ato" import SN74LVC3G14DCUR_driver
 
 module RotaryEncoderAdvanced:
     """
@@ -21,7 +21,7 @@ module RotaryEncoderAdvanced:
 
     # components
     encoder = new RotaryEncoderSwitch
-    buffer = new SN74LVC3G14DCUR
+    buffer = new SN74LVC3G14DCUR_driver
     pull_ups = new Resistor[3]
     rc_filters = new FilterElectricalRC[3]
 

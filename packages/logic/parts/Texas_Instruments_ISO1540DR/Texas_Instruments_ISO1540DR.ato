@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Texas_Instruments_ISO1540DR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C179739", date="2025-06-23T19:48:30.728006+00:00", checksum="184ff7b674b443cf097ee286b3dbf2978991deb48e93ff4d0581984386d97faa">
+
+    trait is_atomic_part<manufacturer="Texas Instruments", partnumber="ISO1540DR", footprint="SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL.kicad_mod", symbol="ISO1540DR.kicad_sym", model="SOIC-8_L4.9-W3.9-H1.7-LS6.0-P1.27.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C179739", manufacturer="Texas Instruments", partno="ISO1540DR">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND1 ~ pin 4
+    signal GND2 ~ pin 5
+    signal SCL1 ~ pin 3
+    signal SCL2 ~ pin 6
+    signal SDA1 ~ pin 2
+    signal SDA2 ~ pin 7
+    signal VCC1 ~ pin 1
+    signal VCC2 ~ pin 8

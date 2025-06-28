@@ -8,7 +8,11 @@ import ElectricPower
 import I2C
 import Resistor
 
-from "ruben-iteng/connectors/fan_connectors.ato" import Fan_4p_Connector, Fan_Interface
+from "ruben-iteng/connectors/fan_connectors.ato" import Fan_4p_Connector
+from "ruben-iteng/connectors/fan_connectors.ato" import Fan_Interface
+
+from "parts/Microchip_Tech_EMC2101_R_ACZL_TR/Microchip_Tech_EMC2101_R_ACZL_TR.ato" import Microchip_Tech_EMC2101_R_ACZL_TR_package
+from "parts/KEC_Semicon_2N3906S_RTK_PS/KEC_Semicon_2N3906S_RTK_PS.ato" import KEC_Semicon_2N3906S_RTK_PS_package
 
 
 module Microchip_EMC2101_driver:
@@ -39,7 +43,7 @@ module Microchip_EMC2101_driver:
     i2c = new I2C
 
     # connections to package
-    package.ALERTh_TACH ~ fan_interface.tach.line
+    package.nALERT_TACH ~ fan_interface.tach.line
     package.DN ~ temperature_sensor.collector
     package.DP ~ temperature_sensor.emitter
     package.FAN ~ fan_interface.pwm.line
@@ -75,44 +79,11 @@ module Microchip_EMC2101_driver:
     i2c.required = True
 
 
-component Microchip_Tech_EMC2101_R_ACZL_TR_package:
-    """Microchip_Tech_EMC2101_R_ACZL_TR package"""
-    lcsc_id = "C626968"
-    manufacturer = "Microchip Tech"
-    mpn = "EMC2101-R-ACZL-TR"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2210180200_Microchip-Tech-EMC2101-R-ACZL-TR_C626968.pdf"
-    designator_prefix = "U"
-
-    # pins
-    signal ALERTh_TACH ~ pin 6
-    signal DN ~ pin 3
-    signal DP ~ pin 2
-    signal FAN ~ pin 4
-    signal GND ~ pin 5
-    signal SMCLK ~ pin 8
-    signal SMDATA ~ pin 7
-    signal VDD ~ pin 1
-
-
 component _KEC_Semicon_2N3906S_RTK_PS from BJT:
     """_2N3906S PNP transistor"""
-    package = new _KEC_Semicon_2N3906S_RTK_PS_package
+    package = new KEC_Semicon_2N3906S_RTK_PS_package
 
     # connections to package
     collector ~ package.C
     base ~ package.B
     emitter ~ package.E
-
-
-component _KEC_Semicon_2N3906S_RTK_PS_package:
-    """KEC_Semicon_2N3906S_RTK_PS component"""
-    lcsc_id = "C5300004"
-    manufacturer = "KEC Semicon"
-    mpn = "2N3906S-RTK/PS"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2212060930_KEC-Semicon-2N3906S-RTK-PS_C5300004.pdf"
-    designator_prefix = "Q"
-
-    # pins
-    signal B ~ pin 2
-    signal C ~ pin 3
-    signal E ~ pin 1

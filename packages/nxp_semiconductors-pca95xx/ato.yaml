@@ -1,36 +1,37 @@
-requires-atopile: "^0.7.0"
+requires-atopile: "^0.9.0"
 
 paths:
   src: "."
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
-  pca9554_driver:
-    entry: pca9554.ato:NXP_Semiconductors_PCA9554_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
+  pca9554pw_driver:
+    entry: pca9554.ato:NXP_Semicon_PCA9554PW_driver
     hide_designators: true
-  pca9554a_driver:
-    entry: pca9554.ato:NXP_Semiconductors_PCA9554A_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
+  pca9554apw_driver:
+    entry: pca9554.ato:NXP_Semicon_PCA9554APW_driver
     hide_designators: true
-  pca9536_driver:
-    entry: pca9536.ato:NXP_Semiconductors_PCA9536_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
+  pca9554abs_driver:
+    entry: pca9554.ato:NXP_Semicon_PCA9554ABS_driver
+    hide_designators: true
+  pca9554bs_driver:
+    entry: pca9554.ato:NXP_Semicon_PCA9554BS_driver
     hide_designators: true
 
-  test:
-    entry: test.ato:Test
-    keep_picked_parts: true
+  pca9536d_driver:
+    entry: pca9536.ato:NXP_Semiconductors_PCA9536D_driver
+    hide_designators: true
+  pca9536tk_driver:
+    entry: pca9536.ato:NXP_Semiconductors_PCA9536TK_driver
+    hide_designators: true
+  pca9536dp_driver:
+    entry: pca9536.ato:NXP_Semiconductors_PCA9536DP_driver
     hide_designators: true
 
 package:
   identifier: ruben-iteng/nxp-semiconductors-pca95xx
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.1.1"
+  version: "0.2.0"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

@@ -2,6 +2,8 @@ import ElectricPower, ElectricLogic, Capacitor
 
 from "components/BridgableLogic.py" import BridgableLogic
 
+from "parts/Changzhou_Amass_Elec_XT30PW_2_2__M_G_B/Changzhou_Amass_Elec_XT30PW_2_2__M_G_B.ato" import Changzhou_Amass_Elec_XT30PW_2_2__M_G_B_package
+
 
 module AddressableLED_driver from BridgableLogic:
     """
@@ -137,34 +139,22 @@ component _SK6812_package from _AddressableLED_package:
     """
 
 
-component AddressableLEDConnector_driver from _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B_package:
+module AddressableLEDConnector_driver:
     """
     XT30 connector with 2 additional data pins.
     Wired for connecting to addressable LED strips.
     """
 
+    package = new Changzhou_Amass_Elec_XT30PW_2_2__M_G_B_package
+
     power = new ElectricPower
     data = new ElectricLogic
     clock = new ElectricLogic
 
-    power.hv ~ pin 1
-    power.lv ~ pin 2
-    data.line ~ pin 3
-    clock.line ~ pin 4
+    power.hv ~ package.1
+    power.lv ~ package.2
+    data.line ~ package.3
+    clock.line ~ package.4
 
     power.required = True
     data.required = True
-
-
-component _Changzhou_Amass_Elec_XT30PW2plus2_M_G_B_package:
-    """XT30 connector with 2 additional data pins"""
-    lcsc_id = "C19268030"
-    manufacturer = "Changzhou Amass Elec"
-    mpn = "XT30PW(2+2)-M.G.B"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401121133_Changzhou-Amass-Elec-XT30-2-2PW-M-G-B_C19268030.pdf"
-    designator_prefix = "U"
-
-    pin 1
-    pin 2
-    pin 3
-    pin 4

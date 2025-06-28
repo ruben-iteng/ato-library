@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component EVISUN_B0505S_1WR3_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C7465178", date="2025-06-09T20:45:55.167991+00:00", checksum="336afbcdab88c67cf8154bb8da67e1ad2b8d558987672f24842a9e83a318587f">
+
+    trait is_atomic_part<manufacturer="EVISUN", partnumber="B0505S-1WR3", footprint="PWRM-TH_B0505S-1WR3.kicad_mod", symbol="B0505S-1WR3_C7465178.kicad_sym", model="PWRM-TH_B0505S-1WR3.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C7465178", manufacturer="EVISUN", partno="B0505S-1WR3">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal Vinneg ~ pin 1
+    signal Vinpos ~ pin 2
+    signal Voutneg ~ pin 3
+    signal Voutpos ~ pin 4

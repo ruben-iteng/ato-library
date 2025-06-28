@@ -6,63 +6,10 @@ import ElectricLogic
 import ElectricPower
 import I2C
 
-from "pca95xx.ato" import NXP_Semiconductors_PCA95xx_base_package, NXP_Semiconductors_PCA95xx_base_driver
-
-
-component NXP_Semiconductors_PCA9536_base_package from NXP_Semiconductors_PCA95xx_base_package:
-    """NXP Semiconductors PCA9536 base package"""
-
-    # pins
-    io = new Electrical[4]
-
-
-component NXP_Semiconductors_PCA9536D_S08_package from NXP_Semiconductors_PCA9536_base_package:
-    """NXP Semiconductors PCA9536D,118 S08 package"""
-    lcsc_id = "C2688883"
-    mpn = "PCA9536D,118"
-
-    # pins
-    pin 1 ~ io[0]
-    pin 2 ~ io[1]
-    pin 3 ~ io[2]
-    pin 5 ~ io[3]
-    pin 6 ~ scl
-    pin 7 ~ sda
-    pin 8 ~ vdd
-    pin 4 ~ vss
-
-
-component NXP_Semiconductors_PCA9536TK_HVSON8_package from NXP_Semiconductors_PCA9536_base_package:
-    """NXP Semiconductors PCA9536TK,118 HVSON8 package"""
-    lcsc_id = "C2652283"
-    mpn = "PCA9536TK,118"
-
-    # pins
-    pin 9 ~ vss
-    pin 1 ~ io[0]
-    pin 2 ~ io[1]
-    pin 3 ~ io[2]
-    pin 5 ~ io[3]
-    pin 6 ~ scl
-    pin 7 ~ sda
-    pin 8 ~ vdd
-    pin 4 ~ vss
-
-
-component NXP_Semiconductors_PCA9536DP_TSSOP8_package from NXP_Semiconductors_PCA9536_base_package:
-    """NXP Semiconductors PCA9536DP,118 TSSOP8 package"""
-    lcsc_id = "C14674"
-    mpn = "PCA9536DP,118"
-
-    # pins
-    pin 1 ~ io[0]
-    pin 2 ~ io[1]
-    pin 3 ~ io[2]
-    pin 5 ~ io[3]
-    pin 6 ~ scl
-    pin 7 ~ sda
-    pin 8 ~ vdd
-    pin 4 ~ vss
+from "pca95xx.ato" import NXP_Semiconductors_PCA95xx_base_driver
+from "parts/NXP_Semicon_PCA9536D_118/NXP_Semicon_PCA9536D_118.ato" import NXP_Semicon_PCA9536D_118_package
+from "parts/NXP_Semicon_PCA9536TK_118/NXP_Semicon_PCA9536TK_118.ato" import NXP_Semicon_PCA9536TK_118_package
+from "parts/NXP_Semicon_PCA9536DP_118/NXP_Semicon_PCA9536DP_118.ato" import NXP_Semicon_PCA9536DP_118_package
 
 
 module NXP_Semiconductors_PCA9536_driver from NXP_Semiconductors_PCA95xx_base_driver:
@@ -86,20 +33,9 @@ module NXP_Semiconductors_PCA9536_driver from NXP_Semiconductors_PCA95xx_base_dr
     - TSSOP8
     - S08
     """
-    package = new NXP_Semiconductors_PCA9536_base_package
 
     # external interfaces (not in base driver)
     io = new ElectricLogic[4]
-
-    # connections to package
-    package.scl ~ i2c.scl.line
-    package.sda ~ i2c.sda.line
-    package.vdd ~ power.hv
-    package.vss ~ power.lv
-    package.io[0] ~ io[0].line
-    package.io[1] ~ io[1].line
-    package.io[2] ~ io[2].line
-    package.io[3] ~ io[3].line
 
     # decoupling capacitor
     decoupling_capacitor = new Capacitor
@@ -109,3 +45,54 @@ module NXP_Semiconductors_PCA9536_driver from NXP_Semiconductors_PCA95xx_base_dr
 
     # parameters
     i2c.address = 0x41
+
+
+module NXP_Semiconductors_PCA9536D_driver from NXP_Semiconductors_PCA9536_driver:
+    """
+    NXP Semiconductors PCA9536D SO-8 package
+    """
+    package = new NXP_Semicon_PCA9536D_118_package
+
+    # connections to package
+    package.SCL ~ i2c.scl.line
+    package.SDA ~ i2c.sda.line
+    package.VDD ~ power.hv
+    package.VSS ~ power.lv
+    package.IO0 ~ io[0].line
+    package.IO1 ~ io[1].line
+    package.IO2 ~ io[2].line
+    package.IO3 ~ io[3].line
+
+
+module NXP_Semiconductors_PCA9536TK_driver from NXP_Semiconductors_PCA9536_driver:
+    """
+    NXP Semiconductors PCA9536TK HVSON-8 package
+    """
+    package = new NXP_Semicon_PCA9536TK_118_package
+
+    # connections to package
+    package.SCL ~ i2c.scl.line
+    package.SDA ~ i2c.sda.line
+    package.VDD ~ power.hv
+    package.VSS ~ power.lv
+    package.IO0 ~ io[0].line
+    package.IO1 ~ io[1].line
+    package.IO2 ~ io[2].line
+    package.IO3 ~ io[3].line
+
+
+module NXP_Semiconductors_PCA9536DP_driver from NXP_Semiconductors_PCA9536_driver:
+    """
+    NXP Semiconductors PCA9536DP TSSOP-8 package
+    """
+    package = new NXP_Semicon_PCA9536DP_118_package
+
+    # connections to package
+    package.SCL ~ i2c.scl.line
+    package.SDA ~ i2c.sda.line
+    package.VDD ~ power.hv
+    package.VSS ~ power.lv
+    package.IO0 ~ io[0].line
+    package.IO1 ~ io[1].line
+    package.IO2 ~ io[2].line
+    package.IO3 ~ io[3].line

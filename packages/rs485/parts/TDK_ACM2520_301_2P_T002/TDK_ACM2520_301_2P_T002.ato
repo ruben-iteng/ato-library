@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component TDK_ACM2520_301_2P_T002_package:
+    """300Ω @100MHz"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C76577", date="2025-06-17T09:29:06.320946+00:00", checksum="6859b44c3ab6ee65814fff3fbf49869e28a5debc5b1e3a2e7ccf8f9fea1eb0cb">
+
+    trait is_atomic_part<manufacturer="TDK", partnumber="ACM2520-301-2P-T002", footprint="FILTER-SMD_4P-L2.5-W2.0-BL.kicad_mod", symbol="ACM2520-301-2P-T002.kicad_sym", model="FILTER-SMD_4P-L2.5-W2.0-H1.2-P1.3.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C76577", manufacturer="TDK", partno="ACM2520-301-2P-T002">
+    trait has_designator_prefix<prefix="L">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4

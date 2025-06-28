@@ -1,0 +1,26 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Samtec_FTSH_105_01_L_DV_K_TR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C448647", date="2025-06-09T21:53:37.774858+00:00", checksum="c332c9a89b2403967fd88131c789c01c0fac6086bcea745fd6bd114995cd271a">
+
+    trait is_atomic_part<manufacturer="Samtec", partnumber="FTSH-105-01-L-DV-K-TR", footprint="CONN-SMD_FTSH-105-01-L-DV-K-TR.kicad_mod", symbol="FTSH-105-01-L-DV-K-TR.kicad_sym", model="CONN-SMD_FTSH-105-01-L-DV-K-TR.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C448647", manufacturer="Samtec", partno="FTSH-105-01-L-DV-K-TR">
+    trait has_designator_prefix<prefix="CN">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+    pin 7
+    pin 8
+    pin 9
+    pin 10

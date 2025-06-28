@@ -1,0 +1,31 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Chipanalog_CA_IS2092A_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C18185406", date="2025-06-23T19:48:45.411099+00:00", checksum="06d5a637747d9db29d7d64ffca083daa85f4e6f1600129fe8f040814b3179287">
+
+    trait is_atomic_part<manufacturer="Chipanalog", partnumber="CA-IS2092A", footprint="LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.kicad_mod", symbol="CA-IS2092A.kicad_sym", model="LGA-16_L5.2-W4.7-P0.65-TL_CA-IS2062A-FRANK2.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C18185406", manufacturer="Chipanalog", partno="CA-IS2092A">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A ~ pin 14
+    signal B ~ pin 15
+    signal DE ~ pin 3
+    signal DI ~ pin 4
+    signal GND1 ~ pin 5
+    GND1 ~ pin 8
+    signal GND2 ~ pin 9
+    GND2 ~ pin 12
+    signal RO ~ pin 1
+    signal SEL ~ pin 13
+    signal VDDL ~ pin 7
+    signal VDDP ~ pin 6
+    signal VISOIN ~ pin 10
+    signal VISOOUT ~ pin 11
+    signal nRE ~ pin 2

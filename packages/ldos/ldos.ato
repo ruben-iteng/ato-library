@@ -3,6 +3,7 @@ import ElectricPower
 import Capacitor
 import LDO
 
+from "parts/TECH_PUBLIC_TPAP2112K_3_3TRG1/TECH_PUBLIC_TPAP2112K_3_3TRG1.ato" import TECH_PUBLIC_TPAP2112K_3_3TRG1_package
 
 module LDO_5V_to_3V3:
     """5V to 3.3V 600mA (max 1100mA) LDO"""
@@ -12,7 +13,7 @@ module LDO_5V_to_3V3:
     power_out = new ElectricPower
 
     # components
-    ldo = new TECH_PUBLIC_TPAP2112K_3_3TRG1
+    ldo = new TECH_PUBLIC_TPAP2112K_3_3TRG1_driver
     power_in_decoupling_capacitor = new Capacitor
     power_out_decoupling_capacitor = new Capacitor
 
@@ -37,19 +38,16 @@ module LDO_5V_to_3V3:
     power_out.required = True
 
 
-component TECH_PUBLIC_TPAP2112K_3_3TRG1 from LDO:
+component TECH_PUBLIC_TPAP2112K_3_3TRG1_driver from LDO:
     """Basic 5.5V to 3.3V LDO nominal 600mA, max 1.1A with enable pin"""
-    lcsc_id = "C3021085"
-    manufacturer = "TECH PUBLIC"
-    mpn = "TPAP2112K-3.3TRG1"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2205241716_TECH-PUBLIC-TPAP2112K-3-3TRG1_C3021085.pdf"
-    designator_prefix = "U"
 
-    # pins
-    enable.enable.line ~ pin 3
-    power_in.lv ~ pin 2
-    power_in.hv ~ pin 1
-    power_out.hv ~ pin 5
+    package = new TECH_PUBLIC_TPAP2112K_3_3TRG1_package
+
+    # connections
+    enable.enable.line ~ package.EN
+    power_in.lv ~ package.GND
+    power_in.hv ~ package.VIN
+    power_out.hv ~ package.VOUT
 
     # parameters
     assert power_in.voltage within 1.2V to 5.5V

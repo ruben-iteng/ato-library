@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Cixi_Kefa_Elec_KF250T_5_0_2_3P_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C976537", date="2025-06-17T17:44:22.671150+00:00", checksum="b37c3d8c67d1f3a670230bb2674efe71ffc1e785105678d9e7edb8b8d53da34c">
+
+    trait is_atomic_part<manufacturer="Cixi Kefa Elec", partnumber="KF250T-5.0-2*3P", footprint="CONN-TH_KF250T-5.0-2X3P.kicad_mod", symbol="KF250T-5.0-2*3P.kicad_sym", model="CONN-TH_KF250T-5.0-2X3P.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C976537", manufacturer="Cixi Kefa Elec", partno="KF250T-5.0-2*3P">
+    trait has_designator_prefix<prefix="CN">
+
+    # pins
+    pin 1
+    pin 6
+    pin 3
+    pin 4
+    pin 5
+    pin 2

@@ -3,7 +3,7 @@
 import ElectricPower
 import ElectricLogic
 import Capacitor
-
+from "parts/Texas_Instruments_LM66200DRLR/Texas_Instruments_LM66200DRLR.ato" import Texas_Instruments_LM66200DRLR_package
 
 module Texas_Instruments_LM66200_driver:
     """
@@ -32,7 +32,7 @@ module Texas_Instruments_LM66200_driver:
 
     # connections to package
     package.GND ~ power_in[0].lv
-    package.ONh ~ enable.line
+    package.nON ~ enable.line
     package.VIN1 ~ power_in[0].hv
     package.VIN2 ~ power_in[1].hv
     package.VOUT ~ power_out.hv
@@ -63,21 +63,3 @@ module Texas_Instruments_LM66200_driver:
     power_in[1].required = True
     power_out.required = True
     enable.required = True
-
-component Texas_Instruments_LM66200DRLR_package:
-    """Texas Instruments LM66200DRLR package"""
-    lcsc_id = "C3235556"
-    manufacturer = "Texas Instruments"
-    mpn = "LM66200DRLR"
-    datasheet_url = "https://www.ti.com/cn/lit/gpn/lm66200"
-    designator_prefix = "U"
-
-    # pins
-    signal GND ~ pin 1
-    GND ~ pin 5
-    signal ONh ~ pin 4
-    signal ST ~ pin 8
-    signal VIN1 ~ pin 3
-    signal VIN2 ~ pin 6
-    signal VOUT ~ pin 2
-    VOUT ~ pin 7

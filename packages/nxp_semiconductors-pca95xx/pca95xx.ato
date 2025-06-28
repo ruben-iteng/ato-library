@@ -9,17 +9,6 @@ import ElectricLogic
 import ElectricPower
 import I2C
 
-component NXP_Semiconductors_PCA95xx_base_package:
-    """NXP Semiconductors PCA95xx base package"""
-    manufacturer = "NXP Semicon"
-    designator_prefix = "U"
-
-    # pins
-    scl = new Electrical
-    sda = new Electrical
-    vdd = new Electrical
-    vss = new Electrical
-
 
 module NXP_Semiconductors_PCA95xx_base_driver:
     """NXP Semiconductors PCA95xx base driver"""

@@ -1,3 +1,5 @@
+#pragma experiment("BRIDGE_CONNECT")
+
 import ElectricLogic
 import ElectricPower
 import I2C
@@ -7,7 +9,10 @@ import JTAG
 import USB2_0
 import Capacitor
 
-from "atopile/buttons/buttons.ato" import ButtonSKRPACE010, ButtonPullup
+from "ruben-iteng/switches/buttons.ato" import ButtonSKRPACE010
+from "ruben-iteng/switches/buttons.ato" import ButtonPullup
+
+from "parts/Espressif_Systems_ESP32_S3_WROOM_1_N16R2/Espressif_Systems_ESP32_S3_WROOM_1_N16R2.ato" import Espressif_Systems_ESP32_S3_WROOM_1_N16R2_package
 
 
 module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
@@ -19,6 +24,7 @@ module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
 
     # components
     boot_switch = new ButtonSKRPACE010
+    boot_rc_capacitor = new Capacitor
     reset_switch = new ButtonPullup
     reset_rc_capacitor = new Capacitor
     decoupling_capacitor_bulk = new Capacitor
@@ -28,11 +34,12 @@ module ESP32_S3_WROOM_1_U_driver from ESP32_S3_WROOM_1_U_driver_base:
     power ~ decoupling_capacitor_bulk.power
     power ~ decoupling_capacitor_small.power
 
-    boot_switch.input ~ power.lv
-    boot_switch.output ~ gpio[0].line
+    boot_switch.unnamed[0] ~ power.lv
+    boot_switch.unnamed[1] ~ gpio[0].line
+    boot_switch.unnamed[1] ~> boot_rc_capacitor ~> power.lv
 
     reset_switch.output.reference ~ power
-    reset_switch.output.line ~ enable.line
+    reset_switch.output ~ enable
     reset_switch.btn -> ButtonSKRPACE010
     reset_rc_capacitor.power.hv ~ reset_switch.output.line
     reset_rc_capacitor.power.lv ~ reset_switch.output.reference.lv
@@ -65,55 +72,55 @@ module ESP32_S3_WROOM_1_U_driver_base:
     enable = new ElectricLogic
     usb = new USB2_0
 
-    gpio = new ElectricLogic[49] # 22-34, 43, 44, are not exposed on the module
+    gpio = new ElectricLogic[49] # 22-34 are not exposed on the module
 
     # connections
-    gpio[0].line ~ package.27 # strapping pin, default pull-up, boot mode
-    gpio[1].line ~ package.39
-    gpio[2].line ~ package.38
-    gpio[3].line ~ package.15 # strapping pin, default pull-down, JTAG source
-    gpio[4].line ~ package.4
-    gpio[5].line ~ package.5
-    gpio[6].line ~ package.6
-    gpio[7].line ~ package.7
-    gpio[8].line ~ package.12
-    gpio[9].line ~ package.17
-    gpio[10].line ~ package.18
-    gpio[11].line ~ package.19
-    gpio[12].line ~ package.20
-    gpio[13].line ~ package.21
-    gpio[14].line ~ package.22
-    gpio[15].line ~ package.8
-    gpio[16].line ~ package.9
-    gpio[17].line ~ package.10
-    gpio[18].line ~ package.11
-    gpio[19].line ~ package.13
-    gpio[20].line ~ package.14
-    gpio[21].line ~ package.23
+    gpio[0].line ~ package.IO0 # strapping pin, default pull-up, boot mode
+    gpio[1].line ~ package.IO1
+    gpio[2].line ~ package.IO2
+    gpio[3].line ~ package.IO3 # strapping pin, default pull-down, JTAG source
+    gpio[4].line ~ package.IO4
+    gpio[5].line ~ package.IO5
+    gpio[6].line ~ package.IO6
+    gpio[7].line ~ package.IO7
+    gpio[8].line ~ package.IO8
+    gpio[9].line ~ package.IO9
+    gpio[10].line ~ package.IO10
+    gpio[11].line ~ package.IO11
+    gpio[12].line ~ package.IO12
+    gpio[13].line ~ package.IO13
+    gpio[14].line ~ package.IO14
+    gpio[15].line ~ package.IO15
+    gpio[16].line ~ package.IO16
+    gpio[17].line ~ package.IO17
+    gpio[18].line ~ package.IO18
+    gpio[19].line ~ package.IO19
+    gpio[20].line ~ package.IO20
+    gpio[21].line ~ package.IO21
     # ~
-    gpio[35].line ~ package.28
-    gpio[36].line ~ package.29
-    gpio[37].line ~ package.30
-    gpio[38].line ~ package.31
-    gpio[39].line ~ package.32
-    gpio[40].line ~ package.33
-    gpio[41].line ~ package.34
-    gpio[42].line ~ package.35
+    gpio[35].line ~ package.IO35
+    gpio[36].line ~ package.IO36
+    gpio[37].line ~ package.IO37
+    gpio[38].line ~ package.IO38
+    gpio[39].line ~ package.IO39
+    gpio[40].line ~ package.IO40
+    gpio[41].line ~ package.IO41
+    gpio[42].line ~ package.IO42
+    gpio[43].line ~ package.RXD0
+    gpio[44].line ~ package.TXD0
     # ~
-    gpio[45].line ~ package.26 # strapping pin, default pull-down
-    gpio[46].line ~ package.16 # strapping pin, default pull-down
-    gpio[47].line ~ package.24
-    gpio[48].line ~ package.25
+    gpio[45].line ~ package.IO45 # strapping pin, default pull-down
+    gpio[46].line ~ package.IO46 # strapping pin, default pull-down
+    gpio[47].line ~ package.IO47
+    gpio[48].line ~ package.IO48
 
-    power.hv ~ package.2
-    power.lv ~ package.1
-    power.lv ~ package.41 # EPAD
-    power.lv ~ package.40
+    power.hv ~ package.P3V3
+    power.lv ~ package.GND
 
-    enable.line ~ package.3
+    enable.line ~ package.EN
 
-    uart.rx.line ~ package.37
-    uart.tx.line ~ package.36
+    uart.rx ~ gpio[44]
+    uart.tx ~ gpio[43]
 
     usb.usb_if.d.n ~ gpio[19]
     usb.usb_if.d.p ~ gpio[20]
@@ -134,55 +141,3 @@ module ESP32_S3_WROOM_1_U_driver_base:
     power.voltage = 3.3V +/- 10%
 
     power.required = True
-
-
-component Espressif_Systems_ESP32_S3_WROOM_1_N16R2_package:
-    """Espressif_Systems_ESP32_S3_WROOM_1_N16R2 component"""
-    lcsc_id = "C2913205"
-    manufacturer = "Espressif Systems"
-    mpn = "ESP32-S3-WROOM-1-N16R2"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281845_Espressif-Systems-ESP32-S3-WROOM-1-N16R2_C2913205.pdf"
-    designator_prefix = "U"
-
-    # pins
-    pin 41
-    pin 40
-    pin 39
-    pin 38
-    pin 37
-    pin 36
-    pin 35
-    pin 34
-    pin 33
-    pin 32
-    pin 31
-    pin 30
-    pin 29
-    pin 28
-    pin 27
-    pin 26
-    pin 25
-    pin 24
-    pin 23
-    pin 22
-    pin 21
-    pin 20
-    pin 19
-    pin 18
-    pin 17
-    pin 16
-    pin 15
-    pin 14
-    pin 13
-    pin 12
-    pin 11
-    pin 10
-    pin 9
-    pin 8
-    pin 7
-    pin 6
-    pin 5
-    pin 4
-    pin 3
-    pin 2
-    pin 1

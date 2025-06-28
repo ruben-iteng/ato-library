@@ -1,5 +1,12 @@
-import ElectricLogic, ElectricPower, JTAG, SWD, Power
+import ElectricLogic
+import ElectricPower
+import JTAG
+import SWD
+import Power
 
+from "parts/Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical/Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical.ato" import Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical
+from "parts/Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical/Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical.ato" import Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical
+from "parts/Samtec_FTSH_105_01_L_DV_K_TR/Samtec_FTSH_105_01_L_DV_K_TR.ato" import Samtec_FTSH_105_01_L_DV_K_TR_package
 
 module ARM_CORTEX_M_DEBUG_HEADER:
     """
@@ -7,7 +14,7 @@ module ARM_CORTEX_M_DEBUG_HEADER:
     https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1
     """
     # components
-    connector = new FTSH10501LDVKTR
+    connector = new Samtec_FTSH_105_01_L_DV_K_TR_package
 
     # external interfaces
     swd = new SWD
@@ -83,34 +90,14 @@ module SWD_TC2030_IDC_FP:
     reference.gnd ~ connector.5
 
 
-component FTSH10501LDVKTR:
-    """Samtec FTSH_105_01_L_DV_K_TR connector with ARM cortex debug pinout"""
-    lcsc_id = "C448647"
-    manufacturer = "Samtec"
-    mpn = "FTSH-105-01-L-DV-K-TR"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/1912111437_Samtec-FTSH-105-01-L-DV-K-TR_C448647.pdf"
-    designator_prefix = "X"
-
-    pin 1
-    pin 2
-    pin 3
-    pin 4
-    pin 5
-    pin 6
-    pin 7
-    pin 8
-    pin 9
-    pin 10
-
-
 component _TC2030_IDC_NL from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-NL (6-pin) landing pattern"""
-    footprint = "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+    footprint = new Tag_Connect_TC2030_IDC_NL_2x03_P1_27mm_Vertical
 
 
 component _TC2030_IDC_FP from _TC2030_IDC:
     """Tag-Connect TC2030-IDC-FP (6-pin) landing pattern with holes"""
-    footprint = "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+    footprint = new Tag_Connect_TC2030_IDC_FP_2x03_P1_27mm_Vertical
 
 
 component _TC2030_IDC:

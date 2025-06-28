@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component PINREX_744_81_04TG20_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    #trait is_auto_generated<system="ato_part", source="easyeda:C402776", date="2025-06-27T13:14:44.180572+00:00", checksum="536eead1e9381f477ee0a2abeb066a4637c64cbb5be5dbc326b06b9747c1e79b">
+
+    trait is_atomic_part<manufacturer="PINREX", partnumber="744-81-04TG20", footprint="CONN-TH_4P-P2.54-V-M_744-81-04TXXX.kicad_mod", symbol="744-81-04TG20.kicad_sym", model="CONN-TH_4P-P2.54-V-M_744-81-04TXXX.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C402776", manufacturer="PINREX", partno="744-81-04TG20">
+    trait has_designator_prefix<prefix="CN">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4

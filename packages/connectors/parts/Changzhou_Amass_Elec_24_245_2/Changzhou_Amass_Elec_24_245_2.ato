@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Changzhou_Amass_Elec_24_245_2_package:
+    """Black banana connector"""
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    # trait is_auto_generated<system="ato_part", source="easyeda:C7437327", date="2025-06-08T09:33:04.285212+00:00", checksum="e6fd0903bb7fce3539e0f7e2df5ff26007af037291e9fe5251ae166f97515f0b">
+
+    trait is_atomic_part<manufacturer="Changzhou Amass Elec", partnumber="24.245.2", footprint="ANT-TH_L33.0-W12.0_BLACK.kicad_mod", symbol="24.245.2.kicad_sym", model="ANT-TH_L33.0-W12.0_BLACK.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C7437327", manufacturer="Changzhou Amass Elec", partno="24.245.2">
+    trait has_designator_prefix<prefix="J">
+
+    # pins
+    pin 5
+    pin 4
+    pin 3
+    pin 2
+    pin 1

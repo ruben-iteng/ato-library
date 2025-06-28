@@ -5,6 +5,10 @@ import Capacitor
 import ElectricPower
 import ElectricLogic
 
+from "parts/Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR/Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR.ato" import Wuxi_I_core_Elec_AiP74LVC1T45GB236_TR_package
+from "parts/UMW_SN74LVC2G34DBVR_UMW/UMW_SN74LVC2G34DBVR_UMW.ato" import UMW_SN74LVC2G34DBVR_UMW_package
+
+
 module AiP74LVC1T45_driver:
     """
     Single channel bidirectional buffer.
@@ -35,7 +39,7 @@ module SN74LVC2G34DBVRUMW_driver:
     logic_out = new ElectricLogic[2]
 
     # components
-    package = new SN74LVC2G34DBVRUMW_package
+    package = new UMW_SN74LVC2G34DBVR_UMW_package
     decoupling_capacitor = new Capacitor
 
     # parameters
@@ -44,54 +48,20 @@ module SN74LVC2G34DBVRUMW_driver:
 
     # connections
     power ~ decoupling_capacitor.power
-    power ~ package.power
-    logic_in[0] ~ package.logic_in[0]
-    logic_in[1] ~ package.logic_in[1]
-    logic_out[0] ~ package.logic_out[0]
-    logic_out[1] ~ package.logic_out[1]
+
+    # connections to package
+    power.hv ~ package.VCC
+    power.lv ~ package.GND
+    logic_in[0].line ~ package.INA1
+    logic_in[1].line ~ package.INA2
+    logic_out[0].line ~ package.Y1
+    logic_out[1].line ~ package.Y2
 
     # constraints
     power.required = True
-
-
-component SN74LVC2G34DBVRUMW_package from UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW_package:
-    """
-    74LVC2G34 dual buffer.
-    """
-
-    power = new ElectricPower
-    logic_in = new ElectricLogic[2]
-    logic_out = new ElectricLogic[2]
-
-    power.hv ~ VCC
-    power.lv ~ GND
-    logic_in[0].line ~ INA1
-    logic_in[1].line ~ INA2
-    logic_out[0].line ~ Y1
-    logic_out[1].line ~ Y2
 
     power.voltage = 1.65V to 5.5V
     for l_i in logic_in:
         l_i.reference.voltage = 1.65V to 5.5V
     for l_o in logic_out:
         l_o.reference.voltage = power.voltage
-
-
-component UMWYoutai_Semiconductor_Co_Ltd_SN74LVC2G34DBVRUMW_package:
-    """
-    UMWYoutai Semiconductor Co., Ltd
-    SN74LVC2G34DBVRUMW Dual buffer
-    """
-    lcsc_id = "C7394039"
-    manufacturer = "UMW(Youtai Semiconductor Co., Ltd.)"
-    mpn = "SN74LVC2G34DBVR(UMW)"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403221055_UMW-Youtai-Semiconductor-Co---Ltd--SN74LVC2G34DBVR-UMW_C7394039.pdf"
-    designator_prefix = "U"
-
-    # pins
-    signal GND ~ pin 2
-    signal INA1 ~ pin 1
-    signal INA2 ~ pin 3
-    signal VCC ~ pin 5
-    signal Y1 ~ pin 6
-    signal Y2 ~ pin 4

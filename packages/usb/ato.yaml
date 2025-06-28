@@ -1,46 +1,38 @@
-requires-atopile: ^0.7.0
+requires-atopile: ^0.9.0
 
 paths:
   src: ./
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
   usb_2_0_type_c_data_power_vertical_connector:
     entry: usb.ato:USB2_0_TypeC_Data_Power_Vertical_Connector_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   usb_2_0_type_c_data_power_horizontal_connector:
     entry: usb.ato:USB2_0_TypeC_Data_Power_Horizontal_Connector_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   usb_pd_power_sink_horizontal_connector:
     entry: usb.ato:USB_PD_Power_Sink_Horizontal_Connector_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   usb_pd_power_sink_vertical_connector:
     entry: usb.ato:USB_PD_Power_Sink_Vertical_Connector_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
 package:
   identifier: ruben-iteng/usb
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.3.0"
+  version: 0.3.1
   authors:
-  - name: Ruben Baldewsing
-    email: 94007802+ruben-iteng@users.noreply.github.com
+    - name: Ruben Baldewsing
+      email: 94007802+ruben-iteng@users.noreply.github.com
   summary: USB connectors and circuitry
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/usb/README.md
+
 dependencies:
-- type: registry
-  identifier: atopile/indicator-leds
-  release: 0.1.0
+  - type: registry
+    identifier: atopile/indicator-leds
+    release: 0.1.2

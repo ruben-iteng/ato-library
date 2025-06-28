@@ -1,36 +1,34 @@
-requires-atopile: "^0.7.0"
+requires-atopile: "^0.9.0"
 
 paths:
   src: "."
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
   driven_dpdt_bistable_relay:
     entry: relays.ato:DrivenDPDTBistableRelay
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   driven_dpdt_bistable_relay_push_terminal:
     entry: relays.ato:DrivenDPDTBistableRelayPushTerminal
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   dc_motor_driver:
     entry: relays.ato:Shenzhen_Fuman_Elec_TC118S_driver
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
 package:
   identifier: ruben-iteng/relays
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.1"
+  version: "0.2.2"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com
   summary: Relay modules
   license: MIT
   homepage: https://github.com/ruben-iteng/ato-library/blob/main/packages/relays/README.md
+
+dependencies:
+  - type: registry
+    identifier: atopile/indicator-leds
+    release: 0.1.2

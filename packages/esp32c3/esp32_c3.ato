@@ -1,32 +1,121 @@
 #pragma experiment("BRIDGE_CONNECT")
 #pragma experiment("FOR_LOOP")
 
-import ElectricLogic, ElectricPower, I2C, SPI, UART_Base, JTAG, USB2_0, Capacitor, Resistor, FilterElectricalRC
-from "atopile/buttons/buttons.ato" import ButtonSKRPACE010
+import ElectricLogic
+import ElectricPower
+import I2C
+import SPI
+import UART_Base
+import JTAG
+import USB2_0
+import Capacitor
+import Resistor
+import FilterElectricalRC
+
+from "ruben-iteng/switches/buttons.ato" import ButtonSKRPACE010
+
+from "parts/Espressif_Systems_ESP32_C3_MINI_1_N4/Espressif_Systems_ESP32_C3_MINI_1_N4.ato" import Espressif_Systems_ESP32_C3_MINI_1_N4_package
+from "parts/Espressif_Systems_ESP32_C3_MINI_1U_H4/Espressif_Systems_ESP32_C3_MINI_1U_H4.ato" import Espressif_Systems_ESP32_C3_MINI_1U_H4_package
 
 
 module ESP32_C3_MINI_driver from ESP32_C3_MINI_1_driver:
     """
     ESP32 S3 WROOM-1 module with build-in antenna and supporting components
     """
-    ic -> Espressif_Systems_ESP32_C3_MINI_1_N4_package
+    # package
+    package = new Espressif_Systems_ESP32_C3_MINI_1_N4_package
+
+    # connections to package
+    gpio[0].line ~ package.IO0
+    gpio[1].line ~ package.IO1
+    gpio[2].line ~ package.IO2 # strapping pin, default floating
+    gpio[3].line ~ package.IO3
+    gpio[4].line ~ package.IO4
+    gpio[5].line ~ package.IO5
+    gpio[6].line ~ package.IO6
+    gpio[7].line ~ package.IO7
+    gpio[8].line ~ package.IO8 # strapping pin, default floating
+    gpio[9].line ~ package.IO9 # strapping pin, default weak pull-up
+    gpio[10].line ~ package.IO10
+    gpio[18].line ~ package.IO18
+    gpio[19].line ~ package.IO19
+    gpio[20].line ~ package.RXD0
+    gpio[21].line ~ package.TXD0
+
+    enable.line ~ package.EN
+
+    power.hv ~ package.P3V3
+    power.lv ~ package.GND
+    uart.rx ~ gpio[20]
+    uart.tx ~ gpio[21]
+
+    usb.usb_if.d.n ~ gpio[18]
+    usb.usb_if.d.p ~ gpio[19]
+
+    # I2C and SPI are muxable to other gpio
+    i2c.scl ~ gpio[6]
+    i2c.sda ~ gpio[5]
+
+    spi.sclk ~ gpio[10]
+    spi.mosi ~ gpio[7]
+    spi.miso ~ gpio[8]
+
+    jtag.tck ~ gpio[6]
+    jtag.tms ~ gpio[4]
+    jtag.tdi ~ gpio[5]
+    jtag.tdo ~ gpio[7]
+    jtag.vtref ~ power
+    jtag.n_trst ~ enable
 
 
 module ESP32_C3_MINI_ufl_driver from ESP32_C3_MINI_1_driver:
     """
     ESP32 S3 WROOM-1 module with u.fl antenna connector and supporting components
     """
-    ic -> Espressif_Systems_ESP32_C3_MINI_1U_H4_package
+    # package
+    package = new Espressif_Systems_ESP32_C3_MINI_1U_H4_package
 
-    # attatch extra gnd pins
-    power.lv ~ ic.54
-    power.lv ~ ic.55
-    power.lv ~ ic.56
-    power.lv ~ ic.57
-    power.lv ~ ic.58
-    power.lv ~ ic.59
-    power.lv ~ ic.60
-    power.lv ~ ic.61
+    # connections to package
+    gpio[0].line ~ package.IO0
+    gpio[1].line ~ package.IO1
+    gpio[2].line ~ package.IO2 # strapping pin, default floating
+    gpio[3].line ~ package.IO3
+    gpio[4].line ~ package.IO4
+    gpio[5].line ~ package.IO5
+    gpio[6].line ~ package.IO6
+    gpio[7].line ~ package.IO7
+    gpio[8].line ~ package.IO8 # strapping pin, default floating
+    gpio[9].line ~ package.IO9 # strapping pin, default weak pull-up
+    gpio[10].line ~ package.IO10
+    gpio[18].line ~ package.IO18
+    gpio[19].line ~ package.IO19
+    gpio[20].line ~ package.RXD0
+    gpio[21].line ~ package.TXD0
+
+    enable.line ~ package.EN
+
+    power.hv ~ package.P3V3
+    power.lv ~ package.GND
+    uart.rx ~ gpio[20]
+    uart.tx ~ gpio[21]
+
+    usb.usb_if.d.n ~ gpio[18]
+    usb.usb_if.d.p ~ gpio[19]
+
+    # I2C and SPI are muxable to other gpio
+    i2c.scl ~ gpio[6]
+    i2c.sda ~ gpio[5]
+
+    spi.sclk ~ gpio[10]
+    spi.mosi ~ gpio[7]
+    spi.miso ~ gpio[8]
+
+    jtag.tck ~ gpio[6]
+    jtag.tms ~ gpio[4]
+    jtag.tdi ~ gpio[5]
+    jtag.tdo ~ gpio[7]
+    jtag.vtref ~ power
+    jtag.n_trst ~ enable
 
 
 module ESP32_C3_MINI_1_driver from ESP32_C3_MINI_1:
@@ -51,11 +140,11 @@ module ESP32_C3_MINI_1_driver from ESP32_C3_MINI_1:
     power ~ decoupling_capacitor_bulk.power
     power ~ decoupling_capacitor_small.power
 
-    boot_switch.input ~ power.lv
-    boot_switch.output ~ gpio[9].line
+    boot_switch.unnamed[0] ~ gpio[9].line
+    boot_switch.unnamed[1] ~ power.lv
 
-    reset_switch.input ~ power.lv
-    reset_switch.output ~ enable.line
+    reset_switch.unnamed[0] ~ enable.line
+    reset_switch.unnamed[1] ~ power.lv
     reset_rc_filter.in_.line ~ power.hv
     reset_rc_filter.out ~ enable
     reset_rc_filter.in_.reference ~ power
@@ -81,9 +170,6 @@ module ESP32_C3_MINI_1:
     """
     ESP32 C3 MINI module
     """
-
-    ic = new Espressif_Systems_ESP32_C3_MINI_1_package_base
-
     # external interfaces
     power = new ElectricPower
     i2c = new I2C
@@ -95,140 +181,7 @@ module ESP32_C3_MINI_1:
 
     gpio = new ElectricLogic[22] # 11-17 are not exposed on the module
 
-    # connections to package
-    gpio[0].line ~ ic.12
-    gpio[1].line ~ ic.13
-    gpio[2].line ~ ic.5 # strapping pin, default floating
-    gpio[3].line ~ ic.6
-    gpio[4].line ~ ic.18
-    gpio[5].line ~ ic.19
-    gpio[6].line ~ ic.20
-    gpio[7].line ~ ic.21
-    gpio[8].line ~ ic.22 # strapping pin, default floating
-    gpio[9].line ~ ic.23 # strapping pin, default weak pull-up
-    gpio[10].line ~ ic.16
-    gpio[18].line ~ ic.26
-    gpio[19].line ~ ic.27
-    gpio[20].line ~ ic.30
-    gpio[21].line ~ ic.31
-
-    enable.line ~ ic.8
-
-    power.hv ~ ic.3
-    power.lv ~ ic.1
-    power.lv ~ ic.2
-    power.lv ~ ic.11
-    power.lv ~ ic.14
-    power.lv ~ ic.36
-    power.lv ~ ic.37
-    power.lv ~ ic.38
-    power.lv ~ ic.39
-    power.lv ~ ic.40
-    power.lv ~ ic.41
-    power.lv ~ ic.42
-    power.lv ~ ic.43
-    power.lv ~ ic.44
-    power.lv ~ ic.45
-    power.lv ~ ic.46
-    power.lv ~ ic.47
-    power.lv ~ ic.48
-    power.lv ~ ic.49
-    power.lv ~ ic.50
-    power.lv ~ ic.51
-    power.lv ~ ic.52
-    power.lv ~ ic.53
-
-    uart.rx ~ gpio[20]
-    uart.tx ~ gpio[21]
-
-    usb.usb_if.d.n ~ gpio[18]
-    usb.usb_if.d.p ~ gpio[19]
-
-    # I2C and SPI are muxable to other gpio
-    i2c.scl ~ gpio[6]
-    i2c.sda ~ gpio[5]
-
-    spi.sclk ~ gpio[10]
-    spi.mosi ~ gpio[7]
-    spi.miso ~ gpio[8]
-
-    jtag.tck ~ gpio[6]
-    jtag.tms ~ gpio[4]
-    jtag.tdi ~ gpio[5]
-    jtag.tdo ~ gpio[7]
-    jtag.vtref ~ power
-    jtag.n_trst ~ enable
-
     # parameters
     power.voltage = 3.3V +/- 10%
 
     power.required = True
-
-
-component Espressif_Systems_ESP32_C3_MINI_1_package_base:
-    """Base component for ESP32 C3 MINI module"""
-    manufacturer = "Espressif Systems"
-    datasheet_url = "https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf"
-    designator_prefix = "U"
-
-    # pins
-    pin 1
-    pin 2
-    pin 3
-    pin 5
-    pin 6
-    pin 8
-    pin 11
-    pin 12
-    pin 13
-    pin 14
-    pin 16
-    pin 18
-    pin 19
-    pin 20
-    pin 21
-    pin 22
-    pin 23
-    pin 26
-    pin 27
-    pin 30
-    pin 31
-    pin 36
-    pin 37
-    pin 38
-    pin 39
-    pin 40
-    pin 41
-    pin 42
-    pin 43
-    pin 44
-    pin 45
-    pin 46
-    pin 47
-    pin 48
-    pin 49
-    pin 50
-    pin 51
-    pin 52
-    pin 53
-
-
-component Espressif_Systems_ESP32_C3_MINI_1_N4_package from Espressif_Systems_ESP32_C3_MINI_1_package_base:
-    """ESP32 C3 MINI module with build-in antenna"""
-    lcsc_id = "C2838502"
-    mpn = "ESP32-C3-MINI-1-N4"
-
-
-component Espressif_Systems_ESP32_C3_MINI_1U_H4_package from Espressif_Systems_ESP32_C3_MINI_1_package_base:
-    """ESP32 C3 MINI module with u.fl antenna connector"""
-    lcsc_id = "C3013922"
-    mpn = "ESP32-C3-MINI-1U-H4"
-
-    pin 54
-    pin 55
-    pin 56
-    pin 57
-    pin 58
-    pin 59
-    pin 60
-    pin 61

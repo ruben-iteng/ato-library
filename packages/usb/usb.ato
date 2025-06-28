@@ -15,6 +15,9 @@ import WCHJiangsu_Qin_Heng_CH224K
 
 from "atopile/indicator-leds/indicator-leds.ato" import LEDIndicatorBlue
 
+from "parts/BHFUSE_BSMD0805_050_15V/BHFUSE_BSMD0805_050_15V.ato" import BHFUSE_BSMD0805_050_15V_package
+from "parts/Jing_Extension_of_the_Electronic_Co_918_418K2022Y40000/Jing_Extension_of_the_Electronic_Co_918_418K2022Y40000.ato" import Jing_Extension_of_the_Electronic_Co_918_418K2022Y40000_package
+from "parts/SHOU_HAN_TYPE_C_16PIN_2MD_073/SHOU_HAN_TYPE_C_16PIN_2MD_073.ato" import SHOU_HAN_TYPE_C_16PIN_2MD_073_package
 
 module USB_PD_Power_Sink_Vertical_Connector_driver from USB_PD_Power_Sink_driver:
     """
@@ -28,7 +31,7 @@ module USB_PD_Power_Sink_Vertical_Connector_driver from USB_PD_Power_Sink_driver
     pd_sink = new USBPDPowerSink
     pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
     """
-    connector -> USB_Type_C_Vertical_Connector_driver
+    connector -> Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_driver
 
 
 module USB_PD_Power_Sink_Horizontal_Connector_driver from USB_PD_Power_Sink_driver:
@@ -43,7 +46,7 @@ module USB_PD_Power_Sink_Horizontal_Connector_driver from USB_PD_Power_Sink_driv
     pd_sink = new USBPDPowerSink
     pd_sink.pd_trigger.voltage_set_resistor.resistance = 56kohm +/- 1%
     """
-    connector -> USB_Type_C_Horizontal_Connector_driver
+    connector -> SHOU_HAN_TYPE_C_16PIN_2MD_073_driver
 
 
 module USB_PD_Power_Sink_driver:
@@ -115,7 +118,7 @@ module WCH_CH224K_driver:
     controller.power ~ decoupling_capacitor.power
     controller.power.lv ~ vbus.lv
     controller.power_good ~ power_good
-    controller.power_good ~ power_good_indicator.power.lv
+    controller.power_good.line ~ power_good_indicator.power.lv
     power_good_indicator.power.hv ~ vbus.hv
     power_good_indicator.power.voltage = vbus.voltage
     controller.usb ~> usb_data.d
@@ -149,7 +152,7 @@ module USB2_0_TypeC_Data_Power_Vertical_Connector_driver from USB2_0_TypeC_Data_
     - Vertical USB Type-C connector
     """
     # connections to package
-    connector -> USB_Type_C_Vertical_Connector_driver
+    connector -> Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_driver
 
 
 module USB2_0_TypeC_Data_Power_Horizontal_Connector_driver from USB2_0_TypeC_Data_Power_driver:
@@ -161,7 +164,7 @@ module USB2_0_TypeC_Data_Power_Horizontal_Connector_driver from USB2_0_TypeC_Dat
     - Horizontal USB Type-C connector
     """
     # connections to package
-    connector -> USB_Type_C_Horizontal_Connector_driver
+    connector -> SHOU_HAN_TYPE_C_16PIN_2MD_073_driver
 
 
 module USB2_0_TypeC_Data_Power_driver:
@@ -172,8 +175,8 @@ module USB2_0_TypeC_Data_Power_driver:
     - Fuse [500mA(hold), 1A(trip)]
 
     Choose between vertical or horizontal connector
-    connector -> USB_Type_C_Vertical_Connector_driver
-    connector -> USB_Type_C_Horizontal_Connector_driver
+    connector -> Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_driver
+    connector -> SHOU_HAN_TYPE_C_16PIN_2MD_073_driver
     """
 
     # external interfaces
@@ -215,7 +218,7 @@ module FusedUSB2_0:
 
     usb_in = new USB2_0
     usb_out = new USB2_0
-    fuse = new BHFUSE_BSMD0805_050_15V
+    fuse = new BHFUSE_BSMD0805_050_15V_driver
 
     # connections
     usb_in.usb_if.buspower.hv ~> fuse ~> usb_out.usb_if.buspower.hv
@@ -233,9 +236,9 @@ module USB_TypeC_Connector_driver:
     shield = new Electrical
 
 
-module USB_Type_C_Horizontal_Connector_driver from USB_TypeC_Connector_driver:
-    """Horizontal USB type-C connector"""
-    package = new SHOU_HAN_TYPE_C_16PIN_2MD073_package
+module SHOU_HAN_TYPE_C_16PIN_2MD_073_driver from USB_TypeC_Connector_driver:
+    """Horizontal 14 pin USB type-C connector"""
+    package = new SHOU_HAN_TYPE_C_16PIN_2MD_073_package
 
     # connections to package
     usb.usb_if.buspower.gnd ~ package.GND
@@ -251,84 +254,28 @@ module USB_Type_C_Horizontal_Connector_driver from USB_TypeC_Connector_driver:
     power_vbus.hv ~ package.VBUS
     power_vbus.lv ~ package.GND
 
-module USB_Type_C_Vertical_Connector_driver from USB_TypeC_Connector_driver:
-    """Vertical USB type-C connector"""
-    package = new Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_package
+
+component Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_driver from USB_TypeC_Connector_driver:
+    """Vertical 14 pin USB type-C connector"""
+    package = new Jing_Extension_of_the_Electronic_Co_918_418K2022Y40000_package
 
     # connections to package
-    usb.usb_if.buspower.gnd ~ package.GND
+    usb.usb_if.buspower.gnd ~ package.G
     cc[0].line ~ package.CC1
     cc[1].line ~ package.CC2
-    shield ~ package.SHELL
-    usb.usb_if.d.p.line ~ package.DP1
-    usb.usb_if.d.n.line ~ package.DN1
-    usb.usb_if.d.p.line ~ package.DP2
-    usb.usb_if.d.n.line ~ package.DN2
-    power_vbus.hv ~ package.VBUS
-    power_vbus.lv ~ package.GND
+    shield ~ package.0
+    usb.usb_if.d.p.line ~ package.Dpos
+    usb.usb_if.d.n.line ~ package.Dneg
+    power_vbus.hv ~ package.V
+    power_vbus.lv ~ package.G
 
 
-component SHOU_HAN_TYPE_C_16PIN_2MD073_package:
-    """Common horizontal 16 pin USB type-C connector"""
-    lcsc_id = "C2765186"
-    manufacturer = "SHOU HAN"
-    mpn = "TYPE-C 16PIN 2MD(073)"
-    datasheet_url = "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588920841703079936"
-    designator_prefix = "X"
-
-    # pins
-    signal CC1 ~ pin 4
-    signal CC2 ~ pin 10
-    signal DN1 ~ pin 7
-    signal DN2 ~ pin 5
-    signal DP1 ~ pin 6
-    signal DP2 ~ pin 8
-    signal GND ~ pin 1
-    GND ~ pin 12
-    signal SBU1 ~ pin 9
-    signal SBU2 ~ pin 3
-    signal SHELL ~ pin 13
-    SHELL ~ pin 14
-    signal VBUS ~ pin 2
-    VBUS ~ pin 11
-
-component Jing_Extension_of_the_Electronic_Co__918_418K2022Y40000_package:
-    """Vertical 14 pin USB type-C connector"""
-    lcsc_id = "C168704"
-    manufacturer = "Jing Extension of the Electronic Co."
-    mpn = "918-418K2022Y40000"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2103051834_Jing-Extension-of-the-Electronic-Co--918-418K2022Y40000_C168704.pdf"
-    designator_prefix = "X"
-
-    # pins
-    signal SHELL ~ pin 0
-    signal CC1 ~ pin 12
-    signal CC2 ~ pin 5
-    signal DN2 ~ pin 3
-    signal DN1 ~ pin 10
-    signal DP2 ~ pin 4
-    signal DP1 ~ pin 11
-    signal GND ~ pin 1
-    GND ~ pin 7
-    GND ~ pin 8
-    GND ~ pin 14
-    signal VBUS ~ pin 2
-    VBUS ~ pin 6
-    VBUS ~ pin 9
-    VBUS ~ pin 13
-
-
-component BHFUSE_BSMD0805_050_15V from Fuse:
-    """BHFUSE_BSMD0805_050_15V component"""
-    lcsc_id = "C883109"
-    manufacturer = "BHFUSE"
-    mpn = "BSMD0805-050-15V"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2305121423_BHFUSE-BSMD0805-050-15V_C883109.pdf"
-    designator_prefix = "F"
+component BHFUSE_BSMD0805_050_15V_driver from Fuse:
+    package = new BHFUSE_BSMD0805_050_15V_package
 
     # parameters
     trip_current = 1A to 1.1A
 
     # pins
-    unnamed[0] ~ pin 1
-    unnamed[1] ~ pin 2
+    unnamed[0] ~ package.1
+    unnamed[1] ~ package.2

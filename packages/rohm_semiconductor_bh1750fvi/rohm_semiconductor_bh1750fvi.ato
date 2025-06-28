@@ -7,6 +7,8 @@ import I2C
 import Capacitor
 import FilterElectricalRC
 
+from "parts/ROHM_Semicon_BH1750FVI_TR/ROHM_Semicon_BH1750FVI_TR.ato" import ROHM_Semicon_BH1750FVI_TR_package
+
 
 module ROHM_Semiconductor_BH1750FVI_TR_driver:
     """
@@ -26,7 +28,7 @@ module ROHM_Semiconductor_BH1750FVI_TR_driver:
     - Small measurement variation (+/- 20%)
     - The influence of infrared is very small
     """
-    package = new ROHM_Semiconductor_BH1750FVI_TR_package
+    package = new ROHM_Semicon_BH1750FVI_TR_package
 
     # external interfaces
     i2c = new I2C
@@ -64,21 +66,3 @@ module ROHM_Semiconductor_BH1750FVI_TR_driver:
     dvi_lowpass.capacitor.package = "C0402"
     decoupling_capacitor.capacitance = 0.1uF +/- 10%
     decoupling_capacitor.package = "C0402"
-
-
-component ROHM_Semiconductor_BH1750FVI_TR_package:
-    """ROHM Semiconductor BH1750FVI-TR package"""
-    lcsc_id = "C78960"
-    manufacturer = "ROHM Semicon"
-    mpn = "BH1750FVI-TR"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081611_ROHM-Semicon-BH1750FVI-TR_C78960.pdf"
-    designator_prefix = "U"
-
-    # pins
-    signal ADDR ~ pin 2
-    signal DVI ~ pin 5
-    signal EP ~ pin 7
-    signal GND ~ pin 3
-    signal SCL ~ pin 6
-    signal SDA ~ pin 4
-    signal VCC ~ pin 1

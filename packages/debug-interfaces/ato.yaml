@@ -1,39 +1,30 @@
-requires-atopile: "^0.5.0"
+requires-atopile: "^0.9.0"
 
 paths:
   src: "."
   layout: ./layouts
-  footprints: ./footprints
 
 builds:
   arm_cortex_m_debug_header:
     entry: debug-interfaces.ato:ARM_CORTEX_M_DEBUG_HEADER
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   swd_tc2030_idc_nl:
     entry: debug-interfaces.ato:SWD_TC2030_IDC_NL
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   swd_tc2030_idc_fp:
     entry: debug-interfaces.ato:SWD_TC2030_IDC_FP
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
   segger_jlink_compact:
     entry: segger.ato:SEGGER_JLink_Compact
-    fail_on_drcs: false
-    keep_picked_parts: true
     hide_designators: true
 
 package:
   identifier: ruben-iteng/debug-interfaces
   repository: https://github.com/ruben-iteng/ato-library
-  version: "0.2.2"
+  version: "0.2.3"
   authors:
     - name: Ruben Baldewsing
       email: 94007802+ruben-iteng@users.noreply.github.com

@@ -6,19 +6,7 @@ import Regulator
 import Capacitor
 import Inductor
 
-component EVISUN_B0505S_1WR3_package:
-    """EVISUN_B0505S_1WR3 component"""
-    lcsc_id = "C7465178"
-    manufacturer = "EVISUN"
-    mpn = "B0505S-1WR3"
-    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307211806_EVISUN-B0505S-1WR3_C7465178.pdf"
-    designator_prefix = "U"
-
-    # pins
-    signal _Vin ~ pin 1
-    signal plusVin ~ pin 2
-    signal _Vout ~ pin 3
-    signal plusVout ~ pin 4
+from "parts/EVISUN_B0505S_1WR3/EVISUN_B0505S_1WR3.ato" import EVISUN_B0505S_1WR3_package
 
 module EVISUN_B0505S_1WR3_driver from Regulator:
     """
@@ -39,10 +27,10 @@ module EVISUN_B0505S_1WR3_driver from Regulator:
     _power_out_unfiltered = new ElectricPower
 
     # connections to package
-    package._Vin ~ _power_in_unfiltered.lv
-    package._Vout ~ _power_out_unfiltered.lv
-    package.plusVin ~ _power_in_unfiltered.hv
-    package.plusVout ~ _power_out_unfiltered.hv
+    package.Vinneg ~ _power_in_unfiltered.lv
+    package.Voutneg ~ _power_out_unfiltered.lv
+    package.Vinpos ~ _power_in_unfiltered.hv
+    package.Voutpos ~ _power_out_unfiltered.hv
 
     # other connections
     _power_in_unfiltered ~ decoupling_capacitor_in[0].power

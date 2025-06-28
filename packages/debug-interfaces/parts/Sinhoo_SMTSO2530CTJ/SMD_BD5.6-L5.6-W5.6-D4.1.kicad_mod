@@ -1,0 +1,228 @@
+(footprint "SMD_BD5.6-L5.6-W5.6-D4.1"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -6.17 0)
+		(layer "F.SilkS")
+		(uuid "955e6912-0e5b-4703-9fbd-8c54fb9b1ef9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SMD_BD5.6-L5.6-W5.6-D4.1"
+		(at 0 6.17 0)
+		(layer "F.Fab")
+		(uuid "dcf092e7-6c30-45d3-9192-14b4a4deb909")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4203b6af-647e-4e7a-92cb-835638b89b0e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6d3caa7c-386e-49c3-be3f-0b0b32392eee")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "checksum" "80baad0f64c60e9fe2b4e2698443da69e0c68a3f1a48f47cff70c6e3a06ddf22"
+		(at 0 0 0)
+		(layer "User.9")
+		(hide yes)
+		(uuid "b4c25d87-39c3-477c-847b-a6cf159349bc")
+		(effects
+			(font
+				(size 0.125 0.125)
+				(thickness 0.01875)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center 0.01 0)
+		(end 3.26 0)
+		(stroke
+			(width 0.13)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "f721345a-d104-45bd-9c6e-295ab0ea815d")
+	)
+	(fp_circle
+		(center 0.01 0)
+		(end 1.01 0)
+		(stroke
+			(width 2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Cmts.User")
+		(uuid "45daeb07-4f9d-417c-a0af-f796aee12da6")
+	)
+	(fp_circle
+		(center 2.79 -2.78)
+		(end 2.82 -2.78)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "9079d8b1-7210-4519-b194-338a69adaf37")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -6.17 0)
+		(layer "F.SilkS")
+		(uuid "955e6912-0e5b-4703-9fbd-8c54fb9b1ef9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "287fce19-aa47-4212-91a0-543107f434df")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" thru_hole circle
+		(at 0.01 0)
+		(size 4.25 4.25)
+		(drill 4.25)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "32f3609a-f262-4fa9-9970-5dc288e128c1")
+	)
+	(pad "1" smd custom
+		(at 1.62 -2.14)
+		(size 0.01 0.01)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -1.52 -0.98) (xy -1.37 -0.97) (xy -1.14 -0.94) (xy -0.99 -0.91) (xy -0.67 -0.82) (xy -0.26 -0.66)
+					(xy 0.13 -0.44) (xy 0.47 -0.16) (xy 0.83 0.2) (xy 1.1 0.62) (xy 1.21 0.84) (xy 1.33 1.12) (xy 1.48 1.67)
+					(xy 1.52 2.06) (xy 0.72 2.06) (xy 0.67 1.73) (xy 0.54 1.25) (xy 0.4 1.03) (xy 0.18 0.69) (xy -0.14 0.35)
+					(xy -0.56 0.09) (xy -0.82 -0.03) (xy -1.22 -0.15) (xy -1.52 -0.18)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "3cdb0d52-ecff-4e9d-8978-6ec272d2cdc6")
+	)
+	(pad "2" smd custom
+		(at 1.62 2.17)
+		(size 0.01 0.01)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 1.52 -2.06) (xy 1.51 -1.91) (xy 1.48 -1.68) (xy 1.45 -1.53) (xy 1.36 -1.21) (xy 1.2 -0.8) (xy 0.98 -0.41)
+					(xy 0.7 -0.07) (xy 0.34 0.29) (xy -0.08 0.56) (xy -0.3 0.67) (xy -0.58 0.79) (xy -1.13 0.94) (xy -1.52 0.98)
+					(xy -1.52 0.18) (xy -1.19 0.13) (xy -0.71 0) (xy -0.49 -0.14) (xy -0.15 -0.36) (xy 0.19 -0.68)
+					(xy 0.45 -1.1) (xy 0.57 -1.36) (xy 0.69 -1.76) (xy 0.72 -2.06)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "3afc77d5-8d54-4954-92d3-5a9ee4c44b02")
+	)
+	(pad "3" smd custom
+		(at -1.62 2.17)
+		(size 0.01 0.01)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 1.52 0.97) (xy 1.37 0.96) (xy 1.14 0.93) (xy 0.99 0.9) (xy 0.67 0.81) (xy 0.26 0.65) (xy -0.13 0.43)
+					(xy -0.47 0.15) (xy -0.83 -0.21) (xy -1.1 -0.63) (xy -1.21 -0.85) (xy -1.33 -1.13) (xy -1.48 -1.68)
+					(xy -1.52 -2.07) (xy -0.72 -2.07) (xy -0.67 -1.74) (xy -0.54 -1.26) (xy -0.4 -1.04) (xy -0.18 -0.7)
+					(xy 0.14 -0.36) (xy 0.56 -0.1) (xy 0.82 0.02) (xy 1.22 0.14) (xy 1.52 0.17)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "4598353b-866d-4291-9eb1-b8c2f2bf5496")
+	)
+	(pad "4" smd custom
+		(at -1.61 -2.17)
+		(size 0.01 0.01)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -1.52 2.06) (xy -1.51 1.91) (xy -1.48 1.68) (xy -1.45 1.53) (xy -1.36 1.21) (xy -1.2 0.8) (xy -0.98 0.41)
+					(xy -0.7 0.07) (xy -0.34 -0.29) (xy 0.08 -0.56) (xy 0.3 -0.67) (xy 0.58 -0.79) (xy 1.13 -0.94)
+					(xy 1.52 -0.98) (xy 1.52 -0.18) (xy 1.19 -0.13) (xy 0.71 0) (xy 0.49 0.14) (xy 0.15 0.36) (xy -0.19 0.68)
+					(xy -0.45 1.1) (xy -0.57 1.36) (xy -0.69 1.76) (xy -0.72 2.06)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "189b4341-29a8-421f-be6f-7e5ebd2e798e")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../../parts/Sinhoo_SMTSO2530CTJ/SMD_BD5.6-L5.6-W5.6-D4.1.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -90)
+		)
+	)
+)

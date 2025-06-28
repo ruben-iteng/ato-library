@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component TA_I_Tech_RLP25FEGR015_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C459682", date="2025-06-09T20:48:03.718021+00:00", checksum="566e1c3d37fd438b6b1dc2b18ecf02716cdccb6768fc3b90135c9e911341e2f0">
+
+    trait is_atomic_part<manufacturer="TA-I Tech", partnumber="RLP25FEGR015", footprint="R2512.kicad_mod", symbol="RLP25FEGR015.kicad_sym", model="R2512_L6.3-W3.2-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C459682", manufacturer="TA-I Tech", partno="RLP25FEGR015">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 1
+    pin 2

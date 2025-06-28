@@ -1,0 +1,19 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component KEC_Semicon_2N3906S_RTK_PS_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C5300004", date="2025-06-17T17:43:55.685340+00:00", checksum="e1997e5f50fca9e6c15a67cf06458335e5076df45c19b4cf845b51c1c273e9d7">
+
+    trait is_atomic_part<manufacturer="KEC Semicon", partnumber="2N3906S-RTK/PS", footprint="SOT-23-3_L2.9-W1.3-P1.90-LS2.4-TR.kicad_mod", symbol="2N3906S-RTK_PS_C5300004.kicad_sym", model="SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5300004", manufacturer="KEC Semicon", partno="2N3906S-RTK/PS">
+    trait has_designator_prefix<prefix="Q">
+
+    # pins
+    signal B ~ pin 2
+    signal C ~ pin 3
+    signal E ~ pin 1

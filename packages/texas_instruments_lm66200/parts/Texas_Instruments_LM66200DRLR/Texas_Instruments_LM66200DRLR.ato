@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Texas_Instruments_LM66200DRLR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C3235556", date="2025-06-23T19:48:22.035518+00:00", checksum="9c1503ada4e6a98e57330902540cf79dc7bc283f1dd42bbe81934b083f4ae42d">
+
+    trait is_atomic_part<manufacturer="Texas Instruments", partnumber="LM66200DRLR", footprint="SOT-583-8_L2.1-W1.2-P0.50-LS1.6-BL.kicad_mod", symbol="LM66200DRLR.kicad_sym", model="SOT-583-8_L2.1-W1.2-P0.50-LS1.6-BL.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C3235556", manufacturer="Texas Instruments", partno="LM66200DRLR">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 1
+    GND ~ pin 5
+    signal ST ~ pin 8
+    signal VIN1 ~ pin 3
+    signal VIN2 ~ pin 6
+    signal VOUT ~ pin 2
+    VOUT ~ pin 7
+    signal nON ~ pin 4

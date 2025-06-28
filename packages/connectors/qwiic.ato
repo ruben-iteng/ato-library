@@ -1,12 +1,16 @@
-import ElectricPower, I2C
+import ElectricPower
+import I2C
 
+from "parts/Sparkfun_QWIIC_Logo/QWIIC_Logo.ato" import QWIIC_Logo_6mm_package
+from "parts/JST_Sales_America_BM04B_SRSS_TB_LF__SN/JST_Sales_America_BM04B_SRSS_TB_LF__SN.ato" import JST_Sales_America_BM04B_SRSS_TB_LF__SN_package
+from "parts/JST_Sales_America_SM04B_SRSS_TB_LF__SN/JST_Sales_America_SM04B_SRSS_TB_LF__SN.ato" import JST_Sales_America_SM04B_SRSS_TB_LF__SN_package
 
 module QwiicVertical_driver from QwiicConnector_driver_base:
     """
     Vertical QWIIC connector
     https://www.sparkfun.com/qwiic
     """
-    connector = new JST_Sales_America_BM04B_SRSS_TBLFSN_package
+    connector = new JST_Sales_America_BM04B_SRSS_TB_LF__SN_package
 
     power.lv ~ connector.1
     power.hv ~ connector.2
@@ -21,7 +25,7 @@ module QwiicHorizontal_driver from QwiicConnector_driver_base:
     Horizontal QWIIC connector
     https://www.sparkfun.com/qwiic
     """
-    connector = new JST_Sales_America_SM04B_SRSS_TBLFSN_package
+    connector = new JST_Sales_America_SM04B_SRSS_TB_LF__SN_package
 
     power.lv ~ connector.1
     power.hv ~ connector.2
@@ -38,7 +42,7 @@ module QwiicConnector_driver_base:
     https://www.sparkfun.com/qwiic
     """
 
-    logo = new QwiicLogo
+    logo = new QWIIC_Logo_6mm_package
 
     power = new ElectricPower
     i2c = new I2C
@@ -48,43 +52,3 @@ module QwiicConnector_driver_base:
 
     power.required = True
     i2c.required = True
-
-
-component QwiicLogo:
-    """
-    Qwiic silkscreen logo
-    """
-    footprint = "qwiic_6mm"
-
-
-component JST_Sales_America_BM04B_SRSS_TBLFSN_package:
-    """JST_Sales_America_BM04B_SRSS_TBLFSN component"""
-    lcsc_id = "C160390"
-    manufacturer = "JST Sales America"
-    mpn = "BM04B-SRSS-TB(LF)(SN)"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-BM04B-SRSS-TB-LF-SN_C160390.pdf"
-    designator_prefix = "CN"
-
-    # pins
-    pin 1
-    pin 2
-    pin 3
-    pin 4
-    pin 0
-
-
-component JST_Sales_America_SM04B_SRSS_TBLFSN_package:
-    """JST_Sales_America_SM04B_SRSS_TBLFSN component"""
-    lcsc_id = "C160404"
-    manufacturer = "JST Sales America"
-    mpn = "SM04B-SRSS-TB(LF)(SN)"
-    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf"
-    designator_prefix = "CN"
-
-    # pins
-    pin 1
-    pin 2
-    pin 3
-    pin 4
-    pin 5
-    pin 6
