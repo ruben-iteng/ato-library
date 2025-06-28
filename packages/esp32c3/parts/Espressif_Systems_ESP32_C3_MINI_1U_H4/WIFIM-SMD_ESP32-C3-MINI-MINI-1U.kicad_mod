@@ -455,11 +455,72 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "81657b31-a2c5-45dd-87a0-236283760fe0")
 	)
+	(pad "49" smd custom
+		(at -1.97 -1.98)
+		(size 0.01 0.01)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -0.73 -0.12) (xy -0.13 -0.72) (xy 0.72 -0.72) (xy 0.72 0.73) (xy -0.73 0.73)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "f04abd0e-c230-4c90-a285-21d3ce4be95d")
+	)
+	(pad "49" smd rect
+		(at -1.97 0)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "d25b73bc-15b2-41ab-b44c-6a89352f3540")
+	)
+	(pad "49" smd rect
+		(at -1.97 1.98)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e619f6be-0578-4e66-90d9-9b5ee2c9bf0b")
+	)
+	(pad "49" smd rect
+		(at 0 -1.97)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "df949e42-f209-4669-92d1-485f31fd4c44")
+	)
 	(pad "49" smd rect
 		(at 0 0)
 		(size 1.45 1.45)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "d0ea139b-2987-4726-9948-f0d3b793d794")
+	)
+	(pad "49" smd rect
+		(at 0 1.98)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "a14901ff-a68e-49da-9a46-365cff4fcb43")
+	)
+	(pad "49" smd rect
+		(at 1.97 -1.97)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6fc2c2e2-a8e5-4e13-9fbe-9653de6df8a9")
+	)
+	(pad "49" smd rect
+		(at 1.97 0)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "23e9a934-43c5-4da1-84b6-c524b8f35076")
+	)
+	(pad "49" smd rect
+		(at 1.97 1.98)
+		(size 1.45 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4286adb4-9f80-4392-98d3-834ac04e4a01")
 	)
 	(pad "50" smd rect
 		(at 5.95 -4.95)
@@ -484,67 +545,6 @@
 		(size 0.9 0.9)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "862589f0-620c-4dbb-b89f-5ac2b7235d88")
-	)
-	(pad "54" smd rect
-		(at -1.97 0)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "d25b73bc-15b2-41ab-b44c-6a89352f3540")
-	)
-	(pad "55" smd custom
-		(at -1.97 -1.98)
-		(size 0.01 0.01)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(options
-			(clearance outline)
-			(anchor circle)
-		)
-		(primitives
-			(gr_poly
-				(pts
-					(xy -0.73 -0.12) (xy -0.13 -0.72) (xy 0.72 -0.72) (xy 0.72 0.73) (xy -0.73 0.73)
-				)
-				(width 0.1)
-				(fill yes)
-			)
-		)
-		(uuid "f04abd0e-c230-4c90-a285-21d3ce4be95d")
-	)
-	(pad "56" smd rect
-		(at 0 -1.97)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "df949e42-f209-4669-92d1-485f31fd4c44")
-	)
-	(pad "57" smd rect
-		(at 1.97 -1.97)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "6fc2c2e2-a8e5-4e13-9fbe-9653de6df8a9")
-	)
-	(pad "58" smd rect
-		(at 1.97 0)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "23e9a934-43c5-4da1-84b6-c524b8f35076")
-	)
-	(pad "59" smd rect
-		(at -1.97 1.98)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "e619f6be-0578-4e66-90d9-9b5ee2c9bf0b")
-	)
-	(pad "60" smd rect
-		(at 0 1.98)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "a14901ff-a68e-49da-9a46-365cff4fcb43")
-	)
-	(pad "61" smd rect
-		(at 1.97 1.98)
-		(size 1.45 1.45)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "4286adb4-9f80-4392-98d3-834ac04e4a01")
 	)
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/../../parts/Espressif_Systems_ESP32_C3_MINI_1U_H4/WIFIM-SMD_ESP32-C3-MINI-MINI-1U.step"
