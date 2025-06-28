@@ -41,7 +41,7 @@ jobs:
 
       - uses: atopile/setup-atopile@v1
         with:
-          version: "main"
+          working-directory: ${{ matrix.package }}
 
       - run: ato sync
         working-directory: ${{ matrix.package }}
@@ -53,5 +53,4 @@ jobs:
           package-entrypoint: ${{ matrix.package }}
           skip-duplicate-versions: true
           package-version: "" # Use the embedded version key
-          atopile-version: "main"
           ato-config: ${{ matrix.package }}/ato.yaml
